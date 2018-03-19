@@ -8,7 +8,15 @@ namespace FS_Crew_Config_Tool
     public class ConfigManager
     {
         private const string FS_PATH = "..\\Local\\spacegame\\Saved\\Config\\WindowsNoEditor\\GameUserSettings.ini";
-        private string completePath = string.Empty;
+
+        private string CompletePath
+        {
+            get
+            {
+                string appDataDir = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                return Path.Combine(appDataDir, FS_PATH);
+            }
+        }
 
         private const string CREW_TEAMS_FLAG = "CrewTeams=";
 
@@ -48,10 +56,7 @@ namespace FS_Crew_Config_Tool
 
         public void LoadConfig()
         {
-            string appDataDir = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            completePath = Path.Combine(appDataDir, FS_PATH);
-
-            string[] fullConfig = File.ReadAllLines(completePath);
+            string[] fullConfig = File.ReadAllLines(CompletePath);
 
             ParseIntoSegments(fullConfig);
         }
@@ -127,6 +132,30 @@ namespace FS_Crew_Config_Tool
                         CrewData[index] = CrewData[index + 1];
                         CrewData[index + 1] = temp;
                     }
+                }
+            }
+        }
+
+        public void SaveConfig()
+        {
+            using (StreamWriter writetext = new StreamWriter(CompletePath))
+            {
+                // Write all segment one items
+                foreach (string line in SegmentStart)
+                {
+                    writetext.WriteLine(line);
+                }
+
+                // Write all crew lines
+                foreach (RawLinePlusCrewName line in CrewData)
+                {
+                    writetext.WriteLine(line.RawLine);
+                }
+
+                // Write all segment three items
+                foreach (string line in SegmentEnd)
+                {
+                    writetext.WriteLine(line);
                 }
             }
         }

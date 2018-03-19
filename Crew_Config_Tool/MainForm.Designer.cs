@@ -30,6 +30,7 @@
         {
             this.ListBoxCrews = new System.Windows.Forms.ListBox();
             this.ButtonSortAlpha = new System.Windows.Forms.Button();
+            this.ButtonSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ListBoxCrews
@@ -50,11 +51,22 @@
             this.ButtonSortAlpha.UseVisualStyleBackColor = true;
             this.ButtonSortAlpha.Click += new System.EventHandler(this.ButtonSortAlpha_Click);
             // 
+            // ButtonSave
+            // 
+            this.ButtonSave.Location = new System.Drawing.Point(124, 9);
+            this.ButtonSave.Name = "ButtonSave";
+            this.ButtonSave.Size = new System.Drawing.Size(60, 23);
+            this.ButtonSave.TabIndex = 2;
+            this.ButtonSave.Text = "Save";
+            this.ButtonSave.UseVisualStyleBackColor = true;
+            this.ButtonSave.Click += new System.EventHandler(this.ButtonSave_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(495, 445);
+            this.Controls.Add(this.ButtonSave);
             this.Controls.Add(this.ButtonSortAlpha);
             this.Controls.Add(this.ListBoxCrews);
             this.Name = "MainForm";
@@ -68,6 +80,7 @@
 
         private System.Windows.Forms.ListBox ListBoxCrews;
         private System.Windows.Forms.Button ButtonSortAlpha;
+        private System.Windows.Forms.Button ButtonSave;
     }
 }
 

@@ -39,5 +39,10 @@ namespace FS_Crew_Config_Tool
                 ListBoxCrews.Items.Add(crewLine.CrewName);
             }
         }
+
+        private void ButtonSave_Click(object sender, EventArgs e)
+        {
+            config.SaveConfig();
+        }
     }
 }
