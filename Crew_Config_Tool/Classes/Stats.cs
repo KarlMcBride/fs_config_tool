@@ -1,87 +1,71 @@
 ﻿namespace FS_Crew_Config_Tool
 {
-    public class Stats
+    public enum StatCategory
     {
-        public enum BALANCE
-        {
-            MIN,
-            MID,
-            MAX
-        }
+        ATTACK,
+        DEFENSE,
+        UTILITY
+    }
 
-        // CAG
-        public float SquadCoolDown = 0;
-        public float SquadSurvival = 0;
+    public enum StatType
+    {
+        ARMOUR_REPAIR_RATE,
+        ARMOUR_STRENGTH,
+        ATTACK_DAMAGE,
+        BROKEN_ARMOUR_DAMAGE,
+        CAPTURE_RATE,
+        DAMAGE_REDUCTION,
+        ENERGY_EFFICIENCY,
+        ENERGY_REGEN,
+        FIRE_RATE,
+        FORWARD_THRUST,
+        HULL_STRENGTH,
+        JUMP_COOLDOWN,
+        JUMP_DAMAGE_REDUCTION,
+        JUMP_PREP,
+        MANEUVERING,
+        MISSILE_RANGE,
+        RAM_DAMAGE,
+        REPAIR_EFFICIENCY,
+        SENSOR_RANGE,
+        STATION_DAMAGE_REDUCTION,
+        SQUAD_COOLDOWN,
+        SQUAD_SURVIVAL,
+        TURN_RATE,
+        TURRET_TRAVERSE,
+        UTILITY_COOLDOWN,
+        UTILITY_DURATION
+    }
 
-        public const float CAG_MAX = 15f;
-        public const float CAG_MID = 11.25f;
-        public const float CAG_MIN = 7.5f;
+    public struct Stats
+    {
+        string Name;
 
-        /// <summary>
-        /// Sets CAG stats
-        /// </summary>
-        /// <param name="squadCdState">MIN - sets MIN to CD, MAX to Survival</param>
-        public void SetCagStats(BALANCE squadCdState)
-        {
-            switch (squadCdState)
-            {
-                case BALANCE.MIN:
-                {
-                    SquadCoolDown = CAG_MAX;
-                    SquadSurvival = CAG_MIN;
-                    break;
-                }
-                case BALANCE.MID:
-                {
-                    SquadCoolDown = CAG_MID;
-                    SquadSurvival = CAG_MID;
-                    break;
-                }
-                case BALANCE.MAX:
-                {
-                    SquadCoolDown = CAG_MIN;
-                    SquadSurvival = CAG_MAX;
-                    break;
-                }
-            }
-        }
-
-
-        // CAPTAIN
-        public float AttackDamage = 0;
-        public float CaptureRate = 0;
-        public float DamageReduction = 0;
-
-        public const float CAPT_DAMAGE_1 = 1;
-        public const float CAPT_DAMAGE_2 = 2;
-        public const float CAPT_DAMAGE_3 = 3;
-        public const float CAPT_DAMAGE_4 = 4;
-
-        public const float CAPT_CAPTURE_LVL_1 = 6.25f;
-        public const float CAPT_CAPTURE_LVL_2 = 12.5f;
-        public const float CAPT_CAPTURE_LVL_3 = 18.75f;
-        public const float CAPT_CAPTURE_LVL_4 = 25;
-
-        public const float CAPT_DMG_RED_LVL_1 = 1.25f;
-        public const float CAPT_DMG_RED_LVL_2 = 2.5f;
-        public const float CAPT_DMG_RED_LVL_3 = 3.75f;
-        public const float CAPT_DMG_RED_LVL_4 = 5;
-
-
-        // COMMS
-        public float EnergyRegen = 0;
-        public float SensorRange = 0;
-
-        public const float COMMS_ENERGY_REGEN_LVL_1 = 3.75f;
-        public const float COMMS_ENERGY_REGEN_LVL_2 = 5.63f;
-        public const float COMMS_ENERGY_REGEN_LVL_3 = 7.5f;
-
-        public const float COMMS_SENSOR_RANGE_LVL_1 = 8f;
-        public const float COMMS_SENSOR_RANGE_LVL_2 = 12;
-        public const float COMMS_SENSOR_RANGE_LVL_3 = 16;
-
-        // ENGINEER
-        
-
+        public float ArmourRepairRate;
+        public float ArmourStrength;
+        public float AttackDamage;
+        public float BrokenArmourDamage;
+        public float Capturerate;
+        public float DamageReduction;
+        public float EnergyEfficiency;
+        public float EnergyRegen;
+        public float FireRate;
+        public float ForwardThrust;
+        public float HullStrength;
+        public float JumpCooldown;
+        public float JumpDamageReduction;
+        public float JumpPrep;
+        public float Maneuvering;
+        public float MissileRange;
+        public float RamDamage;
+        public float RepairEfficiency;
+        public float SensorRange;
+        public float StationDamageReduction;
+        public float SquadCooldown;
+        public float SquadSurvival;
+        public float TurnRate;
+        public float TurretTraverse;
+        public float UtilityCooldown;
+        public float UtilityDuration;
     }
 }
