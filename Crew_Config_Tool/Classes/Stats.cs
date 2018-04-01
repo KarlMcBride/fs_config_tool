@@ -39,8 +39,6 @@
 
     public struct Stats
     {
-        string Name;
-
         public float ArmourRepairRate;
         public float ArmourStrength;
         public float AttackDamage;

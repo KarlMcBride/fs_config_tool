@@ -46,10 +46,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ConfigManager.cs" />
-    <Compile Include="Classes\CrewList.cs" />
-    <Compile Include="Classes\CrewConfig.cs" />
-    <Compile Include="Classes\ImplantList.cs" />
-    <Compile Include="Classes\LineManagement\Parser.cs" />
+    <Compile Include="Classes\Listings\Crew.cs" />
+    <Compile Include="Classes\Listings\TeamConfig.cs" />
+    <Compile Include="Classes\Listings\Implants.cs" />
+    <Compile Include="Classes\ConfigManagement\Parser.cs" />
+    <Compile Include="Classes\Utils\Utils.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

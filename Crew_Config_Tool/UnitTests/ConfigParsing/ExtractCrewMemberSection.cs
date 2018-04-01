@@ -1,5 +1,6 @@
-﻿using FS_Crew_Config_Tool.Classes.LineManagement;
+﻿using FS_Crew_Config_Tool.Classes.ConfigManagement;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using UnitTests.ConfigParsing.TestData;
 
 namespace UnitTests.ConfigParsing.Parsing
 {
@@ -10,7 +11,7 @@ namespace UnitTests.ConfigParsing.Parsing
         public void ExtractRosterWithNoMembers()
         {
             string expected = "(),(),(),(),()";
-            string result = Parser.ExtractCrewMemberSection("CrewTeams=(ID=\"C3ED77E04FCB6D1876D4F2AFD372E00E\",Name=\"The Opportunists\",Icon=\"\",CrewMembers=((),(),(),(),()),Members=)");
+            string result = Parser.ParseCrewMemberSection("CrewTeams=(ID=\"C3ED77E04FCB6D1876D4F2AFD372E00E\",Name=\"The Opportunists\",Icon=\"\",CrewMembers=((),(),(),(),()),Members=)");
 
             Assert.AreEqual(expected, result, "Empty roster string does not match");
         }
@@ -18,8 +19,8 @@ namespace UnitTests.ConfigParsing.Parsing
         [TestMethod]
         public void ExtractRosterWithFiveMembers()
         {
-            string expected = TestData.FIVE_MEMBERS_NO_IMPLANTS;
-            string result = Parser.ExtractCrewMemberSection("CrewTeams=(ID=\"C88443774D6346F59F4E1DA8F94529F2\",Name=\"Crew Only\",Icon=\"\",CrewMembers=((ID=\"FFBB0CD044585FA20397788DA4C8361B\"),(ID=\"00CF4ABB4849164394475884CDBD2FA2\"),(ID=\"BA551FBC4960C181F355B980AF657DCE\"),(ID=\"C9E1CF554D3AA9ABBEACC29081923251\"),(ID=\"10D3DC5F47D80063D389A39B9E43C83A\")),Members=)");
+            string expected = RawStringData.FIVE_MEMBERS_NO_IMPLANTS;
+            string result = Parser.ParseCrewMemberSection(RawStringData.FIVE_MEMBERS_NO_IMPLANTS_FULL_STRING);
 
             Assert.AreEqual(expected, result, "Full roster string does not match");
         }
