@@ -47,10 +47,10 @@
   <ItemGroup>
     <Compile Include="Classes\ConfigManager.cs" />
     <Compile Include="Classes\Listings\Crew.cs" />
-    <Compile Include="Classes\Listings\TeamConfig.cs" />
+    <Compile Include="Classes\TeamConfig.cs" />
     <Compile Include="Classes\Listings\Implants.cs" />
-    <Compile Include="Classes\ConfigManagement\Parser.cs" />
-    <Compile Include="Classes\Utils\Utils.cs" />
+    <Compile Include="Classes\ConfigManagement\CrewParser.cs" />
+    <Compile Include="Classes\Utils.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,7 +59,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Classes\Stats.cs" />
+    <Compile Include="Classes\Listings\Stats.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

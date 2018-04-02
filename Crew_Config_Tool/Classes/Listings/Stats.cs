@@ -1,4 +1,4 @@
-﻿namespace FS_Crew_Config_Tool
+﻿namespace FS_Crew_Config_Tool.Classes.Listings
 {
     public enum StatCategory
     {

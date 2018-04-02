@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FS_Crew_Config_Tool.Classes;
+using FS_Crew_Config_Tool.Classes.ConfigManagement;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
@@ -33,15 +35,17 @@ namespace FS_Crew_Config_Tool
         /// <summary>
         /// Stores raw line data and crew names
         /// </summary>
-        public List<RawLinePlusCrewName> CrewData = new List<RawLinePlusCrewName>();
+        public List<CrewLines> CrewData = new List<CrewLines>();
 
-        public struct RawLinePlusCrewName
+        public struct CrewLines
         {
             public string RawLine;
             public string CrewName;
+            public TeamConfig Team;
 
-            public void GetCrewName()
+            public void ParseLine()
             {
+                // Use regex to strip out the name
                 Match nameTag = Regex.Match(RawLine, "Name=\"");
                 Match endOfName = Regex.Match(RawLine, "\",Icon");
 
@@ -51,11 +55,16 @@ namespace FS_Crew_Config_Tool
                 int length = nameEndIndex - nameStartIndex;
 
                 CrewName = RawLine.Substring(nameStartIndex, length);
+
+                Team = CrewParser.ParseCrewMembersFromLine(RawLine);
             }
         }
 
         public void LoadConfig()
         {
+            CrewList.PopulateCrewList();
+            ImplantList.PopulateImplantList();
+
             string[] fullConfig = File.ReadAllLines(CompletePath);
 
             ParseIntoSegments(fullConfig);
@@ -89,9 +98,9 @@ namespace FS_Crew_Config_Tool
             {
                 if (config[lineNumber].Contains(CREW_TEAMS_FLAG))
                 {
-                    RawLinePlusCrewName line = new RawLinePlusCrewName();
+                    CrewLines line = new CrewLines();
                     line.RawLine = config[lineNumber];
-                    line.GetCrewName();
+                    line.ParseLine();
 
                     CrewData.Add(line);
 
@@ -128,7 +137,7 @@ namespace FS_Crew_Config_Tool
 
                     if (1 == String.Compare(CrewData[index].CrewName, CrewData[index + 1].CrewName))
                     {
-                        RawLinePlusCrewName temp = CrewData[index];
+                        CrewLines temp = CrewData[index];
                         CrewData[index] = CrewData[index + 1];
                         CrewData[index + 1] = temp;
                     }
@@ -147,7 +156,7 @@ namespace FS_Crew_Config_Tool
                 }
 
                 // Write all crew lines
-                foreach (RawLinePlusCrewName line in CrewData)
+                foreach (CrewLines line in CrewData)
                 {
                     writetext.WriteLine(line.RawLine);
                 }

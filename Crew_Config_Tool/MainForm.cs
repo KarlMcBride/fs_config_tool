@@ -34,7 +34,7 @@ namespace FS_Crew_Config_Tool
                 ListBoxCrews.Items.Clear();
             }
 
-            foreach (ConfigManager.RawLinePlusCrewName crewLine in config.CrewData)
+            foreach (ConfigManager.CrewLines crewLine in config.CrewData)
             {
                 ListBoxCrews.Items.Add(crewLine.CrewName);
             }

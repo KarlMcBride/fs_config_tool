@@ -6,6 +6,15 @@ namespace UnitTests.ConfigParsing.TestData
 {
     public class ParsedData
     {
+        public static TeamConfig ClaraOnlyNoImplants()
+        {
+            TeamConfig config = new TeamConfig();
+
+            config.CrewMembers[2].CrewID = CrewEnum.CLARA_REISETTE;
+
+            return config;
+        }
+
         /// <summary>
         /// Test config with basic crew config - no implants
         /// </summary>

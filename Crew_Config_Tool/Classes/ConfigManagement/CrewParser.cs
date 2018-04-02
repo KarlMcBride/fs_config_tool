@@ -1,6 +1,4 @@
-﻿using FS_Crew_Config_Tool.Classes.Listings;
-using FS_Crew_Config_Tool.Classes.Utilities;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace FS_Crew_Config_Tool.Classes.ConfigManagement
 {
@@ -14,14 +12,14 @@ CrewTeams=(ID="C3ED77E04FCB6D1876D4F2AFD372E00E",Name="The Opportunists",Icon=""
      *
      */
 
-    public static class Parser
+    public static class CrewParser
     {
         /// <summary>
         /// Strips the crew ID's and implants out of the line
         /// </summary>
         /// <param name="line">Line to parse</param>
         /// <returns>string in format "(#crew1),(#crew2),(#crew3),(#crew4),(#crew5)"</returns>
-        public static string ParseCrewMemberSection(string line)
+        public static string StripCrewFromRawLine(string line)
         {
             // Strip out ship-crew links, name, icon and member tags
             Match crewStart = Regex.Match(line, "CrewMembers=");
@@ -36,38 +34,51 @@ CrewTeams=(ID="C3ED77E04FCB6D1876D4F2AFD372E00E",Name="The Opportunists",Icon=""
             return line.Substring(crewStartIndex, length);
         }
 
-        public static TeamConfig ParseCrewMembersFromSection(string section)
+        public static TeamConfig ParseCrewMembersFromLine(string section)
         {
             // Substitute () for <> as regex complains about brackets
-            ConfigUtilities.SubstituteBracketsForChevrons(ref section);
-
+            //Utils.SubstituteBracketsForChevrons(ref section);
             TeamConfig config = new TeamConfig();
 
             // Each crew member is separated by an ID tag
-            string[] separator = { "ID" };
+            string[] separator = { "ID", "()" };
 
             // This will produce an array of size 7. Index 0 will be "CrewMembers", 1 will be crew name + ID, 2-6 will be crew members
             string[] splitSection = section.Split(separator, System.StringSplitOptions.None);
 
-            for (int index = 2; index < 7; index++)
+            int crewCount = 0;
+
+            if (splitSection.Length > 2)
             {
-                config.CrewMembers[index - 2] = GetCrewMemberFromString(splitSection[index]);
+                const int skippedIndex = 2;
+
+                crewCount = splitSection.Length - skippedIndex;
+
+                for (int index = skippedIndex; index < skippedIndex + crewCount; index++)
+                {
+                    config.CrewMembers[index - skippedIndex] = GetCrewMemberFromString(splitSection[index]);
+                }
             }
 
             return config;
         }
 
-        public static TeamConfig.CrewMember GetCrewMemberFromString(string input)
+        public static TeamConfig.EnumeratedCrewMember GetCrewMemberFromString(string input)
         {
-            TeamConfig.CrewMember crewMember = new TeamConfig.CrewMember();
+            TeamConfig.EnumeratedCrewMember crewMember = new TeamConfig.EnumeratedCrewMember();
+
+            if (false)
+            {
+                int a = 4;
+            }
 
             // Find the crew member's string from the list
-            foreach (CrewEnum id in CrewEnum.GetValues(typeof(CrewEnum)))
+            for (int id = 0; id < (int)CrewEnum.NONE; id++)
             {
                 if (input.Contains(CrewList.CrewListing[(int)id].Code))
                 {
                     // We've found a match, so assign and break out
-                    crewMember.CrewID = id;
+                    crewMember.CrewID = (CrewEnum)id;
                     break;
                 }
             }

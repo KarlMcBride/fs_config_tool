@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using FS_Crew_Config_Tool.Classes.Listings;
+using System.Collections.Generic;
 
 namespace FS_Crew_Config_Tool.Classes
 {
