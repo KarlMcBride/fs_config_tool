@@ -6,8 +6,13 @@
             "CrewTeams=(ID=\"C3ED77E04FCB6D1876D4F2AFD372E00E\",Name=\"The Opportunists\",Icon=\"\",CrewMembers=((),(),(),(),()),Members=)";
 
         public const string CLARA_ONLY_NO_IMPLANTS =
-            "CrewTeams=(ID=\"709A671240E39FC8FBC3F98404A19AB4\",Name=\"Clara Only\",Icon=\"\",CrewMembers=((),()," +
-            "(ID=\"469C924F46938892882C86B29AEC0787\"),(),()),Members=)";
+            "CrewTeams=(ID=\"709A671240E39FC8FBC3F98404A19AB4\",Name=\"Clara Only\",Icon=\"\",CrewMembers=" +
+            "((),(),(ID=\"469C924F46938892882C86B29AEC0787\"),(),()),Members=)";
+
+        public const string THREE_MEMBERS_NO_IMPLANTS_FULL_STRING =
+            "CrewTeams=(ID=\"21C9E5E4429C2774F5ACB5B2C2B878BA\",Name=\"3 Member Crew\",Icon=\"\",CrewMembers=" +
+            "((ID=\"D84BFBD24EE5AADEA97A57ABDE5B8D06\"),(),(),(ID=\"370F985448800E271DF35A905730FCFD\")," +
+            "(ID=\"50BECA4949A2848119822E82226063C1\")),Members=)";
 
         public const string FIVE_MEMBERS_NO_IMPLANTS =
             "(ID=\"F54C19614EED261DE7B5688440419793\")," +

@@ -40,6 +40,15 @@ namespace UnitTests.ConfigManagement.CrewParser_cs
         }
 
         [TestMethod]
+        public void ParseRosterWithThreeCrewNoCaptain()
+        {
+            TeamConfig expected = ParsedData.ThreeMembersNoCaptainNoImplants();
+            TeamConfig actual = CrewParser.ParseCrewMembersFromLine(RawStringData.THREE_MEMBERS_NO_IMPLANTS_FULL_STRING);
+
+            VerifyCrewsMatch(expected, actual);
+        }
+
+        [TestMethod]
         public void ParseRosterWithFiveMembersNoImplants()
         {
             TeamConfig expected = ParsedData.BasicFiveMembersNoImplants();

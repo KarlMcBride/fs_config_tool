@@ -16,6 +16,21 @@ namespace UnitTests.ConfigParsing.TestData
         }
 
         /// <summary>
+        /// Test config with 3 crew and no captain - no implants
+        /// </summary>
+        /// <returns>Full team config for testing</returns>
+        public static TeamConfig ThreeMembersNoCaptainNoImplants()
+        {
+            TeamConfig config = new TeamConfig();
+
+            config.CrewMembers[0].CrewID = CrewEnum.RIDLEY_J_FINCHER;
+            config.CrewMembers[3].CrewID = CrewEnum.MIA_JENSEN;
+            config.CrewMembers[4].CrewID = CrewEnum.KRYSTEN_TCHAIKOVSKY;
+
+            return config;
+        }
+
+        /// <summary>
         /// Test config with basic crew config - no implants
         /// </summary>
         /// <returns>Full team config for testing</returns>
