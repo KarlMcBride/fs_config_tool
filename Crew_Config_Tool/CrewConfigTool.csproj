@@ -46,6 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ConfigManager.cs" />
+    <Compile Include="Classes\CrewBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\CrewBox.Designer.cs">
+      <DependentUpon>CrewBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\Listings\Crew.cs" />
     <Compile Include="Classes\TeamConfig.cs" />
     <Compile Include="Classes\Listings\Implants.cs" />
@@ -70,6 +76,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\Listings\Stats.cs" />
+    <EmbeddedResource Include="Classes\CrewBox.resx">
+      <DependentUpon>CrewBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Content\CrewResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>CrewResources.Designer.cs</LastGenOutput>
