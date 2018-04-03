@@ -40,18 +40,18 @@ namespace FS_Crew_Config_Tool
         LEXIN_KETHER,
         NESSA_MULLIGAN,
         PROTAGONIST,
-        SAMUEL_MOSELY,
+        SAMUEL_MOSLEY,
         XU_ZIYI,
         // ENGINEER
         ELVY_COOPER,
-        EMMIMINA_XIYU,
+        EMMINA_XINYU,
         GOSS_REZNIK,
         IMMIX_R,
-        MIA_JENSEN,
+        MIA_JANSEN,
         RAGNAR_ZOREF,
         SILKE_KANESHIRO,
         // JUMP CORE
-        ALA8BAMA,
+        ALA8AMA,
         CARZELLE_ODIARRE,
         HALO,
         HERA_DYMARR,
@@ -60,15 +60,15 @@ namespace FS_Crew_Config_Tool
         TELISIC_JENOVA,
         // NAV OFFICER
         BLAIN_ALLEN,
-        BONNY_REID,
+        BONNY_REED,
         CHARION_LLOYD,
         GREGORII_DUROV,
-        IX209,
-        RUT0LF,
+        IX_209,
+        RU_T0LF,
         ZOE_LEDOUX,
         // REPAIR
         LANCE_GREGORY,
-        MAS_DREYLAB,
+        MAS_LEYDRAB,
         MIRA_SHARMA,
         RAYVAK_MOLK,
         REVOK_THORN,
@@ -243,7 +243,7 @@ namespace FS_Crew_Config_Tool
             protagonist.CrewStats.SensorRange = 16f;
             CrewListing.Add(protagonist);
 
-            CrewMember samuelMosley = new CrewMember(CrewEnum.SAMUEL_MOSELY, "Samuel Mosley", CrewRole.COMMS, "0FEFF4C847450FCF4539E6A808210D20");
+            CrewMember samuelMosley = new CrewMember(CrewEnum.SAMUEL_MOSLEY, "Samuel Mosley", CrewRole.COMMS, "0FEFF4C847450FCF4539E6A808210D20");
             samuelMosley.CrewStats.EnergyRegen = 7.5f;
             samuelMosley.CrewStats.SensorRange = 8f;
             CrewListing.Add(samuelMosley);
@@ -260,7 +260,7 @@ namespace FS_Crew_Config_Tool
             elvyCooper.CrewStats.ForwardThrust = 7.5f;
             CrewListing.Add(elvyCooper);
 
-            CrewMember emmimaXinyu = new CrewMember(CrewEnum.EMMIMINA_XIYU, "Emmima Xinyu", CrewRole.ENGINEER, "DE58A8B94BE28412B0AEC5851BF58E06");
+            CrewMember emmimaXinyu = new CrewMember(CrewEnum.EMMINA_XINYU, "Emmima Xinyu", CrewRole.ENGINEER, "DE58A8B94BE28412B0AEC5851BF58E06");
             emmimaXinyu.CrewStats.ArmourStrength = 6.25f;
             emmimaXinyu.CrewStats.ForwardThrust = 7.5f;
             CrewListing.Add(emmimaXinyu);
@@ -275,7 +275,7 @@ namespace FS_Crew_Config_Tool
             immixR.CrewStats.ForwardThrust = 3.75f;
             CrewListing.Add(immixR);
 
-            CrewMember miaJansen = new CrewMember(CrewEnum.MIA_JENSEN, "Mia Jansen", CrewRole.ENGINEER, "370F985448800E271DF35A905730FCFD");
+            CrewMember miaJansen = new CrewMember(CrewEnum.MIA_JANSEN, "Mia Jansen", CrewRole.ENGINEER, "370F985448800E271DF35A905730FCFD");
             miaJansen.CrewStats.ArmourStrength = 9.38f;
             miaJansen.CrewStats.ForwardThrust = 5.63f;
             CrewListing.Add(miaJansen);
@@ -292,7 +292,7 @@ namespace FS_Crew_Config_Tool
 
             // ##### JUMP CORE #####
 
-            CrewMember ala8ama = new CrewMember(CrewEnum.ALA8BAMA, "ALA8AMA", CrewRole.JUMP_CORE, "DBA519884D2448B247F1BAB5B26F0FA0");
+            CrewMember ala8ama = new CrewMember(CrewEnum.ALA8AMA, "ALA8AMA", CrewRole.JUMP_CORE, "DBA519884D2448B247F1BAB5B26F0FA0");
             ala8ama.CrewStats.JumpCooldown = -10f;
             ala8ama.CrewStats.JumpPrep = -5f;
             CrewListing.Add(ala8ama);
@@ -334,7 +334,7 @@ namespace FS_Crew_Config_Tool
             blainAllen.CrewStats.JumpPrep = 9f;
             CrewListing.Add(blainAllen);
 
-            CrewMember bonnyReed = new CrewMember(CrewEnum.BONNY_REID, "Bonny Reed", CrewRole.NAV_OFFICER, "24059A994492D0F581F4BBA34CF04F30");
+            CrewMember bonnyReed = new CrewMember(CrewEnum.BONNY_REED, "Bonny Reed", CrewRole.NAV_OFFICER, "24059A994492D0F581F4BBA34CF04F30");
             bonnyReed.CrewStats.JumpCooldown = 6f;
             bonnyReed.CrewStats.JumpPrep = 12f;
             CrewListing.Add(bonnyReed);
@@ -349,12 +349,12 @@ namespace FS_Crew_Config_Tool
             gregoriiDurov.CrewStats.JumpPrep = 6f;
             CrewListing.Add(gregoriiDurov);
 
-            CrewMember ix209 = new CrewMember(CrewEnum.IX209, "IX-209", CrewRole.NAV_OFFICER, "5881365442DBDBC583701C9C927AE487");
+            CrewMember ix209 = new CrewMember(CrewEnum.IX_209, "IX-209", CrewRole.NAV_OFFICER, "5881365442DBDBC583701C9C927AE487");
             ix209.CrewStats.JumpCooldown = 9f;
             ix209.CrewStats.JumpPrep = 9f;
             CrewListing.Add(ix209);
 
-            CrewMember rut0lf = new CrewMember(CrewEnum.RUT0LF, "Ru-T0LF", CrewRole.NAV_OFFICER, "2023776347DBB48F15EF789DFDFEB9C6");
+            CrewMember rut0lf = new CrewMember(CrewEnum.RU_T0LF, "Ru-T0LF", CrewRole.NAV_OFFICER, "2023776347DBB48F15EF789DFDFEB9C6");
             rut0lf.CrewStats.JumpCooldown = 12f;
             rut0lf.CrewStats.JumpPrep = 6f;
             CrewListing.Add(rut0lf);
@@ -371,7 +371,7 @@ namespace FS_Crew_Config_Tool
             lanceGregory.CrewStats.BrokenArmourDamage = -12.5f;
             CrewListing.Add(lanceGregory);
 
-            CrewMember masDreylab = new CrewMember(CrewEnum.MAS_DREYLAB, "Mas Dreylab", CrewRole.REPAIR, "DCC3E4D34D881F9AD77A4485D49FADDB");
+            CrewMember masDreylab = new CrewMember(CrewEnum.MAS_LEYDRAB, "Mas Dreylab", CrewRole.REPAIR, "DCC3E4D34D881F9AD77A4485D49FADDB");
             masDreylab.CrewStats.ArmourRepairRate = 12.5f;
             masDreylab.CrewStats.BrokenArmourDamage = -12.5f;
             CrewListing.Add(masDreylab);

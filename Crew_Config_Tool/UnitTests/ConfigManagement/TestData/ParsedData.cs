@@ -24,7 +24,7 @@ namespace UnitTests.ConfigParsing.TestData
             TeamConfig config = new TeamConfig();
 
             config.CrewMembers[0].CrewID = CrewEnum.RIDLEY_J_FINCHER;
-            config.CrewMembers[3].CrewID = CrewEnum.MIA_JENSEN;
+            config.CrewMembers[3].CrewID = CrewEnum.MIA_JANSEN;
             config.CrewMembers[4].CrewID = CrewEnum.KRYSTEN_TCHAIKOVSKY;
 
             return config;
@@ -42,7 +42,7 @@ namespace UnitTests.ConfigParsing.TestData
             config.CrewMembers[1].CrewID = CrewEnum.MIRA_SHARMA;
             config.CrewMembers[2].CrewID = CrewEnum.MATSOKAH;
             config.CrewMembers[3].CrewID = CrewEnum.PROTAGONIST;
-            config.CrewMembers[4].CrewID = CrewEnum.BONNY_REID;
+            config.CrewMembers[4].CrewID = CrewEnum.BONNY_REED;
 
             return config;
         }

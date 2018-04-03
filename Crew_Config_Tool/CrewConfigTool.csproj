@@ -51,6 +51,16 @@
     <Compile Include="Classes\Listings\Implants.cs" />
     <Compile Include="Classes\ConfigManagement\CrewParser.cs" />
     <Compile Include="Classes\Utils.cs" />
+    <Compile Include="Content\CrewResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrewResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ImplantResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImplantResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +70,14 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\Listings\Stats.cs" />
+    <EmbeddedResource Include="Content\CrewResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CrewResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\ImplantResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ImplantResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -71,6 +89,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -84,6 +103,273 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\ALA8AMA.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\ARKANY_KENA.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\BENJAMIN_PATRICK.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\BLAIN_ALLEN.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\BONNY_REED.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\CAESAR_MORGAN.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\CARZELLE_ODIARRE.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\CHARION_LLOYD.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\CLARA_REISETTE.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\CORNELIUS_BAPTISTE.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\CPL_JOHNER_ONE.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\DICE_CAPLAN.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\ELAX_ZENCHAS.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\ELVY_COOPER.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\EMMINA_XINYU.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\ERNEST_GRIMUR.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\EVAN_STERLING.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\FRANK_TORRANCE.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\GOSS_REZNIK.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\GREGORII_DUROV.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\GRINCZ_MORROW.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\HALO.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\HERA_DYMARR.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\IMASA_OKADAS.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\IMMIX_R.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\ISABELLA_JAQ.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\IX_209.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\JONESY.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\JULES_VALENTINE.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\KRYSTEN_TCHAIKOVSKY.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\LANCE_GREGORY.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\LEXIN_KETHER.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\LUDOLOGIST.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\MARIE_ANNE.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\MATILDA_ISAACS.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\MATSOKAH.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\MAX_DEMIAN.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\MIA_JANSEN.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\MIRA_SHARMA.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\NESSA_MULLIGAN.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\PALAM0N.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\PROTAGONIST.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\RAGNAR_ZOREF.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\RAYVAK_MOLK.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\REGAN.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\REVOK_THORN.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\RIDLEY_J_FINCHER.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\RU_T0LF.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\SAMUEL_MOSLEY.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\SARA_KRACE.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\SERAPHINE_VEGA.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\SILKE_KANESHIRO.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\STELLAN_SHAW.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\TAU_IS.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\TELISIC_JENOVA.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\TEMPLE_JEMISON.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\THE_MIGHTY_JINGLES.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\TYRAIN_DEMAM.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\WHIM.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\XERID_GREYFIST.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\XU_ZIYI.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\ZHANG_TAO.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\ZOE_LEDOUX.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Implants\ARMOUR_REPAIR_RATE.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Implants\ARMOUR_STRENGTH.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Implants\ATTACK_DAMAGE.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Implants\BROKEN_ARMOUR_DAMAGE.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Implants\CAPTURE_RATE.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Implants\DAMAGE_REDUCTION.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Implants\ENERGY_REGEN.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Implants\FIRE_RATE.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Implants\FORWARD_THRUST.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Implants\HULL_STRENGTH.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Implants\JUMP_COOLDOWN.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Implants\JUMP_DAMAGE_REDUCTION.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Implants\JUMP_PREP.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Implants\MANEUVERING.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Implants\MISSILE_RANGE.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Implants\REPAIR_EFFICIENCY.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Implants\SENSOR_RANGE.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Implants\SQUAD_COOLDOWN.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Implants\SQUAD_SURVIVAL.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Implants\STATION_DAMAGE_REDUCTION.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Implants\TURN_RATE.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Implants\TURRET_TRAVERSE.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Implants\UTILITY_COOLDOWN.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Implants\UTILITY_DURATION.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Crew\MAS_LEYDRAB.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Implants\RAMMING_DAMAGE.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
