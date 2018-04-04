@@ -10,15 +10,11 @@ namespace FS_Crew_Config_Tool
     {
         private ConfigManager config;
 
-        private PictureBox[] crewPictureBoxes;
-
         public MainForm()
         {
             InitializeComponent();
 
             config = new ConfigManager();
-
-            crewPictureBoxes = new PictureBox[] { PictureBoxCrew0, PictureBoxCrew1, PictureBoxCrew2, PictureBoxCrew3, PictureBoxCrew4 };
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -52,21 +48,13 @@ namespace FS_Crew_Config_Tool
             config.SaveConfig();
         }
 
-        private void ListBoxCrews_SelectedINdexChanged(object sender, EventArgs e)
+        private void ListBoxCrews_SelectedIndexChanged(object sender, EventArgs e)
         {
             int selectedIndex = ListBoxCrews.SelectedIndex;
 
-            for (int crewIndex = 0; crewIndex < 5; crewIndex++)
-            {
-                int imageIndex = (int)config.CrewData[selectedIndex].Team.CrewMembers[crewIndex].CrewID;
+            CrewSetBoxMain.DisplaySelectedTeam(config.CrewData[selectedIndex].Team, CrewSetBoxMain);
 
-                crewPictureBoxes[crewIndex].Image = Utils.GetCrewImageByIndex(imageIndex);
-            }
-
-            PictureBoxCrew0Slot0.Image = Utils.GetImplantImageByIndex(selectedIndex);
-
-            //Bitmap implant = ImplantResources.ATTACK_DAMAGE;
-            //implant.MakeTransparent(implant.GetPixel(0, 0));
+            //CrewSetBoxMain.Parent = this;
         }
     }
 }

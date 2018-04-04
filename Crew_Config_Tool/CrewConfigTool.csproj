@@ -46,10 +46,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ConfigManager.cs" />
-    <Compile Include="Classes\CrewBox.cs">
+    <Compile Include="UiComponents\CrewBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Classes\CrewBox.Designer.cs">
+    <Compile Include="UiComponents\CrewBox.Designer.cs">
       <DependentUpon>CrewBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Listings\Crew.cs" />
@@ -76,7 +76,13 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\Listings\Stats.cs" />
-    <EmbeddedResource Include="Classes\CrewBox.resx">
+    <Compile Include="UiComponents\CrewSetBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UiComponents\CrewSetBox.Designer.cs">
+      <DependentUpon>CrewSetBox.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UiComponents\CrewBox.resx">
       <DependentUpon>CrewBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Content\CrewResources.resx">
@@ -100,6 +106,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UiComponents\CrewSetBox.resx">
+      <DependentUpon>CrewSetBox.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
