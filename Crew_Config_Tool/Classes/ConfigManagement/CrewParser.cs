@@ -83,7 +83,7 @@ CrewTeams=(ID="C3ED77E04FCB6D1876D4F2AFD372E00E",Name="The Opportunists",Icon=""
             {
                 int implantNumber = 0;
 
-                for (int implantId = 0; implantId < (int)ImplantEnum.NONE - 1; implantId++)
+                for (int implantId = 0; implantId < (int)ImplantEnum.NONE; implantId++)
                 {
                     if (input.Contains(ImplantList.ImplantListing[implantId].Code))
                     {

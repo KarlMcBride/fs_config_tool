@@ -65,7 +65,7 @@ namespace UnitTests.ConfigParsing.TestData
             {
                 config.CrewMembers[crewIndex].ImplantIDs[0] = ImplantEnum.DAMAGE_REDUCTION;
                 config.CrewMembers[crewIndex].ImplantIDs[1] = ImplantEnum.TURRET_TRAVERSE;
-                config.CrewMembers[crewIndex].ImplantIDs[2] = ImplantEnum.UTILITY_COOLDOWN;
+                config.CrewMembers[crewIndex].ImplantIDs[2] = ImplantEnum.UTILITY_DURATION;
             }
 
             return config;
