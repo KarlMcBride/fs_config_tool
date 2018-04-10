@@ -1,5 +1,6 @@
 ﻿using FS_Crew_Config_Tool.Content;
 using System;
+using System.Diagnostics;
 using System.Drawing;
 
 namespace FS_Crew_Config_Tool.Classes
@@ -38,6 +39,20 @@ namespace FS_Crew_Config_Tool.Classes
             Object rm = ImplantResources.ResourceManager.GetObject(name);
             Bitmap myImage = (Bitmap)rm;
             return myImage;
+        }
+
+        public static bool CheckIfFracSpaceIsRunning()
+        {
+            Process[] processlist = Process.GetProcesses();
+            foreach (Process theprocess in processlist)
+            {
+                if (theprocess.ProcessName.Contains("Fractured Space"))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }
