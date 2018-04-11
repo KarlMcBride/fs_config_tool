@@ -1,7 +1,6 @@
 ﻿using FS_Crew_Config_Tool.Classes;
-using FS_Crew_Config_Tool.Content;
 using System;
-using System.Drawing;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace FS_Crew_Config_Tool
@@ -9,6 +8,8 @@ namespace FS_Crew_Config_Tool
     public partial class MainForm : Form
     {
         private ConfigManager config;
+
+        private BackgroundWorker fsRunningBgWorker;
 
         public MainForm()
         {
@@ -22,6 +23,19 @@ namespace FS_Crew_Config_Tool
             config.LoadConfig();
 
             PopulateCrewBox();
+
+            ConfigureToolTips();
+
+            LabelFsRunningWarning.Visible = Utils.CheckIfFracSpaceIsRunning();
+        }
+
+        private void ConfigureToolTips()
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(LabelFsRunningWarning, "Fractured Space.exe is still running.\n" +
+                                                      "To ensure that no config changes are lost,\n" +
+                                                      "it is recommended to close down FS, save\n" +
+                                                      "configs here and restart.");
         }
 
         private void ButtonSortAlpha_Click(object sender, EventArgs e)

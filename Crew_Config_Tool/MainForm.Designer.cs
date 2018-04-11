@@ -33,6 +33,7 @@
             this.ButtonSortAlpha = new System.Windows.Forms.Button();
             this.ButtonSave = new System.Windows.Forms.Button();
             this.CrewSetBoxMain = new FS_Crew_Config_Tool.UiComponents.CrewSetBox();
+            this.LabelFsRunningWarning = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ListBoxCrews
@@ -71,20 +72,32 @@
             this.CrewSetBoxMain.Size = new System.Drawing.Size(855, 289);
             this.CrewSetBoxMain.TabIndex = 3;
             // 
+            // LabelFsRunningWarning
+            // 
+            this.LabelFsRunningWarning.AutoSize = true;
+            this.LabelFsRunningWarning.Location = new System.Drawing.Point(972, 447);
+            this.LabelFsRunningWarning.Name = "LabelFsRunningWarning";
+            this.LabelFsRunningWarning.Size = new System.Drawing.Size(73, 13);
+            this.LabelFsRunningWarning.TabIndex = 4;
+            this.LabelFsRunningWarning.Text = "FS is Running";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1057, 445);
+            this.ClientSize = new System.Drawing.Size(1057, 469);
+            this.Controls.Add(this.LabelFsRunningWarning);
             this.Controls.Add(this.CrewSetBoxMain);
             this.Controls.Add(this.ButtonSave);
             this.Controls.Add(this.ButtonSortAlpha);
             this.Controls.Add(this.ListBoxCrews);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "FS Crew Config Tool";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -94,6 +107,7 @@
         private System.Windows.Forms.Button ButtonSortAlpha;
         private System.Windows.Forms.Button ButtonSave;
         private UiComponents.CrewSetBox CrewSetBoxMain;
+        private System.Windows.Forms.Label LabelFsRunningWarning;
     }
 }
 
