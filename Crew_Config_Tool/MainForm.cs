@@ -26,7 +26,7 @@ namespace FS_Crew_Config_Tool
 
             ConfigureToolTips();
 
-            LabelFsRunningWarning.Visible = Utils.CheckIfFracSpaceIsRunning();
+            LabelFsRunningWarning.Visible = Utils.CheckIfFracSpaceIsRunning("Fractured Space");
         }
 
         private void ConfigureToolTips()
