@@ -41,12 +41,12 @@ namespace FS_Crew_Config_Tool.Classes
             return myImage;
         }
 
-        public static bool CheckIfFracSpaceIsRunning()
+        public static bool CheckIfFracSpaceIsRunning(string processName)
         {
             Process[] processlist = Process.GetProcesses();
-            foreach (Process theprocess in processlist)
+            foreach (Process currentProcess in processlist)
             {
-                if (theprocess.ProcessName.Contains("Fractured Space"))
+                if (currentProcess.ProcessName.Contains(processName))
                 {
                     return true;
                 }

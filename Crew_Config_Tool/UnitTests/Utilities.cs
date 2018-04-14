@@ -9,6 +9,21 @@ namespace UnitTests
     public class Utilities
     {
         [TestMethod]
+        public void CheckIfFracIsNotRunning()
+        {
+            bool result = Utils.CheckIfFracSpaceIsRunning("Fractured Space");
+            Assert.IsFalse(result, "Process didn't return false as expected");
+        }
+
+        [TestMethod]
+        public void CheckIfFracIsRunning()
+        {
+            // svchost is a common Win process, and at least one instance will always be running.
+            bool result = Utils.CheckIfFracSpaceIsRunning("svchost");
+            Assert.IsTrue(result, "Process didn't return true as expected");
+        }
+
+        [TestMethod]
         public void CheckNoneIdForCaptain()
         {
             CrewEnum input = CrewEnum.NONE;
