@@ -1,6 +1,7 @@
 ﻿using FS_Crew_Config_Tool.Classes;
 using System;
 using System.ComponentModel;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace FS_Crew_Config_Tool
@@ -27,6 +28,35 @@ namespace FS_Crew_Config_Tool
             ConfigureToolTips();
 
             LabelFsRunningWarning.Visible = Utils.CheckIfFracSpaceIsRunning("Fractured Space");
+
+            ConfigureBackgroundWorker();
+        }
+
+        private void ConfigureBackgroundWorker()
+        {
+            fsRunningBgWorker = new BackgroundWorker();
+            fsRunningBgWorker.DoWork += FsRunningBgWorker_DoWork;
+            fsRunningBgWorker.RunWorkerAsync();
+        }
+
+        private void FsRunningBgWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            while (true)
+            {
+                BeginInvoke(new MethodInvoker(delegate
+                {
+                    UpdateFsRunningWarningLabel();
+                }));
+
+                Thread.Sleep(1000);
+            }
+        }
+
+        private void UpdateFsRunningWarningLabel()
+        {
+            bool warningActive = Utils.CheckIfFracSpaceIsRunning("Fractured Space");
+
+            LabelFsRunningWarning.Visible = warningActive;
         }
 
         private void ConfigureToolTips()
