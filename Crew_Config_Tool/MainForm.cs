@@ -110,8 +110,6 @@ namespace FS_Crew_Config_Tool
             int selectedIndex = ListBoxCrews.SelectedIndex;
 
             CrewSetBoxMain.DisplaySelectedTeam(config.CrewData[selectedIndex].Team, CrewSetBoxMain);
-
-            //CrewSetBoxMain.Parent = this;
         }
     }
 }
