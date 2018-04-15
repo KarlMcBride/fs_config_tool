@@ -56,6 +56,19 @@ namespace FS_Crew_Config_Tool
         {
             bool warningActive = Utils.CheckIfFracSpaceIsRunning("Fractured Space");
 
+            if (warningActive)
+            {
+                // Toggle BG colour on each pass
+                if (LabelFsRunningWarning.BackColor == System.Drawing.Color.Red)
+                {
+                    LabelFsRunningWarning.BackColor = System.Drawing.Color.Transparent;
+                }
+                else
+                {
+                    LabelFsRunningWarning.BackColor = System.Drawing.Color.Red;
+                }
+            }
+
             LabelFsRunningWarning.Visible = warningActive;
         }
 
