@@ -127,6 +127,9 @@
   <data name="BENJAMIN_PATRICK" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Crew\BENJAMIN_PATRICK.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BLADE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Crew\BLADE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BLAIN_ALLEN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Crew\BLAIN_ALLEN.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -135,6 +138,9 @@
   </data>
   <data name="CAESAR_MORGAN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Crew\CAESAR_MORGAN.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CALANDRA_VANDENBERG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Crew\CALANDRA_VANDENBERG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CARZELLE_ODIARRE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Crew\CARZELLE_ODIARRE.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,6 +175,9 @@
   <data name="EVAN_STERLING" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Crew\EVAN_STERLING.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="EVER_SWORD_KERN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Crew\EVER_SWORD_KERN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="FRANK_TORRANCE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Crew\FRANK_TORRANCE.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -183,6 +192,9 @@
   </data>
   <data name="HALO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Crew\HALO.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HANAKO_OGRADY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Crew\HANAKO_OGRADY.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HERA_DYMARR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Crew\HERA_DYMARR.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,6 +217,9 @@
   <data name="JULES_VALENTINE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Crew\JULES_VALENTINE.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="KN1FE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Crew\KN1FE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="KRYSTEN_TCHAIKOVSKY" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Crew\KRYSTEN_TCHAIKOVSKY.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -216,6 +231,12 @@
   </data>
   <data name="LUDOLOGIST" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Crew\LUDOLOGIST.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="M1LCH0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Crew\M1LCH0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MAGGIE_471" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Crew\MAGGIE_471.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MARIE_ANNE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Crew\MARIE_ANNE.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -271,6 +292,12 @@
   <data name="SARA_KRACE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Crew\SARA_KRACE.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="SCALPEL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Crew\SCALPEL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SEBASTIAN_BAROX" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Crew\SEBASTIAN_BAROX.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="SERAPHINE_VEGA" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Crew\SERAPHINE_VEGA.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -279,6 +306,9 @@
   </data>
   <data name="STELLAN_SHAW" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Crew\STELLAN_SHAW.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SURINDER_KAUR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Crew\SURINDER_KAUR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TAU_IS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Crew\TAU_IS.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

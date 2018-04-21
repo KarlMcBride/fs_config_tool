@@ -393,6 +393,16 @@
     <None Include="Content\Implants\RAMMING_DAMAGE.PNG" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Content\Crew\BLADE.png" />
+    <None Include="Content\Crew\CALANDRA_VANDENBERG.png" />
+    <None Include="Content\Crew\EVER_SWORD_KERN.png" />
+    <None Include="Content\Crew\M1LCH0.png" />
+    <None Include="Content\Crew\MAGGIE_471.png" />
+    <None Include="Content\Crew\SCALPEL.png" />
+    <None Include="Content\Crew\SEBASTIAN_BAROX.png" />
+    <None Include="Content\Crew\SURINDER_KAUR.png" />
+    <None Include="Content\Crew\KN1FE.png" />
+    <None Include="Content\Crew\HANAKO_OGRADY.png" />
     <Content Include="Drone.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

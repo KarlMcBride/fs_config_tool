@@ -93,6 +93,16 @@ namespace FS_Crew_Config_Tool.Content {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BLADE {
+            get {
+                object obj = ResourceManager.GetObject("BLADE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BLAIN_ALLEN {
             get {
                 object obj = ResourceManager.GetObject("BLAIN_ALLEN", resourceCulture);
@@ -116,6 +126,16 @@ namespace FS_Crew_Config_Tool.Content {
         internal static System.Drawing.Bitmap CAESAR_MORGAN {
             get {
                 object obj = ResourceManager.GetObject("CAESAR_MORGAN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CALANDRA_VANDENBERG {
+            get {
+                object obj = ResourceManager.GetObject("CALANDRA_VANDENBERG", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,6 +253,16 @@ namespace FS_Crew_Config_Tool.Content {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap EVER_SWORD_KERN {
+            get {
+                object obj = ResourceManager.GetObject("EVER_SWORD_KERN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FRANK_TORRANCE {
             get {
                 object obj = ResourceManager.GetObject("FRANK_TORRANCE", resourceCulture);
@@ -276,6 +306,16 @@ namespace FS_Crew_Config_Tool.Content {
         internal static System.Drawing.Bitmap HALO {
             get {
                 object obj = ResourceManager.GetObject("HALO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HANAKO_OGRADY {
+            get {
+                object obj = ResourceManager.GetObject("HANAKO_OGRADY", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -353,6 +393,16 @@ namespace FS_Crew_Config_Tool.Content {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap KN1FE {
+            get {
+                object obj = ResourceManager.GetObject("KN1FE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap KRYSTEN_TCHAIKOVSKY {
             get {
                 object obj = ResourceManager.GetObject("KRYSTEN_TCHAIKOVSKY", resourceCulture);
@@ -386,6 +436,26 @@ namespace FS_Crew_Config_Tool.Content {
         internal static System.Drawing.Bitmap LUDOLOGIST {
             get {
                 object obj = ResourceManager.GetObject("LUDOLOGIST", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap M1LCH0 {
+            get {
+                object obj = ResourceManager.GetObject("M1LCH0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MAGGIE_471 {
+            get {
+                object obj = ResourceManager.GetObject("MAGGIE_471", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -573,6 +643,26 @@ namespace FS_Crew_Config_Tool.Content {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap SCALPEL {
+            get {
+                object obj = ResourceManager.GetObject("SCALPEL", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SEBASTIAN_BAROX {
+            get {
+                object obj = ResourceManager.GetObject("SEBASTIAN_BAROX", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SERAPHINE_VEGA {
             get {
                 object obj = ResourceManager.GetObject("SERAPHINE_VEGA", resourceCulture);
@@ -596,6 +686,16 @@ namespace FS_Crew_Config_Tool.Content {
         internal static System.Drawing.Bitmap STELLAN_SHAW {
             get {
                 object obj = ResourceManager.GetObject("STELLAN_SHAW", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SURINDER_KAUR {
+            get {
+                object obj = ResourceManager.GetObject("SURINDER_KAUR", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
