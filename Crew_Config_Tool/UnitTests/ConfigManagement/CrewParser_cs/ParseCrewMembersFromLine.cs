@@ -65,5 +65,23 @@ namespace UnitTests.ConfigManagement.CrewParser_cs
 
             VerifyCrewsMatch(expected, actual);
         }
+
+        [TestMethod]
+        public void ParseRosterWithDynamicCrewInputNoImplants()
+        {
+            for (int id = 0; id < (int)CrewEnum.NONE; id++)
+            {
+                string customLine = RawStringData.SINGLE_MEMBER_TEMPLATE[0]
+                                        + CrewList.CrewListing[id].Code
+                                        + RawStringData.SINGLE_MEMBER_TEMPLATE[1];
+
+                TeamConfig expected = new TeamConfig();
+                expected.CrewMembers[0].CrewID = (CrewEnum)id;
+
+                TeamConfig actual = CrewParser.ParseCrewMembersFromLine(customLine);
+
+                VerifyCrewsMatch(expected, actual);
+            }
+        }
     }
 }

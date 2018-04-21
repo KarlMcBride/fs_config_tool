@@ -61,5 +61,9 @@
             "(ID=\"5E0EC5464C707BD2491991B3031EC524\", " +
                 "Affinities=(\"EC1EE1F84F43B42461FD848FB3433529\",\"B553F54842EF2379C90DF49836292A76\",\"875C276B4215F18D0903C3852EBDC87C\")))," +
             "Members=)";
+
+        public static string[] SINGLE_MEMBER_TEMPLATE = {
+            "CrewTeams=(ID=\"709A671240E39FC8FBC3F98404A19AB4\",Name=\"SINGLE_MEMBER_TEMPLATE\",Icon=\"\",CrewMembers=((ID=\"",
+            "\"),(),(),(),()),Members=)" };
     }
 }
