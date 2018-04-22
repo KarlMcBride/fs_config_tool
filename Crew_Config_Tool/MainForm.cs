@@ -10,7 +10,9 @@ namespace FS_Crew_Config_Tool
     {
         private ConfigManager config;
 
-        private BackgroundWorker fsRunningBgWorker;
+        private BackgroundWorker backgroundWorker;
+
+        private const int ITERATIONS_TO_UPDATE_CCU = 60;
 
         public MainForm()
         {
@@ -34,18 +36,27 @@ namespace FS_Crew_Config_Tool
 
         private void ConfigureBackgroundWorker()
         {
-            fsRunningBgWorker = new BackgroundWorker();
-            fsRunningBgWorker.DoWork += FsRunningBgWorker_DoWork;
-            fsRunningBgWorker.RunWorkerAsync();
+            backgroundWorker = new BackgroundWorker();
+            backgroundWorker.DoWork += BackgroundWorker_DoWork;
+            backgroundWorker.RunWorkerAsync();
         }
 
-        private void FsRunningBgWorker_DoWork(object sender, DoWorkEventArgs e)
+        private void BackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
+            int iterations = ITERATIONS_TO_UPDATE_CCU;
+            string playerCount = string.Empty;
+
             while (true)
             {
+                if (iterations >= ITERATIONS_TO_UPDATE_CCU)
+                {
+                    playerCount = Utils.GetOnlinePlayerCount();
+                }
+
                 BeginInvoke(new MethodInvoker(delegate
                 {
                     UpdateFsRunningWarningLabel();
+                    UpdateCcuLabel(playerCount);
                 }));
 
                 Thread.Sleep(1000);
@@ -70,6 +81,11 @@ namespace FS_Crew_Config_Tool
             }
 
             LabelFsRunningWarning.Visible = warningActive;
+        }
+
+        private void UpdateCcuLabel(string currrentCCU)
+        {
+            labelCcuCount.Text = "CCU: " + currrentCCU;
         }
 
         private void ConfigureToolTips()

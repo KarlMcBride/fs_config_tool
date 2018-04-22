@@ -34,6 +34,7 @@
             this.ButtonSave = new System.Windows.Forms.Button();
             this.CrewSetBoxMain = new FS_Crew_Config_Tool.UiComponents.CrewSetBox();
             this.LabelFsRunningWarning = new System.Windows.Forms.Label();
+            this.labelCcuCount = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ListBoxCrews
@@ -75,17 +76,28 @@
             // LabelFsRunningWarning
             // 
             this.LabelFsRunningWarning.AutoSize = true;
-            this.LabelFsRunningWarning.Location = new System.Drawing.Point(972, 447);
+            this.LabelFsRunningWarning.Location = new System.Drawing.Point(910, 447);
             this.LabelFsRunningWarning.Name = "LabelFsRunningWarning";
             this.LabelFsRunningWarning.Size = new System.Drawing.Size(73, 13);
             this.LabelFsRunningWarning.TabIndex = 4;
             this.LabelFsRunningWarning.Text = "FS is Running";
+            // 
+            // labelCcuCount
+            // 
+            this.labelCcuCount.AutoSize = true;
+            this.labelCcuCount.Location = new System.Drawing.Point(989, 447);
+            this.labelCcuCount.Name = "labelCcuCount";
+            this.labelCcuCount.Size = new System.Drawing.Size(56, 13);
+            this.labelCcuCount.TabIndex = 5;
+            this.labelCcuCount.TabStop = true;
+            this.labelCcuCount.Text = "CCU: - - - -";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1057, 469);
+            this.Controls.Add(this.labelCcuCount);
             this.Controls.Add(this.LabelFsRunningWarning);
             this.Controls.Add(this.CrewSetBoxMain);
             this.Controls.Add(this.ButtonSave);
@@ -108,6 +120,7 @@
         private System.Windows.Forms.Button ButtonSave;
         private UiComponents.CrewSetBox CrewSetBoxMain;
         private System.Windows.Forms.Label LabelFsRunningWarning;
+        private System.Windows.Forms.Label labelCcuCount;
     }
 }
 

@@ -72,5 +72,14 @@ namespace UnitTests
                 Assert.IsNotNull(result, "Image for [" + ((ImplantEnum)index).ToString() + "] returned null");
             }
         }
+
+        [TestMethod]
+        public void GetOnlinePlayerCount()
+        {
+            string unexpected = "N/A";
+            string actual = Utils.GetOnlinePlayerCount();
+
+            Assert.AreNotEqual(unexpected, actual);
+        }
     }
 }
