@@ -30,7 +30,7 @@ namespace FS_Crew_Config_Tool
 
             ConfigureToolTips();
 
-            LabelFsRunningWarning.Visible = Utils.CheckIfFracSpaceIsRunning("Fractured Space");
+            LabelFsRunningWarning.Visible = Utilities.CheckIfFracSpaceIsRunning("Fractured Space");
 
             ConfigureBackgroundWorker();
         }
@@ -51,11 +51,11 @@ namespace FS_Crew_Config_Tool
 
             while (true)
             {
-                fsRunning = Utils.CheckIfFracSpaceIsRunning("Fractured Space");
+                fsRunning = Utilities.CheckIfFracSpaceIsRunning("Fractured Space");
 
                 if (iterations >= ITERATIONS_TO_UPDATE_CCU)
                 {
-                    playerCount = Utils.GetOnlinePlayerCount();
+                    playerCount = Utilities.GetOnlinePlayerCount();
                     iterations = 0;
                 }
 

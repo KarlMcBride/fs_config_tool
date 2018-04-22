@@ -24,11 +24,11 @@ namespace FS_Crew_Config_Tool.UiComponents
 
         public void DisplaySelectedCrew(TeamConfig.EnumeratedCrewMember crew)
         {
-            PictureBoxCrew.Image = Utils.GetCrewImageByIndex((int)crew.CrewID);
+            PictureBoxCrew.Image = Utilities.GetCrewImageByIndex((int)crew.CrewID);
 
             for (int index = 0; index < 3; index++)
             {
-                pictureBoxImplantArray[index].Image = Utils.GetImplantImageByIndex((int)crew.ImplantIDs[index]);
+                pictureBoxImplantArray[index].Image = Utilities.GetImplantImageByIndex((int)crew.ImplantIDs[index]);
             }
         }
     }

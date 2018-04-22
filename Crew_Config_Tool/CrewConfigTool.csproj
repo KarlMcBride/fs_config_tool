@@ -59,7 +59,7 @@
     <Compile Include="Classes\TeamConfig.cs" />
     <Compile Include="Classes\Listings\Implants.cs" />
     <Compile Include="Classes\ConfigManagement\CrewParser.cs" />
-    <Compile Include="Classes\Utils.cs" />
+    <Compile Include="Classes\Utilities.cs" />
     <Compile Include="Content\CrewResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

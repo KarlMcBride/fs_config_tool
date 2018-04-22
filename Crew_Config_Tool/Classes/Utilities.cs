@@ -7,7 +7,7 @@ using System.Net;
 
 namespace FS_Crew_Config_Tool.Classes
 {
-    public static class Utils
+    public static class Utilities
     {
         public const string FS_PLAYER_API = "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?key=KEY&format=json&appid=310380";
 
