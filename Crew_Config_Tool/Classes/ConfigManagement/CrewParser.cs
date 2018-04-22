@@ -1,5 +1,4 @@
-﻿using System;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace FS_Crew_Config_Tool.Classes.ConfigManagement
 {
@@ -73,7 +72,6 @@ CrewTeams=(ID="C3ED77E04FCB6D1876D4F2AFD372E00E",Name="The Opportunists",Icon=""
             {
                 if (input.Contains(CrewList.CrewListing[id].Code))
                 {
-                    Console.WriteLine(id + ": " + CrewList.CrewListing[id].CharacterName);
                     // We've found a match, so assign and break out
                     crewMember.CrewID = (CrewEnum)id;
                     break;

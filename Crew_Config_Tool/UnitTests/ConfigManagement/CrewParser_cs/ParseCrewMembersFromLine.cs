@@ -58,7 +58,16 @@ namespace UnitTests.ConfigManagement.CrewParser_cs
         }
 
         [TestMethod]
-        public void ParseRosterWithFiveMembersAllImplants()
+        public void ParseRosterWithFiveMembersAllImplantsOrdered()
+        {
+            TeamConfig expected = ParsedData.FiveMembersFullImplantsOrdered();
+            TeamConfig actual = CrewParser.ParseCrewMembersFromLine(RawStringData.FIVE_MEMBERS_ALL_IMPLANTS_FULL_STRING);
+
+            VerifyCrewsMatch(expected, actual);
+        }
+
+        [TestMethod]
+        public void ParseRosterWithFiveMembersAllImplantsScattered()
         {
             TeamConfig expected = ParsedData.FiveMembersFullImplantsOrdered();
             TeamConfig actual = CrewParser.ParseCrewMembersFromLine(RawStringData.FIVE_MEMBERS_FULL_IMPLANTS_SCATTERED_FULL_STRING);

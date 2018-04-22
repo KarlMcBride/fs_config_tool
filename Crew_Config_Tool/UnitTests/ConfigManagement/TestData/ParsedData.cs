@@ -55,54 +55,18 @@ namespace UnitTests.ConfigParsing.TestData
         {
             TeamConfig config = new TeamConfig();
 
-            config.CrewMembers[0].CrewID = CrewEnum.GRINCZ_MORROW;
-            config.CrewMembers[1].CrewID = CrewEnum.HALO;
-            config.CrewMembers[2].CrewID = CrewEnum.WHIM;
-            config.CrewMembers[3].CrewID = CrewEnum.SARA_KRACE;
-            config.CrewMembers[4].CrewID = CrewEnum.DICE_CAPLAN;
+            config.CrewMembers[0].CrewID = CrewEnum.TEMPLE_JEMISON;
+            config.CrewMembers[1].CrewID = CrewEnum.GOSS_REZNIK;
+            config.CrewMembers[2].CrewID = CrewEnum.CLARA_REISETTE;
+            config.CrewMembers[3].CrewID = CrewEnum.GREGORII_DUROV;
+            config.CrewMembers[4].CrewID = CrewEnum.LUDOLOGIST;
 
             for (int crewIndex = 0; crewIndex < 5; crewIndex++)
             {
-                config.CrewMembers[crewIndex].ImplantIDs[0] = ImplantEnum.DAMAGE_REDUCTION;
-                config.CrewMembers[crewIndex].ImplantIDs[1] = ImplantEnum.TURRET_TRAVERSE;
-                config.CrewMembers[crewIndex].ImplantIDs[2] = ImplantEnum.UTILITY_DURATION;
+                config.CrewMembers[crewIndex].ImplantIDs[0] = ImplantEnum.HULL_STRENGTH;
+                config.CrewMembers[crewIndex].ImplantIDs[1] = ImplantEnum.MANEUVERING;
+                config.CrewMembers[crewIndex].ImplantIDs[2] = ImplantEnum.UTILITY_COOLDOWN;
             }
-
-            return config;
-        }
-
-        /// <summary>
-        /// Test config with different implant order for each crew member
-        /// </summary>
-        /// <returns>Full team config for testing</returns>
-        public static TeamConfig FiveMembersFullImplantsScattered()
-        {
-            TeamConfig config = new TeamConfig();
-
-            config.CrewMembers[0].CrewID = CrewEnum.GRINCZ_MORROW;
-            config.CrewMembers[0].ImplantIDs[0] = ImplantEnum.TURRET_TRAVERSE;
-            config.CrewMembers[0].ImplantIDs[1] = ImplantEnum.DAMAGE_REDUCTION;
-            config.CrewMembers[0].ImplantIDs[2] = ImplantEnum.UTILITY_COOLDOWN;
-
-            config.CrewMembers[1].CrewID = CrewEnum.HALO;
-            config.CrewMembers[1].ImplantIDs[0] = ImplantEnum.DAMAGE_REDUCTION;
-            config.CrewMembers[1].ImplantIDs[1] = ImplantEnum.TURRET_TRAVERSE;
-            config.CrewMembers[1].ImplantIDs[2] = ImplantEnum.UTILITY_COOLDOWN;
-
-            config.CrewMembers[2].CrewID = CrewEnum.WHIM;
-            config.CrewMembers[2].ImplantIDs[0] = ImplantEnum.TURRET_TRAVERSE;
-            config.CrewMembers[2].ImplantIDs[1] = ImplantEnum.UTILITY_COOLDOWN;
-            config.CrewMembers[2].ImplantIDs[2] = ImplantEnum.DAMAGE_REDUCTION;
-
-            config.CrewMembers[3].CrewID = CrewEnum.SARA_KRACE;
-            config.CrewMembers[3].ImplantIDs[0] = ImplantEnum.TURRET_TRAVERSE;
-            config.CrewMembers[3].ImplantIDs[1] = ImplantEnum.DAMAGE_REDUCTION;
-            config.CrewMembers[3].ImplantIDs[2] = ImplantEnum.UTILITY_COOLDOWN;
-
-            config.CrewMembers[4].CrewID = CrewEnum.DICE_CAPLAN;
-            config.CrewMembers[4].ImplantIDs[0] = ImplantEnum.UTILITY_COOLDOWN;
-            config.CrewMembers[4].ImplantIDs[1] = ImplantEnum.DAMAGE_REDUCTION;
-            config.CrewMembers[4].ImplantIDs[2] = ImplantEnum.TURRET_TRAVERSE;
 
             return config;
         }
