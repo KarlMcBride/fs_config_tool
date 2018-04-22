@@ -11,6 +11,7 @@ namespace FS_Crew_Config_Tool
         private ConfigManager config;
 
         private BackgroundWorker backgroundWorker;
+        private const int BG_WORKER_INTERVAL_MS = 1000;
 
         private const int ITERATIONS_TO_UPDATE_CCU = 60;
 
@@ -43,31 +44,34 @@ namespace FS_Crew_Config_Tool
 
         private void BackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
+            bool fsRunning = false;
+
             int iterations = ITERATIONS_TO_UPDATE_CCU;
             string playerCount = string.Empty;
 
             while (true)
             {
+                fsRunning = Utils.CheckIfFracSpaceIsRunning("Fractured Space");
+
                 if (iterations >= ITERATIONS_TO_UPDATE_CCU)
                 {
                     playerCount = Utils.GetOnlinePlayerCount();
+                    iterations = 0;
                 }
 
                 BeginInvoke(new MethodInvoker(delegate
                 {
-                    UpdateFsRunningWarningLabel();
+                    UpdateFsRunningWarningLabel(fsRunning);
                     UpdateCcuLabel(playerCount);
                 }));
 
-                Thread.Sleep(1000);
+                Thread.Sleep(BG_WORKER_INTERVAL_MS);
             }
         }
 
-        private void UpdateFsRunningWarningLabel()
+        private void UpdateFsRunningWarningLabel(bool fsRunning)
         {
-            bool warningActive = Utils.CheckIfFracSpaceIsRunning("Fractured Space");
-
-            if (warningActive)
+            if (fsRunning)
             {
                 // Toggle BG colour on each pass
                 if (LabelFsRunningWarning.BackColor == System.Drawing.Color.Red)
@@ -80,7 +84,7 @@ namespace FS_Crew_Config_Tool
                 }
             }
 
-            LabelFsRunningWarning.Visible = warningActive;
+            LabelFsRunningWarning.Visible = fsRunning;
         }
 
         private void UpdateCcuLabel(string currrentCCU)
