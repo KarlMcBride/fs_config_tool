@@ -184,5 +184,26 @@ namespace FS_Crew_Config_Tool
 
             return deleteSuccessful;
         }
+
+        public int GetNextSelectableItem(int currentlySelectedItem, int numOfItems)
+        {
+            int nextSelectable = -1;
+
+            // Only calculate if there's 2 or more items present, and an item is selected
+            if (currentlySelectedItem > -1 || numOfItems > 1)
+            {
+                // If last item is selected, decrement by one
+                if (currentlySelectedItem == (numOfItems - 1))
+                {
+                    nextSelectable = currentlySelectedItem - 1;
+                }
+                else
+                {
+                    nextSelectable = currentlySelectedItem;
+                }
+            }
+
+            return nextSelectable;
+        }
     }
 }

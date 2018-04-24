@@ -128,6 +128,7 @@ namespace FS_Crew_Config_Tool
         private void ButtonDelete_Click(object sender, EventArgs e)
         {
             int selectedIndex = ListBoxCrews.SelectedIndex;
+            int itemCount = ListBoxCrews.Items.Count;
 
             bool deleteSuccessful = config.DeleteSelectedCrewFromList(selectedIndex);
 
@@ -135,18 +136,7 @@ namespace FS_Crew_Config_Tool
             {
                 ListBoxCrews.Items.RemoveAt(selectedIndex);
 
-                int itemCount = ListBoxCrews.Items.Count - 1;
-
-                // Maintain currently selected index if there's enough items to support it
-                if (itemCount >= 2 && selectedIndex < (itemCount - 1))
-                {
-                    ListBoxCrews.SelectedIndex = selectedIndex;
-                }
-                // Otherwise select the preceding item
-                else if (itemCount >= 1)
-                {
-                    ListBoxCrews.SelectedIndex = selectedIndex - 1;
-                }
+                ListBoxCrews.SelectedIndex = config.GetNextSelectableItem(selectedIndex, itemCount);
             }
         }
 

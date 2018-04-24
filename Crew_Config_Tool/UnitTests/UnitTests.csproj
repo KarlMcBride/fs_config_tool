@@ -54,6 +54,7 @@
     <Compile Include="ConfigManagement\CrewParser_cs\ParseCrewMembersFromLine.cs" />
     <Compile Include="ConfigManagement\TestData\RawStringData.cs" />
     <Compile Include="ConfigManagement\TestData\ParsedData.cs" />
+    <Compile Include="ConfigManagement\ConfigManager_Test.cs" />
     <Compile Include="ListingChecks\CrewAndImplants.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UiComponents\CrewSetBox_Test.cs" />
