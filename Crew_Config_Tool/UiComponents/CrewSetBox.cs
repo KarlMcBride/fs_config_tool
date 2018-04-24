@@ -14,6 +14,14 @@ namespace FS_Crew_Config_Tool.UiComponents
             crewBoxArray = new CrewBox[] { CrewBox0, CrewBox1, CrewBox2, CrewBox3, CrewBox4 };
         }
 
+        public void ClearDisplayedTeam(CrewSetBox parent)
+        {
+            // Using freshly initialised config, as it will be set to zero
+            TeamConfig blankConfig = new TeamConfig();
+
+            DisplaySelectedTeam(blankConfig, parent);
+        }
+
         public void DisplaySelectedTeam(TeamConfig team, CrewSetBox parent)
         {
             for (int index = 0; index < 5; index++)

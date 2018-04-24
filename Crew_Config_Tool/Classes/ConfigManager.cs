@@ -168,5 +168,21 @@ namespace FS_Crew_Config_Tool
                 }
             }
         }
+
+        public bool DeleteSelectedCrewFromList(int indexToDelete)
+        {
+            bool deleteSuccessful = false;
+
+            if (CrewData != null)
+            {
+                if (indexToDelete >= 0 && indexToDelete < CrewData.Count)
+                {
+                    CrewData.RemoveAt(indexToDelete);
+                    deleteSuccessful = true;
+                }
+            }
+
+            return deleteSuccessful;
+        }
     }
 }

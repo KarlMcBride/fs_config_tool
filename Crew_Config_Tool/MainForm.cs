@@ -125,11 +125,51 @@ namespace FS_Crew_Config_Tool
             config.SaveConfig();
         }
 
+        private void ButtonDelete_Click(object sender, EventArgs e)
+        {
+            int selectedIndex = ListBoxCrews.SelectedIndex;
+
+            bool deleteSuccessful = config.DeleteSelectedCrewFromList(selectedIndex);
+
+            if (deleteSuccessful)
+            {
+                ListBoxCrews.Items.RemoveAt(selectedIndex);
+
+                int itemCount = ListBoxCrews.Items.Count - 1;
+
+                // Maintain currently selected index if there's enough items to support it
+                if (itemCount >= 2 && selectedIndex < (itemCount - 1))
+                {
+                    ListBoxCrews.SelectedIndex = selectedIndex;
+                }
+                // Otherwise select the preceding item
+                else if (itemCount >= 1)
+                {
+                    ListBoxCrews.SelectedIndex = selectedIndex - 1;
+                }
+            }
+        }
+
         private void ListBoxCrews_SelectedIndexChanged(object sender, EventArgs e)
         {
             int selectedIndex = ListBoxCrews.SelectedIndex;
 
-            CrewSetBoxMain.DisplaySelectedTeam(config.CrewData[selectedIndex].Team, CrewSetBoxMain);
+            if (selectedIndex != -1)
+            {
+                CrewSetBoxMain.DisplaySelectedTeam(config.CrewData[selectedIndex].Team, CrewSetBoxMain);
+
+                SetDeleteButtonState(selectedIndex);
+            }
+            else
+            {
+                CrewSetBoxMain.ClearDisplayedTeam(CrewSetBoxMain);
+            }
+        }
+
+        private void SetDeleteButtonState(int index)
+        {
+            // Index of -1 indicates that no item is selected
+            ButtonDelete.Enabled = (index > -1) ? true : false;
         }
     }
 }

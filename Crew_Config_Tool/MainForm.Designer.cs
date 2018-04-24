@@ -35,6 +35,7 @@
             this.CrewSetBoxMain = new FS_Crew_Config_Tool.UiComponents.CrewSetBox();
             this.LabelFsRunningWarning = new System.Windows.Forms.Label();
             this.labelCcuCount = new System.Windows.Forms.Label();
+            this.ButtonDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ListBoxCrews
@@ -42,7 +43,7 @@
             this.ListBoxCrews.FormattingEnabled = true;
             this.ListBoxCrews.Location = new System.Drawing.Point(12, 38);
             this.ListBoxCrews.Name = "ListBoxCrews";
-            this.ListBoxCrews.Size = new System.Drawing.Size(172, 394);
+            this.ListBoxCrews.Size = new System.Drawing.Size(223, 394);
             this.ListBoxCrews.TabIndex = 0;
             this.ListBoxCrews.SelectedIndexChanged += new System.EventHandler(this.ListBoxCrews_SelectedIndexChanged);
             // 
@@ -50,7 +51,7 @@
             // 
             this.ButtonSortAlpha.Location = new System.Drawing.Point(12, 9);
             this.ButtonSortAlpha.Name = "ButtonSortAlpha";
-            this.ButtonSortAlpha.Size = new System.Drawing.Size(106, 23);
+            this.ButtonSortAlpha.Size = new System.Drawing.Size(108, 23);
             this.ButtonSortAlpha.TabIndex = 1;
             this.ButtonSortAlpha.Text = "Sort Alphabetically";
             this.ButtonSortAlpha.UseVisualStyleBackColor = true;
@@ -58,9 +59,9 @@
             // 
             // ButtonSave
             // 
-            this.ButtonSave.Location = new System.Drawing.Point(124, 9);
+            this.ButtonSave.Location = new System.Drawing.Point(127, 9);
             this.ButtonSave.Name = "ButtonSave";
-            this.ButtonSave.Size = new System.Drawing.Size(60, 23);
+            this.ButtonSave.Size = new System.Drawing.Size(108, 23);
             this.ButtonSave.TabIndex = 2;
             this.ButtonSave.Text = "Save";
             this.ButtonSave.UseVisualStyleBackColor = true;
@@ -68,9 +69,9 @@
             // 
             // CrewSetBoxMain
             // 
-            this.CrewSetBoxMain.Location = new System.Drawing.Point(190, 12);
+            this.CrewSetBoxMain.Location = new System.Drawing.Point(241, 7);
             this.CrewSetBoxMain.Name = "CrewSetBoxMain";
-            this.CrewSetBoxMain.Size = new System.Drawing.Size(855, 289);
+            this.CrewSetBoxMain.Size = new System.Drawing.Size(812, 289);
             this.CrewSetBoxMain.TabIndex = 3;
             // 
             // LabelFsRunningWarning
@@ -92,11 +93,22 @@
             this.labelCcuCount.TabStop = true;
             this.labelCcuCount.Text = "CCU: - - - -";
             // 
+            // ButtonDelete
+            // 
+            this.ButtonDelete.Location = new System.Drawing.Point(12, 438);
+            this.ButtonDelete.Name = "ButtonDelete";
+            this.ButtonDelete.Size = new System.Drawing.Size(223, 23);
+            this.ButtonDelete.TabIndex = 6;
+            this.ButtonDelete.Text = "Delete";
+            this.ButtonDelete.UseVisualStyleBackColor = true;
+            this.ButtonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1057, 469);
+            this.Controls.Add(this.ButtonDelete);
             this.Controls.Add(this.labelCcuCount);
             this.Controls.Add(this.LabelFsRunningWarning);
             this.Controls.Add(this.CrewSetBoxMain);
@@ -121,6 +133,7 @@
         private UiComponents.CrewSetBox CrewSetBoxMain;
         private System.Windows.Forms.Label LabelFsRunningWarning;
         private System.Windows.Forms.Label labelCcuCount;
+        private System.Windows.Forms.Button ButtonDelete;
     }
 }
 
