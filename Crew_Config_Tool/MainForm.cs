@@ -15,6 +15,8 @@ namespace FS_Crew_Config_Tool
 
         private const int ITERATIONS_TO_UPDATE_CCU = 60;
 
+        private CheckBox[] crewFilterArray;
+
         public MainForm()
         {
             InitializeComponent();
@@ -33,6 +35,9 @@ namespace FS_Crew_Config_Tool
             LabelFsRunningWarning.Visible = Utilities.CheckIfFracSpaceIsRunning("Fractured Space");
 
             ConfigureBackgroundWorker();
+
+            crewFilterArray = new CheckBox[] { CheckBoxCag, CheckBoxCaptain, CheckBoxComms, CheckBoxEngineer, CheckBoxJump,
+                                               CheckBoxNav, CheckBoxRepair, CheckBoxTactical, CheckBoxUtility };
         }
 
         private void ConfigureBackgroundWorker()
@@ -160,6 +165,11 @@ namespace FS_Crew_Config_Tool
         {
             // Index of -1 indicates that no item is selected
             ButtonDelete.Enabled = (index > -1) ? true : false;
+        }
+
+        private void CheckBoxCag_CheckedChanged(object sender, EventArgs e)
+        {
+            CrewFilter.CrewTypeFilter filteredList = CrewFilter.ConvertCrewFilterBoxesToStruct(crewFilterArray);
         }
     }
 }
