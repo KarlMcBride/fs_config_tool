@@ -1,4 +1,5 @@
 ﻿using FS_Crew_Config_Tool.Classes;
+using FS_Crew_Config_Tool.UiComponents;
 using System;
 using System.ComponentModel;
 using System.Drawing;
@@ -10,6 +11,7 @@ namespace FS_Crew_Config_Tool
     public partial class MainForm : Form
     {
         private ConfigManager config;
+        private UiOffload uiOffload;
 
         private BackgroundWorker backgroundWorker;
         private const int BG_WORKER_INTERVAL_MS = 1000;
@@ -23,6 +25,7 @@ namespace FS_Crew_Config_Tool
             InitializeComponent();
 
             config = new ConfigManager();
+            uiOffload = new UiOffload();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -172,7 +175,7 @@ namespace FS_Crew_Config_Tool
         {
             ListViewFilteredCrew.Clear();
 
-            var imageList = new ImageList();
+            ImageList imageList = new ImageList();
             imageList.ColorDepth = ColorDepth.Depth16Bit;
 
             int crew_w = 100;
@@ -182,25 +185,7 @@ namespace FS_Crew_Config_Tool
             ListViewFilteredCrew.TileSize = new Size(crew_w + buffer, crew_h + buffer);
             imageList.ImageSize = new Size(crew_w, crew_h);
 
-            CrewFilter.CrewTypeFilter filteredList = CrewFilter.ConvertCrewFilterBoxesToStruct(crewFilterArray);
-
-            int index = 0;
-
-            // create image list and fill it
-            for (int id = 0; id < (int)CrewEnum.NONE; id++)
-            {
-                CrewRole idRole = CrewList.CrewListing[id].Role;
-
-                if (crewFilterArray[(int)idRole].Checked)
-                {
-                    string name = ((CrewEnum)id).ToString();
-
-                    imageList.Images.Add(name, Utilities.GetCrewImageByIndex(id));
-                    ListViewFilteredCrew.Items.Add(name, index);
-
-                    index++;
-                }
-            }
+            uiOffload.PopulateCrewListing(crewFilterArray, ref imageList, ref ListViewFilteredCrew);
 
             ListViewFilteredCrew.LargeImageList = imageList;
         }
