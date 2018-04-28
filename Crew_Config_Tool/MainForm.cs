@@ -1,6 +1,7 @@
 ﻿using FS_Crew_Config_Tool.Classes;
 using System;
 using System.ComponentModel;
+using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -167,9 +168,41 @@ namespace FS_Crew_Config_Tool
             ButtonDelete.Enabled = (index > -1) ? true : false;
         }
 
-        private void CheckBoxCag_CheckedChanged(object sender, EventArgs e)
+        private void CheckBoxFilters_CheckedChanged(object sender, EventArgs e)
         {
+            ListViewFilteredCrew.Clear();
+
+            var imageList = new ImageList();
+            imageList.ColorDepth = ColorDepth.Depth16Bit;
+
+            int crew_w = 100;
+            int crew_h = 177;
+            int buffer = 5;
+
+            ListViewFilteredCrew.TileSize = new Size(crew_w + buffer, crew_h + buffer);
+            imageList.ImageSize = new Size(crew_w, crew_h);
+
             CrewFilter.CrewTypeFilter filteredList = CrewFilter.ConvertCrewFilterBoxesToStruct(crewFilterArray);
+
+            int index = 0;
+
+            // create image list and fill it
+            for (int id = 0; id < (int)CrewEnum.NONE; id++)
+            {
+                CrewRole idRole = CrewList.CrewListing[id].Role;
+
+                if (crewFilterArray[(int)idRole].Checked)
+                {
+                    string name = ((CrewEnum)id).ToString();
+
+                    imageList.Images.Add(name, Utilities.GetCrewImageByIndex(id));
+                    ListViewFilteredCrew.Items.Add(name, index);
+
+                    index++;
+                }
+            }
+
+            ListViewFilteredCrew.LargeImageList = imageList;
         }
     }
 }

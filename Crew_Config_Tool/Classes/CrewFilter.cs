@@ -33,10 +33,5 @@ namespace FS_Crew_Config_Tool.Classes
 
             return filter;
         }
-
-        public static void SetFilteredCrewList(CrewTypeFilter filterList)
-        {
-
-        }
     }
 }

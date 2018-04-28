@@ -32,7 +32,6 @@
             this.ListBoxCrews = new System.Windows.Forms.ListBox();
             this.ButtonSortAlpha = new System.Windows.Forms.Button();
             this.ButtonSave = new System.Windows.Forms.Button();
-            this.CrewSetBoxMain = new FS_Crew_Config_Tool.UiComponents.CrewSetBox();
             this.LabelFsRunningWarning = new System.Windows.Forms.Label();
             this.labelCcuCount = new System.Windows.Forms.Label();
             this.ButtonDelete = new System.Windows.Forms.Button();
@@ -45,22 +44,24 @@
             this.CheckBoxRepair = new System.Windows.Forms.CheckBox();
             this.CheckBoxTactical = new System.Windows.Forms.CheckBox();
             this.CheckBoxUtility = new System.Windows.Forms.CheckBox();
+            this.ListViewFilteredCrew = new System.Windows.Forms.ListView();
+            this.CrewSetBoxMain = new FS_Crew_Config_Tool.UiComponents.CrewSetBox();
             this.SuspendLayout();
             // 
             // ListBoxCrews
             // 
             this.ListBoxCrews.FormattingEnabled = true;
-            this.ListBoxCrews.Location = new System.Drawing.Point(12, 38);
+            this.ListBoxCrews.Location = new System.Drawing.Point(12, 70);
             this.ListBoxCrews.Name = "ListBoxCrews";
-            this.ListBoxCrews.Size = new System.Drawing.Size(223, 394);
+            this.ListBoxCrews.Size = new System.Drawing.Size(223, 511);
             this.ListBoxCrews.TabIndex = 0;
             this.ListBoxCrews.SelectedIndexChanged += new System.EventHandler(this.ListBoxCrews_SelectedIndexChanged);
             // 
             // ButtonSortAlpha
             // 
-            this.ButtonSortAlpha.Location = new System.Drawing.Point(12, 9);
+            this.ButtonSortAlpha.Location = new System.Drawing.Point(11, 9);
             this.ButtonSortAlpha.Name = "ButtonSortAlpha";
-            this.ButtonSortAlpha.Size = new System.Drawing.Size(108, 23);
+            this.ButtonSortAlpha.Size = new System.Drawing.Size(109, 23);
             this.ButtonSortAlpha.TabIndex = 1;
             this.ButtonSortAlpha.Text = "Sort Alphabetically";
             this.ButtonSortAlpha.UseVisualStyleBackColor = true;
@@ -70,23 +71,16 @@
             // 
             this.ButtonSave.Location = new System.Drawing.Point(127, 9);
             this.ButtonSave.Name = "ButtonSave";
-            this.ButtonSave.Size = new System.Drawing.Size(108, 23);
+            this.ButtonSave.Size = new System.Drawing.Size(109, 23);
             this.ButtonSave.TabIndex = 2;
             this.ButtonSave.Text = "Save";
             this.ButtonSave.UseVisualStyleBackColor = true;
             this.ButtonSave.Click += new System.EventHandler(this.ButtonSave_Click);
             // 
-            // CrewSetBoxMain
-            // 
-            this.CrewSetBoxMain.Location = new System.Drawing.Point(241, 7);
-            this.CrewSetBoxMain.Name = "CrewSetBoxMain";
-            this.CrewSetBoxMain.Size = new System.Drawing.Size(812, 289);
-            this.CrewSetBoxMain.TabIndex = 3;
-            // 
             // LabelFsRunningWarning
             // 
             this.LabelFsRunningWarning.AutoSize = true;
-            this.LabelFsRunningWarning.Location = new System.Drawing.Point(910, 447);
+            this.LabelFsRunningWarning.Location = new System.Drawing.Point(910, 799);
             this.LabelFsRunningWarning.Name = "LabelFsRunningWarning";
             this.LabelFsRunningWarning.Size = new System.Drawing.Size(73, 13);
             this.LabelFsRunningWarning.TabIndex = 4;
@@ -95,7 +89,7 @@
             // labelCcuCount
             // 
             this.labelCcuCount.AutoSize = true;
-            this.labelCcuCount.Location = new System.Drawing.Point(989, 447);
+            this.labelCcuCount.Location = new System.Drawing.Point(989, 799);
             this.labelCcuCount.Name = "labelCcuCount";
             this.labelCcuCount.Size = new System.Drawing.Size(56, 13);
             this.labelCcuCount.TabIndex = 5;
@@ -104,9 +98,9 @@
             // 
             // ButtonDelete
             // 
-            this.ButtonDelete.Location = new System.Drawing.Point(12, 438);
+            this.ButtonDelete.Location = new System.Drawing.Point(11, 38);
             this.ButtonDelete.Name = "ButtonDelete";
-            this.ButtonDelete.Size = new System.Drawing.Size(223, 23);
+            this.ButtonDelete.Size = new System.Drawing.Size(225, 23);
             this.ButtonDelete.TabIndex = 6;
             this.ButtonDelete.Text = "Delete";
             this.ButtonDelete.UseVisualStyleBackColor = true;
@@ -121,7 +115,7 @@
             this.CheckBoxCag.TabIndex = 7;
             this.CheckBoxCag.Text = "CAG";
             this.CheckBoxCag.UseVisualStyleBackColor = true;
-            this.CheckBoxCag.CheckedChanged += new System.EventHandler(this.CheckBoxCag_CheckedChanged);
+            this.CheckBoxCag.CheckedChanged += new System.EventHandler(this.CheckBoxFilters_CheckedChanged);
             // 
             // CheckBoxCaptain
             // 
@@ -132,7 +126,7 @@
             this.CheckBoxCaptain.TabIndex = 8;
             this.CheckBoxCaptain.Text = "Captain";
             this.CheckBoxCaptain.UseVisualStyleBackColor = true;
-            this.CheckBoxCaptain.CheckedChanged += new System.EventHandler(this.CheckBoxCag_CheckedChanged);
+            this.CheckBoxCaptain.CheckedChanged += new System.EventHandler(this.CheckBoxFilters_CheckedChanged);
             // 
             // CheckBoxComms
             // 
@@ -143,7 +137,7 @@
             this.CheckBoxComms.TabIndex = 9;
             this.CheckBoxComms.Text = "Comms";
             this.CheckBoxComms.UseVisualStyleBackColor = true;
-            this.CheckBoxComms.CheckedChanged += new System.EventHandler(this.CheckBoxCag_CheckedChanged);
+            this.CheckBoxComms.CheckedChanged += new System.EventHandler(this.CheckBoxFilters_CheckedChanged);
             // 
             // CheckBoxEngineer
             // 
@@ -154,7 +148,7 @@
             this.CheckBoxEngineer.TabIndex = 10;
             this.CheckBoxEngineer.Text = "Engineer";
             this.CheckBoxEngineer.UseVisualStyleBackColor = true;
-            this.CheckBoxEngineer.CheckedChanged += new System.EventHandler(this.CheckBoxCag_CheckedChanged);
+            this.CheckBoxEngineer.CheckedChanged += new System.EventHandler(this.CheckBoxFilters_CheckedChanged);
             // 
             // CheckBoxJump
             // 
@@ -165,57 +159,74 @@
             this.CheckBoxJump.TabIndex = 11;
             this.CheckBoxJump.Text = "Jump";
             this.CheckBoxJump.UseVisualStyleBackColor = true;
-            this.CheckBoxJump.CheckedChanged += new System.EventHandler(this.CheckBoxCag_CheckedChanged);
+            this.CheckBoxJump.CheckedChanged += new System.EventHandler(this.CheckBoxFilters_CheckedChanged);
             // 
             // CheckBoxNav
             // 
             this.CheckBoxNav.AutoSize = true;
-            this.CheckBoxNav.Location = new System.Drawing.Point(328, 293);
+            this.CheckBoxNav.Location = new System.Drawing.Point(251, 408);
             this.CheckBoxNav.Name = "CheckBoxNav";
             this.CheckBoxNav.Size = new System.Drawing.Size(46, 17);
             this.CheckBoxNav.TabIndex = 12;
             this.CheckBoxNav.Text = "Nav";
             this.CheckBoxNav.UseVisualStyleBackColor = true;
-            this.CheckBoxNav.CheckedChanged += new System.EventHandler(this.CheckBoxCag_CheckedChanged);
+            this.CheckBoxNav.CheckedChanged += new System.EventHandler(this.CheckBoxFilters_CheckedChanged);
             // 
             // CheckBoxRepair
             // 
             this.CheckBoxRepair.AutoSize = true;
-            this.CheckBoxRepair.Location = new System.Drawing.Point(328, 316);
+            this.CheckBoxRepair.Location = new System.Drawing.Point(251, 431);
             this.CheckBoxRepair.Name = "CheckBoxRepair";
             this.CheckBoxRepair.Size = new System.Drawing.Size(57, 17);
             this.CheckBoxRepair.TabIndex = 13;
             this.CheckBoxRepair.Text = "Repair";
             this.CheckBoxRepair.UseVisualStyleBackColor = true;
-            this.CheckBoxRepair.CheckedChanged += new System.EventHandler(this.CheckBoxCag_CheckedChanged);
+            this.CheckBoxRepair.CheckedChanged += new System.EventHandler(this.CheckBoxFilters_CheckedChanged);
             // 
             // CheckBoxTactical
             // 
             this.CheckBoxTactical.AutoSize = true;
-            this.CheckBoxTactical.Location = new System.Drawing.Point(328, 339);
+            this.CheckBoxTactical.Location = new System.Drawing.Point(251, 454);
             this.CheckBoxTactical.Name = "CheckBoxTactical";
             this.CheckBoxTactical.Size = new System.Drawing.Size(64, 17);
             this.CheckBoxTactical.TabIndex = 14;
             this.CheckBoxTactical.Text = "Tactical";
             this.CheckBoxTactical.UseVisualStyleBackColor = true;
-            this.CheckBoxTactical.CheckedChanged += new System.EventHandler(this.CheckBoxCag_CheckedChanged);
+            this.CheckBoxTactical.CheckedChanged += new System.EventHandler(this.CheckBoxFilters_CheckedChanged);
             // 
             // CheckBoxUtility
             // 
             this.CheckBoxUtility.AutoSize = true;
-            this.CheckBoxUtility.Location = new System.Drawing.Point(328, 362);
+            this.CheckBoxUtility.Location = new System.Drawing.Point(251, 477);
             this.CheckBoxUtility.Name = "CheckBoxUtility";
             this.CheckBoxUtility.Size = new System.Drawing.Size(51, 17);
             this.CheckBoxUtility.TabIndex = 15;
             this.CheckBoxUtility.Text = "Utility";
             this.CheckBoxUtility.UseVisualStyleBackColor = true;
-            this.CheckBoxUtility.CheckedChanged += new System.EventHandler(this.CheckBoxCag_CheckedChanged);
+            this.CheckBoxUtility.CheckedChanged += new System.EventHandler(this.CheckBoxFilters_CheckedChanged);
+            // 
+            // ListViewFilteredCrew
+            // 
+            this.ListViewFilteredCrew.Location = new System.Drawing.Point(347, 293);
+            this.ListViewFilteredCrew.Name = "ListViewFilteredCrew";
+            this.ListViewFilteredCrew.Size = new System.Drawing.Size(662, 377);
+            this.ListViewFilteredCrew.TabIndex = 16;
+            this.ListViewFilteredCrew.UseCompatibleStateImageBehavior = false;
+            this.ListViewFilteredCrew.View = System.Windows.Forms.View.Tile;
+            // 
+            // CrewSetBoxMain
+            // 
+            this.CrewSetBoxMain.Location = new System.Drawing.Point(241, 7);
+            this.CrewSetBoxMain.Name = "CrewSetBoxMain";
+            this.CrewSetBoxMain.Size = new System.Drawing.Size(812, 289);
+            this.CrewSetBoxMain.TabIndex = 3;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1057, 469);
+            this.ClientSize = new System.Drawing.Size(1057, 821);
+            this.Controls.Add(this.ListViewFilteredCrew);
             this.Controls.Add(this.CheckBoxUtility);
             this.Controls.Add(this.CheckBoxTactical);
             this.Controls.Add(this.CheckBoxRepair);
@@ -260,6 +271,7 @@
         private System.Windows.Forms.CheckBox CheckBoxRepair;
         private System.Windows.Forms.CheckBox CheckBoxTactical;
         private System.Windows.Forms.CheckBox CheckBoxUtility;
+        private System.Windows.Forms.ListView ListViewFilteredCrew;
     }
 }
 
