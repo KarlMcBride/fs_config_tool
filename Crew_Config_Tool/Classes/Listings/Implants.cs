@@ -45,7 +45,7 @@ namespace FS_Crew_Config_Tool.Classes
     {
         public ImplantEnum ID   { get; private set; }
         public string Name      { get; private set; }
-        public ImplantType Role { get; private set; }
+        public ImplantType Type { get; private set; }
         public string Code      { get; private set; }
         public Stats ImplantStats;
 
@@ -53,7 +53,7 @@ namespace FS_Crew_Config_Tool.Classes
         {
             ID = id;
             Name = name;
-            Role = role;
+            Type = role;
             Code = code;
             ImplantStats = new Stats();
         }
@@ -107,7 +107,7 @@ namespace FS_Crew_Config_Tool.Classes
             hullStrength.ImplantStats.HullStrength = 200;
             ImplantListing.Add(hullStrength);
 
-            Implant jumpCooldown = new Implant(ImplantEnum.JUMP_COOLDOWN, "Jump Cooldown", ImplantType.DEFENSE, "571D88634AA9A06CF8703DB822AE72DA");
+            Implant jumpCooldown = new Implant(ImplantEnum.JUMP_COOLDOWN, "Jump Cooldown", ImplantType.UTILITY, "571D88634AA9A06CF8703DB822AE72DA");
             jumpCooldown.ImplantStats.JumpCooldown = -2f;
             ImplantListing.Add(jumpCooldown);
 

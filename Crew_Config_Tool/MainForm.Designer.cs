@@ -35,17 +35,21 @@
             this.LabelFsRunningWarning = new System.Windows.Forms.Label();
             this.labelCcuCount = new System.Windows.Forms.Label();
             this.ButtonDelete = new System.Windows.Forms.Button();
-            this.CheckBoxCag = new System.Windows.Forms.CheckBox();
-            this.CheckBoxCaptain = new System.Windows.Forms.CheckBox();
-            this.CheckBoxComms = new System.Windows.Forms.CheckBox();
-            this.CheckBoxEngineer = new System.Windows.Forms.CheckBox();
-            this.CheckBoxJump = new System.Windows.Forms.CheckBox();
-            this.CheckBoxNav = new System.Windows.Forms.CheckBox();
-            this.CheckBoxRepair = new System.Windows.Forms.CheckBox();
-            this.CheckBoxTactical = new System.Windows.Forms.CheckBox();
-            this.CheckBoxUtility = new System.Windows.Forms.CheckBox();
+            this.CheckBoxCrewCag = new System.Windows.Forms.CheckBox();
+            this.CheckBoxCrewCaptain = new System.Windows.Forms.CheckBox();
+            this.CheckBoxCrewComms = new System.Windows.Forms.CheckBox();
+            this.CheckBoxCrewEngineer = new System.Windows.Forms.CheckBox();
+            this.CheckBoxCrewJump = new System.Windows.Forms.CheckBox();
+            this.CheckBoxCrewNav = new System.Windows.Forms.CheckBox();
+            this.CheckBoxCrewRepair = new System.Windows.Forms.CheckBox();
+            this.CheckBoxCrewTactical = new System.Windows.Forms.CheckBox();
+            this.CheckBoxCrewUtility = new System.Windows.Forms.CheckBox();
             this.ListViewFilteredCrew = new System.Windows.Forms.ListView();
+            this.ListViewImplants = new System.Windows.Forms.ListView();
             this.CrewSetBoxMain = new FS_Crew_Config_Tool.UiComponents.CrewSetBox();
+            this.CheckBoxImpUtil = new System.Windows.Forms.CheckBox();
+            this.CheckBoxImpDef = new System.Windows.Forms.CheckBox();
+            this.CheckBoxImpAtk = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // ListBoxCrews
@@ -106,136 +110,182 @@
             this.ButtonDelete.UseVisualStyleBackColor = true;
             this.ButtonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
             // 
-            // CheckBoxCag
+            // CheckBoxCrewCag
             // 
-            this.CheckBoxCag.AutoSize = true;
-            this.CheckBoxCag.Location = new System.Drawing.Point(251, 293);
-            this.CheckBoxCag.Name = "CheckBoxCag";
-            this.CheckBoxCag.Size = new System.Drawing.Size(48, 17);
-            this.CheckBoxCag.TabIndex = 7;
-            this.CheckBoxCag.Text = "CAG";
-            this.CheckBoxCag.UseVisualStyleBackColor = true;
-            this.CheckBoxCag.CheckedChanged += new System.EventHandler(this.CheckBoxFilters_CheckedChanged);
+            this.CheckBoxCrewCag.AutoSize = true;
+            this.CheckBoxCrewCag.Location = new System.Drawing.Point(262, 293);
+            this.CheckBoxCrewCag.Name = "CheckBoxCrewCag";
+            this.CheckBoxCrewCag.Size = new System.Drawing.Size(48, 17);
+            this.CheckBoxCrewCag.TabIndex = 7;
+            this.CheckBoxCrewCag.Text = "CAG";
+            this.CheckBoxCrewCag.UseVisualStyleBackColor = true;
+            this.CheckBoxCrewCag.CheckedChanged += new System.EventHandler(this.CheckBoxCrewFilters_CheckedChanged);
             // 
-            // CheckBoxCaptain
+            // CheckBoxCrewCaptain
             // 
-            this.CheckBoxCaptain.AutoSize = true;
-            this.CheckBoxCaptain.Location = new System.Drawing.Point(251, 316);
-            this.CheckBoxCaptain.Name = "CheckBoxCaptain";
-            this.CheckBoxCaptain.Size = new System.Drawing.Size(62, 17);
-            this.CheckBoxCaptain.TabIndex = 8;
-            this.CheckBoxCaptain.Text = "Captain";
-            this.CheckBoxCaptain.UseVisualStyleBackColor = true;
-            this.CheckBoxCaptain.CheckedChanged += new System.EventHandler(this.CheckBoxFilters_CheckedChanged);
+            this.CheckBoxCrewCaptain.AutoSize = true;
+            this.CheckBoxCrewCaptain.Location = new System.Drawing.Point(262, 316);
+            this.CheckBoxCrewCaptain.Name = "CheckBoxCrewCaptain";
+            this.CheckBoxCrewCaptain.Size = new System.Drawing.Size(62, 17);
+            this.CheckBoxCrewCaptain.TabIndex = 8;
+            this.CheckBoxCrewCaptain.Text = "Captain";
+            this.CheckBoxCrewCaptain.UseVisualStyleBackColor = true;
+            this.CheckBoxCrewCaptain.CheckedChanged += new System.EventHandler(this.CheckBoxCrewFilters_CheckedChanged);
             // 
-            // CheckBoxComms
+            // CheckBoxCrewComms
             // 
-            this.CheckBoxComms.AutoSize = true;
-            this.CheckBoxComms.Location = new System.Drawing.Point(251, 339);
-            this.CheckBoxComms.Name = "CheckBoxComms";
-            this.CheckBoxComms.Size = new System.Drawing.Size(60, 17);
-            this.CheckBoxComms.TabIndex = 9;
-            this.CheckBoxComms.Text = "Comms";
-            this.CheckBoxComms.UseVisualStyleBackColor = true;
-            this.CheckBoxComms.CheckedChanged += new System.EventHandler(this.CheckBoxFilters_CheckedChanged);
+            this.CheckBoxCrewComms.AutoSize = true;
+            this.CheckBoxCrewComms.Location = new System.Drawing.Point(262, 339);
+            this.CheckBoxCrewComms.Name = "CheckBoxCrewComms";
+            this.CheckBoxCrewComms.Size = new System.Drawing.Size(60, 17);
+            this.CheckBoxCrewComms.TabIndex = 9;
+            this.CheckBoxCrewComms.Text = "Comms";
+            this.CheckBoxCrewComms.UseVisualStyleBackColor = true;
+            this.CheckBoxCrewComms.CheckedChanged += new System.EventHandler(this.CheckBoxCrewFilters_CheckedChanged);
             // 
-            // CheckBoxEngineer
+            // CheckBoxCrewEngineer
             // 
-            this.CheckBoxEngineer.AutoSize = true;
-            this.CheckBoxEngineer.Location = new System.Drawing.Point(251, 362);
-            this.CheckBoxEngineer.Name = "CheckBoxEngineer";
-            this.CheckBoxEngineer.Size = new System.Drawing.Size(68, 17);
-            this.CheckBoxEngineer.TabIndex = 10;
-            this.CheckBoxEngineer.Text = "Engineer";
-            this.CheckBoxEngineer.UseVisualStyleBackColor = true;
-            this.CheckBoxEngineer.CheckedChanged += new System.EventHandler(this.CheckBoxFilters_CheckedChanged);
+            this.CheckBoxCrewEngineer.AutoSize = true;
+            this.CheckBoxCrewEngineer.Location = new System.Drawing.Point(262, 362);
+            this.CheckBoxCrewEngineer.Name = "CheckBoxCrewEngineer";
+            this.CheckBoxCrewEngineer.Size = new System.Drawing.Size(68, 17);
+            this.CheckBoxCrewEngineer.TabIndex = 10;
+            this.CheckBoxCrewEngineer.Text = "Engineer";
+            this.CheckBoxCrewEngineer.UseVisualStyleBackColor = true;
+            this.CheckBoxCrewEngineer.CheckedChanged += new System.EventHandler(this.CheckBoxCrewFilters_CheckedChanged);
             // 
-            // CheckBoxJump
+            // CheckBoxCrewJump
             // 
-            this.CheckBoxJump.AutoSize = true;
-            this.CheckBoxJump.Location = new System.Drawing.Point(251, 385);
-            this.CheckBoxJump.Name = "CheckBoxJump";
-            this.CheckBoxJump.Size = new System.Drawing.Size(51, 17);
-            this.CheckBoxJump.TabIndex = 11;
-            this.CheckBoxJump.Text = "Jump";
-            this.CheckBoxJump.UseVisualStyleBackColor = true;
-            this.CheckBoxJump.CheckedChanged += new System.EventHandler(this.CheckBoxFilters_CheckedChanged);
+            this.CheckBoxCrewJump.AutoSize = true;
+            this.CheckBoxCrewJump.Location = new System.Drawing.Point(262, 385);
+            this.CheckBoxCrewJump.Name = "CheckBoxCrewJump";
+            this.CheckBoxCrewJump.Size = new System.Drawing.Size(51, 17);
+            this.CheckBoxCrewJump.TabIndex = 11;
+            this.CheckBoxCrewJump.Text = "Jump";
+            this.CheckBoxCrewJump.UseVisualStyleBackColor = true;
+            this.CheckBoxCrewJump.CheckedChanged += new System.EventHandler(this.CheckBoxCrewFilters_CheckedChanged);
             // 
-            // CheckBoxNav
+            // CheckBoxCrewNav
             // 
-            this.CheckBoxNav.AutoSize = true;
-            this.CheckBoxNav.Location = new System.Drawing.Point(251, 408);
-            this.CheckBoxNav.Name = "CheckBoxNav";
-            this.CheckBoxNav.Size = new System.Drawing.Size(46, 17);
-            this.CheckBoxNav.TabIndex = 12;
-            this.CheckBoxNav.Text = "Nav";
-            this.CheckBoxNav.UseVisualStyleBackColor = true;
-            this.CheckBoxNav.CheckedChanged += new System.EventHandler(this.CheckBoxFilters_CheckedChanged);
+            this.CheckBoxCrewNav.AutoSize = true;
+            this.CheckBoxCrewNav.Location = new System.Drawing.Point(262, 408);
+            this.CheckBoxCrewNav.Name = "CheckBoxCrewNav";
+            this.CheckBoxCrewNav.Size = new System.Drawing.Size(46, 17);
+            this.CheckBoxCrewNav.TabIndex = 12;
+            this.CheckBoxCrewNav.Text = "Nav";
+            this.CheckBoxCrewNav.UseVisualStyleBackColor = true;
+            this.CheckBoxCrewNav.CheckedChanged += new System.EventHandler(this.CheckBoxCrewFilters_CheckedChanged);
             // 
-            // CheckBoxRepair
+            // CheckBoxCrewRepair
             // 
-            this.CheckBoxRepair.AutoSize = true;
-            this.CheckBoxRepair.Location = new System.Drawing.Point(251, 431);
-            this.CheckBoxRepair.Name = "CheckBoxRepair";
-            this.CheckBoxRepair.Size = new System.Drawing.Size(57, 17);
-            this.CheckBoxRepair.TabIndex = 13;
-            this.CheckBoxRepair.Text = "Repair";
-            this.CheckBoxRepair.UseVisualStyleBackColor = true;
-            this.CheckBoxRepair.CheckedChanged += new System.EventHandler(this.CheckBoxFilters_CheckedChanged);
+            this.CheckBoxCrewRepair.AutoSize = true;
+            this.CheckBoxCrewRepair.Location = new System.Drawing.Point(262, 431);
+            this.CheckBoxCrewRepair.Name = "CheckBoxCrewRepair";
+            this.CheckBoxCrewRepair.Size = new System.Drawing.Size(57, 17);
+            this.CheckBoxCrewRepair.TabIndex = 13;
+            this.CheckBoxCrewRepair.Text = "Repair";
+            this.CheckBoxCrewRepair.UseVisualStyleBackColor = true;
+            this.CheckBoxCrewRepair.CheckedChanged += new System.EventHandler(this.CheckBoxCrewFilters_CheckedChanged);
             // 
-            // CheckBoxTactical
+            // CheckBoxCrewTactical
             // 
-            this.CheckBoxTactical.AutoSize = true;
-            this.CheckBoxTactical.Location = new System.Drawing.Point(251, 454);
-            this.CheckBoxTactical.Name = "CheckBoxTactical";
-            this.CheckBoxTactical.Size = new System.Drawing.Size(64, 17);
-            this.CheckBoxTactical.TabIndex = 14;
-            this.CheckBoxTactical.Text = "Tactical";
-            this.CheckBoxTactical.UseVisualStyleBackColor = true;
-            this.CheckBoxTactical.CheckedChanged += new System.EventHandler(this.CheckBoxFilters_CheckedChanged);
+            this.CheckBoxCrewTactical.AutoSize = true;
+            this.CheckBoxCrewTactical.Location = new System.Drawing.Point(262, 454);
+            this.CheckBoxCrewTactical.Name = "CheckBoxCrewTactical";
+            this.CheckBoxCrewTactical.Size = new System.Drawing.Size(64, 17);
+            this.CheckBoxCrewTactical.TabIndex = 14;
+            this.CheckBoxCrewTactical.Text = "Tactical";
+            this.CheckBoxCrewTactical.UseVisualStyleBackColor = true;
+            this.CheckBoxCrewTactical.CheckedChanged += new System.EventHandler(this.CheckBoxCrewFilters_CheckedChanged);
             // 
-            // CheckBoxUtility
+            // CheckBoxCrewUtility
             // 
-            this.CheckBoxUtility.AutoSize = true;
-            this.CheckBoxUtility.Location = new System.Drawing.Point(251, 477);
-            this.CheckBoxUtility.Name = "CheckBoxUtility";
-            this.CheckBoxUtility.Size = new System.Drawing.Size(51, 17);
-            this.CheckBoxUtility.TabIndex = 15;
-            this.CheckBoxUtility.Text = "Utility";
-            this.CheckBoxUtility.UseVisualStyleBackColor = true;
-            this.CheckBoxUtility.CheckedChanged += new System.EventHandler(this.CheckBoxFilters_CheckedChanged);
+            this.CheckBoxCrewUtility.AutoSize = true;
+            this.CheckBoxCrewUtility.Location = new System.Drawing.Point(262, 477);
+            this.CheckBoxCrewUtility.Name = "CheckBoxCrewUtility";
+            this.CheckBoxCrewUtility.Size = new System.Drawing.Size(51, 17);
+            this.CheckBoxCrewUtility.TabIndex = 15;
+            this.CheckBoxCrewUtility.Text = "Utility";
+            this.CheckBoxCrewUtility.UseVisualStyleBackColor = true;
+            this.CheckBoxCrewUtility.CheckedChanged += new System.EventHandler(this.CheckBoxCrewFilters_CheckedChanged);
             // 
             // ListViewFilteredCrew
             // 
             this.ListViewFilteredCrew.Location = new System.Drawing.Point(347, 293);
             this.ListViewFilteredCrew.Name = "ListViewFilteredCrew";
-            this.ListViewFilteredCrew.Size = new System.Drawing.Size(662, 377);
+            this.ListViewFilteredCrew.Size = new System.Drawing.Size(662, 201);
             this.ListViewFilteredCrew.TabIndex = 16;
             this.ListViewFilteredCrew.UseCompatibleStateImageBehavior = false;
             this.ListViewFilteredCrew.View = System.Windows.Forms.View.Tile;
+            // 
+            // ListViewImplants
+            // 
+            this.ListViewImplants.Location = new System.Drawing.Point(347, 500);
+            this.ListViewImplants.Name = "ListViewImplants";
+            this.ListViewImplants.Size = new System.Drawing.Size(662, 201);
+            this.ListViewImplants.TabIndex = 17;
+            this.ListViewImplants.TileSize = new System.Drawing.Size(168, 30);
+            this.ListViewImplants.UseCompatibleStateImageBehavior = false;
             // 
             // CrewSetBoxMain
             // 
             this.CrewSetBoxMain.Location = new System.Drawing.Point(241, 7);
             this.CrewSetBoxMain.Name = "CrewSetBoxMain";
-            this.CrewSetBoxMain.Size = new System.Drawing.Size(812, 289);
+            this.CrewSetBoxMain.Size = new System.Drawing.Size(812, 280);
             this.CrewSetBoxMain.TabIndex = 3;
+            // 
+            // CheckBoxImpUtil
+            // 
+            this.CheckBoxImpUtil.AutoSize = true;
+            this.CheckBoxImpUtil.Location = new System.Drawing.Point(262, 601);
+            this.CheckBoxImpUtil.Name = "CheckBoxImpUtil";
+            this.CheckBoxImpUtil.Size = new System.Drawing.Size(51, 17);
+            this.CheckBoxImpUtil.TabIndex = 20;
+            this.CheckBoxImpUtil.Text = "Utility";
+            this.CheckBoxImpUtil.UseVisualStyleBackColor = true;
+            this.CheckBoxImpUtil.CheckedChanged += new System.EventHandler(this.CheckBoxImplantFilters_CheckedChanged);
+            // 
+            // CheckBoxImpDef
+            // 
+            this.CheckBoxImpDef.AutoSize = true;
+            this.CheckBoxImpDef.Location = new System.Drawing.Point(262, 578);
+            this.CheckBoxImpDef.Name = "CheckBoxImpDef";
+            this.CheckBoxImpDef.Size = new System.Drawing.Size(66, 17);
+            this.CheckBoxImpDef.TabIndex = 19;
+            this.CheckBoxImpDef.Text = "Defense";
+            this.CheckBoxImpDef.UseVisualStyleBackColor = true;
+            this.CheckBoxImpDef.CheckedChanged += new System.EventHandler(this.CheckBoxImplantFilters_CheckedChanged);
+            // 
+            // CheckBoxImpAtk
+            // 
+            this.CheckBoxImpAtk.AutoSize = true;
+            this.CheckBoxImpAtk.Location = new System.Drawing.Point(262, 555);
+            this.CheckBoxImpAtk.Name = "CheckBoxImpAtk";
+            this.CheckBoxImpAtk.Size = new System.Drawing.Size(57, 17);
+            this.CheckBoxImpAtk.TabIndex = 18;
+            this.CheckBoxImpAtk.Text = "Attack";
+            this.CheckBoxImpAtk.UseVisualStyleBackColor = true;
+            this.CheckBoxImpAtk.CheckedChanged += new System.EventHandler(this.CheckBoxImplantFilters_CheckedChanged);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1057, 821);
+            this.Controls.Add(this.CheckBoxImpUtil);
+            this.Controls.Add(this.CheckBoxImpDef);
+            this.Controls.Add(this.CheckBoxImpAtk);
+            this.Controls.Add(this.ListViewImplants);
             this.Controls.Add(this.ListViewFilteredCrew);
-            this.Controls.Add(this.CheckBoxUtility);
-            this.Controls.Add(this.CheckBoxTactical);
-            this.Controls.Add(this.CheckBoxRepair);
-            this.Controls.Add(this.CheckBoxNav);
-            this.Controls.Add(this.CheckBoxJump);
-            this.Controls.Add(this.CheckBoxEngineer);
-            this.Controls.Add(this.CheckBoxComms);
-            this.Controls.Add(this.CheckBoxCaptain);
-            this.Controls.Add(this.CheckBoxCag);
+            this.Controls.Add(this.CheckBoxCrewUtility);
+            this.Controls.Add(this.CheckBoxCrewTactical);
+            this.Controls.Add(this.CheckBoxCrewRepair);
+            this.Controls.Add(this.CheckBoxCrewNav);
+            this.Controls.Add(this.CheckBoxCrewJump);
+            this.Controls.Add(this.CheckBoxCrewEngineer);
+            this.Controls.Add(this.CheckBoxCrewComms);
+            this.Controls.Add(this.CheckBoxCrewCaptain);
+            this.Controls.Add(this.CheckBoxCrewCag);
             this.Controls.Add(this.ButtonDelete);
             this.Controls.Add(this.labelCcuCount);
             this.Controls.Add(this.LabelFsRunningWarning);
@@ -262,16 +312,20 @@
         private System.Windows.Forms.Label LabelFsRunningWarning;
         private System.Windows.Forms.Label labelCcuCount;
         private System.Windows.Forms.Button ButtonDelete;
-        private System.Windows.Forms.CheckBox CheckBoxCag;
-        private System.Windows.Forms.CheckBox CheckBoxCaptain;
-        private System.Windows.Forms.CheckBox CheckBoxComms;
-        private System.Windows.Forms.CheckBox CheckBoxEngineer;
-        private System.Windows.Forms.CheckBox CheckBoxJump;
-        private System.Windows.Forms.CheckBox CheckBoxNav;
-        private System.Windows.Forms.CheckBox CheckBoxRepair;
-        private System.Windows.Forms.CheckBox CheckBoxTactical;
-        private System.Windows.Forms.CheckBox CheckBoxUtility;
+        private System.Windows.Forms.CheckBox CheckBoxCrewCag;
+        private System.Windows.Forms.CheckBox CheckBoxCrewCaptain;
+        private System.Windows.Forms.CheckBox CheckBoxCrewComms;
+        private System.Windows.Forms.CheckBox CheckBoxCrewEngineer;
+        private System.Windows.Forms.CheckBox CheckBoxCrewJump;
+        private System.Windows.Forms.CheckBox CheckBoxCrewNav;
+        private System.Windows.Forms.CheckBox CheckBoxCrewRepair;
+        private System.Windows.Forms.CheckBox CheckBoxCrewTactical;
+        private System.Windows.Forms.CheckBox CheckBoxCrewUtility;
         private System.Windows.Forms.ListView ListViewFilteredCrew;
+        private System.Windows.Forms.ListView ListViewImplants;
+        private System.Windows.Forms.CheckBox CheckBoxImpUtil;
+        private System.Windows.Forms.CheckBox CheckBoxImpDef;
+        private System.Windows.Forms.CheckBox CheckBoxImpAtk;
     }
 }
 

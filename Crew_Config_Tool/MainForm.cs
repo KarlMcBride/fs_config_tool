@@ -18,6 +18,7 @@ namespace FS_Crew_Config_Tool
         private const int ITERATIONS_TO_UPDATE_CCU = 60;
 
         private CheckBox[] crewFilterArray;
+        private CheckBox[] implantFilterArray;
 
         public MainForm()
         {
@@ -39,8 +40,10 @@ namespace FS_Crew_Config_Tool
 
             ConfigureBackgroundWorker();
 
-            crewFilterArray = new CheckBox[] { CheckBoxCag, CheckBoxCaptain, CheckBoxComms, CheckBoxEngineer, CheckBoxJump,
-                                               CheckBoxNav, CheckBoxRepair, CheckBoxTactical, CheckBoxUtility };
+            crewFilterArray = new CheckBox[] { CheckBoxCrewCag, CheckBoxCrewCaptain, CheckBoxCrewComms, CheckBoxCrewEngineer, CheckBoxCrewJump,
+                                               CheckBoxCrewNav, CheckBoxCrewRepair, CheckBoxCrewTactical, CheckBoxCrewUtility };
+
+            implantFilterArray = new CheckBox[] { CheckBoxImpAtk, CheckBoxImpDef, CheckBoxImpUtil };
         }
 
         private void ConfigureBackgroundWorker()
@@ -170,9 +173,14 @@ namespace FS_Crew_Config_Tool
             ButtonDelete.Enabled = (index > -1) ? true : false;
         }
 
-        private void CheckBoxFilters_CheckedChanged(object sender, EventArgs e)
+        private void CheckBoxCrewFilters_CheckedChanged(object sender, EventArgs e)
         {
             uiOffload.PopulateCrewListing(crewFilterArray, ref ListViewFilteredCrew);
+        }
+
+        private void CheckBoxImplantFilters_CheckedChanged(object sender, EventArgs e)
+        {
+            uiOffload.PopulateImplantListing(implantFilterArray, ref ListViewImplants);
         }
     }
 }
