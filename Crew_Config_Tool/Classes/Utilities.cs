@@ -79,14 +79,10 @@ namespace FS_Crew_Config_Tool.Classes
 
             string playerCount = "N/A";
 
-            // "Parse" the uri Response if it's populated
-            if (!uriResponse.Equals(string.Empty))
-            {
-                char[] separators = { ',', ':' };
-                string[] parsed = uriResponse.Split(separators);
+            char[] separators = { ',', ':' };
+            string[] parsed = uriResponse.Split(separators);
 
-                playerCount = parsed[2];
-            }
+            playerCount = parsed[2];
 
             return playerCount;
         }

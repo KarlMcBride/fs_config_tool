@@ -25,6 +25,13 @@ namespace UnitTests.UiComponents
 
             CrewBox crewBox = new CrewBox();
             crewBox.DisplaySelectedCrew(enumeratedCrew);
+
+            Assert.IsFalse(crewBox.CheckDisplayedCrewImage());
+
+            for (int implantIndex = 0; implantIndex < 3; implantIndex++)
+            {
+                Assert.IsFalse(crewBox.CheckDisplayedImplantImage(implantIndex));
+            }
         }
 
         [TestMethod]
@@ -39,6 +46,11 @@ namespace UnitTests.UiComponents
 
             CrewBox crewBox = new CrewBox();
             crewBox.DisplaySelectedCrew(enumeratedCrew);
+
+            for (int implantIndex = 0; implantIndex < 3; implantIndex++)
+            {
+                Assert.IsTrue(crewBox.CheckDisplayedImplantImage(implantIndex));
+            }
         }
     }
 }

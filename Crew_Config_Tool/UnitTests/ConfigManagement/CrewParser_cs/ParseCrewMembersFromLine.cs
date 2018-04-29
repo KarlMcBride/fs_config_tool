@@ -30,6 +30,18 @@ namespace UnitTests.ConfigManagement.CrewParser_cs
             }
         }
 
+        /// <summary>
+        /// Ensure that if a nonsensical line is parsed, that a default blank crew is returned
+        /// </summary>
+        [TestMethod]
+        public void ParseDudRoster()
+        {
+            TeamConfig expected = new TeamConfig();
+            TeamConfig actual = CrewParser.ParseCrewMembersFromLine("x");
+
+            VerifyCrewsMatch(expected, actual);
+        }
+
         [TestMethod]
         public void ParseRosterWithClaraOnlyNoImplants()
         {
