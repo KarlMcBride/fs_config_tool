@@ -2,7 +2,6 @@
 using FS_Crew_Config_Tool.UiComponents;
 using System;
 using System.ComponentModel;
-using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -173,21 +172,7 @@ namespace FS_Crew_Config_Tool
 
         private void CheckBoxFilters_CheckedChanged(object sender, EventArgs e)
         {
-            ListViewFilteredCrew.Clear();
-
-            ImageList imageList = new ImageList();
-            imageList.ColorDepth = ColorDepth.Depth16Bit;
-
-            int crew_w = 100;
-            int crew_h = 177;
-            int buffer = 5;
-
-            ListViewFilteredCrew.TileSize = new Size(crew_w + buffer, crew_h + buffer);
-            imageList.ImageSize = new Size(crew_w, crew_h);
-
-            uiOffload.PopulateCrewListing(crewFilterArray, ref imageList, ref ListViewFilteredCrew);
-
-            ListViewFilteredCrew.LargeImageList = imageList;
+            uiOffload.PopulateCrewListing(crewFilterArray, ref ListViewFilteredCrew);
         }
     }
 }

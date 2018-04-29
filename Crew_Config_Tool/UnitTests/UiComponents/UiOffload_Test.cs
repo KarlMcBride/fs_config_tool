@@ -43,8 +43,7 @@ namespace UnitTests.UiComponents
                 ImageList imageList = new ImageList();
                 ListView listView = new ListView();
 
-                uiOffload.PopulateCrewListing(array, ref imageList, ref listView);
-                listView.LargeImageList = imageList;
+                uiOffload.PopulateCrewListing(array, ref listView);
 
                 array[role].Checked = false;
 
