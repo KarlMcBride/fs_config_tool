@@ -47,7 +47,7 @@ namespace UnitTests.UiComponents
 
                 array[role].Checked = false;
 
-                for (int index = 0; index < imageList.Images.Count; index++)
+                for (int index = 0; index < listView.Items.Count; index++)
                 {
                     Assert.IsNotNull(listView.Items[index].ImageIndex, "Image index [" + index + "] is null");
                 }
