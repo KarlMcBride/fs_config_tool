@@ -217,6 +217,7 @@
             this.ListViewFilteredCrew.TabIndex = 16;
             this.ListViewFilteredCrew.UseCompatibleStateImageBehavior = false;
             this.ListViewFilteredCrew.View = System.Windows.Forms.View.Tile;
+            this.ListViewFilteredCrew.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ListViewFilteredCrew_MouseDoubleClick);
             // 
             // ListViewImplants
             // 

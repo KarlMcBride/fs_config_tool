@@ -205,5 +205,10 @@ namespace FS_Crew_Config_Tool
 
             return nextSelectable;
         }
+
+        public void AddSelectedMemberToCrew(string crewName)
+        {
+
+        }
     }
 }

@@ -45,6 +45,18 @@ namespace FS_Crew_Config_Tool.Classes
             return myImage;
         }
 
+        public static CrewEnum ConvertCrewStringToEnum(string crewName)
+        {
+            bool parseSuccessful = Enum.TryParse(crewName, out CrewEnum crewMember);
+
+            if (!parseSuccessful)
+            {
+                crewMember = CrewEnum.NONE;
+            }
+
+            return crewMember;
+        }
+
         public static bool CheckIfFracSpaceIsRunning(string processName)
         {
             Process[] processlist = Process.GetProcesses();

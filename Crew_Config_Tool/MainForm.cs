@@ -182,5 +182,12 @@ namespace FS_Crew_Config_Tool
         {
             uiOffload.PopulateImplantListing(implantFilterArray, ref ListViewImplants);
         }
+
+        private void ListViewFilteredCrew_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            string crewName = ListViewFilteredCrew.FocusedItem.Text;
+
+            config.AddSelectedMemberToCrew(crewName);
+        }
     }
 }

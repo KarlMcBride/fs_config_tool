@@ -74,6 +74,36 @@ namespace UnitTests
         }
 
         [TestMethod]
+        public void ConvertValidCrewMemberStringsToEnum()
+        {
+            for (int index = 0; index < (int)CrewEnum.NONE; index++)
+            {
+                CrewEnum inputCrew = (CrewEnum)index;
+                string crewAsString = inputCrew.ToString();
+
+                CrewEnum outputCrew = Utilities.ConvertCrewStringToEnum(crewAsString);
+
+                Assert.AreEqual(inputCrew, outputCrew, "Crew doesn't match, [" + inputCrew + " , " + outputCrew + "]");
+            }
+        }
+
+        [TestMethod]
+        public void ConvertEmptyCrewMemberStringToEnum()
+        {
+            CrewEnum outputCrew = Utilities.ConvertCrewStringToEnum("");
+
+            Assert.AreEqual(CrewEnum.NONE, outputCrew, "Output is not CrewEnum.None [" + outputCrew + "]");
+        }
+
+        [TestMethod]
+        public void ConvertInvalidCrewMemberStringToEnum()
+        {
+            CrewEnum outputCrew = Utilities.ConvertCrewStringToEnum("Invalid crew string");
+
+            Assert.AreEqual(CrewEnum.NONE, outputCrew, "Output for is not CrewEnum.None [" + outputCrew + "]");
+        }
+
+        [TestMethod]
         public void GetOnlinePlayerCount()
         {
             string unexpected = "N/A";
