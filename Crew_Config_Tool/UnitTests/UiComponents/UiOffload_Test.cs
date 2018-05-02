@@ -31,9 +31,9 @@ namespace UnitTests.UiComponents
         [TestMethod]
         public void PopulateCrewListing()
         {
-            CheckBox[] array = CreateCheckBoxArray((int)CrewRole.UTILITY + 1);
+            CheckBox[] array = CreateCheckBoxArray((int)CrewRole.NONE);
 
-            for (int role = 0; role <= (int)CrewRole.UTILITY; role++)
+            for (int role = 0; role < (int)CrewRole.NONE; role++)
             {
                 array[role].Checked = true;
 

@@ -2,6 +2,7 @@
 using FS_Crew_Config_Tool.Classes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Drawing;
+using UnitTests.ConfigParsing.TestData;
 
 namespace UnitTests
 {

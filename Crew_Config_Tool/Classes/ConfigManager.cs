@@ -206,9 +206,18 @@ namespace FS_Crew_Config_Tool
             return nextSelectable;
         }
 
-        public void AddSelectedMemberToCrew(string crewName)
+        public bool AddSelectedMemberToSelectedCrew(string crewName, int selectedTeam)
         {
+            CrewEnum selectedCrewRole = Utilities.ConvertCrewStringToEnum(crewName);
 
+            bool addSuccessful = false;
+
+            if (CrewData != null)
+            {
+                ConfigUtilities.CheckCrewTeamForSelectedMembersRoleIsPresent(selectedCrewRole, CrewData[selectedTeam].Team);
+            }
+
+            return addSuccessful;
         }
     }
 }

@@ -13,7 +13,11 @@ namespace FS_Crew_Config_Tool
         NAV_OFFICER,
         REPAIR,
         TACTICAL,
-        UTILITY
+        UTILITY,
+        /// <summary>
+        /// End of list value - for iteration
+        /// </summary>
+        NONE
     }
 
     public enum CrewEnum
@@ -101,7 +105,9 @@ namespace FS_Crew_Config_Tool
         SCALPEL,
         SERAPHINE_VEGA,
         ZHANG_TAO,
-        // End of List
+        /// <summary>
+        /// End of list value - for iteration
+        /// </summary>
         NONE
     }
 
