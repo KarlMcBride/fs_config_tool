@@ -4,11 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace FS_Crew_Config_Tool
 {
     public class ConfigManager
     {
+        private const int UNSELECTED_INDEX = -1;
+
         private const string FS_PATH = "..\\Local\\spacegame\\Saved\\Config\\WindowsNoEditor\\GameUserSettings.ini";
 
         private string CompletePath
@@ -187,10 +190,10 @@ namespace FS_Crew_Config_Tool
 
         public int GetNextSelectableItem(int currentlySelectedItem, int numOfItems)
         {
-            int nextSelectable = -1;
+            int nextSelectable = UNSELECTED_INDEX;
 
             // Only calculate if there's 2 or more items present, and an item is selected
-            if (currentlySelectedItem > -1 || numOfItems > 1)
+            if (currentlySelectedItem > UNSELECTED_INDEX || numOfItems > 1)
             {
                 // If last item is selected, decrement by one
                 if (currentlySelectedItem == (numOfItems - 1))
@@ -208,20 +211,32 @@ namespace FS_Crew_Config_Tool
 
         public bool AddSelectedMemberToSelectedCrew(string crewName, int selectedTeam)
         {
-            CrewEnum selectedCrewName = Utilities.ConvertCrewStringToEnum(crewName);
+            CrewEnum selectedCrewID = Utilities.ConvertCrewStringToEnum(crewName);
 
             bool addSuccessful = false;
 
-            if (CrewData != null)
+            if (CrewData != null && selectedTeam > UNSELECTED_INDEX)
             {
                 int matchIndex =
-                    ConfigUtilities.CheckCrewTeamForSelectedMembersRoleIsPresent(selectedCrewName, CrewData[selectedTeam].Team);
+                    ConfigUtilities.CheckCrewTeamForSelectedMembersRoleIsPresent(selectedCrewID, CrewData[selectedTeam].Team);
 
                 // Swap out the current crew in the set with the newly selected one if its role matches
                 if (matchIndex != ConfigUtilities.CREW_NOT_FOUND)
                 {
-                    CrewData[selectedTeam].Team.CrewMembers[matchIndex].CrewID = selectedCrewName;
+                    CrewData[selectedTeam].Team.CrewMembers[matchIndex].CrewID = selectedCrewID;
                     addSuccessful = true;
+                }
+                else if (ConfigUtilities.CountNumberOfCrewInTeam(CrewData[selectedTeam].Team) < 5)
+                {
+                    int nextFreeSlot = ConfigUtilities.FindFirstFreeSlot(CrewData[selectedTeam].Team);
+
+                    CrewData[selectedTeam].Team.CrewMembers[nextFreeSlot].CrewID = selectedCrewID;
+                    addSuccessful = true;
+                }
+                else
+                {
+                    MessageBox.Show("Crew is full. Remove a member and try again.", "Notice",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
 

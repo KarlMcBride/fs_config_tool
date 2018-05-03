@@ -34,5 +34,41 @@
 
             return matchIndex;
         }
+
+        /// <summary>
+        /// Counts the number of crew members in the team i.e. CrewID != CrewEnum.NONE
+        /// </summary>
+        /// <param name="selectedTeam">Team to run a count on</param>
+        /// <returns>Int number of crew in team</returns>
+        public static int CountNumberOfCrewInTeam(TeamConfig selectedTeam)
+        {
+            int crewCount = 0;
+
+            for (int index = 0; index < 5; index++)
+            {
+                if (selectedTeam.CrewMembers[index].CrewID != CrewEnum.NONE)
+                {
+                    crewCount++;
+                }
+            }
+
+            return crewCount;
+        }
+
+        public static int FindFirstFreeSlot(TeamConfig selectedTeam)
+        {
+            int nextFreeSlot = CREW_NOT_FOUND;
+
+            for (int index = 0; index < 5; index++)
+            {
+                if (selectedTeam.CrewMembers[index].CrewID == CrewEnum.NONE)
+                {
+                    nextFreeSlot = index;
+                    break;
+                }
+            }
+
+            return nextFreeSlot;
+        }
     }
 }
