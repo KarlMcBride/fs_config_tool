@@ -21,12 +21,15 @@ namespace UnitTests.ConfigManagement
         {
             TeamConfig teamConfig = ParsedData.BasicFiveMembersNoImplants();
 
-            // Use the first member's enum, as it will be in the config we're checking against
-            CrewEnum crew = teamConfig.CrewMembers[0].CrewID;
+            for (int crewIndex = 0; crewIndex < 5; crewIndex++)
+            {
+                // Use the first member's enum, as it will be in the config we're checking against
+                CrewEnum crew = teamConfig.CrewMembers[crewIndex].CrewID;
 
-            bool result = ConfigUtilities.CheckCrewTeamForSelectedMembersRoleIsPresent(crew, teamConfig);
+                int result = ConfigUtilities.CheckCrewTeamForSelectedMembersRoleIsPresent(crew, teamConfig);
 
-            Assert.IsTrue(result, "Expected a match for [" + crew.ToString() + "]");
+                Assert.AreEqual(crewIndex, result, "Expected a match for [" + crew.ToString() + "]");
+            }
         }
 
         [TestMethod]
@@ -34,9 +37,9 @@ namespace UnitTests.ConfigManagement
         {
             TeamConfig teamConfig = ParsedData.FiveMembersFullImplantsOrdered();
 
-            bool result = ConfigUtilities.CheckCrewTeamForSelectedMembersRoleIsPresent(CrewEnum.DICE_CAPLAN, teamConfig);
+            int result = ConfigUtilities.CheckCrewTeamForSelectedMembersRoleIsPresent(CrewEnum.DICE_CAPLAN, teamConfig);
 
-            Assert.IsFalse(result, "Expected no match");
+            Assert.AreEqual(ConfigUtilities.CREW_NOT_FOUND, result, "Expected no match");
         }
 
         [TestMethod]
@@ -44,9 +47,9 @@ namespace UnitTests.ConfigManagement
         {
             TeamConfig teamConfig = new TeamConfig();
 
-            bool result = ConfigUtilities.CheckCrewTeamForSelectedMembersRoleIsPresent(CrewEnum.DICE_CAPLAN, teamConfig);
+            int result = ConfigUtilities.CheckCrewTeamForSelectedMembersRoleIsPresent(CrewEnum.DICE_CAPLAN, teamConfig);
 
-            Assert.IsFalse(result, "Expected no match");
+            Assert.AreEqual(ConfigUtilities.CREW_NOT_FOUND, result, "Expected no match");
         }
 
         [TestMethod]
@@ -54,9 +57,9 @@ namespace UnitTests.ConfigManagement
         {
             TeamConfig teamConfig = ParsedData.BasicFiveMembersNoImplants();
 
-            bool result = ConfigUtilities.CheckCrewTeamForSelectedMembersRoleIsPresent(CrewEnum.NONE, teamConfig);
+            int result = ConfigUtilities.CheckCrewTeamForSelectedMembersRoleIsPresent(CrewEnum.NONE, teamConfig);
 
-            Assert.IsFalse(result, "Expected no match");
+            Assert.AreEqual(ConfigUtilities.CREW_NOT_FOUND, result, "Expected no match");
         }
 
         [TestMethod]
@@ -64,9 +67,9 @@ namespace UnitTests.ConfigManagement
         {
             TeamConfig teamConfig = new TeamConfig();
 
-            bool result = ConfigUtilities.CheckCrewTeamForSelectedMembersRoleIsPresent(CrewEnum.NONE, teamConfig);
+            int result = ConfigUtilities.CheckCrewTeamForSelectedMembersRoleIsPresent(CrewEnum.NONE, teamConfig);
 
-            Assert.IsFalse(result, "Expected no match");
+            Assert.AreEqual(ConfigUtilities.CREW_NOT_FOUND, result, "Expected no match");
         }
     }
 }

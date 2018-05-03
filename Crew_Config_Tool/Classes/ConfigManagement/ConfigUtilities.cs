@@ -2,15 +2,17 @@
 {
     public static class ConfigUtilities
     {
+        public const int CREW_NOT_FOUND = -1;
+
         /// <summary>
         /// Scans all five crew slots, and checks for any match.
         /// </summary>
         /// <param name="crewEnum">Crew member to check for. Its Role type is used to check against</param>
         /// <param name="selectedTeam">Team config to check against</param>
-        /// <returns>True if matching role is present, otherwise false</returns>
-        public static bool CheckCrewTeamForSelectedMembersRoleIsPresent(CrewEnum crewEnum, TeamConfig selectedTeam)
+        /// <returns>Index of match if found (0-4), or -1 if not found</returns>
+        public static int CheckCrewTeamForSelectedMembersRoleIsPresent(CrewEnum crewEnum, TeamConfig selectedTeam)
         {
-            bool isRolePresent = false;
+            int matchIndex = CREW_NOT_FOUND;
 
             CrewRole selectedRole = (crewEnum == CrewEnum.NONE) ? CrewRole.NONE : CrewList.CrewListing[(int)crewEnum].Role;
 
@@ -24,13 +26,13 @@
 
                     if (selectedRole == currentRole)
                     {
-                        isRolePresent = true;
+                        matchIndex = index;
                         break;
                     }
                 }
             }
 
-            return isRolePresent;
+            return matchIndex;
         }
     }
 }

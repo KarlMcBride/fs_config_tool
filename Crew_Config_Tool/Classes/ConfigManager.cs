@@ -208,13 +208,21 @@ namespace FS_Crew_Config_Tool
 
         public bool AddSelectedMemberToSelectedCrew(string crewName, int selectedTeam)
         {
-            CrewEnum selectedCrewRole = Utilities.ConvertCrewStringToEnum(crewName);
+            CrewEnum selectedCrewName = Utilities.ConvertCrewStringToEnum(crewName);
 
             bool addSuccessful = false;
 
             if (CrewData != null)
             {
-                ConfigUtilities.CheckCrewTeamForSelectedMembersRoleIsPresent(selectedCrewRole, CrewData[selectedTeam].Team);
+                int matchIndex =
+                    ConfigUtilities.CheckCrewTeamForSelectedMembersRoleIsPresent(selectedCrewName, CrewData[selectedTeam].Team);
+
+                // Swap out the current crew in the set with the newly selected one if its role matches
+                if (matchIndex != ConfigUtilities.CREW_NOT_FOUND)
+                {
+                    CrewData[selectedTeam].Team.CrewMembers[matchIndex].CrewID = selectedCrewName;
+                    addSuccessful = true;
+                }
             }
 
             return addSuccessful;

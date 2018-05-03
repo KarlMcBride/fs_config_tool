@@ -8,6 +8,9 @@ namespace UnitTests.UiComponents
     [TestClass]
     public class CrewSetBox_Test
     {
+        private const bool EXPECTING_IMAGE = true;
+        private const bool EXPECTING_NULL = false;
+
         [TestMethod]
         public void CrewBox_Load()
         {
@@ -23,6 +26,36 @@ namespace UnitTests.UiComponents
         {
             CrewSetBox crewSetBox = new CrewSetBox();
             crewSetBox.DisplaySelectedTeam(ParsedData.FiveMembersFullImplantsOrdered(), null);
+
+            for(int index = 0; index < 5; index++)
+            {
+                Assert.IsNotNull(crewSetBox.CheckCrewImageState(index, EXPECTING_IMAGE));
+            }
+        }
+
+        [TestMethod]
+        public void ClearBlankCrew()
+        {
+            CrewSetBox crewSetBox = new CrewSetBox();
+            crewSetBox.ClearDisplayedTeam(null);
+
+            for (int index = 0; index < 5; index++)
+            {
+                Assert.IsNotNull(crewSetBox.CheckCrewImageState(index, EXPECTING_NULL));
+            }
+        }
+
+        [TestMethod]
+        public void ClearFullCrew()
+        {
+            CrewSetBox crewSetBox = new CrewSetBox();
+            crewSetBox.DisplaySelectedTeam(ParsedData.FiveMembersFullImplantsOrdered(), null);
+            crewSetBox.ClearDisplayedTeam(null);
+
+            for (int index = 0; index < 5; index++)
+            {
+                Assert.IsNotNull(crewSetBox.CheckCrewImageState(index, EXPECTING_NULL));
+            }
         }
     }
 }

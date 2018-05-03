@@ -187,7 +187,14 @@ namespace FS_Crew_Config_Tool
         {
             string crewName = ListViewFilteredCrew.FocusedItem.Text;
 
-            config.AddSelectedMemberToSelectedCrew(crewName, ListBoxCrews.SelectedIndex);
+            bool addSuccessful = config.AddSelectedMemberToSelectedCrew(crewName, ListBoxCrews.SelectedIndex);
+
+            if (addSuccessful)
+            {
+                int selectedIndex = ListBoxCrews.SelectedIndex;
+
+                CrewSetBoxMain.DisplaySelectedTeam(config.CrewData[selectedIndex].Team, CrewSetBoxMain);
+            }
         }
     }
 }

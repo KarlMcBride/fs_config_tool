@@ -30,5 +30,16 @@ namespace FS_Crew_Config_Tool.UiComponents
                 crewBoxArray[index].DisplaySelectedCrew(team.CrewMembers[index]);
             }
         }
+
+        /// <summary>
+        /// Helper method intended for unit-testing. Checks an indexed crewbox for an image
+        /// </summary>
+        /// <param name="index">CrewBox array index to check</param>
+        /// <param name="expectingImage">Bool flag, affects return val</param>
+        /// <returns>If eI is true, returns true if image not null. If eI is false, returns false</returns>
+        public bool CheckCrewImageState(int index, bool expectingImage)
+        {
+             return crewBoxArray[index].CheckDisplayedCrewImage();
+        }
     }
 }
