@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
-using System.Windows.Forms;
 
 namespace FS_Crew_Config_Tool
 {
@@ -215,28 +214,32 @@ namespace FS_Crew_Config_Tool
 
             bool addSuccessful = false;
 
-            if (CrewData != null && selectedTeam > UNSELECTED_INDEX)
+            if (selectedCrewID != CrewEnum.NONE && CrewData != null && CrewData.Count > 0 && selectedTeam > UNSELECTED_INDEX)
             {
                 int matchIndex =
                     ConfigUtilities.CheckCrewTeamForSelectedMembersRoleIsPresent(selectedCrewID, CrewData[selectedTeam].Team);
 
+                // If the selected crew member is a captain, add it into the middle slot
+                if (CrewList.CrewListing[(int)selectedCrewID].Role == CrewRole.CAPTAIN)
+                {
+                    CrewData[selectedTeam].Team.CrewMembers[ConfigUtilities.CAPTAIN_SLOT].CrewID = selectedCrewID;
+                    addSuccessful = true;
+                }
                 // Swap out the current crew in the set with the newly selected one if its role matches
-                if (matchIndex != ConfigUtilities.CREW_NOT_FOUND)
+                else if (matchIndex != ConfigUtilities.OUT_OF_BOUNDS)
                 {
                     CrewData[selectedTeam].Team.CrewMembers[matchIndex].CrewID = selectedCrewID;
                     addSuccessful = true;
                 }
                 else if (ConfigUtilities.CountNumberOfCrewInTeam(CrewData[selectedTeam].Team) < 5)
                 {
-                    int nextFreeSlot = ConfigUtilities.FindFirstFreeSlot(CrewData[selectedTeam].Team);
+                    int nextFreeSlot = ConfigUtilities.FindFirstFreeSlotForNonCaptain(CrewData[selectedTeam].Team);
 
-                    CrewData[selectedTeam].Team.CrewMembers[nextFreeSlot].CrewID = selectedCrewID;
-                    addSuccessful = true;
-                }
-                else
-                {
-                    MessageBox.Show("Crew is full. Remove a member and try again.", "Notice",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (nextFreeSlot > ConfigUtilities.OUT_OF_BOUNDS)
+                    {
+                        CrewData[selectedTeam].Team.CrewMembers[nextFreeSlot].CrewID = selectedCrewID;
+                        addSuccessful = true;
+                    }
                 }
             }
 

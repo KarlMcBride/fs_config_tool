@@ -39,7 +39,7 @@ namespace UnitTests.ConfigManagement
 
             int result = ConfigUtilities.CheckCrewTeamForSelectedMembersRoleIsPresent(CrewEnum.DICE_CAPLAN, teamConfig);
 
-            Assert.AreEqual(ConfigUtilities.CREW_NOT_FOUND, result, "Expected no match");
+            Assert.AreEqual(ConfigUtilities.OUT_OF_BOUNDS, result, "Expected no match");
         }
 
         [TestMethod]
@@ -49,7 +49,7 @@ namespace UnitTests.ConfigManagement
 
             int result = ConfigUtilities.CheckCrewTeamForSelectedMembersRoleIsPresent(CrewEnum.DICE_CAPLAN, teamConfig);
 
-            Assert.AreEqual(ConfigUtilities.CREW_NOT_FOUND, result, "Expected no match");
+            Assert.AreEqual(ConfigUtilities.OUT_OF_BOUNDS, result, "Expected no match");
         }
 
         [TestMethod]
@@ -59,7 +59,23 @@ namespace UnitTests.ConfigManagement
 
             int result = ConfigUtilities.CheckCrewTeamForSelectedMembersRoleIsPresent(CrewEnum.NONE, teamConfig);
 
-            Assert.AreEqual(ConfigUtilities.CREW_NOT_FOUND, result, "Expected no match");
+            Assert.AreEqual(ConfigUtilities.OUT_OF_BOUNDS, result, "Expected no match");
+        }
+
+        [TestMethod]
+        public void CheckPresentCrewMemberAgainstFullTeam()
+        {
+            TeamConfig teamConfig = ParsedData.BasicFiveMembersNoImplants();
+
+            for(int index = 0; index < 5; index++)
+            {
+                CrewEnum crewId = teamConfig.CrewMembers[index].CrewID;
+
+                int result = ConfigUtilities.CheckCrewTeamForSelectedMembersRoleIsPresent(crewId, teamConfig);
+
+                Assert.AreEqual(index, result, "Expected a match");
+
+            }
         }
 
         [TestMethod]
@@ -69,7 +85,68 @@ namespace UnitTests.ConfigManagement
 
             int result = ConfigUtilities.CheckCrewTeamForSelectedMembersRoleIsPresent(CrewEnum.NONE, teamConfig);
 
-            Assert.AreEqual(ConfigUtilities.CREW_NOT_FOUND, result, "Expected no match");
+            Assert.AreEqual(ConfigUtilities.OUT_OF_BOUNDS, result, "Expected no match");
+        }
+
+        [TestMethod]
+        public void CountNumberOfCrewInEmptyTeam()
+        {
+            TeamConfig teamConfig = new TeamConfig();
+
+            int result = ConfigUtilities.CountNumberOfCrewInTeam(teamConfig);
+
+            Assert.AreEqual(0, result, "Expected to have 0 crew members");
+        }
+
+        [TestMethod]
+        public void CountNumberOfCrewInSingleMemberTeam()
+        {
+            TeamConfig teamConfig = ParsedData.ClaraOnlyNoImplants();
+
+            int result = ConfigUtilities.CountNumberOfCrewInTeam(teamConfig);
+
+            Assert.AreEqual(1, result, "Expected to have 1 crew member");
+        }
+
+        [TestMethod]
+        public void CountNumberOfCrewInFullMemberTeam()
+        {
+            TeamConfig teamConfig = ParsedData.BasicFiveMembersNoImplants();
+
+            int result = ConfigUtilities.CountNumberOfCrewInTeam(teamConfig);
+
+            Assert.AreEqual(5, result, "Expected to have 5 crew members");
+        }
+
+        [TestMethod]
+        public void FindFirstFreeSlotForNonCaptain_EmptyCrew()
+        {
+            TeamConfig teamConfig = new TeamConfig();
+
+            int result = ConfigUtilities.FindFirstFreeSlotForNonCaptain(teamConfig);
+
+            Assert.AreEqual(0, result, "Expected index 0 to be the next free slot");
+        }
+
+        [TestMethod]
+        public void FindFirstFreeSlotForNonCaptain_ThreeMemberCrew()
+        {
+            TeamConfig teamConfig = ParsedData.ThreeMembersNoCaptainNoImplants();
+
+            int result = ConfigUtilities.FindFirstFreeSlotForNonCaptain(teamConfig);
+
+            Assert.AreEqual(1, result, "Expected index 1 to be the next free slot");
+        }
+
+        [TestMethod]
+        public void FindFirstFreeSlotForNonCaptain_FullCrew()
+        {
+            TeamConfig teamConfig = ParsedData.BasicFiveMembersNoImplants();
+
+            int result = ConfigUtilities.FindFirstFreeSlotForNonCaptain(teamConfig);
+
+            Assert.AreEqual(ConfigUtilities.OUT_OF_BOUNDS, result, "Expected index ["
+                                + ConfigUtilities.OUT_OF_BOUNDS + "] to be returned");
         }
     }
 }

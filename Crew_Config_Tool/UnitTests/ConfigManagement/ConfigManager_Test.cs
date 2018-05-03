@@ -1,12 +1,21 @@
-﻿using System;
-using FS_Crew_Config_Tool;
+﻿using FS_Crew_Config_Tool;
+using FS_Crew_Config_Tool.Classes;
+using FS_Crew_Config_Tool.Classes.ConfigManagement;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using UnitTests.ConfigParsing.TestData;
 
 namespace UnitTests.ConfigManagement
 {
     [TestClass]
     public class ConfigManager_Test
     {
+        [TestInitialize]
+        public void PopulateLists()
+        {
+            CrewList.PopulateCrewList();
+            ImplantList.PopulateImplantList();
+        }
+
         [TestMethod]
         public void GetNextSelectableItem_NoItemsAvailable()
         {
@@ -102,6 +111,76 @@ namespace UnitTests.ConfigManagement
             int actualItem = manager.GetNextSelectableItem(selectedItem, numOfItems);
 
             Assert.AreEqual(expected, actualItem);
+        }
+
+        [TestMethod]
+        public void AddSelectedMemberToSelectedCrew_EmptyCrewList()
+        {
+            ConfigManager manager = new ConfigManager();
+
+            manager.AddSelectedMemberToSelectedCrew("asdf", 0);
+        }
+
+        [TestMethod]
+        public void AddSelectedMemberToSelectedCrew_PopulatedCrewList()
+        {
+            ConfigManager manager = new ConfigManager();
+
+            ConfigManager.CrewLines crewLine = new ConfigManager.CrewLines();
+            crewLine.Team = ParsedData.ClaraOnlyNoImplants();
+
+            manager.CrewData.Add(crewLine);
+
+            bool result = manager.AddSelectedMemberToSelectedCrew(CrewEnum.ALA8AMA.ToString(), 0);
+
+            Assert.IsTrue(result, "Failed to add crew member");
+        }
+
+        [TestMethod]
+        public void AddSelectedMemberToSelectedCrew_PopulatedCrewListSameRoleAlreadyPresent()
+        {
+            ConfigManager manager = new ConfigManager();
+
+            ConfigManager.CrewLines crewLine = new ConfigManager.CrewLines();
+            crewLine.Team = ParsedData.ThreeMembersNoCaptainNoImplants();
+
+            manager.CrewData.Add(crewLine);
+
+            string crewName = crewLine.Team.CrewMembers[0].CrewID.ToString();
+
+            bool result = manager.AddSelectedMemberToSelectedCrew(crewName, 0);
+
+            Assert.IsTrue(result, "Failed to add crew member");
+        }
+
+        [TestMethod]
+        public void AddSelectedCaptainMemberToSelectedCrew_PopulatedCrewList()
+        {
+            ConfigManager manager = new ConfigManager();
+
+            ConfigManager.CrewLines crewLine = new ConfigManager.CrewLines();
+            crewLine.Team = ParsedData.ClaraOnlyNoImplants();
+
+            manager.CrewData.Add(crewLine);
+
+            bool result = manager.AddSelectedMemberToSelectedCrew(CrewEnum.CLARA_REISETTE.ToString(), 0);
+
+            Assert.IsTrue(result, "Failed to add crew member");
+        }
+
+        [TestMethod]
+        public void AddNonCrewMemberMemberToSelectedCrew_PopulatedCrewList()
+        {
+            ConfigManager manager = new ConfigManager();
+
+            ConfigManager.CrewLines crewLine = new ConfigManager.CrewLines();
+            crewLine.Team = ParsedData.ClaraOnlyNoImplants();
+
+            manager.CrewData.Add(crewLine);
+
+            bool result = manager.AddSelectedMemberToSelectedCrew(CrewEnum.NONE.ToString(), 0);
+
+            Assert.IsFalse(result, "Added non-crew member to team");
         }
     }
 }

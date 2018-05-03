@@ -2,7 +2,8 @@
 {
     public static class ConfigUtilities
     {
-        public const int CREW_NOT_FOUND = -1;
+        public const int OUT_OF_BOUNDS = -1;
+        public const int CAPTAIN_SLOT = 2;
 
         /// <summary>
         /// Scans all five crew slots, and checks for any match.
@@ -12,7 +13,7 @@
         /// <returns>Index of match if found (0-4), or -1 if not found</returns>
         public static int CheckCrewTeamForSelectedMembersRoleIsPresent(CrewEnum crewEnum, TeamConfig selectedTeam)
         {
-            int matchIndex = CREW_NOT_FOUND;
+            int matchIndex = OUT_OF_BOUNDS;
 
             CrewRole selectedRole = (crewEnum == CrewEnum.NONE) ? CrewRole.NONE : CrewList.CrewListing[(int)crewEnum].Role;
 
@@ -55,12 +56,17 @@
             return crewCount;
         }
 
-        public static int FindFirstFreeSlot(TeamConfig selectedTeam)
+        public static int FindFirstFreeSlotForNonCaptain(TeamConfig selectedTeam)
         {
-            int nextFreeSlot = CREW_NOT_FOUND;
+            int nextFreeSlot = OUT_OF_BOUNDS;
 
             for (int index = 0; index < 5; index++)
             {
+                if (index == 2)
+                {
+                    // Skip the captain's slot, effectively reserving it for captains
+                    continue;
+                }
                 if (selectedTeam.CrewMembers[index].CrewID == CrewEnum.NONE)
                 {
                     nextFreeSlot = index;
