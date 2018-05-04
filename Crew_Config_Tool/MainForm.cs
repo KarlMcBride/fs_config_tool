@@ -17,8 +17,8 @@ namespace FS_Crew_Config_Tool
 
         private const int ITERATIONS_TO_UPDATE_CCU = 60;
 
-        private CheckBox[] crewFilterArray;
-        private CheckBox[] implantFilterArray;
+        private RadioButton[] crewFilterArray;
+        private RadioButton[] implantFilterArray;
 
         public MainForm()
         {
@@ -40,10 +40,11 @@ namespace FS_Crew_Config_Tool
 
             ConfigureBackgroundWorker();
 
-            crewFilterArray = new CheckBox[] { CheckBoxCrewCag, CheckBoxCrewCaptain, CheckBoxCrewComms, CheckBoxCrewEngineer, CheckBoxCrewJump,
-                                               CheckBoxCrewNav, CheckBoxCrewRepair, CheckBoxCrewTactical, CheckBoxCrewUtility };
+            crewFilterArray = new RadioButton[] { RadioButtonCrewCag, RadioButtonCrewCaptain, RadioButtonCrewComms,
+                                                  RadioButtonCrewEngineer, RadioButtonCrewJump, RadioButtonCrewNav,
+                                                  RadioButtonCrewRepair, RadioButtonCrewTactical, RadioButtonCrewUtility };
 
-            implantFilterArray = new CheckBox[] { CheckBoxImpAtk, CheckBoxImpDef, CheckBoxImpUtil };
+            implantFilterArray = new RadioButton[] { RadioButtonImpAtk, RadioButtonImpDef, RadioButtonImpUtil };
         }
 
         private void ConfigureBackgroundWorker()

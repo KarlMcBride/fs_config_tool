@@ -16,13 +16,13 @@ namespace UnitTests.UiComponents
             ImplantList.PopulateImplantList();
         }
 
-        private CheckBox[] CreateCheckBoxArray(int numOfElements)
+        private RadioButton[] CreateRadioButtonArray(int numOfElements)
         {
-            CheckBox[] array = new CheckBox[numOfElements];
+            RadioButton[] array = new RadioButton[numOfElements];
 
             for (int index = 0; index < numOfElements; index++)
             {
-                array[index] = new CheckBox();
+                array[index] = new RadioButton();
             }
 
             return array;
@@ -31,7 +31,7 @@ namespace UnitTests.UiComponents
         [TestMethod]
         public void PopulateCrewListing()
         {
-            CheckBox[] array = CreateCheckBoxArray((int)CrewRole.NONE);
+            RadioButton[] array = CreateRadioButtonArray((int)CrewRole.NONE);
 
             for (int role = 0; role < (int)CrewRole.NONE; role++)
             {
@@ -55,7 +55,7 @@ namespace UnitTests.UiComponents
         [TestMethod]
         public void PopulateImplantListing()
         {
-            CheckBox[] array = CreateCheckBoxArray((int)ImplantType.UTILITY + 1);
+            RadioButton[] array = CreateRadioButtonArray((int)ImplantType.UTILITY + 1);
 
             for (int role = 0; role <= (int)ImplantType.UTILITY; role++)
             {

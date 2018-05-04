@@ -9,7 +9,7 @@ namespace FS_Crew_Config_Tool.UiComponents
     /// </summary>
     public class UiOffload
     {
-        public void PopulateCrewListing(CheckBox[] crewFilterArray, ref ListView listView)
+        public void PopulateCrewListing(RadioButton[] crewFilterArray, ref ListView listView)
         {
             listView.Clear();
 
@@ -43,7 +43,7 @@ namespace FS_Crew_Config_Tool.UiComponents
             listView.LargeImageList = imageList;
         }
 
-        public void PopulateImplantListing(CheckBox[] implantFilterArray, ref ListView listView)
+        public void PopulateImplantListing(RadioButton[] implantFilterArray, ref ListView listView)
         {
             listView.Clear();
 

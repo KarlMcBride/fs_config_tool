@@ -35,21 +35,25 @@
             this.LabelFsRunningWarning = new System.Windows.Forms.Label();
             this.labelCcuCount = new System.Windows.Forms.Label();
             this.ButtonDelete = new System.Windows.Forms.Button();
-            this.CheckBoxCrewCag = new System.Windows.Forms.CheckBox();
-            this.CheckBoxCrewCaptain = new System.Windows.Forms.CheckBox();
-            this.CheckBoxCrewComms = new System.Windows.Forms.CheckBox();
-            this.CheckBoxCrewEngineer = new System.Windows.Forms.CheckBox();
-            this.CheckBoxCrewJump = new System.Windows.Forms.CheckBox();
-            this.CheckBoxCrewNav = new System.Windows.Forms.CheckBox();
-            this.CheckBoxCrewRepair = new System.Windows.Forms.CheckBox();
-            this.CheckBoxCrewTactical = new System.Windows.Forms.CheckBox();
-            this.CheckBoxCrewUtility = new System.Windows.Forms.CheckBox();
+            this.RadioButtonCrewCag = new System.Windows.Forms.RadioButton();
+            this.RadioButtonCrewCaptain = new System.Windows.Forms.RadioButton();
+            this.RadioButtonCrewComms = new System.Windows.Forms.RadioButton();
+            this.RadioButtonCrewEngineer = new System.Windows.Forms.RadioButton();
+            this.RadioButtonCrewJump = new System.Windows.Forms.RadioButton();
+            this.RadioButtonCrewNav = new System.Windows.Forms.RadioButton();
+            this.RadioButtonCrewRepair = new System.Windows.Forms.RadioButton();
+            this.RadioButtonCrewTactical = new System.Windows.Forms.RadioButton();
+            this.RadioButtonCrewUtility = new System.Windows.Forms.RadioButton();
             this.ListViewFilteredCrew = new System.Windows.Forms.ListView();
             this.ListViewImplants = new System.Windows.Forms.ListView();
             this.CrewSetBoxMain = new FS_Crew_Config_Tool.UiComponents.CrewSetBox();
-            this.CheckBoxImpUtil = new System.Windows.Forms.CheckBox();
-            this.CheckBoxImpDef = new System.Windows.Forms.CheckBox();
-            this.CheckBoxImpAtk = new System.Windows.Forms.CheckBox();
+            this.RadioButtonImpUtil = new System.Windows.Forms.RadioButton();
+            this.RadioButtonImpDef = new System.Windows.Forms.RadioButton();
+            this.RadioButtonImpAtk = new System.Windows.Forms.RadioButton();
+            this.GroupBoxCrewMembers = new System.Windows.Forms.GroupBox();
+            this.GroupBoxImplants = new System.Windows.Forms.GroupBox();
+            this.GroupBoxCrewMembers.SuspendLayout();
+            this.GroupBoxImplants.SuspendLayout();
             this.SuspendLayout();
             // 
             // ListBoxCrews
@@ -84,7 +88,7 @@
             // LabelFsRunningWarning
             // 
             this.LabelFsRunningWarning.AutoSize = true;
-            this.LabelFsRunningWarning.Location = new System.Drawing.Point(910, 799);
+            this.LabelFsRunningWarning.Location = new System.Drawing.Point(1390, 641);
             this.LabelFsRunningWarning.Name = "LabelFsRunningWarning";
             this.LabelFsRunningWarning.Size = new System.Drawing.Size(73, 13);
             this.LabelFsRunningWarning.TabIndex = 4;
@@ -93,7 +97,7 @@
             // labelCcuCount
             // 
             this.labelCcuCount.AutoSize = true;
-            this.labelCcuCount.Location = new System.Drawing.Point(989, 799);
+            this.labelCcuCount.Location = new System.Drawing.Point(1407, 666);
             this.labelCcuCount.Name = "labelCcuCount";
             this.labelCcuCount.Size = new System.Drawing.Size(56, 13);
             this.labelCcuCount.TabIndex = 5;
@@ -110,110 +114,110 @@
             this.ButtonDelete.UseVisualStyleBackColor = true;
             this.ButtonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
             // 
-            // CheckBoxCrewCag
+            // RadioButtonCrewCag
             // 
-            this.CheckBoxCrewCag.AutoSize = true;
-            this.CheckBoxCrewCag.Location = new System.Drawing.Point(262, 293);
-            this.CheckBoxCrewCag.Name = "CheckBoxCrewCag";
-            this.CheckBoxCrewCag.Size = new System.Drawing.Size(48, 17);
-            this.CheckBoxCrewCag.TabIndex = 7;
-            this.CheckBoxCrewCag.Text = "CAG";
-            this.CheckBoxCrewCag.UseVisualStyleBackColor = true;
-            this.CheckBoxCrewCag.CheckedChanged += new System.EventHandler(this.CheckBoxCrewFilters_CheckedChanged);
+            this.RadioButtonCrewCag.AutoSize = true;
+            this.RadioButtonCrewCag.Location = new System.Drawing.Point(6, 88);
+            this.RadioButtonCrewCag.Name = "RadioButtonCrewCag";
+            this.RadioButtonCrewCag.Size = new System.Drawing.Size(47, 17);
+            this.RadioButtonCrewCag.TabIndex = 7;
+            this.RadioButtonCrewCag.Text = "CAG";
+            this.RadioButtonCrewCag.UseVisualStyleBackColor = true;
+            this.RadioButtonCrewCag.CheckedChanged += new System.EventHandler(this.CheckBoxCrewFilters_CheckedChanged);
             // 
-            // CheckBoxCrewCaptain
+            // RadioButtonCrewCaptain
             // 
-            this.CheckBoxCrewCaptain.AutoSize = true;
-            this.CheckBoxCrewCaptain.Location = new System.Drawing.Point(262, 316);
-            this.CheckBoxCrewCaptain.Name = "CheckBoxCrewCaptain";
-            this.CheckBoxCrewCaptain.Size = new System.Drawing.Size(62, 17);
-            this.CheckBoxCrewCaptain.TabIndex = 8;
-            this.CheckBoxCrewCaptain.Text = "Captain";
-            this.CheckBoxCrewCaptain.UseVisualStyleBackColor = true;
-            this.CheckBoxCrewCaptain.CheckedChanged += new System.EventHandler(this.CheckBoxCrewFilters_CheckedChanged);
+            this.RadioButtonCrewCaptain.AutoSize = true;
+            this.RadioButtonCrewCaptain.Location = new System.Drawing.Point(6, 111);
+            this.RadioButtonCrewCaptain.Name = "RadioButtonCrewCaptain";
+            this.RadioButtonCrewCaptain.Size = new System.Drawing.Size(61, 17);
+            this.RadioButtonCrewCaptain.TabIndex = 8;
+            this.RadioButtonCrewCaptain.Text = "Captain";
+            this.RadioButtonCrewCaptain.UseVisualStyleBackColor = true;
+            this.RadioButtonCrewCaptain.CheckedChanged += new System.EventHandler(this.CheckBoxCrewFilters_CheckedChanged);
             // 
-            // CheckBoxCrewComms
+            // RadioButtonCrewComms
             // 
-            this.CheckBoxCrewComms.AutoSize = true;
-            this.CheckBoxCrewComms.Location = new System.Drawing.Point(262, 339);
-            this.CheckBoxCrewComms.Name = "CheckBoxCrewComms";
-            this.CheckBoxCrewComms.Size = new System.Drawing.Size(60, 17);
-            this.CheckBoxCrewComms.TabIndex = 9;
-            this.CheckBoxCrewComms.Text = "Comms";
-            this.CheckBoxCrewComms.UseVisualStyleBackColor = true;
-            this.CheckBoxCrewComms.CheckedChanged += new System.EventHandler(this.CheckBoxCrewFilters_CheckedChanged);
+            this.RadioButtonCrewComms.AutoSize = true;
+            this.RadioButtonCrewComms.Location = new System.Drawing.Point(6, 134);
+            this.RadioButtonCrewComms.Name = "RadioButtonCrewComms";
+            this.RadioButtonCrewComms.Size = new System.Drawing.Size(59, 17);
+            this.RadioButtonCrewComms.TabIndex = 9;
+            this.RadioButtonCrewComms.Text = "Comms";
+            this.RadioButtonCrewComms.UseVisualStyleBackColor = true;
+            this.RadioButtonCrewComms.CheckedChanged += new System.EventHandler(this.CheckBoxCrewFilters_CheckedChanged);
             // 
-            // CheckBoxCrewEngineer
+            // RadioButtonCrewEngineer
             // 
-            this.CheckBoxCrewEngineer.AutoSize = true;
-            this.CheckBoxCrewEngineer.Location = new System.Drawing.Point(262, 362);
-            this.CheckBoxCrewEngineer.Name = "CheckBoxCrewEngineer";
-            this.CheckBoxCrewEngineer.Size = new System.Drawing.Size(68, 17);
-            this.CheckBoxCrewEngineer.TabIndex = 10;
-            this.CheckBoxCrewEngineer.Text = "Engineer";
-            this.CheckBoxCrewEngineer.UseVisualStyleBackColor = true;
-            this.CheckBoxCrewEngineer.CheckedChanged += new System.EventHandler(this.CheckBoxCrewFilters_CheckedChanged);
+            this.RadioButtonCrewEngineer.AutoSize = true;
+            this.RadioButtonCrewEngineer.Location = new System.Drawing.Point(6, 157);
+            this.RadioButtonCrewEngineer.Name = "RadioButtonCrewEngineer";
+            this.RadioButtonCrewEngineer.Size = new System.Drawing.Size(67, 17);
+            this.RadioButtonCrewEngineer.TabIndex = 10;
+            this.RadioButtonCrewEngineer.Text = "Engineer";
+            this.RadioButtonCrewEngineer.UseVisualStyleBackColor = true;
+            this.RadioButtonCrewEngineer.CheckedChanged += new System.EventHandler(this.CheckBoxCrewFilters_CheckedChanged);
             // 
-            // CheckBoxCrewJump
+            // RadioButtonCrewJump
             // 
-            this.CheckBoxCrewJump.AutoSize = true;
-            this.CheckBoxCrewJump.Location = new System.Drawing.Point(262, 385);
-            this.CheckBoxCrewJump.Name = "CheckBoxCrewJump";
-            this.CheckBoxCrewJump.Size = new System.Drawing.Size(51, 17);
-            this.CheckBoxCrewJump.TabIndex = 11;
-            this.CheckBoxCrewJump.Text = "Jump";
-            this.CheckBoxCrewJump.UseVisualStyleBackColor = true;
-            this.CheckBoxCrewJump.CheckedChanged += new System.EventHandler(this.CheckBoxCrewFilters_CheckedChanged);
+            this.RadioButtonCrewJump.AutoSize = true;
+            this.RadioButtonCrewJump.Location = new System.Drawing.Point(6, 180);
+            this.RadioButtonCrewJump.Name = "RadioButtonCrewJump";
+            this.RadioButtonCrewJump.Size = new System.Drawing.Size(50, 17);
+            this.RadioButtonCrewJump.TabIndex = 11;
+            this.RadioButtonCrewJump.Text = "Jump";
+            this.RadioButtonCrewJump.UseVisualStyleBackColor = true;
+            this.RadioButtonCrewJump.CheckedChanged += new System.EventHandler(this.CheckBoxCrewFilters_CheckedChanged);
             // 
-            // CheckBoxCrewNav
+            // RadioButtonCrewNav
             // 
-            this.CheckBoxCrewNav.AutoSize = true;
-            this.CheckBoxCrewNav.Location = new System.Drawing.Point(262, 408);
-            this.CheckBoxCrewNav.Name = "CheckBoxCrewNav";
-            this.CheckBoxCrewNav.Size = new System.Drawing.Size(46, 17);
-            this.CheckBoxCrewNav.TabIndex = 12;
-            this.CheckBoxCrewNav.Text = "Nav";
-            this.CheckBoxCrewNav.UseVisualStyleBackColor = true;
-            this.CheckBoxCrewNav.CheckedChanged += new System.EventHandler(this.CheckBoxCrewFilters_CheckedChanged);
+            this.RadioButtonCrewNav.AutoSize = true;
+            this.RadioButtonCrewNav.Location = new System.Drawing.Point(6, 203);
+            this.RadioButtonCrewNav.Name = "RadioButtonCrewNav";
+            this.RadioButtonCrewNav.Size = new System.Drawing.Size(45, 17);
+            this.RadioButtonCrewNav.TabIndex = 12;
+            this.RadioButtonCrewNav.Text = "Nav";
+            this.RadioButtonCrewNav.UseVisualStyleBackColor = true;
+            this.RadioButtonCrewNav.CheckedChanged += new System.EventHandler(this.CheckBoxCrewFilters_CheckedChanged);
             // 
-            // CheckBoxCrewRepair
+            // RadioButtonCrewRepair
             // 
-            this.CheckBoxCrewRepair.AutoSize = true;
-            this.CheckBoxCrewRepair.Location = new System.Drawing.Point(262, 431);
-            this.CheckBoxCrewRepair.Name = "CheckBoxCrewRepair";
-            this.CheckBoxCrewRepair.Size = new System.Drawing.Size(57, 17);
-            this.CheckBoxCrewRepair.TabIndex = 13;
-            this.CheckBoxCrewRepair.Text = "Repair";
-            this.CheckBoxCrewRepair.UseVisualStyleBackColor = true;
-            this.CheckBoxCrewRepair.CheckedChanged += new System.EventHandler(this.CheckBoxCrewFilters_CheckedChanged);
+            this.RadioButtonCrewRepair.AutoSize = true;
+            this.RadioButtonCrewRepair.Location = new System.Drawing.Point(6, 226);
+            this.RadioButtonCrewRepair.Name = "RadioButtonCrewRepair";
+            this.RadioButtonCrewRepair.Size = new System.Drawing.Size(56, 17);
+            this.RadioButtonCrewRepair.TabIndex = 13;
+            this.RadioButtonCrewRepair.Text = "Repair";
+            this.RadioButtonCrewRepair.UseVisualStyleBackColor = true;
+            this.RadioButtonCrewRepair.CheckedChanged += new System.EventHandler(this.CheckBoxCrewFilters_CheckedChanged);
             // 
-            // CheckBoxCrewTactical
+            // RadioButtonCrewTactical
             // 
-            this.CheckBoxCrewTactical.AutoSize = true;
-            this.CheckBoxCrewTactical.Location = new System.Drawing.Point(262, 454);
-            this.CheckBoxCrewTactical.Name = "CheckBoxCrewTactical";
-            this.CheckBoxCrewTactical.Size = new System.Drawing.Size(64, 17);
-            this.CheckBoxCrewTactical.TabIndex = 14;
-            this.CheckBoxCrewTactical.Text = "Tactical";
-            this.CheckBoxCrewTactical.UseVisualStyleBackColor = true;
-            this.CheckBoxCrewTactical.CheckedChanged += new System.EventHandler(this.CheckBoxCrewFilters_CheckedChanged);
+            this.RadioButtonCrewTactical.AutoSize = true;
+            this.RadioButtonCrewTactical.Location = new System.Drawing.Point(6, 249);
+            this.RadioButtonCrewTactical.Name = "RadioButtonCrewTactical";
+            this.RadioButtonCrewTactical.Size = new System.Drawing.Size(63, 17);
+            this.RadioButtonCrewTactical.TabIndex = 14;
+            this.RadioButtonCrewTactical.Text = "Tactical";
+            this.RadioButtonCrewTactical.UseVisualStyleBackColor = true;
+            this.RadioButtonCrewTactical.CheckedChanged += new System.EventHandler(this.CheckBoxCrewFilters_CheckedChanged);
             // 
-            // CheckBoxCrewUtility
+            // RadioButtonCrewUtility
             // 
-            this.CheckBoxCrewUtility.AutoSize = true;
-            this.CheckBoxCrewUtility.Location = new System.Drawing.Point(262, 477);
-            this.CheckBoxCrewUtility.Name = "CheckBoxCrewUtility";
-            this.CheckBoxCrewUtility.Size = new System.Drawing.Size(51, 17);
-            this.CheckBoxCrewUtility.TabIndex = 15;
-            this.CheckBoxCrewUtility.Text = "Utility";
-            this.CheckBoxCrewUtility.UseVisualStyleBackColor = true;
-            this.CheckBoxCrewUtility.CheckedChanged += new System.EventHandler(this.CheckBoxCrewFilters_CheckedChanged);
+            this.RadioButtonCrewUtility.AutoSize = true;
+            this.RadioButtonCrewUtility.Location = new System.Drawing.Point(6, 272);
+            this.RadioButtonCrewUtility.Name = "RadioButtonCrewUtility";
+            this.RadioButtonCrewUtility.Size = new System.Drawing.Size(50, 17);
+            this.RadioButtonCrewUtility.TabIndex = 15;
+            this.RadioButtonCrewUtility.Text = "Utility";
+            this.RadioButtonCrewUtility.UseVisualStyleBackColor = true;
+            this.RadioButtonCrewUtility.CheckedChanged += new System.EventHandler(this.CheckBoxCrewFilters_CheckedChanged);
             // 
             // ListViewFilteredCrew
             // 
-            this.ListViewFilteredCrew.Location = new System.Drawing.Point(347, 293);
+            this.ListViewFilteredCrew.Location = new System.Drawing.Point(85, 19);
             this.ListViewFilteredCrew.Name = "ListViewFilteredCrew";
-            this.ListViewFilteredCrew.Size = new System.Drawing.Size(662, 201);
+            this.ListViewFilteredCrew.Size = new System.Drawing.Size(551, 377);
             this.ListViewFilteredCrew.TabIndex = 16;
             this.ListViewFilteredCrew.UseCompatibleStateImageBehavior = false;
             this.ListViewFilteredCrew.View = System.Windows.Forms.View.Tile;
@@ -221,72 +225,92 @@
             // 
             // ListViewImplants
             // 
-            this.ListViewImplants.Location = new System.Drawing.Point(347, 500);
+            this.ListViewImplants.Location = new System.Drawing.Point(85, 19);
             this.ListViewImplants.Name = "ListViewImplants";
-            this.ListViewImplants.Size = new System.Drawing.Size(662, 201);
+            this.ListViewImplants.Size = new System.Drawing.Size(383, 377);
             this.ListViewImplants.TabIndex = 17;
             this.ListViewImplants.TileSize = new System.Drawing.Size(168, 30);
             this.ListViewImplants.UseCompatibleStateImageBehavior = false;
             // 
             // CrewSetBoxMain
             // 
-            this.CrewSetBoxMain.Location = new System.Drawing.Point(241, 7);
+            this.CrewSetBoxMain.Location = new System.Drawing.Point(326, 9);
             this.CrewSetBoxMain.Name = "CrewSetBoxMain";
-            this.CrewSetBoxMain.Size = new System.Drawing.Size(812, 280);
+            this.CrewSetBoxMain.Size = new System.Drawing.Size(812, 270);
             this.CrewSetBoxMain.TabIndex = 3;
             // 
-            // CheckBoxImpUtil
+            // RadioButtonImpUtil
             // 
-            this.CheckBoxImpUtil.AutoSize = true;
-            this.CheckBoxImpUtil.Location = new System.Drawing.Point(262, 601);
-            this.CheckBoxImpUtil.Name = "CheckBoxImpUtil";
-            this.CheckBoxImpUtil.Size = new System.Drawing.Size(51, 17);
-            this.CheckBoxImpUtil.TabIndex = 20;
-            this.CheckBoxImpUtil.Text = "Utility";
-            this.CheckBoxImpUtil.UseVisualStyleBackColor = true;
-            this.CheckBoxImpUtil.CheckedChanged += new System.EventHandler(this.CheckBoxImplantFilters_CheckedChanged);
+            this.RadioButtonImpUtil.AutoSize = true;
+            this.RadioButtonImpUtil.Location = new System.Drawing.Point(6, 203);
+            this.RadioButtonImpUtil.Name = "RadioButtonImpUtil";
+            this.RadioButtonImpUtil.Size = new System.Drawing.Size(50, 17);
+            this.RadioButtonImpUtil.TabIndex = 20;
+            this.RadioButtonImpUtil.Text = "Utility";
+            this.RadioButtonImpUtil.UseVisualStyleBackColor = true;
+            this.RadioButtonImpUtil.CheckedChanged += new System.EventHandler(this.CheckBoxImplantFilters_CheckedChanged);
             // 
-            // CheckBoxImpDef
+            // RadioButtonImpDef
             // 
-            this.CheckBoxImpDef.AutoSize = true;
-            this.CheckBoxImpDef.Location = new System.Drawing.Point(262, 578);
-            this.CheckBoxImpDef.Name = "CheckBoxImpDef";
-            this.CheckBoxImpDef.Size = new System.Drawing.Size(66, 17);
-            this.CheckBoxImpDef.TabIndex = 19;
-            this.CheckBoxImpDef.Text = "Defense";
-            this.CheckBoxImpDef.UseVisualStyleBackColor = true;
-            this.CheckBoxImpDef.CheckedChanged += new System.EventHandler(this.CheckBoxImplantFilters_CheckedChanged);
+            this.RadioButtonImpDef.AutoSize = true;
+            this.RadioButtonImpDef.Location = new System.Drawing.Point(6, 180);
+            this.RadioButtonImpDef.Name = "RadioButtonImpDef";
+            this.RadioButtonImpDef.Size = new System.Drawing.Size(65, 17);
+            this.RadioButtonImpDef.TabIndex = 19;
+            this.RadioButtonImpDef.Text = "Defense";
+            this.RadioButtonImpDef.UseVisualStyleBackColor = true;
+            this.RadioButtonImpDef.CheckedChanged += new System.EventHandler(this.CheckBoxImplantFilters_CheckedChanged);
             // 
-            // CheckBoxImpAtk
+            // RadioButtonImpAtk
             // 
-            this.CheckBoxImpAtk.AutoSize = true;
-            this.CheckBoxImpAtk.Location = new System.Drawing.Point(262, 555);
-            this.CheckBoxImpAtk.Name = "CheckBoxImpAtk";
-            this.CheckBoxImpAtk.Size = new System.Drawing.Size(57, 17);
-            this.CheckBoxImpAtk.TabIndex = 18;
-            this.CheckBoxImpAtk.Text = "Attack";
-            this.CheckBoxImpAtk.UseVisualStyleBackColor = true;
-            this.CheckBoxImpAtk.CheckedChanged += new System.EventHandler(this.CheckBoxImplantFilters_CheckedChanged);
+            this.RadioButtonImpAtk.AutoSize = true;
+            this.RadioButtonImpAtk.Location = new System.Drawing.Point(6, 157);
+            this.RadioButtonImpAtk.Name = "RadioButtonImpAtk";
+            this.RadioButtonImpAtk.Size = new System.Drawing.Size(56, 17);
+            this.RadioButtonImpAtk.TabIndex = 18;
+            this.RadioButtonImpAtk.Text = "Attack";
+            this.RadioButtonImpAtk.UseVisualStyleBackColor = true;
+            this.RadioButtonImpAtk.CheckedChanged += new System.EventHandler(this.CheckBoxImplantFilters_CheckedChanged);
+            // 
+            // GroupBoxCrewMembers
+            // 
+            this.GroupBoxCrewMembers.Controls.Add(this.RadioButtonCrewCag);
+            this.GroupBoxCrewMembers.Controls.Add(this.RadioButtonCrewCaptain);
+            this.GroupBoxCrewMembers.Controls.Add(this.RadioButtonCrewComms);
+            this.GroupBoxCrewMembers.Controls.Add(this.RadioButtonCrewEngineer);
+            this.GroupBoxCrewMembers.Controls.Add(this.RadioButtonCrewJump);
+            this.GroupBoxCrewMembers.Controls.Add(this.ListViewFilteredCrew);
+            this.GroupBoxCrewMembers.Controls.Add(this.RadioButtonCrewNav);
+            this.GroupBoxCrewMembers.Controls.Add(this.RadioButtonCrewUtility);
+            this.GroupBoxCrewMembers.Controls.Add(this.RadioButtonCrewRepair);
+            this.GroupBoxCrewMembers.Controls.Add(this.RadioButtonCrewTactical);
+            this.GroupBoxCrewMembers.Location = new System.Drawing.Point(244, 283);
+            this.GroupBoxCrewMembers.Name = "GroupBoxCrewMembers";
+            this.GroupBoxCrewMembers.Size = new System.Drawing.Size(642, 403);
+            this.GroupBoxCrewMembers.TabIndex = 21;
+            this.GroupBoxCrewMembers.TabStop = false;
+            this.GroupBoxCrewMembers.Text = "Crew Members";
+            // 
+            // GroupBoxImplants
+            // 
+            this.GroupBoxImplants.Controls.Add(this.RadioButtonImpAtk);
+            this.GroupBoxImplants.Controls.Add(this.RadioButtonImpDef);
+            this.GroupBoxImplants.Controls.Add(this.ListViewImplants);
+            this.GroupBoxImplants.Controls.Add(this.RadioButtonImpUtil);
+            this.GroupBoxImplants.Location = new System.Drawing.Point(892, 283);
+            this.GroupBoxImplants.Name = "GroupBoxImplants";
+            this.GroupBoxImplants.Size = new System.Drawing.Size(474, 403);
+            this.GroupBoxImplants.TabIndex = 22;
+            this.GroupBoxImplants.TabStop = false;
+            this.GroupBoxImplants.Text = "Implants";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1057, 821);
-            this.Controls.Add(this.CheckBoxImpUtil);
-            this.Controls.Add(this.CheckBoxImpDef);
-            this.Controls.Add(this.CheckBoxImpAtk);
-            this.Controls.Add(this.ListViewImplants);
-            this.Controls.Add(this.ListViewFilteredCrew);
-            this.Controls.Add(this.CheckBoxCrewUtility);
-            this.Controls.Add(this.CheckBoxCrewTactical);
-            this.Controls.Add(this.CheckBoxCrewRepair);
-            this.Controls.Add(this.CheckBoxCrewNav);
-            this.Controls.Add(this.CheckBoxCrewJump);
-            this.Controls.Add(this.CheckBoxCrewEngineer);
-            this.Controls.Add(this.CheckBoxCrewComms);
-            this.Controls.Add(this.CheckBoxCrewCaptain);
-            this.Controls.Add(this.CheckBoxCrewCag);
+            this.ClientSize = new System.Drawing.Size(1475, 691);
+            this.Controls.Add(this.GroupBoxImplants);
+            this.Controls.Add(this.GroupBoxCrewMembers);
             this.Controls.Add(this.ButtonDelete);
             this.Controls.Add(this.labelCcuCount);
             this.Controls.Add(this.LabelFsRunningWarning);
@@ -299,6 +323,10 @@
             this.Name = "MainForm";
             this.Text = "FS Crew Config Tool";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.GroupBoxCrewMembers.ResumeLayout(false);
+            this.GroupBoxCrewMembers.PerformLayout();
+            this.GroupBoxImplants.ResumeLayout(false);
+            this.GroupBoxImplants.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,20 +341,22 @@
         private System.Windows.Forms.Label LabelFsRunningWarning;
         private System.Windows.Forms.Label labelCcuCount;
         private System.Windows.Forms.Button ButtonDelete;
-        private System.Windows.Forms.CheckBox CheckBoxCrewCag;
-        private System.Windows.Forms.CheckBox CheckBoxCrewCaptain;
-        private System.Windows.Forms.CheckBox CheckBoxCrewComms;
-        private System.Windows.Forms.CheckBox CheckBoxCrewEngineer;
-        private System.Windows.Forms.CheckBox CheckBoxCrewJump;
-        private System.Windows.Forms.CheckBox CheckBoxCrewNav;
-        private System.Windows.Forms.CheckBox CheckBoxCrewRepair;
-        private System.Windows.Forms.CheckBox CheckBoxCrewTactical;
-        private System.Windows.Forms.CheckBox CheckBoxCrewUtility;
+        private System.Windows.Forms.RadioButton RadioButtonCrewCag;
+        private System.Windows.Forms.RadioButton RadioButtonCrewCaptain;
+        private System.Windows.Forms.RadioButton RadioButtonCrewComms;
+        private System.Windows.Forms.RadioButton RadioButtonCrewEngineer;
+        private System.Windows.Forms.RadioButton RadioButtonCrewJump;
+        private System.Windows.Forms.RadioButton RadioButtonCrewNav;
+        private System.Windows.Forms.RadioButton RadioButtonCrewRepair;
+        private System.Windows.Forms.RadioButton RadioButtonCrewTactical;
+        private System.Windows.Forms.RadioButton RadioButtonCrewUtility;
         private System.Windows.Forms.ListView ListViewFilteredCrew;
         private System.Windows.Forms.ListView ListViewImplants;
-        private System.Windows.Forms.CheckBox CheckBoxImpUtil;
-        private System.Windows.Forms.CheckBox CheckBoxImpDef;
-        private System.Windows.Forms.CheckBox CheckBoxImpAtk;
+        private System.Windows.Forms.RadioButton RadioButtonImpUtil;
+        private System.Windows.Forms.RadioButton RadioButtonImpDef;
+        private System.Windows.Forms.RadioButton RadioButtonImpAtk;
+        private System.Windows.Forms.GroupBox GroupBoxCrewMembers;
+        private System.Windows.Forms.GroupBox GroupBoxImplants;
     }
 }
 
