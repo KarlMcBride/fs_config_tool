@@ -40,6 +40,8 @@ namespace FS_Crew_Config_Tool
 
             ConfigureBackgroundWorker();
 
+            ConfigureCrewAndImplantRemovalCallbacks();
+
             crewFilterArray = new RadioButton[] { RadioButtonCrewCag, RadioButtonCrewCaptain, RadioButtonCrewComms,
                                                   RadioButtonCrewEngineer, RadioButtonCrewJump, RadioButtonCrewNav,
                                                   RadioButtonCrewRepair, RadioButtonCrewTactical, RadioButtonCrewUtility };
@@ -52,6 +54,12 @@ namespace FS_Crew_Config_Tool
             backgroundWorker = new BackgroundWorker();
             backgroundWorker.DoWork += BackgroundWorker_DoWork;
             backgroundWorker.RunWorkerAsync();
+        }
+
+        private void ConfigureCrewAndImplantRemovalCallbacks()
+        {
+            CrewSetBoxMain.CrewMemberDoubleClicked += RemoveSelectedCrewMember;
+            CrewSetBoxMain.ImplantDoubleClicked += RemoveSelectedCrewMemberImplant;
         }
 
         private void BackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
@@ -195,6 +203,30 @@ namespace FS_Crew_Config_Tool
                 int selectedIndex = ListBoxCrews.SelectedIndex;
 
                 CrewSetBoxMain.DisplaySelectedTeam(config.CrewData[selectedIndex].Team, CrewSetBoxMain);
+            }
+        }
+
+        public void RemoveSelectedCrewMember(object sender, int crewIndexToRemove)
+        {
+            int selectedCrewIndex = ListBoxCrews.SelectedIndex;
+
+            bool removeSuccessful = config.RemoveSelectedCrewMember(selectedCrewIndex, crewIndexToRemove);
+
+            if (removeSuccessful)
+            {
+                CrewSetBoxMain.DisplaySelectedTeam(config.CrewData[selectedCrewIndex].Team, CrewSetBoxMain);
+            }
+        }
+
+        public void RemoveSelectedCrewMemberImplant(object sender, UiArguments args)
+        {
+            int selectedCrewIndex = ListBoxCrews.SelectedIndex;
+
+            bool removeSuccessful = config.RemoveSelectedCrewImplant(selectedCrewIndex, args);
+
+            if (removeSuccessful)
+            {
+                CrewSetBoxMain.DisplaySelectedTeam(config.CrewData[selectedCrewIndex].Team, CrewSetBoxMain);
             }
         }
     }

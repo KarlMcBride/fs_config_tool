@@ -1,5 +1,6 @@
 ﻿using FS_Crew_Config_Tool.Classes;
 using FS_Crew_Config_Tool.Classes.ConfigManagement;
+using FS_Crew_Config_Tool.UiComponents;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -244,6 +245,32 @@ namespace FS_Crew_Config_Tool
             }
 
             return addSuccessful;
+        }
+
+        public bool RemoveSelectedCrewMember(int selectedTeam, int crewIndexToRemove)
+        {
+            bool removeSuccessful = false;
+
+            if (CrewData[selectedTeam].Team.CrewMembers[crewIndexToRemove].CrewID != CrewEnum.NONE)
+            {
+                CrewData[selectedTeam].Team.CrewMembers[crewIndexToRemove].CrewID = CrewEnum.NONE;
+                removeSuccessful = true;
+            }
+
+            return removeSuccessful;
+        }
+
+        public bool RemoveSelectedCrewImplant(int selectedTeam, UiArguments args)
+        {
+            bool removeSuccessful = false;
+
+            if (CrewData[selectedTeam].Team.CrewMembers[args.CrewIndex].ImplantIDs[args.ImplantIndex] != ImplantEnum.NONE)
+            {
+                CrewData[selectedTeam].Team.CrewMembers[args.CrewIndex].ImplantIDs[args.ImplantIndex] = ImplantEnum.NONE;
+                removeSuccessful = true;
+            }
+
+            return removeSuccessful;
         }
     }
 }

@@ -1,10 +1,14 @@
 ﻿using FS_Crew_Config_Tool.Classes;
+using System;
 using System.Windows.Forms;
 
 namespace FS_Crew_Config_Tool.UiComponents
 {
     public partial class CrewSetBox : UserControl
     {
+        public event EventHandler<int> CrewMemberDoubleClicked;
+        public event EventHandler<UiArguments> ImplantDoubleClicked;
+
         private CrewBox[] crewBoxArray;
 
         public CrewSetBox()
@@ -12,6 +16,29 @@ namespace FS_Crew_Config_Tool.UiComponents
             InitializeComponent();
 
             crewBoxArray = new CrewBox[] { CrewBox0, CrewBox1, CrewBox2, CrewBox3, CrewBox4 };
+
+            for (int index = 0; index < 5; index++)
+            {
+                crewBoxArray[index].SetBoxIndex(index);
+                crewBoxArray[index].CrewMemberDoubleClicked += RemoveClickedCrewMember;
+                crewBoxArray[index].ImplantDoubleClicked += RemoveClickedImplant;
+            }
+        }
+
+        public void RemoveClickedCrewMember(object sender, int selectedIndex)
+        {
+            if (CrewMemberDoubleClicked != null)
+            {
+                CrewMemberDoubleClicked(this, selectedIndex);
+            }
+        }
+
+        public void RemoveClickedImplant(object sender, UiArguments args)
+        {
+            if (ImplantDoubleClicked != null)
+            {
+                ImplantDoubleClicked(this, args);
+            }
         }
 
         public void ClearDisplayedTeam(CrewSetBox parent)

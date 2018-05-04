@@ -48,6 +48,7 @@
             this.PictureBoxImplant2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureBoxImplant2.TabIndex = 3;
             this.PictureBoxImplant2.TabStop = false;
+            this.PictureBoxImplant2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PictureBoxImplant2_MouseDoubleClick);
             // 
             // PictureBoxImplant1
             // 
@@ -59,6 +60,7 @@
             this.PictureBoxImplant1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureBoxImplant1.TabIndex = 2;
             this.PictureBoxImplant1.TabStop = false;
+            this.PictureBoxImplant1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PictureBoxImplant1_MouseDoubleClick);
             // 
             // PictureBoxImplant0
             // 
@@ -69,14 +71,17 @@
             this.PictureBoxImplant0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureBoxImplant0.TabIndex = 1;
             this.PictureBoxImplant0.TabStop = false;
+            this.PictureBoxImplant0.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PictureBoxImplant0_MouseDoubleClick);
             // 
             // PictureBoxCrew
             // 
+            this.PictureBoxCrew.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PictureBoxCrew.Location = new System.Drawing.Point(3, 3);
             this.PictureBoxCrew.Name = "PictureBoxCrew";
             this.PictureBoxCrew.Size = new System.Drawing.Size(158, 275);
             this.PictureBoxCrew.TabIndex = 0;
             this.PictureBoxCrew.TabStop = false;
+            this.PictureBoxCrew.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PictureBoxCrew_MouseDoubleClick);
             // 
             // CrewBox
             // 

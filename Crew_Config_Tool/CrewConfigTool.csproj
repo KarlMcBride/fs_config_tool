@@ -86,6 +86,7 @@
     <Compile Include="UiComponents\CrewSetBox.Designer.cs">
       <DependentUpon>CrewSetBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="UiComponents\UiArguments.cs" />
     <Compile Include="UiComponents\UiOffload.cs" />
     <EmbeddedResource Include="UiComponents\CrewBox.resx">
       <DependentUpon>CrewBox.cs</DependentUpon>
