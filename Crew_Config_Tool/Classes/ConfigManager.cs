@@ -61,6 +61,15 @@ namespace FS_Crew_Config_Tool
 
                 Team = CrewParser.ParseCrewMembersFromLine(RawLine);
             }
+
+            public string BuildLine()
+            {
+                string line = ConfigUtilities.GetStartOfRawCrewString(RawLine);
+                line += CrewBuilder.GenerateCrewStringFromEnumerations(Team);
+                line += ",Members=)";
+
+                return line;
+            }
         }
 
         public void LoadConfig()
@@ -161,7 +170,7 @@ namespace FS_Crew_Config_Tool
                 // Write all crew lines
                 foreach (CrewLines line in CrewData)
                 {
-                    writetext.WriteLine(line.RawLine);
+                    writetext.WriteLine(line.BuildLine());
                 }
 
                 // Write all segment three items

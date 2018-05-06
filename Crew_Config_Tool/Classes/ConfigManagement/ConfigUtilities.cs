@@ -1,4 +1,6 @@
-﻿namespace FS_Crew_Config_Tool.Classes.ConfigManagement
+﻿using System.Text.RegularExpressions;
+
+namespace FS_Crew_Config_Tool.Classes.ConfigManagement
 {
     public static class ConfigUtilities
     {
@@ -182,6 +184,18 @@
             }
 
             return new CrewImplantIndexStruct(emptySlotFound, crewIndex, implantIndex);
+        }
+
+        public static string GetStartOfRawCrewString(string rawString)
+        {
+            // After ship-crew links, name, icon and member tags
+            Match endOfStart = Regex.Match(rawString, "CrewMembers=");
+            
+            int endOfStartIndex = endOfStart.Index + endOfStart.Length;
+
+            string returnString = rawString.Substring(0, endOfStartIndex);
+
+            return returnString;
         }
     }
 }

@@ -19,8 +19,6 @@ namespace UnitTests.ConfigManagement.CrewBuilder_cs
         [TestMethod]
         public void OnlyImplants()
         {
-            CrewBuilder crewBuilder = new CrewBuilder();
-
             TeamConfig teamConfig = new TeamConfig();
 
             TeamConfig.EnumeratedCrewMember crewMember = new TeamConfig.EnumeratedCrewMember();
@@ -31,7 +29,7 @@ namespace UnitTests.ConfigManagement.CrewBuilder_cs
             crewMember.ImplantIDs[2] = ImplantEnum.UTILITY_COOLDOWN;
 
             string expected = "()";
-            string actual = (string)crewBuilder.GenerateSingleCrewMemberComponent(crewMember);
+            string actual = CrewBuilder.GenerateSingleCrewMemberComponent(crewMember);
 
             bool stringPresent = expected.Contains(actual);
 
@@ -41,8 +39,6 @@ namespace UnitTests.ConfigManagement.CrewBuilder_cs
         [TestMethod]
         public void ClaraNoImplants()
         {
-            CrewBuilder crewBuilder = new CrewBuilder();
-
             TeamConfig teamConfig = new TeamConfig();
 
             TeamConfig.EnumeratedCrewMember crewMember = new TeamConfig.EnumeratedCrewMember();
@@ -50,7 +46,7 @@ namespace UnitTests.ConfigManagement.CrewBuilder_cs
             crewMember.CrewID = CrewEnum.CLARA_REISETTE;
             
             string expected = RawStringData.CLARA_ONLY_NO_IMPLANTS;
-            string actual = (string)crewBuilder.GenerateSingleCrewMemberComponent(crewMember);
+            string actual = CrewBuilder.GenerateSingleCrewMemberComponent(crewMember);
 
             bool stringPresent = expected.Contains(actual);
 
@@ -60,8 +56,6 @@ namespace UnitTests.ConfigManagement.CrewBuilder_cs
         [TestMethod]
         public void ClaraOneImplant()
         {
-            CrewBuilder crewBuilder = new CrewBuilder();
-
             TeamConfig teamConfig = new TeamConfig();
 
             TeamConfig.EnumeratedCrewMember crewMember = new TeamConfig.EnumeratedCrewMember();
@@ -70,7 +64,7 @@ namespace UnitTests.ConfigManagement.CrewBuilder_cs
             crewMember.ImplantIDs[0] = ImplantEnum.MANEUVERING;
 
             string expected = RawStringData.CLARA_ONLY_ONE_IMPLANT;
-            string actual = (string)crewBuilder.GenerateSingleCrewMemberComponent(crewMember);
+            string actual = CrewBuilder.GenerateSingleCrewMemberComponent(crewMember);
 
             bool stringPresent = expected.Contains(actual);
 
@@ -80,8 +74,6 @@ namespace UnitTests.ConfigManagement.CrewBuilder_cs
         [TestMethod]
         public void ClaraTwoImplants()
         {
-            CrewBuilder crewBuilder = new CrewBuilder();
-
             TeamConfig teamConfig = new TeamConfig();
 
             TeamConfig.EnumeratedCrewMember crewMember = new TeamConfig.EnumeratedCrewMember();
@@ -91,7 +83,7 @@ namespace UnitTests.ConfigManagement.CrewBuilder_cs
             crewMember.ImplantIDs[1] = ImplantEnum.UTILITY_COOLDOWN;
 
             string expected = RawStringData.CLARA_ONLY_TWO_IMPLANTS;
-            string actual = (string)crewBuilder.GenerateSingleCrewMemberComponent(crewMember);
+            string actual = CrewBuilder.GenerateSingleCrewMemberComponent(crewMember);
 
             bool stringPresent = expected.Contains(actual);
 
@@ -101,8 +93,6 @@ namespace UnitTests.ConfigManagement.CrewBuilder_cs
         [TestMethod]
         public void ClaraThreeImplants()
         {
-            CrewBuilder crewBuilder = new CrewBuilder();
-
             TeamConfig teamConfig = new TeamConfig();
 
             TeamConfig.EnumeratedCrewMember crewMember = new TeamConfig.EnumeratedCrewMember();
@@ -113,7 +103,7 @@ namespace UnitTests.ConfigManagement.CrewBuilder_cs
             crewMember.ImplantIDs[2] = ImplantEnum.UTILITY_COOLDOWN;
 
             string expected = RawStringData.CLARA_ONLY_THREE_IMPLANTS;
-            string actual = (string)crewBuilder.GenerateSingleCrewMemberComponent(crewMember);
+            string actual = CrewBuilder.GenerateSingleCrewMemberComponent(crewMember);
 
             bool stringPresent = expected.Contains(actual);
 
