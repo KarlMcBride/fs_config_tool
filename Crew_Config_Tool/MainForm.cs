@@ -236,7 +236,19 @@ namespace FS_Crew_Config_Tool
         {
             int selectedCrewIndex = ListBoxCrews.SelectedIndex;
 
-            bool removeSuccessful = config.RemoveSelectedCrewMember(selectedCrewIndex, crewIndexToRemove);
+            bool removeSuccessful = false;
+
+            if (ModifierKeys == Keys.Shift)
+            {
+                for (int index = 0; index < 5; index++)
+                {
+                    removeSuccessful |= config.RemoveSelectedCrewMember(selectedCrewIndex, index);
+                }
+            }
+            else
+            {
+                removeSuccessful = config.RemoveSelectedCrewMember(selectedCrewIndex, crewIndexToRemove);
+            }
 
             if (removeSuccessful)
             {
@@ -248,7 +260,21 @@ namespace FS_Crew_Config_Tool
         {
             int selectedCrewIndex = ListBoxCrews.SelectedIndex;
 
-            bool removeSuccessful = config.RemoveSelectedCrewImplant(selectedCrewIndex, args);
+            bool removeSuccessful = false;
+
+            if (ModifierKeys == Keys.Shift)
+            {
+                for (int implantIndex = 0; implantIndex < 3; implantIndex++)
+                {
+                    UiArguments uiArguments = new UiArguments(args.CrewIndex, implantIndex);
+
+                    removeSuccessful |= config.RemoveSelectedCrewImplant(selectedCrewIndex, uiArguments);
+                }
+            }
+            else
+            {
+                removeSuccessful = config.RemoveSelectedCrewImplant(selectedCrewIndex, args);
+            }
 
             if (removeSuccessful)
             {
