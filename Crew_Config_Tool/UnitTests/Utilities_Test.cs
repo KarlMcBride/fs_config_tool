@@ -2,13 +2,19 @@
 using FS_Crew_Config_Tool.Classes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Drawing;
-using UnitTests.ConfigParsing.TestData;
 
 namespace UnitTests
 {
     [TestClass]
     public class Utilities_Test
     {
+        [TestInitialize]
+        public void PopulateLists()
+        {
+            CrewList.PopulateCrewList();
+            ImplantList.PopulateImplantList();
+        }
+
         [TestMethod]
         public void CheckIfFracIsNotRunning()
         {
@@ -102,6 +108,36 @@ namespace UnitTests
             CrewEnum outputCrew = Utilities.ConvertCrewStringToEnum("Invalid crew string");
 
             Assert.AreEqual(CrewEnum.NONE, outputCrew, "Output for is not CrewEnum.None [" + outputCrew + "]");
+        }
+
+        [TestMethod]
+        public void ConvertValidImplantStringsToEnum()
+        {
+            for (int index = 0; index < (int)ImplantEnum.NONE; index++)
+            {
+                string implantAsString = ImplantList.ImplantListing[index].Name;
+
+                ImplantEnum inputImplant = (ImplantEnum)index;
+                ImplantEnum outputImplant = Utilities.ConvertImplantStringToEnum(implantAsString);
+
+                Assert.AreEqual(inputImplant, outputImplant, "Implant doesn't match, [" + inputImplant + " , " + outputImplant + "]");
+            }
+        }
+
+        [TestMethod]
+        public void ConvertEmptyImplantStringToEnum()
+        {
+            ImplantEnum outputImplant = Utilities.ConvertImplantStringToEnum("");
+
+            Assert.AreEqual(ImplantEnum.NONE, outputImplant, "Output is not ImplantEnum.None [" + outputImplant + "]");
+        }
+
+        [TestMethod]
+        public void ConvertInvalidImplantStringToEnum()
+        {
+            ImplantEnum outputImplant = Utilities.ConvertImplantStringToEnum ("Invalid implant string");
+
+            Assert.AreEqual(ImplantEnum.NONE, outputImplant, "Output is not ImplantEnum.None [" + outputImplant + "]");
         }
 
         [TestMethod]

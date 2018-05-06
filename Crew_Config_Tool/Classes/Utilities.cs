@@ -57,6 +57,22 @@ namespace FS_Crew_Config_Tool.Classes
             return crewMember;
         }
 
+        public static ImplantEnum ConvertImplantStringToEnum(string implantName)
+        {
+            ImplantEnum implantEnum = ImplantEnum.NONE;
+
+            for (int index = 0; index < (int)ImplantEnum.NONE; index++)
+            {
+                if (ImplantList.ImplantListing[index].Name.Equals(implantName))
+                {
+                    implantEnum = (ImplantEnum)index;
+                    break;
+                }
+            }
+
+            return implantEnum;
+        }
+
         public static bool CheckIfFracSpaceIsRunning(string processName)
         {
             Process[] processlist = Process.GetProcesses();

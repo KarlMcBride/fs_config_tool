@@ -195,14 +195,27 @@ namespace FS_Crew_Config_Tool
         private void ListViewFilteredCrew_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             string crewName = ListViewFilteredCrew.FocusedItem.Text;
+            int selectedIndex = ListBoxCrews.SelectedIndex;
 
-            bool addSuccessful = config.AddSelectedMemberToSelectedCrew(crewName, ListBoxCrews.SelectedIndex);
+            bool addSuccessful = config.AddSelectedMemberToSelectedCrew(crewName, selectedIndex);
 
             if (addSuccessful)
             {
-                int selectedIndex = ListBoxCrews.SelectedIndex;
 
                 CrewSetBoxMain.DisplaySelectedTeam(config.CrewData[selectedIndex].Team, CrewSetBoxMain);
+            }
+        }
+
+        private void ListViewImplants_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int selectedCrewIndex = ListBoxCrews.SelectedIndex;
+            string implantName = ListViewImplants.FocusedItem.Text;
+
+            bool addSuccessful = config.AddSelectedImplantToNextFreeSlot(implantName, selectedCrewIndex);
+
+            if (addSuccessful)
+            {
+                CrewSetBoxMain.DisplaySelectedTeam(config.CrewData[selectedCrewIndex].Team, CrewSetBoxMain);
             }
         }
 

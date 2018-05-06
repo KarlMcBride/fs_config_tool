@@ -182,5 +182,41 @@ namespace UnitTests.ConfigManagement
 
             Assert.IsFalse(result, "Added non-crew member to team");
         }
+
+        /// <summary>
+        /// Attempt to add an implant when no crew members are listed (i.e. blank team)
+        /// </summary>
+        [TestMethod]
+        public void AddSelectedImplant_NoCrewPresent()
+        {
+            ConfigManager manager = new ConfigManager();
+
+            ConfigManager.CrewLines crewLine = new ConfigManager.CrewLines();
+            crewLine.Team = new TeamConfig();
+
+            manager.CrewData.Add(crewLine);
+
+            bool result = manager.AddSelectedImplantToNextFreeSlot(ImplantList.ImplantListing[(int)ImplantEnum.FIRE_RATE].Name, 0);
+
+            Assert.IsTrue(result, "Didn't add implant to empty team");
+        }
+
+        /// <summary>
+        /// Attempt to add an implant to a valid crew
+        /// </summary>
+        [TestMethod]
+        public void AddSelectedImplant_ValidCrewNoImplants()
+        {
+            ConfigManager manager = new ConfigManager();
+
+            ConfigManager.CrewLines crewLine = new ConfigManager.CrewLines();
+            crewLine.Team = ParsedData.BasicFiveMembersNoImplants();
+
+            manager.CrewData.Add(crewLine);
+
+            bool result = manager.AddSelectedImplantToNextFreeSlot(ImplantList.ImplantListing[(int)ImplantEnum.JUMP_PREP].Name, 0);
+
+            Assert.IsTrue(result, "Failed to add implant");
+        }
     }
 }

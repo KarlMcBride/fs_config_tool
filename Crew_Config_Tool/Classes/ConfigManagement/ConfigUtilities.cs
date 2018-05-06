@@ -2,6 +2,27 @@
 {
     public static class ConfigUtilities
     {
+        public struct CrewImplantIndexStruct
+        {
+            public bool EmptySlotFound  { get; private set; }
+            public int CrewIndex        { get; private set; }
+            public int ImplantIndex     { get; private set; }
+
+            public CrewImplantIndexStruct(bool emptySlotFound)
+            {
+                EmptySlotFound = emptySlotFound;
+                CrewIndex = -1;
+                ImplantIndex = -1;
+            }
+
+            public CrewImplantIndexStruct(bool emptySlotFound, int crewIndex, int implantIndex)
+            {
+                EmptySlotFound = emptySlotFound;
+                CrewIndex = crewIndex;
+                ImplantIndex = implantIndex;
+            }
+        }
+
         public const int OUT_OF_BOUNDS = -1;
         public const int CAPTAIN_SLOT = 2;
 
@@ -75,6 +96,50 @@
             }
 
             return nextFreeSlot;
+        }
+
+        /// <summary>
+        /// Counts the number of implants members in the team i.e. ImplantID != ImplantEnum.NONE
+        /// </summary>
+        /// <param name="selectedTeam">Team to run a count on</param>
+        /// <returns>Int number of implants in team</returns>
+        public static int CountNumberOfImplantsInTeam(TeamConfig selectedTeam)
+        {
+            int implantCount = 0;
+
+            for (int crewIndex = 0; crewIndex < 5; crewIndex++)
+            {
+                for (int implantIndex = 0; implantIndex < 3; implantIndex++)
+                {
+                    if (selectedTeam.CrewMembers[crewIndex].ImplantIDs[implantIndex] != ImplantEnum.NONE)
+                    {
+                        implantCount++;
+                    }
+                }
+            }
+
+            return implantCount;
+        }
+
+        public static CrewImplantIndexStruct FindFirstFreeImplantSlot(TeamConfig selectedTeam)
+        {
+            bool emptySlotFound = false;
+            int crewIndex = 0;
+            int implantIndex = 0;
+
+            for (crewIndex = 0; crewIndex < 5; crewIndex++)
+            {
+                for (implantIndex = 0; implantIndex < 3; implantIndex++)
+                {
+                    if (selectedTeam.CrewMembers[crewIndex].ImplantIDs[implantIndex] == ImplantEnum.NONE)
+                    {
+                        emptySlotFound = true;
+                        return new CrewImplantIndexStruct(emptySlotFound, crewIndex, implantIndex);
+                    }
+                }
+            }
+
+            return new CrewImplantIndexStruct(emptySlotFound);
         }
     }
 }

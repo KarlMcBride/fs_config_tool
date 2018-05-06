@@ -119,6 +119,26 @@ namespace UnitTests.ConfigManagement
         }
 
         [TestMethod]
+        public void CountNumberOfImplantsInFullMemberTeam_NoImplants()
+        {
+            TeamConfig teamConfig = ParsedData.BasicFiveMembersNoImplants();
+
+            int result = ConfigUtilities.CountNumberOfImplantsInTeam(teamConfig);
+
+            Assert.AreEqual(0, result, "Expected to have 0 implants");
+        }
+
+        [TestMethod]
+        public void CountNumberOfImplantsInFullMemberTeam_FullImplants()
+        {
+            TeamConfig teamConfig = ParsedData.FiveMembersFullImplantsOrdered();
+
+            int result = ConfigUtilities.CountNumberOfImplantsInTeam(teamConfig);
+
+            Assert.AreEqual(15, result, "Expected to have 15 implants");
+        }
+
+        [TestMethod]
         public void FindFirstFreeSlotForNonCaptain_EmptyCrew()
         {
             TeamConfig teamConfig = new TeamConfig();
@@ -147,6 +167,30 @@ namespace UnitTests.ConfigManagement
 
             Assert.AreEqual(ConfigUtilities.OUT_OF_BOUNDS, result, "Expected index ["
                                 + ConfigUtilities.OUT_OF_BOUNDS + "] to be returned");
+        }
+
+        [TestMethod]
+        public void FindFirstFreeImplantSlot_EmptyCrew()
+        {
+            TeamConfig teamConfig = new TeamConfig();
+
+            ConfigUtilities.CrewImplantIndexStruct expected = new ConfigUtilities.CrewImplantIndexStruct(true, 0, 0);
+
+            ConfigUtilities.CrewImplantIndexStruct actual = ConfigUtilities.FindFirstFreeImplantSlot(teamConfig);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void FindFirstFreeImplantSlot_FullCrew()
+        {
+            TeamConfig teamConfig = ParsedData.FiveMembersFullImplantsOrdered();
+
+            ConfigUtilities.CrewImplantIndexStruct expected = new ConfigUtilities.CrewImplantIndexStruct(false);
+
+            ConfigUtilities.CrewImplantIndexStruct actual = ConfigUtilities.FindFirstFreeImplantSlot(teamConfig);
+
+            Assert.AreEqual(expected, actual);
         }
     }
 }

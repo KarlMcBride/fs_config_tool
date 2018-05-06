@@ -231,6 +231,7 @@
             this.ListViewImplants.TabIndex = 17;
             this.ListViewImplants.TileSize = new System.Drawing.Size(168, 30);
             this.ListViewImplants.UseCompatibleStateImageBehavior = false;
+            this.ListViewImplants.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ListViewImplants_MouseDoubleClick);
             // 
             // CrewSetBoxMain
             // 

@@ -260,6 +260,29 @@ namespace FS_Crew_Config_Tool
             return removeSuccessful;
         }
 
+        public bool AddSelectedImplantToNextFreeSlot(string implantName, int selectedTeam)
+        {
+            bool addSuccessful = false;
+
+            ImplantEnum selectedImplantID = Utilities.ConvertImplantStringToEnum(implantName);
+
+            if (selectedImplantID != ImplantEnum.NONE && CrewData != null && CrewData.Count > 0 && selectedTeam > UNSELECTED_INDEX)
+            {
+                if (ConfigUtilities.CountNumberOfImplantsInTeam(CrewData[selectedTeam].Team) < 15)
+                {
+                    ConfigUtilities.CrewImplantIndexStruct nextFreeSlot = ConfigUtilities.FindFirstFreeImplantSlot(CrewData[selectedTeam].Team);
+
+                    if (nextFreeSlot.EmptySlotFound)
+                    {
+                        CrewData[selectedTeam].Team.CrewMembers[nextFreeSlot.CrewIndex].ImplantIDs[nextFreeSlot.ImplantIndex] = selectedImplantID;
+                        addSuccessful = true;
+                    }
+                }
+            }
+
+            return addSuccessful;
+        }
+
         public bool RemoveSelectedCrewImplant(int selectedTeam, UiArguments args)
         {
             bool removeSuccessful = false;
