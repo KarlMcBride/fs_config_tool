@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ConfigManagement\ConfigUtilities.cs" />
+    <Compile Include="Classes\ConfigManagement\CrewBuilder.cs" />
     <Compile Include="Classes\ConfigManager.cs" />
     <Compile Include="UiComponents\CrewBox.cs">
       <SubType>UserControl</SubType>

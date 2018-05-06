@@ -50,6 +50,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccessExtensions.cs" />
+    <Compile Include="ConfigManagement\CrewBuilder_cs\GenerateCrewStringFromEnumerations.cs" />
+    <Compile Include="ConfigManagement\CrewBuilder_cs\GenerateSingleCrewMemberComponent.cs" />
     <Compile Include="ConfigManagement\CrewParser_cs\ParseCrewMemberSection.cs" />
     <Compile Include="ConfigManagement\CrewParser_cs\ParseCrewMembersFromLine.cs" />
     <Compile Include="ConfigManagement\TestData\RawStringData.cs" />

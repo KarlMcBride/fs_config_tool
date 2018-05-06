@@ -118,12 +118,26 @@
 
             for (int crewIndex = 0; crewIndex < 5; crewIndex++)
             {
-                for (int implantIndex = 0; implantIndex < 3; implantIndex++)
+                implantCount += CountNumberOfImplantsInCrewMember(selectedTeam.CrewMembers[crewIndex]);
+            }
+
+            return implantCount;
+        }
+
+        /// <summary>
+        /// Counts the number of implants of a given crew member
+        /// </summary>
+        /// <param name="selectedCrew">Crew member to run a count on</param>
+        /// <returns>Int number of implants in crew member</returns>
+        public static int CountNumberOfImplantsInCrewMember(TeamConfig.EnumeratedCrewMember selectedCrew)
+        {
+            int implantCount = 0;
+
+            for (int implantIndex = 0; implantIndex < 3; implantIndex++)
+            {
+                if (selectedCrew.ImplantIDs[implantIndex] != ImplantEnum.NONE)
                 {
-                    if (selectedTeam.CrewMembers[crewIndex].ImplantIDs[implantIndex] != ImplantEnum.NONE)
-                    {
-                        implantCount++;
-                    }
+                    implantCount++;
                 }
             }
 

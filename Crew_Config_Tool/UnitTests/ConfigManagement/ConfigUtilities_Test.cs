@@ -139,6 +139,60 @@ namespace UnitTests.ConfigManagement
         }
 
         [TestMethod]
+        public void CountNumberOfImplants_BasicCrewMember()
+        {
+            TeamConfig.EnumeratedCrewMember crewMember = new TeamConfig.EnumeratedCrewMember();
+
+            crewMember.CrewID = CrewEnum.BLADE;
+
+            int result = ConfigUtilities.CountNumberOfImplantsInCrewMember(crewMember);
+
+            Assert.AreEqual(0, result, "Expected to have 0 implants");
+        }
+
+        [TestMethod]
+        public void CountNumberOfImplants_CrewPlusOneImplant()
+        {
+            TeamConfig.EnumeratedCrewMember crewMember = new TeamConfig.EnumeratedCrewMember();
+
+            crewMember.CrewID = CrewEnum.BLADE;
+            crewMember.ImplantIDs[0] = ImplantEnum.ARMOUR_STRENGTH;
+
+            int result = ConfigUtilities.CountNumberOfImplantsInCrewMember(crewMember);
+
+            Assert.AreEqual(1, result, "Expected to have 1 implant");
+        }
+
+        [TestMethod]
+        public void CountNumberOfImplants_CrewPlusTwoImplants()
+        {
+            TeamConfig.EnumeratedCrewMember crewMember = new TeamConfig.EnumeratedCrewMember();
+
+            crewMember.CrewID = CrewEnum.BLADE;
+            crewMember.ImplantIDs[0] = ImplantEnum.ARMOUR_STRENGTH;
+            crewMember.ImplantIDs[0] = ImplantEnum.CAPTURE_RATE;
+
+            int result = ConfigUtilities.CountNumberOfImplantsInCrewMember(crewMember);
+
+            Assert.AreEqual(1, result, "Expected to have 2 implants");
+        }
+
+        [TestMethod]
+        public void CountNumberOfImplants_CrewPlusThreeImplants()
+        {
+            TeamConfig.EnumeratedCrewMember crewMember = new TeamConfig.EnumeratedCrewMember();
+
+            crewMember.CrewID = CrewEnum.BLADE;
+            crewMember.ImplantIDs[0] = ImplantEnum.ARMOUR_STRENGTH;
+            crewMember.ImplantIDs[0] = ImplantEnum.CAPTURE_RATE;
+            crewMember.ImplantIDs[0] = ImplantEnum.REPAIR_EFFICIENCY;
+
+            int result = ConfigUtilities.CountNumberOfImplantsInCrewMember(crewMember);
+
+            Assert.AreEqual(1, result, "Expected to have 3 implants");
+        }
+
+        [TestMethod]
         public void FindFirstFreeSlotForNonCaptain_EmptyCrew()
         {
             TeamConfig teamConfig = new TeamConfig();
