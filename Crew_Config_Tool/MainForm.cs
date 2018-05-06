@@ -211,7 +211,20 @@ namespace FS_Crew_Config_Tool
             int selectedCrewIndex = ListBoxCrews.SelectedIndex;
             string implantName = ListViewImplants.FocusedItem.Text;
 
-            bool addSuccessful = config.AddSelectedImplantToNextFreeSlot(implantName, selectedCrewIndex);
+            bool addSuccessful = false;
+
+            // If shift is down, attempt to apply the implant to each crew member
+            if (ModifierKeys == Keys.Shift)
+            {
+                for (int index = 0; index < 5; index++)
+                {
+                    addSuccessful |= config.AddSelectedImplantToNextFreeSlot(implantName, selectedCrewIndex);
+                }
+            }
+            else
+            {
+                addSuccessful = config.AddSelectedImplantToNextFreeSlot(implantName, selectedCrewIndex);
+            }
 
             if (addSuccessful)
             {
