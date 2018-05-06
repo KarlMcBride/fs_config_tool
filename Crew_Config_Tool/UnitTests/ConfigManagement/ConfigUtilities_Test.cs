@@ -176,7 +176,7 @@ namespace UnitTests.ConfigManagement
 
             ConfigUtilities.CrewImplantIndexStruct expected = new ConfigUtilities.CrewImplantIndexStruct(true, 0, 0);
 
-            ConfigUtilities.CrewImplantIndexStruct actual = ConfigUtilities.FindFirstFreeImplantSlot(teamConfig);
+            ConfigUtilities.CrewImplantIndexStruct actual = ConfigUtilities.FindFirstFreeImplantSlotWithoutDuplication(teamConfig, ImplantEnum.FIRE_RATE);
 
             Assert.AreEqual(expected, actual);
         }
@@ -188,9 +188,41 @@ namespace UnitTests.ConfigManagement
 
             ConfigUtilities.CrewImplantIndexStruct expected = new ConfigUtilities.CrewImplantIndexStruct(false);
 
-            ConfigUtilities.CrewImplantIndexStruct actual = ConfigUtilities.FindFirstFreeImplantSlot(teamConfig);
+            ConfigUtilities.CrewImplantIndexStruct actual = ConfigUtilities.FindFirstFreeImplantSlotWithoutDuplication(teamConfig, ImplantEnum.FIRE_RATE);
 
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual, "Return struct did not match: " +
+                        "expected: [" + expected.EmptySlotFound + ", " + expected.CrewIndex + ", " + expected.ImplantIndex + "], " +
+                        "actual:   [" + actual.EmptySlotFound + ", " + actual.CrewIndex + ", " + actual.ImplantIndex + "]");
+        }
+
+        [TestMethod]
+        public void FindFirstFreeImplantSlot_FullCrewWithSingleImplant()
+        {
+            for (int crewIndex = 0; crewIndex < 5; crewIndex++)
+            {
+                for (int implantIndex = 0; implantIndex < 3; implantIndex++)
+                {
+                    TeamConfig teamConfig = ParsedData.BasicFiveMembersNoImplants();
+
+                    teamConfig.CrewMembers[crewIndex].ImplantIDs[implantIndex] = ImplantEnum.ENERGY_REGEN;
+
+                    int validImplantIndex = 0;
+
+                    // If the crewmember has a single implant, it should default to index zero of the first crewmember, unless zero is occupied
+                    if (crewIndex == 0 && implantIndex == 0)
+                    {
+                        validImplantIndex = 1;
+                    }
+
+                    ConfigUtilities.CrewImplantIndexStruct expected = new ConfigUtilities.CrewImplantIndexStruct(true, 0, validImplantIndex);
+
+                    ConfigUtilities.CrewImplantIndexStruct actual = ConfigUtilities.FindFirstFreeImplantSlotWithoutDuplication(teamConfig, ImplantEnum.FIRE_RATE);
+
+                    Assert.AreEqual(expected, actual, "Return struct did not match: " +
+                        "expected: [" + expected.EmptySlotFound + ", " + expected.CrewIndex + ", " + expected.ImplantIndex + "], " +
+                        "actual:   ["+ actual.EmptySlotFound + ", " + actual.CrewIndex + ", " + actual.ImplantIndex + "]");
+                }
+            }
         }
     }
 }

@@ -218,5 +218,24 @@ namespace UnitTests.ConfigManagement
 
             Assert.IsTrue(result, "Failed to add implant");
         }
+
+        /// <summary>
+        /// Attempt to add an implant to a valid crew twice. The second instance should not complete
+        /// </summary>
+        [TestMethod]
+        public void AddSelectedImplant_ValidCrewNoImplantsDuplicate()
+        {
+            ConfigManager manager = new ConfigManager();
+
+            ConfigManager.CrewLines crewLine = new ConfigManager.CrewLines();
+            crewLine.Team = ParsedData.BasicFiveMembersNoImplants();
+
+            manager.CrewData.Add(crewLine);
+
+            manager.AddSelectedImplantToNextFreeSlot(ImplantList.ImplantListing[(int)ImplantEnum.JUMP_PREP].Name, 0);
+            bool result = manager.AddSelectedImplantToNextFreeSlot(ImplantList.ImplantListing[(int)ImplantEnum.JUMP_PREP].Name, 0);
+
+            Assert.IsTrue(result, "Expected to add implant");
+        }
     }
 }

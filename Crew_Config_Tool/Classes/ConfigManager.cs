@@ -270,7 +270,8 @@ namespace FS_Crew_Config_Tool
             {
                 if (ConfigUtilities.CountNumberOfImplantsInTeam(CrewData[selectedTeam].Team) < 15)
                 {
-                    ConfigUtilities.CrewImplantIndexStruct nextFreeSlot = ConfigUtilities.FindFirstFreeImplantSlot(CrewData[selectedTeam].Team);
+                    ConfigUtilities.CrewImplantIndexStruct nextFreeSlot = 
+                        ConfigUtilities.FindFirstFreeImplantSlotWithoutDuplication(CrewData[selectedTeam].Team, selectedImplantID);
 
                     if (nextFreeSlot.EmptySlotFound)
                     {

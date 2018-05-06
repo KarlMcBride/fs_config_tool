@@ -11,15 +11,24 @@
             public CrewImplantIndexStruct(bool emptySlotFound)
             {
                 EmptySlotFound = emptySlotFound;
-                CrewIndex = -1;
-                ImplantIndex = -1;
+                CrewIndex = OUT_OF_BOUNDS;
+                ImplantIndex = OUT_OF_BOUNDS;
             }
 
             public CrewImplantIndexStruct(bool emptySlotFound, int crewIndex, int implantIndex)
             {
                 EmptySlotFound = emptySlotFound;
-                CrewIndex = crewIndex;
-                ImplantIndex = implantIndex;
+
+                if (emptySlotFound)
+                {
+                    CrewIndex = crewIndex;
+                    ImplantIndex = implantIndex;
+                }
+                else
+                {
+                    CrewIndex = OUT_OF_BOUNDS;
+                    ImplantIndex = OUT_OF_BOUNDS;
+                }
             }
         }
 
@@ -121,7 +130,7 @@
             return implantCount;
         }
 
-        public static CrewImplantIndexStruct FindFirstFreeImplantSlot(TeamConfig selectedTeam)
+        public static CrewImplantIndexStruct FindFirstFreeImplantSlotWithoutDuplication(TeamConfig selectedTeam, ImplantEnum implantID)
         {
             bool emptySlotFound = false;
             int crewIndex = 0;
@@ -129,17 +138,36 @@
 
             for (crewIndex = 0; crewIndex < 5; crewIndex++)
             {
+                int implantSlotsChecked = 0;
+                int emptySlot = -1;
+
                 for (implantIndex = 0; implantIndex < 3; implantIndex++)
                 {
                     if (selectedTeam.CrewMembers[crewIndex].ImplantIDs[implantIndex] == ImplantEnum.NONE)
                     {
-                        emptySlotFound = true;
-                        return new CrewImplantIndexStruct(emptySlotFound, crewIndex, implantIndex);
+                        // Hold onto the first empty slot
+                        if (emptySlot == -1)
+                        {
+                            emptySlot = implantIndex;
+                        }
+                        implantSlotsChecked++;
                     }
+                    else if (selectedTeam.CrewMembers[crewIndex].ImplantIDs[implantIndex] != implantID)
+                    {
+                        implantSlotsChecked++;
+                    }
+                }
+
+                // If the current implant doesn't match any of the current slots, then 
+                if (implantSlotsChecked == 3 && emptySlot > -1)
+                {
+                    emptySlotFound = true;
+                    implantIndex = emptySlot;
+                    break;
                 }
             }
 
-            return new CrewImplantIndexStruct(emptySlotFound);
+            return new CrewImplantIndexStruct(emptySlotFound, crewIndex, implantIndex);
         }
     }
 }
