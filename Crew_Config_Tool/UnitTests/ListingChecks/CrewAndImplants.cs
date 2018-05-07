@@ -34,5 +34,19 @@ namespace UnitTests.ListingChecks
 
             Assert.AreEqual(enum_expected, actual);
         }
+
+        [TestMethod]
+        public void VerifyImplantListOrder()
+        {
+            for (int index = 0; index < (int)ImplantEnum.NONE; index++)
+            {
+                ImplantEnum expected = (ImplantEnum)index;
+
+                ImplantEnum actual = ImplantList.ImplantListing[index].ID;
+
+                Assert.AreEqual(expected, actual);
+            }
+
+        }
     }
 }

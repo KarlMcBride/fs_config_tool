@@ -278,5 +278,15 @@ namespace UnitTests.ConfigManagement
                 }
             }
         }
+
+        [TestMethod]
+        public void GetStartOfRawCrewString()
+        {
+            string expected = RawStringData.NO_MEMBERS_PARTIAL_STRING;
+
+            string actual = ConfigUtilities.GetStartOfRawCrewString(RawStringData.NO_MEMBERS_FULL_STRING);
+
+            Assert.AreEqual(expected, actual, "Partial crew string differs");
+        }
     }
 }

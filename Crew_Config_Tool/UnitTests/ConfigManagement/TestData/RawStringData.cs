@@ -5,6 +5,9 @@
         public const string NO_MEMBERS_FULL_STRING =
             "CrewTeams=(ID=\"C3ED77E04FCB6D1876D4F2AFD372E00E\",Name=\"The Opportunists\",Icon=\"\",CrewMembers=((),(),(),(),()),Members=)";
 
+        public const string NO_MEMBERS_PARTIAL_STRING =
+            "CrewTeams=(ID=\"C3ED77E04FCB6D1876D4F2AFD372E00E\",Name=\"The Opportunists\",Icon=\"\",CrewMembers=";
+
         public const string CLARA_ONLY_NO_IMPLANTS =
             "CrewTeams=(ID=\"709A671240E39FC8FBC3F98404A19AB4\",Name=\"Clara Only\",Icon=\"\",CrewMembers=" +
             "((),(),(ID=\"469C924F46938892882C86B29AEC0787\"),(),()),Members=)";
