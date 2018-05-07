@@ -1,6 +1,7 @@
 ﻿using FS_Crew_Config_Tool.Classes;
 using FS_Crew_Config_Tool.Classes.ConfigManagement;
 using FS_Crew_Config_Tool.Classes.ConfigManagement.FS_Crew_Config_Tool.Classes.ConfigManagement;
+using FS_Crew_Config_Tool.Classes.Listings;
 using FS_Crew_Config_Tool.UiComponents;
 using System;
 
@@ -20,6 +21,7 @@ namespace FS_Crew_Config_Tool
         /// </summary>
         public ConfigManager()
         {
+            StatList.PopulateStatsList();
             CrewList.PopulateCrewList();
             ImplantList.PopulateImplantList();
 
