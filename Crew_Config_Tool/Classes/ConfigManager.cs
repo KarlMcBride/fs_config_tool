@@ -3,7 +3,6 @@ using FS_Crew_Config_Tool.Classes.ConfigManagement;
 using FS_Crew_Config_Tool.Classes.ConfigManagement.FS_Crew_Config_Tool.Classes.ConfigManagement;
 using FS_Crew_Config_Tool.UiComponents;
 using System;
-using System.IO;
 
 namespace FS_Crew_Config_Tool
 {

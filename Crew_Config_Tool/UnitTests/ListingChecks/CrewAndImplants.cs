@@ -1,5 +1,4 @@
-﻿using System;
-using FS_Crew_Config_Tool;
+﻿using FS_Crew_Config_Tool;
 using FS_Crew_Config_Tool.Classes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

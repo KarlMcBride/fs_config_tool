@@ -1,6 +1,5 @@
 ﻿using FS_Crew_Config_Tool.Classes.ConfigManagement.FS_Crew_Config_Tool.Classes.ConfigManagement;
 using System;
-using System.Collections.Generic;
 using System.IO;
 
 namespace FS_Crew_Config_Tool.Classes.ConfigManagement
