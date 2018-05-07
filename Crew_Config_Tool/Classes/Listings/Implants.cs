@@ -36,21 +36,22 @@ namespace FS_Crew_Config_Tool.Classes
 
     public struct Implant
     {
-        public ImplantEnum ID   { get; private set; }
-        public string Name      { get; private set; }
-        public StatCategory Cat { get; private set; }
-        public StatType Type    { get; private set; }
-        public string Code      { get; private set; }
-        public float Stat       { get; private set; }
+        public ImplantEnum ID        { get; private set; }
+        public string Name           { get; private set; }
+        public StatCategory Category { get; private set; }
+        public StatType Type         { get; private set; }
+        public string Code           { get; private set; }
+        public StatCombination Stat  { get; private set; }
 
         public Implant(ImplantEnum id, string code, float stat)
         {
             ID = id;
             Name = StatList.StatsListing[(int)id].Name;
-            Cat = StatList.StatsListing[(int)id].Category;
+            Category = StatList.StatsListing[(int)id].Category;
             Type = StatList.StatsListing[(int)id].Type;
             Code = code;
-            Stat = stat;
+
+            Stat = new StatCombination(Category, Type, Name);
         }
     }
 

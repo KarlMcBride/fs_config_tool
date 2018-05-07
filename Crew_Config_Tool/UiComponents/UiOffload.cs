@@ -72,7 +72,7 @@ namespace FS_Crew_Config_Tool.UiComponents
             // Loop through all implants
             for (int id = 0; id < (int)ImplantEnum.NONE; id++)
             {
-                if (implantCategory == ImplantList.ImplantListing[id].Cat)
+                if (implantCategory == ImplantList.ImplantListing[id].Category)
                 {
                     string name = ImplantList.ImplantListing[id].Name;
 

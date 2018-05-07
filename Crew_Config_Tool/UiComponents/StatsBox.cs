@@ -1,4 +1,5 @@
 ﻿using FS_Crew_Config_Tool.Classes;
+using FS_Crew_Config_Tool.Classes.Listings;
 using System.Windows.Forms;
 
 namespace FS_Crew_Config_Tool.UiComponents
@@ -20,14 +21,24 @@ namespace FS_Crew_Config_Tool.UiComponents
             for (int crewIndex = 0; crewIndex < 5; crewIndex++)
             {
                 int crewID = (int)team.CrewMembers[crewIndex].CrewID;
-
-                //if (CrewList.CrewListing[crewID].
+                AddCrewStatsToTotals(CrewList.CrewListing[crewID].CrewStats);
 
                 for (int implantIndex = 0; implantIndex < 3; implantIndex++)
                 {
-
+                    int implantID = (int)team.CrewMembers[crewIndex].ImplantIDs[implantIndex];
+                    AddImplantStatsToTotals(ImplantList.ImplantListing[implantID].Stat);
                 }
             }
+        }
+
+        private void AddCrewStatsToTotals(StatCombination[] crewStats)
+        {
+
+        }
+
+        private void AddImplantStatsToTotals(StatCombination implantStats)
+        {
+
         }
     }
 }
