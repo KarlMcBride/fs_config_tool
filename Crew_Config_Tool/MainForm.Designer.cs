@@ -216,6 +216,7 @@
             // ListViewFilteredCrew
             // 
             this.ListViewFilteredCrew.Location = new System.Drawing.Point(85, 19);
+            this.ListViewFilteredCrew.MultiSelect = false;
             this.ListViewFilteredCrew.Name = "ListViewFilteredCrew";
             this.ListViewFilteredCrew.Size = new System.Drawing.Size(551, 377);
             this.ListViewFilteredCrew.TabIndex = 16;
@@ -226,6 +227,7 @@
             // ListViewImplants
             // 
             this.ListViewImplants.Location = new System.Drawing.Point(85, 19);
+            this.ListViewImplants.MultiSelect = false;
             this.ListViewImplants.Name = "ListViewImplants";
             this.ListViewImplants.Size = new System.Drawing.Size(383, 377);
             this.ListViewImplants.TabIndex = 17;
