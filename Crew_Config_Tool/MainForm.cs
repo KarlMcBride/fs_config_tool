@@ -168,7 +168,7 @@ namespace FS_Crew_Config_Tool
 
             if (selectedIndex != -1)
             {
-                CrewSetBoxMain.DisplaySelectedTeam(config.DataLists.CrewData[selectedIndex].Team, CrewSetBoxMain);
+                RunCrewUpdates(selectedIndex);
 
                 SetDeleteButtonState(selectedIndex);
             }
@@ -203,8 +203,7 @@ namespace FS_Crew_Config_Tool
 
             if (addSuccessful)
             {
-
-                CrewSetBoxMain.DisplaySelectedTeam(config.DataLists.CrewData[selectedIndex].Team, CrewSetBoxMain);
+                RunCrewUpdates(selectedIndex);
             }
         }
 
@@ -230,7 +229,7 @@ namespace FS_Crew_Config_Tool
 
             if (addSuccessful)
             {
-                CrewSetBoxMain.DisplaySelectedTeam(config.DataLists.CrewData[selectedCrewIndex].Team, CrewSetBoxMain);
+                RunCrewUpdates(selectedCrewIndex);
             }
         }
 
@@ -254,7 +253,7 @@ namespace FS_Crew_Config_Tool
 
             if (removeSuccessful)
             {
-                CrewSetBoxMain.DisplaySelectedTeam(config.DataLists.CrewData[selectedCrewIndex].Team, CrewSetBoxMain);
+                RunCrewUpdates(selectedCrewIndex);
             }
         }
 
@@ -280,8 +279,14 @@ namespace FS_Crew_Config_Tool
 
             if (removeSuccessful)
             {
-                CrewSetBoxMain.DisplaySelectedTeam(config.DataLists.CrewData[selectedCrewIndex].Team, CrewSetBoxMain);
+                RunCrewUpdates(selectedCrewIndex);
             }
+        }
+
+        private void RunCrewUpdates(int selectedCrewIndex)
+        {
+            CrewSetBoxMain.DisplaySelectedTeam(config.DataLists.CrewData[selectedCrewIndex].Team, CrewSetBoxMain);
+            StatsBox.GenerateStats(config.DataLists.CrewData[selectedCrewIndex].Team);
         }
     }
 }

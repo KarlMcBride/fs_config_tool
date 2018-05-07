@@ -52,6 +52,7 @@
             this.RadioButtonImpAtk = new System.Windows.Forms.RadioButton();
             this.GroupBoxCrewMembers = new System.Windows.Forms.GroupBox();
             this.GroupBoxImplants = new System.Windows.Forms.GroupBox();
+            this.StatsBox = new FS_Crew_Config_Tool.UiComponents.StatsBox();
             this.GroupBoxCrewMembers.SuspendLayout();
             this.GroupBoxImplants.SuspendLayout();
             this.SuspendLayout();
@@ -88,7 +89,7 @@
             // LabelFsRunningWarning
             // 
             this.LabelFsRunningWarning.AutoSize = true;
-            this.LabelFsRunningWarning.Location = new System.Drawing.Point(1390, 641);
+            this.LabelFsRunningWarning.Location = new System.Drawing.Point(1602, 644);
             this.LabelFsRunningWarning.Name = "LabelFsRunningWarning";
             this.LabelFsRunningWarning.Size = new System.Drawing.Size(73, 13);
             this.LabelFsRunningWarning.TabIndex = 4;
@@ -97,7 +98,7 @@
             // labelCcuCount
             // 
             this.labelCcuCount.AutoSize = true;
-            this.labelCcuCount.Location = new System.Drawing.Point(1407, 666);
+            this.labelCcuCount.Location = new System.Drawing.Point(1619, 669);
             this.labelCcuCount.Name = "labelCcuCount";
             this.labelCcuCount.Size = new System.Drawing.Size(56, 13);
             this.labelCcuCount.TabIndex = 5;
@@ -287,7 +288,7 @@
             this.GroupBoxCrewMembers.Controls.Add(this.RadioButtonCrewUtility);
             this.GroupBoxCrewMembers.Controls.Add(this.RadioButtonCrewRepair);
             this.GroupBoxCrewMembers.Controls.Add(this.RadioButtonCrewTactical);
-            this.GroupBoxCrewMembers.Location = new System.Drawing.Point(244, 283);
+            this.GroupBoxCrewMembers.Location = new System.Drawing.Point(329, 279);
             this.GroupBoxCrewMembers.Name = "GroupBoxCrewMembers";
             this.GroupBoxCrewMembers.Size = new System.Drawing.Size(642, 403);
             this.GroupBoxCrewMembers.TabIndex = 21;
@@ -300,18 +301,26 @@
             this.GroupBoxImplants.Controls.Add(this.RadioButtonImpDef);
             this.GroupBoxImplants.Controls.Add(this.ListViewImplants);
             this.GroupBoxImplants.Controls.Add(this.RadioButtonImpUtil);
-            this.GroupBoxImplants.Location = new System.Drawing.Point(892, 283);
+            this.GroupBoxImplants.Location = new System.Drawing.Point(1012, 279);
             this.GroupBoxImplants.Name = "GroupBoxImplants";
             this.GroupBoxImplants.Size = new System.Drawing.Size(474, 403);
             this.GroupBoxImplants.TabIndex = 22;
             this.GroupBoxImplants.TabStop = false;
             this.GroupBoxImplants.Text = "Implants";
             // 
+            // StatsBox
+            // 
+            this.StatsBox.Location = new System.Drawing.Point(1152, 3);
+            this.StatsBox.Name = "StatsBox";
+            this.StatsBox.Size = new System.Drawing.Size(511, 279);
+            this.StatsBox.TabIndex = 23;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1475, 691);
+            this.ClientSize = new System.Drawing.Size(1687, 691);
+            this.Controls.Add(this.StatsBox);
             this.Controls.Add(this.GroupBoxImplants);
             this.Controls.Add(this.GroupBoxCrewMembers);
             this.Controls.Add(this.ButtonDelete);
@@ -360,6 +369,7 @@
         private System.Windows.Forms.RadioButton RadioButtonImpAtk;
         private System.Windows.Forms.GroupBox GroupBoxCrewMembers;
         private System.Windows.Forms.GroupBox GroupBoxImplants;
+        private UiComponents.StatsBox StatsBox;
     }
 }
 
