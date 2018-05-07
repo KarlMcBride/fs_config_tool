@@ -234,7 +234,7 @@ namespace FS_Crew_Config_Tool
             }
         }
 
-        public void RemoveSelectedCrewMember(object sender, int crewIndexToRemove)
+        public void RemoveSelectedCrewMember(object sender, CrewArgs args)
         {
             int selectedCrewIndex = ListBoxCrews.SelectedIndex;
 
@@ -249,7 +249,7 @@ namespace FS_Crew_Config_Tool
             }
             else
             {
-                removeSuccessful = config.RemoveSelectedCrewMember(selectedCrewIndex, crewIndexToRemove);
+                removeSuccessful = config.RemoveSelectedCrewMember(selectedCrewIndex, args.CrewIndex);
             }
 
             if (removeSuccessful)
@@ -258,7 +258,7 @@ namespace FS_Crew_Config_Tool
             }
         }
 
-        public void RemoveSelectedCrewMemberImplant(object sender, UiArguments args)
+        public void RemoveSelectedCrewMemberImplant(object sender, CrewImplantArgs args)
         {
             int selectedCrewIndex = ListBoxCrews.SelectedIndex;
 
@@ -268,7 +268,7 @@ namespace FS_Crew_Config_Tool
             {
                 for (int implantIndex = 0; implantIndex < 3; implantIndex++)
                 {
-                    UiArguments uiArguments = new UiArguments(args.CrewIndex, implantIndex);
+                    CrewImplantArgs uiArguments = new CrewImplantArgs(args.CrewIndex, implantIndex);
 
                     removeSuccessful |= config.RemoveSelectedCrewImplant(selectedCrewIndex, uiArguments);
                 }

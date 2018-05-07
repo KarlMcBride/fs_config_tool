@@ -6,8 +6,8 @@ namespace FS_Crew_Config_Tool.UiComponents
 {
     public partial class CrewBox : UserControl
     {
-        public event EventHandler<int> CrewMemberDoubleClicked;
-        public event EventHandler<UiArguments> ImplantDoubleClicked;
+        public event EventHandler<CrewArgs> CrewMemberDoubleClicked;
+        public event EventHandler<CrewImplantArgs> ImplantDoubleClicked;
 
         private PictureBox[] pictureBoxImplantArray;
         private int boxIndex = -1;
@@ -65,7 +65,9 @@ namespace FS_Crew_Config_Tool.UiComponents
         {
             if (CrewMemberDoubleClicked != null)
             {
-                CrewMemberDoubleClicked(this, boxIndex);
+                CrewArgs args = new CrewArgs(boxIndex);
+
+                CrewMemberDoubleClicked(this, args);
             }
         }
 
@@ -73,7 +75,7 @@ namespace FS_Crew_Config_Tool.UiComponents
         {
             if (ImplantDoubleClicked != null)
             {
-                UiArguments args = new UiArguments(boxIndex, 0);
+                CrewImplantArgs args = new CrewImplantArgs(boxIndex, 0);
 
                 ImplantDoubleClicked(this, args);
             }
@@ -83,7 +85,7 @@ namespace FS_Crew_Config_Tool.UiComponents
         {
             if (ImplantDoubleClicked != null)
             {
-                UiArguments args = new UiArguments(boxIndex, 1);
+                CrewImplantArgs args = new CrewImplantArgs(boxIndex, 1);
 
                 ImplantDoubleClicked(this, args);
             }
@@ -94,7 +96,7 @@ namespace FS_Crew_Config_Tool.UiComponents
         {
             if (ImplantDoubleClicked != null)
             {
-                UiArguments args = new UiArguments(boxIndex, 2);
+                CrewImplantArgs args = new CrewImplantArgs(boxIndex, 2);
 
                 ImplantDoubleClicked(this, args);
             }

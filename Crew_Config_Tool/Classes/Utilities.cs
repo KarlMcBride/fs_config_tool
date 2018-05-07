@@ -98,12 +98,13 @@ namespace FS_Crew_Config_Tool.Classes
 
             string uriResponse = string.Empty;
 
-            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-            using (Stream stream = response.GetResponseStream())
-            using (StreamReader reader = new StreamReader(stream))
-            {
-                uriResponse = reader.ReadToEnd();
-            }
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            Stream stream = response.GetResponseStream();
+            StreamReader reader = new StreamReader(stream);
+
+            uriResponse = reader.ReadToEnd();
+
+            stream.Dispose();
 
             string playerCount = "N/A";
 

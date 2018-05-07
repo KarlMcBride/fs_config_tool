@@ -6,8 +6,8 @@ namespace FS_Crew_Config_Tool.UiComponents
 {
     public partial class CrewSetBox : UserControl
     {
-        public event EventHandler<int> CrewMemberDoubleClicked;
-        public event EventHandler<UiArguments> ImplantDoubleClicked;
+        public event EventHandler<CrewArgs> CrewMemberDoubleClicked;
+        public event EventHandler<CrewImplantArgs> ImplantDoubleClicked;
 
         private CrewBox[] crewBoxArray;
 
@@ -25,15 +25,15 @@ namespace FS_Crew_Config_Tool.UiComponents
             }
         }
 
-        public void RemoveClickedCrewMember(object sender, int selectedIndex)
+        public void RemoveClickedCrewMember(object sender, CrewArgs args)
         {
             if (CrewMemberDoubleClicked != null)
             {
-                CrewMemberDoubleClicked(this, selectedIndex);
+                CrewMemberDoubleClicked(this, args);
             }
         }
 
-        public void RemoveClickedImplant(object sender, UiArguments args)
+        public void RemoveClickedImplant(object sender, CrewImplantArgs args)
         {
             if (ImplantDoubleClicked != null)
             {

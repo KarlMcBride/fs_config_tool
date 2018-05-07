@@ -13,7 +13,7 @@ namespace UnitTests.UiComponents
             int expectedCrew = 2;
             int expectedImplant = 1;
 
-            UiArguments args = new UiArguments(expectedCrew, expectedImplant);
+            CrewImplantArgs args = new CrewImplantArgs(expectedCrew, expectedImplant);
 
             Assert.AreEqual(expectedCrew, args.CrewIndex,       "Crew index doesn't match");
             Assert.AreEqual(expectedImplant, args.ImplantIndex, "Implant doesn't match");
@@ -25,7 +25,7 @@ namespace UnitTests.UiComponents
             int expectedCrew = -1;
             int erroneousCrew = -2;
 
-            UiArguments args = new UiArguments(erroneousCrew, 0);
+            CrewImplantArgs args = new CrewImplantArgs(erroneousCrew, 0);
 
             Assert.AreEqual(expectedCrew, args.CrewIndex, "Negative crew index OOR not correctly handled");
         }
@@ -36,7 +36,7 @@ namespace UnitTests.UiComponents
             int expectedCrew = -1;
             int erroneousCrew = 5;
 
-            UiArguments args = new UiArguments(erroneousCrew, 0);
+            CrewImplantArgs args = new CrewImplantArgs(erroneousCrew, 0);
 
             Assert.AreEqual(expectedCrew, args.CrewIndex, "OOR crew index not correctly handled");
         }
@@ -47,7 +47,7 @@ namespace UnitTests.UiComponents
             int expectedImplant = -1;
             int erroneousImplant = -2;
 
-            UiArguments args = new UiArguments(0, erroneousImplant);
+            CrewImplantArgs args = new CrewImplantArgs(0, erroneousImplant);
 
             Assert.AreEqual(expectedImplant, args.ImplantIndex, "Negative implant index not correctly handled");
         }
@@ -58,7 +58,7 @@ namespace UnitTests.UiComponents
             int expectedImplant = -1;
             int erroneousImplant = 3;
 
-            UiArguments args = new UiArguments(0, erroneousImplant);
+            CrewImplantArgs args = new CrewImplantArgs(0, erroneousImplant);
 
             Assert.AreEqual(expectedImplant, args.ImplantIndex, "OOR implant index not correctly handled");
         }

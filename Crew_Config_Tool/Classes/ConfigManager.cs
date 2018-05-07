@@ -257,7 +257,7 @@ namespace FS_Crew_Config_Tool
             return addSuccessful;
         }
 
-        public bool RemoveSelectedCrewImplant(int selectedTeam, UiArguments args)
+        public bool RemoveSelectedCrewImplant(int selectedTeam, CrewImplantArgs args)
         {
             bool removeSuccessful = false;
 

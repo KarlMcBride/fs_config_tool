@@ -57,7 +57,7 @@
   <ItemGroup>
     <Compile Include="Classes\ConfigManagement\ConfigUtilities.cs" />
     <Compile Include="Classes\ConfigManagement\CrewBuilder.cs" />
-    <Compile Include="Classes\ConfigManagement\DataStorage.cs" />
+    <Compile Include="Classes\ConfigManagement\DataListings.cs" />
     <Compile Include="Classes\ConfigManagement\DataTypes.cs" />
     <Compile Include="Classes\ConfigManagement\FileIO.cs" />
     <Compile Include="Classes\ConfigManager.cs" />

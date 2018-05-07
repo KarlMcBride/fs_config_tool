@@ -2,9 +2,23 @@
 
 namespace FS_Crew_Config_Tool.UiComponents
 {
-    public class UiArguments : EventArgs
+    public class CrewArgs : EventArgs
     {
-        public UiArguments(int crew, int implant)
+        public CrewArgs(int crew)
+        {
+            if (crew >= 4 || crew < -1)
+            {
+                crew = -1;
+            }
+            CrewIndex = crew;
+        }
+
+        public int CrewIndex { get; private set; }
+    }
+
+    public class CrewImplantArgs : EventArgs
+    {
+        public CrewImplantArgs(int crew, int implant)
         {
             if (crew >= 4 || crew < -1)
             {
