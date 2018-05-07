@@ -6,7 +6,7 @@ namespace FS_Crew_Config_Tool.UiComponents
     {
         public CrewArgs(int crew)
         {
-            if (crew >= 4 || crew < -1)
+            if (crew > 4 || crew < -1)
             {
                 crew = -1;
             }
@@ -20,13 +20,13 @@ namespace FS_Crew_Config_Tool.UiComponents
     {
         public CrewImplantArgs(int crew, int implant)
         {
-            if (crew >= 4 || crew < -1)
+            if (crew > 4 || crew < -1)
             {
                 crew = -1;
             }
             CrewIndex = crew;
 
-            if (implant >= 3 || implant < -1)
+            if (implant > 2 || implant < -1)
             {
                 implant = -1;
             }

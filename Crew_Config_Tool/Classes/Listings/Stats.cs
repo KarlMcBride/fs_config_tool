@@ -70,12 +70,33 @@ namespace FS_Crew_Config_Tool.Classes.Listings
         /// </summary>
         public float Value           { get; set; }
 
+        /// <summary>
+        /// Constructor for stat types
+        /// </summary>
+        /// <param name="category">Attack/defense/utility</param>
+        /// <param name="type">E.g. attack damage, repair efficiency</param>
+        /// <param name="name">Stat name e.g. "Capture Rate"</param>
         public StatCombination(StatCategory category, StatType type, string name)
         {
             Category = category;
             Type = type;
             Name = name;
             Value = 0;
+        }
+
+        /// <summary>
+        /// Constructor for implant stats
+        /// </summary>
+        /// <param name="category">Attack/defense/utility</param>
+        /// <param name="type">E.g. attack damage, repair efficiency</param>
+        /// <param name="name">Stat name e.g. "Capture Rate"</param>
+        /// <param name="value">Implant value e.g. 200 for hull strength</param>
+        public StatCombination(StatCategory category, StatType type, string name, float value)
+        {
+            Category = category;
+            Type = type;
+            Name = name;
+            Value = value;
         }
     }
 

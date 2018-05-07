@@ -51,7 +51,7 @@ namespace FS_Crew_Config_Tool.Classes
             Type = StatList.StatsListing[(int)id].Type;
             Code = code;
 
-            Stat = new StatCombination(Category, Type, Name);
+            Stat = new StatCombination(Category, Type, Name, stat);
         }
     }
 

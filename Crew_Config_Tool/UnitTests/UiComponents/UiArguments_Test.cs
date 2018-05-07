@@ -7,10 +7,52 @@ namespace UnitTests.UiComponents
     public class UiArguments_Test
     {
         [TestMethod]
-        public void ValidArgs()
+        public void Crew_ValidArgsLowerBounds()
         {
-            int expectedCrew = 2;
-            int expectedImplant = 1;
+            int expectedCrew = 0;
+
+            CrewArgs args = new CrewArgs(expectedCrew);
+
+            Assert.AreEqual(expectedCrew, args.CrewIndex, "Crew index doesn't match");
+        }
+
+        [TestMethod]
+        public void Crew_ValidArgsUpperBounds()
+        {
+            int expectedCrew = 4;
+
+            CrewArgs args = new CrewArgs(expectedCrew);
+
+            Assert.AreEqual(expectedCrew, args.CrewIndex, "Crew index doesn't match");
+        }
+
+        [TestMethod]
+        public void Crew_Negative()
+        {
+            int expectedCrew = -1;
+            int erroneousCrew = -2;
+
+            CrewArgs args = new CrewArgs(erroneousCrew);
+
+            Assert.AreEqual(expectedCrew, args.CrewIndex, "Negative crew index not correctly handled");
+        }
+
+        [TestMethod]
+        public void Crew_OOR()
+        {
+            int expectedCrew = -1;
+            int erroneousCrew = 5;
+
+            CrewArgs args = new CrewArgs(erroneousCrew);
+
+            Assert.AreEqual(expectedCrew, args.CrewIndex, "OOR crew index not correctly handled");
+        }
+
+        [TestMethod]
+        public void CrewImplant_ValidArgsLowerBounds()
+        {
+            int expectedCrew = 0;
+            int expectedImplant = 0;
 
             CrewImplantArgs args = new CrewImplantArgs(expectedCrew, expectedImplant);
 
@@ -19,18 +61,30 @@ namespace UnitTests.UiComponents
         }
 
         [TestMethod]
-        public void NegativeCrew()
+        public void CrewImplant_ValidArgsUpperBounds()
+        {
+            int expectedCrew = 4;
+            int expectedImplant = 2;
+
+            CrewImplantArgs args = new CrewImplantArgs(expectedCrew, expectedImplant);
+
+            Assert.AreEqual(expectedCrew, args.CrewIndex, "Crew index doesn't match");
+            Assert.AreEqual(expectedImplant, args.ImplantIndex, "Implant doesn't match");
+        }
+
+        [TestMethod]
+        public void CrewImplant_NegativeCrew()
         {
             int expectedCrew = -1;
             int erroneousCrew = -2;
 
             CrewImplantArgs args = new CrewImplantArgs(erroneousCrew, 0);
 
-            Assert.AreEqual(expectedCrew, args.CrewIndex, "Negative crew index OOR not correctly handled");
+            Assert.AreEqual(expectedCrew, args.CrewIndex, "Negative crew index not correctly handled");
         }
 
         [TestMethod]
-        public void OorCrew()
+        public void CrewImplant_OorCrew()
         {
             int expectedCrew = -1;
             int erroneousCrew = 5;
@@ -41,7 +95,7 @@ namespace UnitTests.UiComponents
         }
 
         [TestMethod]
-        public void NegativeImplant()
+        public void CrewImplant_NegativeImplant()
         {
             int expectedImplant = -1;
             int erroneousImplant = -2;
@@ -52,7 +106,7 @@ namespace UnitTests.UiComponents
         }
 
         [TestMethod]
-        public void OorImplant()
+        public void CrewImplant_OorImplant()
         {
             int expectedImplant = -1;
             int erroneousImplant = 3;
