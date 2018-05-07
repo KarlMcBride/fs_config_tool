@@ -93,6 +93,11 @@ namespace FS_Crew_Config_Tool.Classes.Listings
 
         public static void PopulateStatsList()
         {
+            if (StatsListing != null)
+            {
+                //return;
+            }
+
             StatsListing = new List<StatCombination>();
 
             StatCombination armourRepairRate = new StatCombination(StatCategory.DEFENSE, StatType.ARMOUR_REPAIR_RATE , "Armour Repair Rate");

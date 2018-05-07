@@ -1,5 +1,6 @@
 ﻿using FS_Crew_Config_Tool;
 using FS_Crew_Config_Tool.Classes;
+using FS_Crew_Config_Tool.Classes.Listings;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTests.ListingChecks
@@ -10,6 +11,7 @@ namespace UnitTests.ListingChecks
         [TestInitialize]
         public void PopulateLists()
         {
+            StatList.PopulateStatsList();
             CrewList.PopulateCrewList();
             ImplantList.PopulateImplantList();
         }

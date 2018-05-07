@@ -208,6 +208,11 @@ namespace FS_Crew_Config_Tool
 
         public static void PopulateCrewList()
         {
+            if (CrewListing != null)
+            {
+                return;
+            }
+
             CrewListing = new List<CrewMember>();
 
             // ##### CAG #####

@@ -24,8 +24,8 @@ namespace FS_Crew_Config_Tool.Classes
         REPAIR_EFFICIENCY,
         SENSOR_RANGE,
         SQUAD_COOLDOWN,
-        SQUAD_SURVIVAL,
         STATION_DAMAGE_REDUCTION,
+        SQUAD_SURVIVAL,
         TURN_RATE,
         TURRET_TRAVERSE,
         UTILITY_COOLDOWN,
@@ -60,6 +60,11 @@ namespace FS_Crew_Config_Tool.Classes
 
         public static void PopulateImplantList()
         {
+            if (ImplantListing != null)
+            {
+                return;
+            }
+
             ImplantListing = new List<Implant>();
 
             Implant armourRepairRate = new Implant(ImplantEnum.ARMOUR_REPAIR_RATE, "BB220E9345CEFD879D93838D549B26CF", 5f);
