@@ -11,20 +11,10 @@ namespace FS_Crew_Config_Tool
     {
         private const int UNSELECTED_INDEX = -1;
 
-        private const string FS_PATH = "..\\Local\\spacegame\\Saved\\Config\\WindowsNoEditor\\GameUserSettings.ini";
-
-        private string CompletePath
-        {
-            get
-            {
-                string appDataDir = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-                return Path.Combine(appDataDir, FS_PATH);
-            }
-        }
-
         private const string CREW_TEAMS_FLAG = "CrewTeams=";
 
         public DataListings DataLists;
+        public FileIO FileIO;
 
         /// <summary>
         /// Class constructor - populates crew & implant lists
@@ -35,11 +25,12 @@ namespace FS_Crew_Config_Tool
             ImplantList.PopulateImplantList();
 
             DataLists = new DataListings();
+            FileIO = new FileIO();
         }
 
         public void LoadConfig()
         {
-            string[] fullConfig = File.ReadAllLines(CompletePath);
+            string[] fullConfig = FileIO.ReadConfig();
 
             ParseIntoSegments(fullConfig);
         }
@@ -121,26 +112,7 @@ namespace FS_Crew_Config_Tool
 
         public void SaveConfig()
         {
-            using (StreamWriter writetext = new StreamWriter(CompletePath))
-            {
-                // Write all segment one items
-                foreach (string line in DataLists.SegmentStart)
-                {
-                    writetext.WriteLine(line);
-                }
-
-                // Write all crew lines
-                foreach (CrewLines line in DataLists.CrewData)
-                {
-                    writetext.WriteLine(line.BuildLine());
-                }
-
-                // Write all segment three items
-                foreach (string line in DataLists.SegmentEnd)
-                {
-                    writetext.WriteLine(line);
-                }
-            }
+            FileIO.SaveConfig(DataLists);
         }
 
         public bool DeleteSelectedCrewFromList(int indexToDelete)
