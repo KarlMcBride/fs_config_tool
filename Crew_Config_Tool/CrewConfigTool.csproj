@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -56,7 +57,9 @@
   <ItemGroup>
     <Compile Include="Classes\ConfigManagement\ConfigUtilities.cs" />
     <Compile Include="Classes\ConfigManagement\CrewBuilder.cs" />
+    <Compile Include="Classes\ConfigManagement\DataStorage.cs" />
     <Compile Include="Classes\ConfigManagement\DataTypes.cs" />
+    <Compile Include="Classes\ConfigManagement\FileIO.cs" />
     <Compile Include="Classes\ConfigManager.cs" />
     <Compile Include="UiComponents\CrewBox.cs">
       <SubType>UserControl</SubType>

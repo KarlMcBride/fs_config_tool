@@ -1,5 +1,6 @@
 ﻿using FS_Crew_Config_Tool.Classes;
 using FS_Crew_Config_Tool.Classes.ConfigManagement;
+using FS_Crew_Config_Tool.Classes.ConfigManagement.FS_Crew_Config_Tool.Classes.ConfigManagement;
 using FS_Crew_Config_Tool.UiComponents;
 using System;
 using System.ComponentModel;
@@ -135,7 +136,7 @@ namespace FS_Crew_Config_Tool
                 ListBoxCrews.Items.Clear();
             }
 
-            foreach (CrewLines crewLine in config.CrewData)
+            foreach (CrewLines crewLine in config.DataLists.CrewData)
             {
                 ListBoxCrews.Items.Add(crewLine.CrewName);
             }
@@ -167,7 +168,7 @@ namespace FS_Crew_Config_Tool
 
             if (selectedIndex != -1)
             {
-                CrewSetBoxMain.DisplaySelectedTeam(config.CrewData[selectedIndex].Team, CrewSetBoxMain);
+                CrewSetBoxMain.DisplaySelectedTeam(config.DataLists.CrewData[selectedIndex].Team, CrewSetBoxMain);
 
                 SetDeleteButtonState(selectedIndex);
             }
@@ -203,7 +204,7 @@ namespace FS_Crew_Config_Tool
             if (addSuccessful)
             {
 
-                CrewSetBoxMain.DisplaySelectedTeam(config.CrewData[selectedIndex].Team, CrewSetBoxMain);
+                CrewSetBoxMain.DisplaySelectedTeam(config.DataLists.CrewData[selectedIndex].Team, CrewSetBoxMain);
             }
         }
 
@@ -229,7 +230,7 @@ namespace FS_Crew_Config_Tool
 
             if (addSuccessful)
             {
-                CrewSetBoxMain.DisplaySelectedTeam(config.CrewData[selectedCrewIndex].Team, CrewSetBoxMain);
+                CrewSetBoxMain.DisplaySelectedTeam(config.DataLists.CrewData[selectedCrewIndex].Team, CrewSetBoxMain);
             }
         }
 
@@ -253,7 +254,7 @@ namespace FS_Crew_Config_Tool
 
             if (removeSuccessful)
             {
-                CrewSetBoxMain.DisplaySelectedTeam(config.CrewData[selectedCrewIndex].Team, CrewSetBoxMain);
+                CrewSetBoxMain.DisplaySelectedTeam(config.DataLists.CrewData[selectedCrewIndex].Team, CrewSetBoxMain);
             }
         }
 
@@ -279,7 +280,7 @@ namespace FS_Crew_Config_Tool
 
             if (removeSuccessful)
             {
-                CrewSetBoxMain.DisplaySelectedTeam(config.CrewData[selectedCrewIndex].Team, CrewSetBoxMain);
+                CrewSetBoxMain.DisplaySelectedTeam(config.DataLists.CrewData[selectedCrewIndex].Team, CrewSetBoxMain);
             }
         }
     }

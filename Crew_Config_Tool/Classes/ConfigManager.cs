@@ -3,7 +3,6 @@ using FS_Crew_Config_Tool.Classes.ConfigManagement;
 using FS_Crew_Config_Tool.Classes.ConfigManagement.FS_Crew_Config_Tool.Classes.ConfigManagement;
 using FS_Crew_Config_Tool.UiComponents;
 using System;
-using System.Collections.Generic;
 using System.IO;
 
 namespace FS_Crew_Config_Tool
@@ -25,20 +24,7 @@ namespace FS_Crew_Config_Tool
 
         private const string CREW_TEAMS_FLAG = "CrewTeams=";
 
-        /// <summary>
-        /// Stores first chunk of config e.g. core game settings, ship skin and loadout setups
-        /// </summary>
-        private List<string> SegmentStart = new List<string>();
-
-        /// <summary>
-        /// Stores third chunk of config - ReadItems list and other miscellaneous config items
-        /// </summary>
-        private List<string> SegmentEnd = new List<string>();
-
-        /// <summary>
-        /// Stores raw line data and crew names
-        /// </summary>
-        public List<CrewLines> CrewData = new List<CrewLines>();
+        public DataListings DataLists;
 
         /// <summary>
         /// Class constructor - populates crew & implant lists
@@ -47,6 +33,8 @@ namespace FS_Crew_Config_Tool
         {
             CrewList.PopulateCrewList();
             ImplantList.PopulateImplantList();
+
+            DataLists = new DataListings();
         }
 
         public void LoadConfig()
@@ -73,7 +61,7 @@ namespace FS_Crew_Config_Tool
                 else
                 {
                     // Add line to the first segment
-                    SegmentStart.Add(config[lineNumber]);
+                    DataLists.SegmentStart.Add(config[lineNumber]);
                     lineNumber++;
                 }
             }
@@ -88,7 +76,7 @@ namespace FS_Crew_Config_Tool
                     line.RawLine = config[lineNumber];
                     line.ParseLine();
 
-                    CrewData.Add(line);
+                    DataLists.CrewData.Add(line);
 
                     lineNumber++;
                 }
@@ -104,15 +92,15 @@ namespace FS_Crew_Config_Tool
             // Starting value is blank, as we want to use lineNumbers current value
             for (; lineNumber <= lineCount; lineNumber++)
             {
-                SegmentEnd.Add(config[lineNumber]);
+                DataLists.SegmentEnd.Add(config[lineNumber]);
             }
         }
 
         public void SortAlphabetically()
         {
-            for (int iteration = 0; iteration < CrewData.Count - 1; iteration++)
+            for (int iteration = 0; iteration < DataLists.CrewData.Count - 1; iteration++)
             {
-                for (int index = 0; index < CrewData.Count - 1; index++)
+                for (int index = 0; index < DataLists.CrewData.Count - 1; index++)
                 {
                     /* Return values of String.Compare
                      *
@@ -121,11 +109,11 @@ namespace FS_Crew_Config_Tool
                      * -1 - parameter 1 is alphabetically ahead of 2
                     */
 
-                    if (1 == String.Compare(CrewData[index].CrewName, CrewData[index + 1].CrewName))
+                    if (1 == String.Compare(DataLists.CrewData[index].CrewName, DataLists.CrewData[index + 1].CrewName))
                     {
-                        CrewLines temp = CrewData[index];
-                        CrewData[index] = CrewData[index + 1];
-                        CrewData[index + 1] = temp;
+                        CrewLines temp = DataLists.CrewData[index];
+                        DataLists.CrewData[index] = DataLists.CrewData[index + 1];
+                        DataLists.CrewData[index + 1] = temp;
                     }
                 }
             }
@@ -136,19 +124,19 @@ namespace FS_Crew_Config_Tool
             using (StreamWriter writetext = new StreamWriter(CompletePath))
             {
                 // Write all segment one items
-                foreach (string line in SegmentStart)
+                foreach (string line in DataLists.SegmentStart)
                 {
                     writetext.WriteLine(line);
                 }
 
                 // Write all crew lines
-                foreach (CrewLines line in CrewData)
+                foreach (CrewLines line in DataLists.CrewData)
                 {
                     writetext.WriteLine(line.BuildLine());
                 }
 
                 // Write all segment three items
-                foreach (string line in SegmentEnd)
+                foreach (string line in DataLists.SegmentEnd)
                 {
                     writetext.WriteLine(line);
                 }
@@ -159,11 +147,11 @@ namespace FS_Crew_Config_Tool
         {
             bool deleteSuccessful = false;
 
-            if (CrewData != null)
+            if (DataLists.CrewData != null)
             {
-                if (indexToDelete >= 0 && indexToDelete < CrewData.Count)
+                if (indexToDelete >= 0 && indexToDelete < DataLists.CrewData.Count)
                 {
-                    CrewData.RemoveAt(indexToDelete);
+                    DataLists.CrewData.RemoveAt(indexToDelete);
                     deleteSuccessful = true;
                 }
             }
@@ -198,30 +186,31 @@ namespace FS_Crew_Config_Tool
 
             bool addSuccessful = false;
 
-            if (selectedCrewID != CrewEnum.NONE && CrewData != null && CrewData.Count > 0 && selectedTeam > UNSELECTED_INDEX)
+            if (selectedCrewID != CrewEnum.NONE && DataLists.CrewData != null && DataLists.CrewData.Count > 0
+                    && selectedTeam > UNSELECTED_INDEX)
             {
                 int matchIndex =
-                    ConfigUtilities.CheckCrewTeamForSelectedMembersRoleIsPresent(selectedCrewID, CrewData[selectedTeam].Team);
+                    ConfigUtilities.CheckCrewTeamForSelectedMembersRoleIsPresent(selectedCrewID, DataLists.CrewData[selectedTeam].Team);
 
                 // If the selected crew member is a captain, add it into the middle slot
                 if (CrewList.CrewListing[(int)selectedCrewID].Role == CrewRole.CAPTAIN)
                 {
-                    CrewData[selectedTeam].Team.CrewMembers[ConfigUtilities.CAPTAIN_SLOT].CrewID = selectedCrewID;
+                    DataLists.CrewData[selectedTeam].Team.CrewMembers[ConfigUtilities.CAPTAIN_SLOT].CrewID = selectedCrewID;
                     addSuccessful = true;
                 }
                 // Swap out the current crew in the set with the newly selected one if its role matches
                 else if (matchIndex != ConfigUtilities.OUT_OF_BOUNDS)
                 {
-                    CrewData[selectedTeam].Team.CrewMembers[matchIndex].CrewID = selectedCrewID;
+                    DataLists.CrewData[selectedTeam].Team.CrewMembers[matchIndex].CrewID = selectedCrewID;
                     addSuccessful = true;
                 }
-                else if (ConfigUtilities.CountNumberOfCrewInTeam(CrewData[selectedTeam].Team) < 5)
+                else if (ConfigUtilities.CountNumberOfCrewInTeam(DataLists.CrewData[selectedTeam].Team) < 5)
                 {
-                    int nextFreeSlot = ConfigUtilities.FindFirstFreeSlotForNonCaptain(CrewData[selectedTeam].Team);
+                    int nextFreeSlot = ConfigUtilities.FindFirstFreeSlotForNonCaptain(DataLists.CrewData[selectedTeam].Team);
 
                     if (nextFreeSlot > ConfigUtilities.OUT_OF_BOUNDS)
                     {
-                        CrewData[selectedTeam].Team.CrewMembers[nextFreeSlot].CrewID = selectedCrewID;
+                        DataLists.CrewData[selectedTeam].Team.CrewMembers[nextFreeSlot].CrewID = selectedCrewID;
                         addSuccessful = true;
                     }
                 }
@@ -234,9 +223,9 @@ namespace FS_Crew_Config_Tool
         {
             bool removeSuccessful = false;
 
-            if (CrewData[selectedTeam].Team.CrewMembers[crewIndexToRemove].CrewID != CrewEnum.NONE)
+            if (DataLists.CrewData[selectedTeam].Team.CrewMembers[crewIndexToRemove].CrewID != CrewEnum.NONE)
             {
-                CrewData[selectedTeam].Team.CrewMembers[crewIndexToRemove].CrewID = CrewEnum.NONE;
+                DataLists.CrewData[selectedTeam].Team.CrewMembers[crewIndexToRemove].CrewID = CrewEnum.NONE;
                 removeSuccessful = true;
             }
 
@@ -249,16 +238,17 @@ namespace FS_Crew_Config_Tool
 
             ImplantEnum selectedImplantID = Utilities.ConvertImplantStringToEnum(implantName);
 
-            if (selectedImplantID != ImplantEnum.NONE && CrewData != null && CrewData.Count > 0 && selectedTeam > UNSELECTED_INDEX)
+            if (selectedImplantID != ImplantEnum.NONE && DataLists.CrewData != null && DataLists.CrewData.Count > 0
+                    && selectedTeam > UNSELECTED_INDEX)
             {
-                if (ConfigUtilities.CountNumberOfImplantsInTeam(CrewData[selectedTeam].Team) < 15)
+                if (ConfigUtilities.CountNumberOfImplantsInTeam(DataLists.CrewData[selectedTeam].Team) < 15)
                 {
                     ConfigUtilities.CrewImplantIndexStruct nextFreeSlot = 
-                        ConfigUtilities.FindFirstFreeImplantSlotWithoutDuplication(CrewData[selectedTeam].Team, selectedImplantID);
+                        ConfigUtilities.FindFirstFreeImplantSlotWithoutDuplication(DataLists.CrewData[selectedTeam].Team, selectedImplantID);
 
                     if (nextFreeSlot.EmptySlotFound)
                     {
-                        CrewData[selectedTeam].Team.CrewMembers[nextFreeSlot.CrewIndex].ImplantIDs[nextFreeSlot.ImplantIndex] = selectedImplantID;
+                        DataLists.CrewData[selectedTeam].Team.CrewMembers[nextFreeSlot.CrewIndex].ImplantIDs[nextFreeSlot.ImplantIndex] = selectedImplantID;
                         addSuccessful = true;
                     }
                 }
@@ -271,9 +261,9 @@ namespace FS_Crew_Config_Tool
         {
             bool removeSuccessful = false;
 
-            if (CrewData[selectedTeam].Team.CrewMembers[args.CrewIndex].ImplantIDs[args.ImplantIndex] != ImplantEnum.NONE)
+            if (DataLists.CrewData[selectedTeam].Team.CrewMembers[args.CrewIndex].ImplantIDs[args.ImplantIndex] != ImplantEnum.NONE)
             {
-                CrewData[selectedTeam].Team.CrewMembers[args.CrewIndex].ImplantIDs[args.ImplantIndex] = ImplantEnum.NONE;
+                DataLists.CrewData[selectedTeam].Team.CrewMembers[args.CrewIndex].ImplantIDs[args.ImplantIndex] = ImplantEnum.NONE;
                 removeSuccessful = true;
             }
 

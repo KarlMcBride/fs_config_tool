@@ -130,7 +130,7 @@ namespace UnitTests.ConfigManagement
             CrewLines crewLine = new CrewLines();
             crewLine.Team = ParsedData.ClaraOnlyNoImplants();
 
-            manager.CrewData.Add(crewLine);
+            manager.DataLists.CrewData.Add(crewLine);
 
             bool result = manager.AddSelectedMemberToSelectedCrew(CrewEnum.ALA8AMA.ToString(), 0);
 
@@ -145,7 +145,7 @@ namespace UnitTests.ConfigManagement
             CrewLines crewLine = new CrewLines();
             crewLine.Team = ParsedData.ThreeMembersNoCaptainNoImplants();
 
-            manager.CrewData.Add(crewLine);
+            manager.DataLists.CrewData.Add(crewLine);
 
             string crewName = crewLine.Team.CrewMembers[0].CrewID.ToString();
 
@@ -162,7 +162,7 @@ namespace UnitTests.ConfigManagement
             CrewLines crewLine = new CrewLines();
             crewLine.Team = ParsedData.ClaraOnlyNoImplants();
 
-            manager.CrewData.Add(crewLine);
+            manager.DataLists.CrewData.Add(crewLine);
 
             bool result = manager.AddSelectedMemberToSelectedCrew(CrewEnum.CLARA_REISETTE.ToString(), 0);
 
@@ -177,7 +177,7 @@ namespace UnitTests.ConfigManagement
             CrewLines crewLine = new CrewLines();
             crewLine.Team = ParsedData.ClaraOnlyNoImplants();
 
-            manager.CrewData.Add(crewLine);
+            manager.DataLists.CrewData.Add(crewLine);
 
             bool result = manager.AddSelectedMemberToSelectedCrew(CrewEnum.NONE.ToString(), 0);
 
@@ -195,7 +195,7 @@ namespace UnitTests.ConfigManagement
             CrewLines crewLine = new CrewLines();
             crewLine.Team = new TeamConfig();
 
-            manager.CrewData.Add(crewLine);
+            manager.DataLists.CrewData.Add(crewLine);
 
             bool result = manager.AddSelectedImplantToNextFreeSlot(ImplantList.ImplantListing[(int)ImplantEnum.FIRE_RATE].Name, 0);
 
@@ -213,7 +213,7 @@ namespace UnitTests.ConfigManagement
             CrewLines crewLine = new CrewLines();
             crewLine.Team = ParsedData.BasicFiveMembersNoImplants();
 
-            manager.CrewData.Add(crewLine);
+            manager.DataLists.CrewData.Add(crewLine);
 
             bool result = manager.AddSelectedImplantToNextFreeSlot(ImplantList.ImplantListing[(int)ImplantEnum.JUMP_PREP].Name, 0);
 
@@ -231,7 +231,7 @@ namespace UnitTests.ConfigManagement
             CrewLines crewLine = new CrewLines();
             crewLine.Team = ParsedData.BasicFiveMembersNoImplants();
 
-            manager.CrewData.Add(crewLine);
+            manager.DataLists.CrewData.Add(crewLine);
 
             manager.AddSelectedImplantToNextFreeSlot(ImplantList.ImplantListing[(int)ImplantEnum.JUMP_PREP].Name, 0);
             bool result = manager.AddSelectedImplantToNextFreeSlot(ImplantList.ImplantListing[(int)ImplantEnum.JUMP_PREP].Name, 0);
