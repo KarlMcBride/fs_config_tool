@@ -1,4 +1,5 @@
 ﻿using FS_Crew_Config_Tool.Classes;
+using FS_Crew_Config_Tool.Classes.ConfigManagement;
 using FS_Crew_Config_Tool.UiComponents;
 using System;
 using System.ComponentModel;
@@ -134,7 +135,7 @@ namespace FS_Crew_Config_Tool
                 ListBoxCrews.Items.Clear();
             }
 
-            foreach (ConfigManager.CrewLines crewLine in config.CrewData)
+            foreach (CrewLines crewLine in config.CrewData)
             {
                 ListBoxCrews.Items.Add(crewLine.CrewName);
             }

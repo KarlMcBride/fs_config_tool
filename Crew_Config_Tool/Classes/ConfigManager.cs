@@ -1,10 +1,10 @@
 ﻿using FS_Crew_Config_Tool.Classes;
 using FS_Crew_Config_Tool.Classes.ConfigManagement;
+using FS_Crew_Config_Tool.Classes.ConfigManagement.FS_Crew_Config_Tool.Classes.ConfigManagement;
 using FS_Crew_Config_Tool.UiComponents;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text.RegularExpressions;
 
 namespace FS_Crew_Config_Tool
 {
@@ -40,43 +40,17 @@ namespace FS_Crew_Config_Tool
         /// </summary>
         public List<CrewLines> CrewData = new List<CrewLines>();
 
-        public struct CrewLines
+        /// <summary>
+        /// Class constructor - populates crew & implant lists
+        /// </summary>
+        public ConfigManager()
         {
-            public string RawLine;
-            public string CrewName;
-            public TeamConfig Team;
-
-            public void ParseLine()
-            {
-                // Use regex to strip out the name
-                Match nameTag = Regex.Match(RawLine, "Name=\"");
-                Match endOfName = Regex.Match(RawLine, "\",Icon");
-
-                int nameStartIndex = nameTag.Index + nameTag.Length;
-                int nameEndIndex = endOfName.Index;
-
-                int length = nameEndIndex - nameStartIndex;
-
-                CrewName = RawLine.Substring(nameStartIndex, length);
-
-                Team = CrewParser.ParseCrewMembersFromLine(RawLine);
-            }
-
-            public string BuildLine()
-            {
-                string line = ConfigUtilities.GetStartOfRawCrewString(RawLine);
-                line += CrewBuilder.GenerateCrewStringFromEnumerations(Team);
-                line += ",Members=)";
-
-                return line;
-            }
+            CrewList.PopulateCrewList();
+            ImplantList.PopulateImplantList();
         }
 
         public void LoadConfig()
         {
-            CrewList.PopulateCrewList();
-            ImplantList.PopulateImplantList();
-
             string[] fullConfig = File.ReadAllLines(CompletePath);
 
             ParseIntoSegments(fullConfig);

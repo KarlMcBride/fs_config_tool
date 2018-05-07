@@ -1,6 +1,7 @@
 ﻿using FS_Crew_Config_Tool;
 using FS_Crew_Config_Tool.Classes;
 using FS_Crew_Config_Tool.Classes.ConfigManagement;
+using FS_Crew_Config_Tool.Classes.ConfigManagement.FS_Crew_Config_Tool.Classes.ConfigManagement;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using UnitTests.ConfigParsing.TestData;
 
@@ -126,7 +127,7 @@ namespace UnitTests.ConfigManagement
         {
             ConfigManager manager = new ConfigManager();
 
-            ConfigManager.CrewLines crewLine = new ConfigManager.CrewLines();
+            CrewLines crewLine = new CrewLines();
             crewLine.Team = ParsedData.ClaraOnlyNoImplants();
 
             manager.CrewData.Add(crewLine);
@@ -141,7 +142,7 @@ namespace UnitTests.ConfigManagement
         {
             ConfigManager manager = new ConfigManager();
 
-            ConfigManager.CrewLines crewLine = new ConfigManager.CrewLines();
+            CrewLines crewLine = new CrewLines();
             crewLine.Team = ParsedData.ThreeMembersNoCaptainNoImplants();
 
             manager.CrewData.Add(crewLine);
@@ -158,7 +159,7 @@ namespace UnitTests.ConfigManagement
         {
             ConfigManager manager = new ConfigManager();
 
-            ConfigManager.CrewLines crewLine = new ConfigManager.CrewLines();
+            CrewLines crewLine = new CrewLines();
             crewLine.Team = ParsedData.ClaraOnlyNoImplants();
 
             manager.CrewData.Add(crewLine);
@@ -173,7 +174,7 @@ namespace UnitTests.ConfigManagement
         {
             ConfigManager manager = new ConfigManager();
 
-            ConfigManager.CrewLines crewLine = new ConfigManager.CrewLines();
+            CrewLines crewLine = new CrewLines();
             crewLine.Team = ParsedData.ClaraOnlyNoImplants();
 
             manager.CrewData.Add(crewLine);
@@ -191,7 +192,7 @@ namespace UnitTests.ConfigManagement
         {
             ConfigManager manager = new ConfigManager();
 
-            ConfigManager.CrewLines crewLine = new ConfigManager.CrewLines();
+            CrewLines crewLine = new CrewLines();
             crewLine.Team = new TeamConfig();
 
             manager.CrewData.Add(crewLine);
@@ -209,7 +210,7 @@ namespace UnitTests.ConfigManagement
         {
             ConfigManager manager = new ConfigManager();
 
-            ConfigManager.CrewLines crewLine = new ConfigManager.CrewLines();
+            CrewLines crewLine = new CrewLines();
             crewLine.Team = ParsedData.BasicFiveMembersNoImplants();
 
             manager.CrewData.Add(crewLine);
@@ -227,7 +228,7 @@ namespace UnitTests.ConfigManagement
         {
             ConfigManager manager = new ConfigManager();
 
-            ConfigManager.CrewLines crewLine = new ConfigManager.CrewLines();
+            CrewLines crewLine = new CrewLines();
             crewLine.Team = ParsedData.BasicFiveMembersNoImplants();
 
             manager.CrewData.Add(crewLine);
