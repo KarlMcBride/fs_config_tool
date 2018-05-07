@@ -286,7 +286,7 @@ namespace FS_Crew_Config_Tool
         private void RunCrewUpdates(int selectedCrewIndex)
         {
             CrewSetBoxMain.DisplaySelectedTeam(config.DataLists.CrewData[selectedCrewIndex].Team, CrewSetBoxMain);
-            StatsBox.GenerateStats(config.DataLists.CrewData[selectedCrewIndex].Team);
+            StatsBox.UpdateAndShowStats(config.DataLists.CrewData[selectedCrewIndex].Team);
         }
     }
 }

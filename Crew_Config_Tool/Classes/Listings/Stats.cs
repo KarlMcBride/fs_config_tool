@@ -2,7 +2,9 @@
 
 namespace FS_Crew_Config_Tool.Classes.Listings
 {
-
+    /// <summary>
+    /// Broad stat category used for grouping (i.e. attack, defense, utility)
+    /// </summary>
     public enum StatCategory
     {
         ATTACK,
@@ -11,6 +13,9 @@ namespace FS_Crew_Config_Tool.Classes.Listings
         END_OF_LIST
     }
 
+    /// <summary>
+    /// Complete list of stats in-game e.g. attack damage, sensor range
+    /// </summary>
     public enum StatType
     {
         ARMOUR_REPAIR_RATE,
@@ -38,14 +43,31 @@ namespace FS_Crew_Config_Tool.Classes.Listings
         TURRET_TRAVERSE,
         UTILITY_COOLDOWN,
         UTILITY_DURATION,
+        /// <summary>
+        /// Listed last as this list is shared for both implants and crew, and is placed last
+        /// to ensure that it doesn't impact the implant enumerations and throw off the ordering.
+        /// May also be used as an end-of-enum marker for iteration
+        /// </summary>
         ENERGY_EFFICIENCY
     }
 
     public struct StatCombination
     {
+        /// <summary>
+        /// Broad stat category used for grouping (i.e. attack, defense, utility)
+        /// </summary>
         public StatCategory Category { get; private set; }
+        /// <summary>
+        /// Complete list of stats in-game e.g. attack damage, sensor range
+        /// </summary>
         public StatType Type         { get; private set; }
+        /// <summary>
+        /// Name of stat shown to the user e.g. "Jump prep"
+        /// </summary>
         public string Name           { get; private set; }
+        /// <summary>
+        /// Quantitative effect of the stat e.g. +200 (hull), -1.5f (util cd)
+        /// </summary>
         public float Value           { get; set; }
 
         public StatCombination(StatCategory category, StatType type, string name)
