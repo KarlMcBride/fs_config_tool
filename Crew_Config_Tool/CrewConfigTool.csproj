@@ -97,6 +97,12 @@
     <Compile Include="UiComponents\CrewSetBox.Designer.cs">
       <DependentUpon>CrewSetBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="UiComponents\StatPair.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UiComponents\StatPair.Designer.cs">
+      <DependentUpon>StatPair.cs</DependentUpon>
+    </Compile>
     <Compile Include="UiComponents\StatsBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     </Compile>
     <EmbeddedResource Include="UiComponents\CrewSetBox.resx">
       <DependentUpon>CrewSetBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiComponents\StatPair.resx">
+      <DependentUpon>StatPair.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UiComponents\StatsBox.resx">
       <DependentUpon>StatsBox.cs</DependentUpon>

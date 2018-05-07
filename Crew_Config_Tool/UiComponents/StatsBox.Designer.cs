@@ -29,47 +29,285 @@
         private void InitializeComponent()
         {
             this.GroupBoxStatistics = new System.Windows.Forms.GroupBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.PanelUtility = new System.Windows.Forms.Panel();
+            this.PanelDefense = new System.Windows.Forms.Panel();
+            this.StatPairDefense6 = new FS_Crew_Config_Tool.UiComponents.StatPair();
+            this.StatPairDefense5 = new FS_Crew_Config_Tool.UiComponents.StatPair();
+            this.StatPairDefense4 = new FS_Crew_Config_Tool.UiComponents.StatPair();
+            this.StatPairDefense3 = new FS_Crew_Config_Tool.UiComponents.StatPair();
+            this.StatPairDefense2 = new FS_Crew_Config_Tool.UiComponents.StatPair();
+            this.StatPairDefense1 = new FS_Crew_Config_Tool.UiComponents.StatPair();
+            this.StatPairDefense0 = new FS_Crew_Config_Tool.UiComponents.StatPair();
             this.PanelAttack = new System.Windows.Forms.Panel();
+            this.StatPairAttack4 = new FS_Crew_Config_Tool.UiComponents.StatPair();
+            this.StatPairAttack3 = new FS_Crew_Config_Tool.UiComponents.StatPair();
+            this.StatPairAttack2 = new FS_Crew_Config_Tool.UiComponents.StatPair();
+            this.StatPairAttack1 = new FS_Crew_Config_Tool.UiComponents.StatPair();
+            this.StatPairAttack0 = new FS_Crew_Config_Tool.UiComponents.StatPair();
+            this.StatPairUtility6 = new FS_Crew_Config_Tool.UiComponents.StatPair();
+            this.StatPairUtility5 = new FS_Crew_Config_Tool.UiComponents.StatPair();
+            this.StatPairUtility4 = new FS_Crew_Config_Tool.UiComponents.StatPair();
+            this.StatPairUtility3 = new FS_Crew_Config_Tool.UiComponents.StatPair();
+            this.StatPairUtility2 = new FS_Crew_Config_Tool.UiComponents.StatPair();
+            this.StatPairUtility1 = new FS_Crew_Config_Tool.UiComponents.StatPair();
+            this.StatPairUtility0 = new FS_Crew_Config_Tool.UiComponents.StatPair();
+            this.StatPairUtility13 = new FS_Crew_Config_Tool.UiComponents.StatPair();
+            this.StatPairUtility7 = new FS_Crew_Config_Tool.UiComponents.StatPair();
+            this.StatPairUtility12 = new FS_Crew_Config_Tool.UiComponents.StatPair();
+            this.StatPairUtility8 = new FS_Crew_Config_Tool.UiComponents.StatPair();
+            this.StatPairUtility11 = new FS_Crew_Config_Tool.UiComponents.StatPair();
+            this.StatPairUtility9 = new FS_Crew_Config_Tool.UiComponents.StatPair();
+            this.StatPairUtility10 = new FS_Crew_Config_Tool.UiComponents.StatPair();
             this.GroupBoxStatistics.SuspendLayout();
+            this.PanelUtility.SuspendLayout();
+            this.PanelDefense.SuspendLayout();
+            this.PanelAttack.SuspendLayout();
             this.SuspendLayout();
             // 
             // GroupBoxStatistics
             // 
-            this.GroupBoxStatistics.Controls.Add(this.panel2);
-            this.GroupBoxStatistics.Controls.Add(this.panel1);
+            this.GroupBoxStatistics.Controls.Add(this.PanelUtility);
+            this.GroupBoxStatistics.Controls.Add(this.PanelDefense);
             this.GroupBoxStatistics.Controls.Add(this.PanelAttack);
             this.GroupBoxStatistics.Location = new System.Drawing.Point(3, 3);
             this.GroupBoxStatistics.Name = "GroupBoxStatistics";
-            this.GroupBoxStatistics.Size = new System.Drawing.Size(505, 271);
+            this.GroupBoxStatistics.Size = new System.Drawing.Size(515, 287);
             this.GroupBoxStatistics.TabIndex = 24;
             this.GroupBoxStatistics.TabStop = false;
             this.GroupBoxStatistics.Text = "Statistics";
             // 
-            // panel2
+            // PanelUtility
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panel2.Location = new System.Drawing.Point(338, 19);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(160, 248);
-            this.panel2.TabIndex = 2;
+            this.PanelUtility.AutoScroll = true;
+            this.PanelUtility.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.PanelUtility.Controls.Add(this.StatPairUtility13);
+            this.PanelUtility.Controls.Add(this.StatPairUtility7);
+            this.PanelUtility.Controls.Add(this.StatPairUtility12);
+            this.PanelUtility.Controls.Add(this.StatPairUtility8);
+            this.PanelUtility.Controls.Add(this.StatPairUtility11);
+            this.PanelUtility.Controls.Add(this.StatPairUtility9);
+            this.PanelUtility.Controls.Add(this.StatPairUtility10);
+            this.PanelUtility.Controls.Add(this.StatPairUtility6);
+            this.PanelUtility.Controls.Add(this.StatPairUtility0);
+            this.PanelUtility.Controls.Add(this.StatPairUtility5);
+            this.PanelUtility.Controls.Add(this.StatPairUtility1);
+            this.PanelUtility.Controls.Add(this.StatPairUtility4);
+            this.PanelUtility.Controls.Add(this.StatPairUtility2);
+            this.PanelUtility.Controls.Add(this.StatPairUtility3);
+            this.PanelUtility.Location = new System.Drawing.Point(338, 19);
+            this.PanelUtility.Name = "PanelUtility";
+            this.PanelUtility.Size = new System.Drawing.Size(175, 262);
+            this.PanelUtility.TabIndex = 2;
             // 
-            // panel1
+            // PanelDefense
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(200)))), ((int)(((byte)(220)))));
-            this.panel1.Location = new System.Drawing.Point(172, 19);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(160, 248);
-            this.panel1.TabIndex = 1;
+            this.PanelDefense.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(200)))), ((int)(((byte)(220)))));
+            this.PanelDefense.Controls.Add(this.StatPairDefense6);
+            this.PanelDefense.Controls.Add(this.StatPairDefense5);
+            this.PanelDefense.Controls.Add(this.StatPairDefense4);
+            this.PanelDefense.Controls.Add(this.StatPairDefense3);
+            this.PanelDefense.Controls.Add(this.StatPairDefense2);
+            this.PanelDefense.Controls.Add(this.StatPairDefense1);
+            this.PanelDefense.Controls.Add(this.StatPairDefense0);
+            this.PanelDefense.Location = new System.Drawing.Point(172, 19);
+            this.PanelDefense.Name = "PanelDefense";
+            this.PanelDefense.Size = new System.Drawing.Size(160, 262);
+            this.PanelDefense.TabIndex = 1;
+            // 
+            // StatPairDefense6
+            // 
+            this.StatPairDefense6.Location = new System.Drawing.Point(3, 229);
+            this.StatPairDefense6.Name = "StatPairDefense6";
+            this.StatPairDefense6.Size = new System.Drawing.Size(154, 32);
+            this.StatPairDefense6.TabIndex = 12;
+            // 
+            // StatPairDefense5
+            // 
+            this.StatPairDefense5.Location = new System.Drawing.Point(3, 191);
+            this.StatPairDefense5.Name = "StatPairDefense5";
+            this.StatPairDefense5.Size = new System.Drawing.Size(154, 32);
+            this.StatPairDefense5.TabIndex = 11;
+            // 
+            // StatPairDefense4
+            // 
+            this.StatPairDefense4.Location = new System.Drawing.Point(3, 153);
+            this.StatPairDefense4.Name = "StatPairDefense4";
+            this.StatPairDefense4.Size = new System.Drawing.Size(154, 32);
+            this.StatPairDefense4.TabIndex = 10;
+            // 
+            // StatPairDefense3
+            // 
+            this.StatPairDefense3.Location = new System.Drawing.Point(3, 115);
+            this.StatPairDefense3.Name = "StatPairDefense3";
+            this.StatPairDefense3.Size = new System.Drawing.Size(154, 32);
+            this.StatPairDefense3.TabIndex = 9;
+            // 
+            // StatPairDefense2
+            // 
+            this.StatPairDefense2.Location = new System.Drawing.Point(3, 77);
+            this.StatPairDefense2.Name = "StatPairDefense2";
+            this.StatPairDefense2.Size = new System.Drawing.Size(154, 32);
+            this.StatPairDefense2.TabIndex = 8;
+            // 
+            // StatPairDefense1
+            // 
+            this.StatPairDefense1.Location = new System.Drawing.Point(3, 41);
+            this.StatPairDefense1.Name = "StatPairDefense1";
+            this.StatPairDefense1.Size = new System.Drawing.Size(154, 30);
+            this.StatPairDefense1.TabIndex = 7;
+            // 
+            // StatPairDefense0
+            // 
+            this.StatPairDefense0.Location = new System.Drawing.Point(3, 3);
+            this.StatPairDefense0.Name = "StatPairDefense0";
+            this.StatPairDefense0.Size = new System.Drawing.Size(154, 32);
+            this.StatPairDefense0.TabIndex = 6;
             // 
             // PanelAttack
             // 
             this.PanelAttack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.PanelAttack.Controls.Add(this.StatPairAttack4);
+            this.PanelAttack.Controls.Add(this.StatPairAttack3);
+            this.PanelAttack.Controls.Add(this.StatPairAttack2);
+            this.PanelAttack.Controls.Add(this.StatPairAttack1);
+            this.PanelAttack.Controls.Add(this.StatPairAttack0);
             this.PanelAttack.Location = new System.Drawing.Point(6, 19);
             this.PanelAttack.Name = "PanelAttack";
-            this.PanelAttack.Size = new System.Drawing.Size(160, 248);
+            this.PanelAttack.Size = new System.Drawing.Size(160, 262);
             this.PanelAttack.TabIndex = 0;
+            // 
+            // StatPairAttack4
+            // 
+            this.StatPairAttack4.Location = new System.Drawing.Point(3, 153);
+            this.StatPairAttack4.Name = "StatPairAttack4";
+            this.StatPairAttack4.Size = new System.Drawing.Size(154, 32);
+            this.StatPairAttack4.TabIndex = 5;
+            // 
+            // StatPairAttack3
+            // 
+            this.StatPairAttack3.Location = new System.Drawing.Point(3, 115);
+            this.StatPairAttack3.Name = "StatPairAttack3";
+            this.StatPairAttack3.Size = new System.Drawing.Size(154, 32);
+            this.StatPairAttack3.TabIndex = 4;
+            // 
+            // StatPairAttack2
+            // 
+            this.StatPairAttack2.Location = new System.Drawing.Point(3, 77);
+            this.StatPairAttack2.Name = "StatPairAttack2";
+            this.StatPairAttack2.Size = new System.Drawing.Size(154, 32);
+            this.StatPairAttack2.TabIndex = 3;
+            // 
+            // StatPairAttack1
+            // 
+            this.StatPairAttack1.Location = new System.Drawing.Point(3, 41);
+            this.StatPairAttack1.Name = "StatPairAttack1";
+            this.StatPairAttack1.Size = new System.Drawing.Size(154, 30);
+            this.StatPairAttack1.TabIndex = 1;
+            // 
+            // StatPairAttack0
+            // 
+            this.StatPairAttack0.Location = new System.Drawing.Point(3, 3);
+            this.StatPairAttack0.Name = "StatPairAttack0";
+            this.StatPairAttack0.Size = new System.Drawing.Size(154, 32);
+            this.StatPairAttack0.TabIndex = 0;
+            // 
+            // StatPairUtility6
+            // 
+            this.StatPairUtility6.Location = new System.Drawing.Point(3, 229);
+            this.StatPairUtility6.Name = "StatPairUtility6";
+            this.StatPairUtility6.Size = new System.Drawing.Size(154, 32);
+            this.StatPairUtility6.TabIndex = 19;
+            // 
+            // StatPairUtility5
+            // 
+            this.StatPairUtility5.Location = new System.Drawing.Point(3, 191);
+            this.StatPairUtility5.Name = "StatPairUtility5";
+            this.StatPairUtility5.Size = new System.Drawing.Size(154, 32);
+            this.StatPairUtility5.TabIndex = 18;
+            // 
+            // StatPairUtility4
+            // 
+            this.StatPairUtility4.Location = new System.Drawing.Point(3, 153);
+            this.StatPairUtility4.Name = "StatPairUtility4";
+            this.StatPairUtility4.Size = new System.Drawing.Size(154, 32);
+            this.StatPairUtility4.TabIndex = 17;
+            // 
+            // StatPairUtility3
+            // 
+            this.StatPairUtility3.Location = new System.Drawing.Point(3, 115);
+            this.StatPairUtility3.Name = "StatPairUtility3";
+            this.StatPairUtility3.Size = new System.Drawing.Size(154, 32);
+            this.StatPairUtility3.TabIndex = 16;
+            // 
+            // StatPairUtility2
+            // 
+            this.StatPairUtility2.Location = new System.Drawing.Point(3, 77);
+            this.StatPairUtility2.Name = "StatPairUtility2";
+            this.StatPairUtility2.Size = new System.Drawing.Size(154, 32);
+            this.StatPairUtility2.TabIndex = 15;
+            // 
+            // StatPairUtility1
+            // 
+            this.StatPairUtility1.Location = new System.Drawing.Point(3, 41);
+            this.StatPairUtility1.Name = "StatPairUtility1";
+            this.StatPairUtility1.Size = new System.Drawing.Size(154, 30);
+            this.StatPairUtility1.TabIndex = 14;
+            // 
+            // StatPairUtility0
+            // 
+            this.StatPairUtility0.Location = new System.Drawing.Point(3, 3);
+            this.StatPairUtility0.Name = "StatPairUtility0";
+            this.StatPairUtility0.Size = new System.Drawing.Size(152, 32);
+            this.StatPairUtility0.TabIndex = 13;
+            // 
+            // StatPairUtility13
+            // 
+            this.StatPairUtility13.Location = new System.Drawing.Point(3, 493);
+            this.StatPairUtility13.Name = "StatPairUtility13";
+            this.StatPairUtility13.Size = new System.Drawing.Size(154, 32);
+            this.StatPairUtility13.TabIndex = 26;
+            // 
+            // StatPairUtility7
+            // 
+            this.StatPairUtility7.Location = new System.Drawing.Point(3, 267);
+            this.StatPairUtility7.Name = "StatPairUtility7";
+            this.StatPairUtility7.Size = new System.Drawing.Size(154, 32);
+            this.StatPairUtility7.TabIndex = 20;
+            // 
+            // StatPairUtility12
+            // 
+            this.StatPairUtility12.Location = new System.Drawing.Point(3, 455);
+            this.StatPairUtility12.Name = "StatPairUtility12";
+            this.StatPairUtility12.Size = new System.Drawing.Size(154, 32);
+            this.StatPairUtility12.TabIndex = 25;
+            // 
+            // StatPairUtility8
+            // 
+            this.StatPairUtility8.Location = new System.Drawing.Point(3, 305);
+            this.StatPairUtility8.Name = "StatPairUtility8";
+            this.StatPairUtility8.Size = new System.Drawing.Size(154, 30);
+            this.StatPairUtility8.TabIndex = 21;
+            // 
+            // StatPairUtility11
+            // 
+            this.StatPairUtility11.Location = new System.Drawing.Point(3, 417);
+            this.StatPairUtility11.Name = "StatPairUtility11";
+            this.StatPairUtility11.Size = new System.Drawing.Size(154, 32);
+            this.StatPairUtility11.TabIndex = 24;
+            // 
+            // StatPairUtility9
+            // 
+            this.StatPairUtility9.Location = new System.Drawing.Point(3, 341);
+            this.StatPairUtility9.Name = "StatPairUtility9";
+            this.StatPairUtility9.Size = new System.Drawing.Size(154, 32);
+            this.StatPairUtility9.TabIndex = 22;
+            // 
+            // StatPairUtility10
+            // 
+            this.StatPairUtility10.Location = new System.Drawing.Point(3, 379);
+            this.StatPairUtility10.Name = "StatPairUtility10";
+            this.StatPairUtility10.Size = new System.Drawing.Size(154, 32);
+            this.StatPairUtility10.TabIndex = 23;
             // 
             // StatsBox
             // 
@@ -77,8 +315,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.GroupBoxStatistics);
             this.Name = "StatsBox";
-            this.Size = new System.Drawing.Size(511, 279);
+            this.Size = new System.Drawing.Size(521, 292);
             this.GroupBoxStatistics.ResumeLayout(false);
+            this.PanelUtility.ResumeLayout(false);
+            this.PanelDefense.ResumeLayout(false);
+            this.PanelAttack.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -86,8 +327,34 @@
         #endregion
 
         private System.Windows.Forms.GroupBox GroupBoxStatistics;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel PanelUtility;
+        private System.Windows.Forms.Panel PanelDefense;
         private System.Windows.Forms.Panel PanelAttack;
+        private StatPair StatPairAttack1;
+        private StatPair StatPairAttack0;
+        private StatPair StatPairAttack4;
+        private StatPair StatPairAttack3;
+        private StatPair StatPairAttack2;
+        private StatPair StatPairDefense6;
+        private StatPair StatPairDefense5;
+        private StatPair StatPairDefense4;
+        private StatPair StatPairDefense3;
+        private StatPair StatPairDefense2;
+        private StatPair StatPairDefense1;
+        private StatPair StatPairDefense0;
+        private StatPair StatPairUtility13;
+        private StatPair StatPairUtility7;
+        private StatPair StatPairUtility12;
+        private StatPair StatPairUtility8;
+        private StatPair StatPairUtility11;
+        private StatPair StatPairUtility9;
+        private StatPair StatPairUtility10;
+        private StatPair StatPairUtility6;
+        private StatPair StatPairUtility0;
+        private StatPair StatPairUtility5;
+        private StatPair StatPairUtility1;
+        private StatPair StatPairUtility4;
+        private StatPair StatPairUtility2;
+        private StatPair StatPairUtility3;
     }
 }
