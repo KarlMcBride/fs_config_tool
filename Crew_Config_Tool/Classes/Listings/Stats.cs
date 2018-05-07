@@ -7,7 +7,8 @@ namespace FS_Crew_Config_Tool.Classes.Listings
     {
         ATTACK,
         DEFENSE,
-        UTILITY
+        UTILITY,
+        END_OF_LIST
     }
 
     public enum StatType
@@ -18,7 +19,6 @@ namespace FS_Crew_Config_Tool.Classes.Listings
         BROKEN_ARMOUR_DAMAGE,
         CAPTURE_RATE,
         DAMAGE_REDUCTION,
-        ENERGY_EFFICIENCY,
         ENERGY_REGEN,
         FIRE_RATE,
         FORWARD_THRUST,
@@ -31,14 +31,14 @@ namespace FS_Crew_Config_Tool.Classes.Listings
         RAM_DAMAGE,
         REPAIR_EFFICIENCY,
         SENSOR_RANGE,
-        STATION_DAMAGE_REDUCTION,
         SQUAD_COOLDOWN,
+        STATION_DAMAGE_REDUCTION,
         SQUAD_SURVIVAL,
         TURN_RATE,
         TURRET_TRAVERSE,
         UTILITY_COOLDOWN,
         UTILITY_DURATION,
-        END_OF_LIST
+        ENERGY_EFFICIENCY
     }
 
     public struct StatCombination
@@ -46,7 +46,7 @@ namespace FS_Crew_Config_Tool.Classes.Listings
         public StatCategory Category { get; private set; }
         public StatType Type         { get; private set; }
         public string Name           { get; private set; }
-        public float Value           { get; set; };
+        public float Value           { get; set; }
 
         public StatCombination(StatCategory category, StatType type, string name)
         {
@@ -78,8 +78,8 @@ namespace FS_Crew_Config_Tool.Classes.Listings
         public float RamDamage;
         public float RepairEfficiency;
         public float SensorRange;
-        public float StationDamageReduction;
         public float SquadCooldown;
+        public float StationDamageReduction;
         public float SquadSurvival;
         public float TurnRate;
         public float TurretTraverse;
@@ -112,9 +112,6 @@ namespace FS_Crew_Config_Tool.Classes.Listings
 
             StatCombination damageReduction = new StatCombination(StatCategory.DEFENSE, StatType.DAMAGE_REDUCTION, "Damage Reduction");
             StatsListing.Add(damageReduction);
-
-            StatCombination energyEfficiency = new StatCombination(StatCategory.UTILITY, StatType.ENERGY_EFFICIENCY, "Energy Efficiency");
-            StatsListing.Add(energyEfficiency);
 
             StatCombination energyRegen = new StatCombination(StatCategory.UTILITY, StatType.ENERGY_REGEN, "Energy Regen");
             StatsListing.Add(energyRegen);
@@ -152,11 +149,11 @@ namespace FS_Crew_Config_Tool.Classes.Listings
             StatCombination sensorRange = new StatCombination(StatCategory.UTILITY, StatType.SENSOR_RANGE, "Sensor Range");
             StatsListing.Add(sensorRange);
 
-            StatCombination StationDamageReduction = new StatCombination(StatCategory.DEFENSE, StatType.STATION_DAMAGE_REDUCTION, "Station Damage Reduction");
-            StatsListing.Add(StationDamageReduction);
-
             StatCombination squadCooldown = new StatCombination(StatCategory.UTILITY, StatType.SQUAD_COOLDOWN, "Squad Cooldown");
             StatsListing.Add(squadCooldown);
+
+            StatCombination StationDamageReduction = new StatCombination(StatCategory.DEFENSE, StatType.STATION_DAMAGE_REDUCTION, "Station Damage Reduction");
+            StatsListing.Add(StationDamageReduction);
 
             StatCombination squadSurvival = new StatCombination(StatCategory.UTILITY, StatType.SQUAD_SURVIVAL, "Squad Survival");
             StatsListing.Add(squadSurvival);
@@ -172,6 +169,10 @@ namespace FS_Crew_Config_Tool.Classes.Listings
 
             StatCombination utilityDuration = new StatCombination(StatCategory.UTILITY, StatType.UTILITY_DURATION, "Utility Duration");
             StatsListing.Add(utilityDuration);
+
+            // Energy effiency is last, as this list is shared between crew and implants. However implants doesn't have an equivalent
+            StatCombination energyEfficiency = new StatCombination(StatCategory.UTILITY, StatType.ENERGY_EFFICIENCY, "Energy Efficiency");
+            StatsListing.Add(energyEfficiency);
         }
     }
 }

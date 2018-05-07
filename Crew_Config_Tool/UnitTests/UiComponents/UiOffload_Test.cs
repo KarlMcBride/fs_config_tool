@@ -1,5 +1,6 @@
 ﻿using FS_Crew_Config_Tool;
 using FS_Crew_Config_Tool.Classes;
+using FS_Crew_Config_Tool.Classes.Listings;
 using FS_Crew_Config_Tool.UiComponents;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Windows.Forms;
@@ -12,6 +13,7 @@ namespace UnitTests.UiComponents
         [TestInitialize]
         public void PopulateLists()
         {
+            StatList.PopulateStatsList();
             CrewList.PopulateCrewList();
             ImplantList.PopulateImplantList();
         }
@@ -55,9 +57,9 @@ namespace UnitTests.UiComponents
         [TestMethod]
         public void PopulateImplantListing()
         {
-            RadioButton[] array = CreateRadioButtonArray((int)ImplantType.UTILITY + 1);
+            RadioButton[] array = CreateRadioButtonArray((int)StatCategory.END_OF_LIST);
 
-            for (int role = 0; role <= (int)ImplantType.UTILITY; role++)
+            for (int role = 0; role < (int)StatCategory.END_OF_LIST; role++)
             {
                 array[role].Checked = true;
 

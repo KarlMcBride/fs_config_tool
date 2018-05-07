@@ -1,4 +1,5 @@
 ﻿using FS_Crew_Config_Tool.Classes;
+using FS_Crew_Config_Tool.Classes.Listings;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -57,14 +58,21 @@ namespace FS_Crew_Config_Tool.UiComponents
             listView.TileSize = new Size(implant_w + buffer, implant_h + buffer);
             imageList.ImageSize = new Size(implant_w, implant_h);
 
-            int index = 0;
+            StatCategory implantCategory = StatCategory.END_OF_LIST;
+            for (int radioIndex = 0; radioIndex < implantFilterArray.Length; radioIndex++)
+            {
+                if (implantFilterArray[radioIndex].Checked)
+                {
+                    implantCategory = (StatCategory)radioIndex;
+                    break;
+                }
+            }
 
+            int index = 0;
             // Loop through all implants
             for (int id = 0; id < (int)ImplantEnum.NONE; id++)
             {
-                ImplantType implantType = ImplantList.ImplantListing[id].Type;
-
-                if (implantFilterArray[(int)implantType].Checked)
+                if (implantCategory == ImplantList.ImplantListing[id].Cat)
                 {
                     string name = ImplantList.ImplantListing[id].Name;
 
