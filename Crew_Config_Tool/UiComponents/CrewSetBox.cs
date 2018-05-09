@@ -25,7 +25,7 @@ namespace FS_Crew_Config_Tool.UiComponents
             }
         }
 
-        public void RemoveClickedCrewMember(object sender, CrewArgs args)
+        private void RemoveClickedCrewMember(object sender, CrewArgs args)
         {
             if (CrewMemberDoubleClicked != null)
             {
@@ -33,7 +33,7 @@ namespace FS_Crew_Config_Tool.UiComponents
             }
         }
 
-        public void RemoveClickedImplant(object sender, CrewImplantArgs args)
+        private void RemoveClickedImplant(object sender, CrewImplantArgs args)
         {
             if (ImplantDoubleClicked != null)
             {
@@ -43,7 +43,7 @@ namespace FS_Crew_Config_Tool.UiComponents
 
         public void ClearDisplayedTeam(CrewSetBox parent)
         {
-            // Using freshly initialised config, as it will be set to zero
+            // Using freshly initialised config, as it will be set to CrewEnum.NONE and ImplantEnum.NONE
             TeamConfig blankConfig = new TeamConfig();
 
             DisplaySelectedTeam(blankConfig, parent);

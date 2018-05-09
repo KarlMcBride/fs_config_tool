@@ -8,6 +8,25 @@ namespace UnitTests.UiComponents
     [TestClass]
     public class CrewSetBox_Test
     {
+        private int ArgCrewIndex;
+        /// <summary>
+        /// Helper method for receiving injected crew events
+        /// </summary>
+        private void CrewReceiver(object sender, CrewArgs e)
+        {
+            ArgCrewIndex = e.CrewIndex;
+        }
+
+        private int ArgImplantIndex;
+        /// <summary>
+        /// Helper method for receiving injected crew implant events
+        /// </summary>
+        private void CrewImplantReceiver(object sender, CrewImplantArgs e)
+        {
+            ArgCrewIndex = e.CrewIndex;
+            ArgImplantIndex = e.ImplantIndex;
+        }
+
         private const bool EXPECTING_IMAGE = true;
         private const bool EXPECTING_NULL = false;
 
@@ -55,6 +74,76 @@ namespace UnitTests.UiComponents
             for (int index = 0; index < 5; index++)
             {
                 Assert.IsNotNull(crewSetBox.CheckCrewImageState(index, EXPECTING_NULL));
+            }
+        }
+
+        [TestMethod]
+        public void RemoveClickedCrewMember()
+        {
+            CrewSetBox crewSetBox = new CrewSetBox();
+
+            crewSetBox.CrewMemberDoubleClicked += CrewReceiver;
+
+            for (int index = 0; index < 5; index++)
+            {
+                CrewArgs args = new CrewArgs(index);
+                
+                crewSetBox.CallHiddenMethod("RemoveClickedCrewMember", null, args);
+                Assert.AreEqual(index, ArgCrewIndex, "Crew index args do not match");
+            }
+        }
+
+        /// <summary>
+        /// Ensure that the crew click handler doesn't misbehave if it is null
+        /// </summary>
+        [TestMethod]
+        public void RemoveClickedCrewMember_NoListenerAttached()
+        {
+            CrewSetBox crewSetBox = new CrewSetBox();
+
+            for (int index = 0; index < 5; index++)
+            {
+                CrewArgs args = new CrewArgs(index);
+
+                crewSetBox.CallHiddenMethod("RemoveClickedCrewMember", null, args);
+            }
+        }
+        [TestMethod]
+        public void RemoveClickedImplant()
+        {
+            CrewSetBox crewSetBox = new CrewSetBox();
+
+            crewSetBox.ImplantDoubleClicked += CrewImplantReceiver;
+
+            for (int crewIndex = 0; crewIndex < 5; crewIndex++)
+            {
+                for (int implantIndex = 0; implantIndex < 3; implantIndex++)
+                {
+                    CrewImplantArgs args = new CrewImplantArgs(crewIndex, implantIndex);
+
+                    crewSetBox.CallHiddenMethod("RemoveClickedImplant", null, args);
+                    Assert.AreEqual(crewIndex, ArgCrewIndex, "Crew index args do not match");
+                    Assert.AreEqual(implantIndex, ArgImplantIndex, "Implant index args do not match");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Ensure that the implant click handler doesn't misbehave if it is null
+        /// </summary>
+        [TestMethod]
+        public void RemoveClickedImplant_NoListenerAttached()
+        {
+            CrewSetBox crewSetBox = new CrewSetBox();
+
+            for (int crewIndex = 0; crewIndex < 5; crewIndex++)
+            {
+                for (int implantIndex = 0; implantIndex < 3; implantIndex++)
+                {
+                    CrewImplantArgs args = new CrewImplantArgs(crewIndex, implantIndex);
+
+                    crewSetBox.CallHiddenMethod("RemoveClickedImplant", null, args);
+                }
             }
         }
     }
