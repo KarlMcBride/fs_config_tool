@@ -9,23 +9,23 @@ namespace UnitTests.UiComponents
     [TestClass]
     public class CrewBox_Test
     {
-        private int CrewIndex;
+        private int ArgCrewIndex;
         /// <summary>
         /// Helper method for receiving injected crew events
         /// </summary>
         private void CrewReceiver(object sender, CrewArgs e)
         {
-            CrewIndex = e.CrewIndex;
+            ArgCrewIndex = e.CrewIndex;
         }
 
-        private int ImplantIndex;
+        private int ArgImplantIndex;
         /// <summary>
         /// Helper method for receiving injected crew implant events
         /// </summary>
         private void CrewImplantReceiver(object sender, CrewImplantArgs e)
         {
-            CrewIndex = e.CrewIndex;
-            ImplantIndex = e.ImplantIndex;
+            ArgCrewIndex = e.CrewIndex;
+            ArgImplantIndex = e.ImplantIndex;
         }
 
 
@@ -73,7 +73,7 @@ namespace UnitTests.UiComponents
         }
 
         [TestMethod]
-        public void DoubleClickCrew()
+        public void DoubleClickCrew_ListenerAttached()
         {
             CrewBox crewBox = new CrewBox();
 
@@ -83,7 +83,23 @@ namespace UnitTests.UiComponents
             {
                 crewBox.SetBoxIndex(index);
                 crewBox.CallHiddenMethod("PictureBoxCrew_MouseDoubleClick", null, null);
-                Assert.AreEqual(index, CrewIndex, "Crew index args do not match");
+                Assert.AreEqual(index, ArgCrewIndex, "Crew index args do not match");
+            }
+        }
+
+        /// <summary>
+        /// Ensure that the crew click handler doesn't misbehave if it is null
+        /// </summary>
+        [TestMethod]
+        public void DoubleClickCrew_NoListenerAttached()
+        {
+            CrewBox crewBox = new CrewBox();
+
+            for (int index = 0; index < 5; index+=6)
+            {
+                crewBox.SetBoxIndex(index);
+                crewBox.CallHiddenMethod("PictureBoxCrew_MouseDoubleClick", null, null);
+                Assert.AreEqual(index, ArgCrewIndex, "Crew index args do not match");
             }
         }
 
@@ -98,15 +114,36 @@ namespace UnitTests.UiComponents
             {
                 crewBox.SetBoxIndex(index);
                 crewBox.CallHiddenMethod("PictureBoxImplant0_MouseDoubleClick", null, null);
-                Assert.AreEqual(index, CrewIndex, "Implant index args do not match");
+                Assert.AreEqual(0, ArgImplantIndex, "Implant index args do not match");
 
                 crewBox.SetBoxIndex(index);
                 crewBox.CallHiddenMethod("PictureBoxImplant1_MouseDoubleClick", null, null);
-                Assert.AreEqual(index, CrewIndex, "Implant index args do not match");
+                Assert.AreEqual(1, ArgImplantIndex, "Implant index args do not match");
 
                 crewBox.SetBoxIndex(index);
                 crewBox.CallHiddenMethod("PictureBoxImplant2_MouseDoubleClick", null, null);
-                Assert.AreEqual(index, CrewIndex, "Implant index args do not match");
+                Assert.AreEqual(2, ArgImplantIndex, "Implant index args do not match");
+            }
+        }
+
+        /// <summary>
+        /// Ensure that the implant click handler doesn't misbehave if it is null
+        /// </summary>
+        [TestMethod]
+        public void DoubleClickImplant_NoListenerAttached()
+        {
+            CrewBox crewBox = new CrewBox();
+
+            for (int index = 0; index < 5; index++)
+            {
+                crewBox.SetBoxIndex(index);
+                crewBox.CallHiddenMethod("PictureBoxImplant0_MouseDoubleClick", null, null);
+
+                crewBox.SetBoxIndex(index);
+                crewBox.CallHiddenMethod("PictureBoxImplant1_MouseDoubleClick", null, null);
+
+                crewBox.SetBoxIndex(index);
+                crewBox.CallHiddenMethod("PictureBoxImplant2_MouseDoubleClick", null, null);
             }
         }
     }

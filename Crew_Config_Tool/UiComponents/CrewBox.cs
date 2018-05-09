@@ -61,6 +61,12 @@ namespace FS_Crew_Config_Tool.UiComponents
             return (pictureBoxImplantArray[index].Image != null);
         }
 
+        /// <summary>
+        /// Event handler for handling a crew double click - raises CrewMemberDoubleClicked
+        /// to remove the crewmember assigned to this box
+        /// </summary>
+        /// <param name="sender">Object sending this - should be PictureBoxCrew</param>
+        /// <param name="e">Mouse arguments (x, y and button)</param>
         private void PictureBoxCrew_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (CrewMemberDoubleClicked != null)
@@ -71,6 +77,12 @@ namespace FS_Crew_Config_Tool.UiComponents
             }
         }
 
+        /// <summary>
+        /// Event handler for handling a crew double click - raises ImplantDoubleClicked
+        /// to remove the implant assigned to this box
+        /// </summary>
+        /// <param name="sender">Object sending this - should be PictureBoxImplant0</param>
+        /// <param name="e">Mouse arguments (x, y and button)</param>
         private void PictureBoxImplant0_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (ImplantDoubleClicked != null)
@@ -81,6 +93,12 @@ namespace FS_Crew_Config_Tool.UiComponents
             }
         }
 
+        /// <summary>
+        /// Event handler for handling a crew double click - raises ImplantDoubleClicked
+        /// to remove the implant assigned to this box
+        /// </summary>
+        /// <param name="sender">Object sending this - should be PictureBoxImplant1</param>
+        /// <param name="e">Mouse arguments (x, y and button)</param>
         private void PictureBoxImplant1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (ImplantDoubleClicked != null)
@@ -89,9 +107,14 @@ namespace FS_Crew_Config_Tool.UiComponents
 
                 ImplantDoubleClicked(this, args);
             }
-
         }
 
+        /// <summary>
+        /// Event handler for handling a crew double click - raises ImplantDoubleClicked
+        /// to remove the implant assigned to this box
+        /// </summary>
+        /// <param name="sender">Object sending this - should be PictureBoxImplant2</param>
+        /// <param name="e">Mouse arguments (x, y and button)</param>
         private void PictureBoxImplant2_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (ImplantDoubleClicked != null)
