@@ -65,6 +65,7 @@
     <Compile Include="UiComponents\CrewBox_Test.cs" />
     <Compile Include="UiComponents\UiOffload_Test.cs" />
     <Compile Include="UiComponents\UiArguments_Test.cs" />
+    <Compile Include="UiComponents\StatPair_Test.cs" />
     <Compile Include="Utilities_Test.cs" />
   </ItemGroup>
   <ItemGroup>

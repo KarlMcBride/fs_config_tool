@@ -98,6 +98,19 @@ namespace FS_Crew_Config_Tool.Classes.Listings
             Name = name;
             Value = value;
         }
+
+        /// <summary>
+        /// Constructor for passing to UI
+        /// </summary>
+        /// <param name="name">Stat name e.g. "Capture Rate"</param>
+        /// <param name="value">Implant value e.g. 200 for hull strength</param>
+        public StatCombination(string name, float value)
+        {
+            Category = StatCategory.END_OF_LIST;
+            Type = StatType.ENERGY_EFFICIENCY;
+            Name = name;
+            Value = value;
+        }
     }
 
     public struct Stats
