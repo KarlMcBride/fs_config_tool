@@ -28,7 +28,6 @@ namespace UnitTests.UiComponents
             ArgImplantIndex = e.ImplantIndex;
         }
 
-
         [TestMethod]
         public void CrewBox_Load()
         {

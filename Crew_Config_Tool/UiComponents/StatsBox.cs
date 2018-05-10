@@ -140,7 +140,6 @@ namespace FS_Crew_Config_Tool.UiComponents
 
                     typeCount[statCategoryInt]++;
                 }
-
             }
         }
 
@@ -158,6 +157,11 @@ namespace FS_Crew_Config_Tool.UiComponents
             {
                 statPairsUtility[index].ClearDownValues();
             }
+        }
+
+        public int GetStatMathListLength()
+        {
+            return StatMathList.Length;
         }
     }
 }
