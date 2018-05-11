@@ -20,13 +20,39 @@ namespace UnitTests.UiComponents
         }
 
         [TestMethod]
-        public void SetStats()
+        public void SetPositiveStats()
         {
             string name = "Capture Rate";
-            float value = 5;
+            string value = "+5%";
 
             StatPair pair = new StatPair();
-            pair.SetValues(new StatCombination("Capture Rate", 5));
+            pair.SetValues(new StatCombination(name, 5));
+
+            Assert.AreEqual(name, pair.StatName, "Stat name is not set");
+            Assert.AreEqual(value, pair.StatValue, "Stat value is not set");
+        }
+
+        [TestMethod]
+        public void SetNegativeStats()
+        {
+            string name = "Broken Armour Damage Reduction";
+            string value = "-2.5%";
+
+            StatPair pair = new StatPair();
+            pair.SetValues(new StatCombination(name, -2.5f));
+
+            Assert.AreEqual(name, pair.StatName, "Stat name is not set");
+            Assert.AreEqual(value.ToString(), pair.StatValue, "Stat value is not set");
+        }
+
+        [TestMethod]
+        public void SetHitPointStats()
+        {
+            string name = "Hull Strength";
+            string value = "+1000 HP";
+
+            StatPair pair = new StatPair();
+            pair.SetValues(new StatCombination(StatCategory.DEFENSE, StatType.HULL_STRENGTH, name, 1000));
 
             Assert.AreEqual(name, pair.StatName, "Stat name is not set");
             Assert.AreEqual(value.ToString(), pair.StatValue, "Stat value is not set");

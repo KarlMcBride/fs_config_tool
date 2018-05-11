@@ -43,9 +43,9 @@
             // 
             // LabelStatValue
             // 
-            this.LabelStatValue.Location = new System.Drawing.Point(111, 0);
+            this.LabelStatValue.Location = new System.Drawing.Point(84, 0);
             this.LabelStatValue.Name = "LabelStatValue";
-            this.LabelStatValue.Size = new System.Drawing.Size(35, 26);
+            this.LabelStatValue.Size = new System.Drawing.Size(70, 26);
             this.LabelStatValue.TabIndex = 1;
             this.LabelStatValue.Text = "####";
             this.LabelStatValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -54,8 +54,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.LabelStatValue);
             this.Controls.Add(this.LabelStatName);
+            this.Controls.Add(this.LabelStatValue);
             this.Name = "StatPair";
             this.Size = new System.Drawing.Size(154, 26);
             this.ResumeLayout(false);

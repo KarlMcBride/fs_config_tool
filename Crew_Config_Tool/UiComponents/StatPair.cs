@@ -29,7 +29,7 @@ namespace FS_Crew_Config_Tool.UiComponents
         public void SetValues(StatCombination stat)
         {
             LabelStatName.Text = stat.Name;
-            LabelStatValue.Text = stat.Value.ToString();
+            LabelStatValue.Text = stat.GenerateFormattedStringForDisplay();
         }
     }
 }

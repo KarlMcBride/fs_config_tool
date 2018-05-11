@@ -111,6 +111,34 @@ namespace FS_Crew_Config_Tool.Classes.Listings
             Name = name;
             Value = value;
         }
+
+        public string GenerateFormattedStringForDisplay()
+        {
+            string formattedString = string.Empty;
+
+            if (Value > 0)
+            {
+                formattedString = "+";
+            }
+
+            formattedString += Value.ToString();
+
+            switch (Type)
+            {
+                case (StatType.HULL_STRENGTH):
+                {
+                    formattedString += " HP";
+                    break;
+                }
+                default:
+                {
+                    formattedString += "%";
+                    break;
+                }
+            }
+
+            return formattedString;
+        }
     }
 
     public struct Stats
