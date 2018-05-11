@@ -9,6 +9,17 @@ namespace UnitTests.UiComponents
     public class StatPair_Test
     {
         [TestMethod]
+        public void EnsureStatsAreEmptyUponInit()
+        {
+            string expected = string.Empty;
+
+            StatPair pair = new StatPair();
+
+            Assert.AreEqual(expected, pair.StatName, "Stat name is not empty");
+            Assert.AreEqual(expected, pair.StatValue, "Stat value is not empty");
+        }
+
+        [TestMethod]
         public void SetStats()
         {
             string name = "Capture Rate";

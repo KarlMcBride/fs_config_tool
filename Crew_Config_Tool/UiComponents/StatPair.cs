@@ -17,6 +17,7 @@ namespace FS_Crew_Config_Tool.UiComponents
         public StatPair()
         {
             InitializeComponent();
+            ClearDownValues();
         }
 
         public void ClearDownValues()
