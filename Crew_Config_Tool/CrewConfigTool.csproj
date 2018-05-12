@@ -426,6 +426,9 @@
     <None Include="Content\Implants\RAMMING_DAMAGE.PNG" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Utility.png" />
+    <None Include="Resources\Defense.png" />
+    <None Include="Resources\Attack.png" />
     <None Include="Content\Crew\BLADE.png" />
     <None Include="Content\Crew\CALANDRA_VANDENBERG.png" />
     <None Include="Content\Crew\EVER_SWORD_KERN.png" />
