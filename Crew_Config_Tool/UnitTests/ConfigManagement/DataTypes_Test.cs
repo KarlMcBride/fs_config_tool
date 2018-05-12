@@ -63,5 +63,19 @@ namespace UnitTests.ConfigManagement
 
             Assert.AreEqual(expected, line.CrewName, "Parsed crewname isn't empty [" + line.CrewName + "]");
         }
+
+        [TestMethod]
+        public void BuildLine()
+        {
+            string expected = RawStringData.FIVE_MEMBERS_ALL_IMPLANTS_FULL_STRING;
+
+            CrewLines line = new CrewLines();
+            line.RawLine = expected;
+            line.ParseLine();
+
+            string actual = line.BuildLine();
+
+            Assert.AreEqual(expected, actual, "Built crew line does not match");
+        }
     }
 }
