@@ -11,8 +11,6 @@ namespace UnitTests.ListingChecks
         [TestInitialize]
         public void PopulateLists()
         {
-            StatList.PopulateStatsList();
-            CrewList.PopulateCrewList();
             ImplantList.PopulateImplantList();
         }
 
