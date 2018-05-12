@@ -90,7 +90,7 @@ namespace UnitTests.ConfigManagement.CrewParser_cs
         [TestMethod]
         public void ParseRosterWithDynamicCrewInputNoImplants()
         {
-            for (int id = 0; id < (int)CrewEnum.NONE; id++)
+            for (int id = 0; id < (int)CrewEnum.END_OF_LIST; id++)
             {
                 string customLine = RawStringData.SINGLE_MEMBER_TEMPLATE[0]
                                         + CrewList.CrewListing[id].Code

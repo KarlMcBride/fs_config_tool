@@ -61,6 +61,7 @@
     <Compile Include="ConfigManagement\ConfigUtilities_Test.cs" />
     <Compile Include="Listings\Implant_Test.cs" />
     <Compile Include="Listings\Crew_Test.cs" />
+    <Compile Include="Listings\Stats_Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UiComponents\CrewSetBox_Test.cs" />
     <Compile Include="UiComponents\CrewBox_Test.cs" />

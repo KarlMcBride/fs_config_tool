@@ -47,13 +47,13 @@ namespace FS_Crew_Config_Tool.Classes.ConfigManagement
         {
             int matchIndex = OUT_OF_BOUNDS;
 
-            CrewRole selectedRole = (crewEnum == CrewEnum.NONE) ? CrewRole.NONE : CrewList.CrewListing[(int)crewEnum].Role;
+            CrewRole selectedRole = (crewEnum == CrewEnum.END_OF_LIST) ? CrewRole.END_OF_LIST : CrewList.CrewListing[(int)crewEnum].Role;
 
             for (int index = 0; index < 5; index++)
             {
                 int crewIndex = (int)selectedTeam.CrewMembers[index].CrewID;
 
-                if (crewIndex < (int)CrewEnum.NONE)
+                if (crewIndex < (int)CrewEnum.END_OF_LIST)
                 {
                     CrewRole currentRole = CrewList.CrewListing[crewIndex].Role;
 
@@ -79,7 +79,7 @@ namespace FS_Crew_Config_Tool.Classes.ConfigManagement
 
             for (int index = 0; index < 5; index++)
             {
-                if (selectedTeam.CrewMembers[index].CrewID != CrewEnum.NONE)
+                if (selectedTeam.CrewMembers[index].CrewID != CrewEnum.END_OF_LIST)
                 {
                     crewCount++;
                 }
@@ -99,7 +99,7 @@ namespace FS_Crew_Config_Tool.Classes.ConfigManagement
                     // Skip the captain's slot, effectively reserving it for captains
                     continue;
                 }
-                if (selectedTeam.CrewMembers[index].CrewID == CrewEnum.NONE)
+                if (selectedTeam.CrewMembers[index].CrewID == CrewEnum.END_OF_LIST)
                 {
                     nextFreeSlot = index;
                     break;
@@ -137,7 +137,7 @@ namespace FS_Crew_Config_Tool.Classes.ConfigManagement
 
             for (int implantIndex = 0; implantIndex < 3; implantIndex++)
             {
-                if (selectedCrew.ImplantIDs[implantIndex] != ImplantEnum.NONE)
+                if (selectedCrew.ImplantIDs[implantIndex] != ImplantEnum.END_OF_LIST)
                 {
                     implantCount++;
                 }
@@ -159,7 +159,7 @@ namespace FS_Crew_Config_Tool.Classes.ConfigManagement
 
                 for (implantIndex = 0; implantIndex < 3; implantIndex++)
                 {
-                    if (selectedTeam.CrewMembers[crewIndex].ImplantIDs[implantIndex] == ImplantEnum.NONE)
+                    if (selectedTeam.CrewMembers[crewIndex].ImplantIDs[implantIndex] == ImplantEnum.END_OF_LIST)
                     {
                         // Hold onto the first empty slot
                         if (emptySlot == -1)

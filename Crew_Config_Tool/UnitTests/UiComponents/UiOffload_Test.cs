@@ -33,9 +33,9 @@ namespace UnitTests.UiComponents
         [TestMethod]
         public void PopulateCrewListing()
         {
-            RadioButton[] array = CreateRadioButtonArray((int)CrewRole.NONE);
+            RadioButton[] array = CreateRadioButtonArray((int)CrewRole.END_OF_LIST);
 
-            for (int role = 0; role < (int)CrewRole.NONE; role++)
+            for (int role = 0; role < (int)CrewRole.END_OF_LIST; role++)
             {
                 array[role].Checked = true;
 

@@ -33,7 +33,7 @@ namespace UnitTests
         [TestMethod]
         public void CheckNoneIdForCaptain()
         {
-            CrewEnum input = CrewEnum.NONE;
+            CrewEnum input = CrewEnum.END_OF_LIST;
 
             bool actual = Utilities.IsCrewMemberCaptain(input);
 
@@ -63,7 +63,7 @@ namespace UnitTests
         [TestMethod]
         public void ValidateCrewResourceImages()
         {
-            for (int index = 0; index < (int)CrewEnum.NONE; index++)
+            for (int index = 0; index < (int)CrewEnum.END_OF_LIST; index++)
             {
                 Bitmap result = Utilities.GetCrewImageByIndex(index);
                 Assert.IsNotNull(result, "Image for [" + ((CrewEnum)index).ToString() + "] returned null");
@@ -73,7 +73,7 @@ namespace UnitTests
         [TestMethod]
         public void ValidateImplantResourceImages()
         {
-            for (int index = 0; index < (int)ImplantEnum.NONE; index++)
+            for (int index = 0; index < (int)ImplantEnum.END_OF_LIST; index++)
             {
                 Bitmap result = Utilities.GetImplantImageByIndex(index);
                 Assert.IsNotNull(result, "Image for [" + ((ImplantEnum)index).ToString() + "] returned null");
@@ -83,7 +83,7 @@ namespace UnitTests
         [TestMethod]
         public void ConvertValidCrewMemberStringsToEnum()
         {
-            for (int index = 0; index < (int)CrewEnum.NONE; index++)
+            for (int index = 0; index < (int)CrewEnum.END_OF_LIST; index++)
             {
                 CrewEnum inputCrew = (CrewEnum)index;
                 string crewAsString = inputCrew.ToString();
@@ -99,7 +99,7 @@ namespace UnitTests
         {
             CrewEnum outputCrew = Utilities.ConvertCrewStringToEnum("");
 
-            Assert.AreEqual(CrewEnum.NONE, outputCrew, "Output is not CrewEnum.None [" + outputCrew + "]");
+            Assert.AreEqual(CrewEnum.END_OF_LIST, outputCrew, "Output is not CrewEnum.None [" + outputCrew + "]");
         }
 
         [TestMethod]
@@ -107,13 +107,13 @@ namespace UnitTests
         {
             CrewEnum outputCrew = Utilities.ConvertCrewStringToEnum("Invalid crew string");
 
-            Assert.AreEqual(CrewEnum.NONE, outputCrew, "Output for is not CrewEnum.None [" + outputCrew + "]");
+            Assert.AreEqual(CrewEnum.END_OF_LIST, outputCrew, "Output for is not CrewEnum.None [" + outputCrew + "]");
         }
 
         [TestMethod]
         public void ConvertValidImplantStringsToEnum()
         {
-            for (int index = 0; index < (int)ImplantEnum.NONE; index++)
+            for (int index = 0; index < (int)ImplantEnum.END_OF_LIST; index++)
             {
                 string implantAsString = ImplantList.ImplantListing[index].Name;
 
@@ -129,7 +129,7 @@ namespace UnitTests
         {
             ImplantEnum outputImplant = Utilities.ConvertImplantStringToEnum("");
 
-            Assert.AreEqual(ImplantEnum.NONE, outputImplant, "Output is not ImplantEnum.None [" + outputImplant + "]");
+            Assert.AreEqual(ImplantEnum.END_OF_LIST, outputImplant, "Output is not ImplantEnum.None [" + outputImplant + "]");
         }
 
         [TestMethod]
@@ -137,7 +137,7 @@ namespace UnitTests
         {
             ImplantEnum outputImplant = Utilities.ConvertImplantStringToEnum ("Invalid implant string");
 
-            Assert.AreEqual(ImplantEnum.NONE, outputImplant, "Output is not ImplantEnum.None [" + outputImplant + "]");
+            Assert.AreEqual(ImplantEnum.END_OF_LIST, outputImplant, "Output is not ImplantEnum.None [" + outputImplant + "]");
         }
 
         [TestMethod]

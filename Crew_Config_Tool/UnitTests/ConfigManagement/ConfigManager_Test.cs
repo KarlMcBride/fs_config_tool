@@ -180,7 +180,7 @@ namespace UnitTests.ConfigManagement
 
             manager.DataLists.CrewData.Add(crewLine);
 
-            bool result = manager.AddSelectedMemberToSelectedCrew(CrewEnum.NONE.ToString(), 0);
+            bool result = manager.AddSelectedMemberToSelectedCrew(CrewEnum.END_OF_LIST.ToString(), 0);
 
             Assert.IsFalse(result, "Added non-crew member to team");
         }

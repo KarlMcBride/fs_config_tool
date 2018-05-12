@@ -17,13 +17,13 @@
 
             public EnumeratedCrewMember()
             {
-                CrewID = CrewEnum.NONE;
+                CrewID = CrewEnum.END_OF_LIST;
 
                 ImplantIDs = new ImplantEnum[MAX_IMPLANTS_PER_CREW_MEMBER];
 
                 for (int index = 0; index < MAX_IMPLANTS_PER_CREW_MEMBER; index++)
                 {
-                    ImplantIDs[index] = ImplantEnum.NONE;
+                    ImplantIDs[index] = ImplantEnum.END_OF_LIST;
                 }
             }
         }

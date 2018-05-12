@@ -57,7 +57,7 @@ namespace UnitTests.ConfigManagement
         {
             TeamConfig teamConfig = ParsedData.BasicFiveMembersNoImplants();
 
-            int result = ConfigUtilities.CheckCrewTeamForSelectedMembersRoleIsPresent(CrewEnum.NONE, teamConfig);
+            int result = ConfigUtilities.CheckCrewTeamForSelectedMembersRoleIsPresent(CrewEnum.END_OF_LIST, teamConfig);
 
             Assert.AreEqual(ConfigUtilities.OUT_OF_BOUNDS, result, "Expected no match");
         }
@@ -83,7 +83,7 @@ namespace UnitTests.ConfigManagement
         {
             TeamConfig teamConfig = new TeamConfig();
 
-            int result = ConfigUtilities.CheckCrewTeamForSelectedMembersRoleIsPresent(CrewEnum.NONE, teamConfig);
+            int result = ConfigUtilities.CheckCrewTeamForSelectedMembersRoleIsPresent(CrewEnum.END_OF_LIST, teamConfig);
 
             Assert.AreEqual(ConfigUtilities.OUT_OF_BOUNDS, result, "Expected no match");
         }

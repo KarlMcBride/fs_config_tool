@@ -52,7 +52,7 @@ namespace UnitTests.UiComponents
             string value = "+1000 HP";
 
             StatPair pair = new StatPair();
-            pair.SetValues(new StatCombination(StatCategory.DEFENSE, StatType.HULL_STRENGTH, name, 1000));
+            pair.SetValues(new StatCombination(StatCategory.DEFENSE, StatEnum.HULL_STRENGTH, name, 1000));
 
             Assert.AreEqual(name, pair.StatName, "Stat name is not set");
             Assert.AreEqual(value.ToString(), pair.StatValue, "Stat value is not set");

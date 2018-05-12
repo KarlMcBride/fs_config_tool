@@ -26,7 +26,7 @@ namespace FS_Crew_Config_Tool.UiComponents
 
             int index = 0;
 
-            for (int id = 0; id < (int)CrewEnum.NONE; id++)
+            for (int id = 0; id < (int)CrewEnum.END_OF_LIST; id++)
             {
                 CrewRole idRole = CrewList.CrewListing[id].Role;
 
@@ -70,7 +70,7 @@ namespace FS_Crew_Config_Tool.UiComponents
 
             int index = 0;
             // Loop through all implants
-            for (int id = 0; id < (int)ImplantEnum.NONE; id++)
+            for (int id = 0; id < (int)ImplantEnum.END_OF_LIST; id++)
             {
                 if (implantCategory == ImplantList.ImplantListing[id].Category)
                 {

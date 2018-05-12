@@ -68,7 +68,7 @@ CrewTeams=(ID="C3ED77E04FCB6D1876D4F2AFD372E00E",Name="The Opportunists",Icon=""
             TeamConfig.EnumeratedCrewMember crewMember = new TeamConfig.EnumeratedCrewMember();
 
             // Find the crew member's string from the list
-            for (int id = 0; id < (int)CrewEnum.NONE; id++)
+            for (int id = 0; id < (int)CrewEnum.END_OF_LIST; id++)
             {
                 if (input.Contains(CrewList.CrewListing[id].Code))
                 {
@@ -79,11 +79,11 @@ CrewTeams=(ID="C3ED77E04FCB6D1876D4F2AFD372E00E",Name="The Opportunists",Icon=""
             }
 
             // Parse implants if crew member was found
-            if (crewMember.CrewID != CrewEnum.NONE)
+            if (crewMember.CrewID != CrewEnum.END_OF_LIST)
             {
                 int implantNumber = 0;
 
-                for (int implantId = 0; implantId < (int)ImplantEnum.NONE; implantId++)
+                for (int implantId = 0; implantId < (int)ImplantEnum.END_OF_LIST; implantId++)
                 {
                     if (input.Contains(ImplantList.ImplantListing[implantId].Code))
                     {

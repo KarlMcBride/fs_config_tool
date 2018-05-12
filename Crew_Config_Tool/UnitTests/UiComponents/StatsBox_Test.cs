@@ -21,7 +21,7 @@ namespace UnitTests.UiComponents
             statsBox.CallHiddenMethod("PopulateStatMathList");
 
             int actualSize = statsBox.GetStatMathListLength();
-            int expectedSize = (int)StatType.ENERGY_EFFICIENCY + 1;
+            int expectedSize = (int)StatEnum.ENERGY_EFFICIENCY + 1;
 
             Assert.AreEqual(expectedSize, actualSize, "Size of StatMathList is not correct");
         }

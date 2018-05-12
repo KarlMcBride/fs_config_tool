@@ -23,7 +23,7 @@ namespace UnitTests.ConfigManagement.CrewBuilder_cs
 
             TeamConfig.EnumeratedCrewMember crewMember = new TeamConfig.EnumeratedCrewMember();
 
-            crewMember.CrewID = CrewEnum.NONE;
+            crewMember.CrewID = CrewEnum.END_OF_LIST;
             crewMember.ImplantIDs[0] = ImplantEnum.MANEUVERING;
             crewMember.ImplantIDs[1] = ImplantEnum.HULL_STRENGTH;
             crewMember.ImplantIDs[2] = ImplantEnum.UTILITY_COOLDOWN;

@@ -17,7 +17,7 @@ namespace FS_Crew_Config_Tool
         /// <summary>
         /// End of list value - for iteration
         /// </summary>
-        NONE
+        END_OF_LIST
     }
 
     public enum CrewEnum
@@ -108,7 +108,7 @@ namespace FS_Crew_Config_Tool
         /// <summary>
         /// End of list value - for iteration
         /// </summary>
-        NONE
+        END_OF_LIST
     }
 
     public struct CrewMember
@@ -145,57 +145,62 @@ namespace FS_Crew_Config_Tool
             {
                 case CrewRole.CAG:
                 {
-                    CrewStats[0] = StatList.StatsListing[(int)StatType.SQUAD_COOLDOWN];
-                    CrewStats[1] = StatList.StatsListing[(int)StatType.SQUAD_SURVIVAL];
+                    CrewStats[0] = StatList.StatsListing[(int)StatEnum.SQUAD_COOLDOWN];
+                    CrewStats[1] = StatList.StatsListing[(int)StatEnum.SQUAD_SURVIVAL];
                     break;
                 }
                 case CrewRole.CAPTAIN:
                 {
-                    CrewStats[0] = StatList.StatsListing[(int)StatType.ATTACK_DAMAGE];
-                    CrewStats[1] = StatList.StatsListing[(int)StatType.CAPTURE_RATE];
-                    CrewStats[2] = StatList.StatsListing[(int)StatType.DAMAGE_REDUCTION];
+                    CrewStats[0] = StatList.StatsListing[(int)StatEnum.ATTACK_DAMAGE];
+                    CrewStats[1] = StatList.StatsListing[(int)StatEnum.CAPTURE_RATE];
+                    CrewStats[2] = StatList.StatsListing[(int)StatEnum.DAMAGE_REDUCTION];
                     break;
                 }
                 case CrewRole.COMMS:
                 {
-                    CrewStats[0] = StatList.StatsListing[(int)StatType.ENERGY_REGEN];
-                    CrewStats[1] = StatList.StatsListing[(int)StatType.SENSOR_RANGE];
+                    CrewStats[0] = StatList.StatsListing[(int)StatEnum.ENERGY_REGEN];
+                    CrewStats[1] = StatList.StatsListing[(int)StatEnum.SENSOR_RANGE];
                     break;
                 }
                 case CrewRole.ENGINEER:
                 {
-                    CrewStats[0] = StatList.StatsListing[(int)StatType.ARMOUR_STRENGTH];
-                    CrewStats[1] = StatList.StatsListing[(int)StatType.FORWARD_THRUST];
+                    CrewStats[0] = StatList.StatsListing[(int)StatEnum.ARMOUR_STRENGTH];
+                    CrewStats[1] = StatList.StatsListing[(int)StatEnum.FORWARD_THRUST];
                     break;
                 }
                 case CrewRole.JUMP_CORE:
                 {
-                    CrewStats[0] = StatList.StatsListing[(int)StatType.JUMP_COOLDOWN];
-                    CrewStats[1] = StatList.StatsListing[(int)StatType.JUMP_PREP];
+                    CrewStats[0] = StatList.StatsListing[(int)StatEnum.JUMP_COOLDOWN];
+                    CrewStats[1] = StatList.StatsListing[(int)StatEnum.JUMP_PREP];
                     break;
                 }
                 case CrewRole.NAV_OFFICER:
                 {
-                    CrewStats[0] = StatList.StatsListing[(int)StatType.MANEUVERING];
-                    CrewStats[1] = StatList.StatsListing[(int)StatType.TURN_RATE];
+                    CrewStats[0] = StatList.StatsListing[(int)StatEnum.MANEUVERING];
+                    CrewStats[1] = StatList.StatsListing[(int)StatEnum.TURN_RATE];
                     break;
                 }
                 case CrewRole.REPAIR:
                 {
-                    CrewStats[0] = StatList.StatsListing[(int)StatType.BROKEN_ARMOUR_DAMAGE];
-                    CrewStats[1] = StatList.StatsListing[(int)StatType.ARMOUR_REPAIR_RATE];
+                    CrewStats[0] = StatList.StatsListing[(int)StatEnum.BROKEN_ARMOUR_DAMAGE];
+                    CrewStats[1] = StatList.StatsListing[(int)StatEnum.ARMOUR_REPAIR_RATE];
                     break;
                 }
                 case CrewRole.TACTICAL:
                 {
-                    CrewStats[0] = StatList.StatsListing[(int)StatType.FIRE_RATE];
-                    CrewStats[1] = StatList.StatsListing[(int)StatType.TURRET_TRAVERSE];
+                    CrewStats[0] = StatList.StatsListing[(int)StatEnum.FIRE_RATE];
+                    CrewStats[1] = StatList.StatsListing[(int)StatEnum.TURRET_TRAVERSE];
                     break;
                     }
                 case CrewRole.UTILITY:
                 {
-                    CrewStats[0] = StatList.StatsListing[(int)StatType.ENERGY_EFFICIENCY];
-                    CrewStats[1] = StatList.StatsListing[(int)StatType.UTILITY_COOLDOWN];
+                    CrewStats[0] = StatList.StatsListing[(int)StatEnum.ENERGY_EFFICIENCY];
+                    CrewStats[1] = StatList.StatsListing[(int)StatEnum.UTILITY_COOLDOWN];
+                    break;
+                }
+                default:
+                {
+                    // NO-OP
                     break;
                 }
             }

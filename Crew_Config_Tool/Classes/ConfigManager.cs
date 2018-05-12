@@ -159,7 +159,7 @@ namespace FS_Crew_Config_Tool
 
             bool addSuccessful = false;
 
-            if (selectedCrewID != CrewEnum.NONE && DataLists.CrewData != null && DataLists.CrewData.Count > 0
+            if (selectedCrewID != CrewEnum.END_OF_LIST && DataLists.CrewData != null && DataLists.CrewData.Count > 0
                     && selectedTeam > UNSELECTED_INDEX)
             {
                 int matchIndex =
@@ -196,9 +196,9 @@ namespace FS_Crew_Config_Tool
         {
             bool removeSuccessful = false;
 
-            if (DataLists.CrewData[selectedTeam].Team.CrewMembers[crewIndexToRemove].CrewID != CrewEnum.NONE)
+            if (DataLists.CrewData[selectedTeam].Team.CrewMembers[crewIndexToRemove].CrewID != CrewEnum.END_OF_LIST)
             {
-                DataLists.CrewData[selectedTeam].Team.CrewMembers[crewIndexToRemove].CrewID = CrewEnum.NONE;
+                DataLists.CrewData[selectedTeam].Team.CrewMembers[crewIndexToRemove].CrewID = CrewEnum.END_OF_LIST;
                 removeSuccessful = true;
             }
 
@@ -211,7 +211,7 @@ namespace FS_Crew_Config_Tool
 
             ImplantEnum selectedImplantID = Utilities.ConvertImplantStringToEnum(implantName);
 
-            if (selectedImplantID != ImplantEnum.NONE && DataLists.CrewData != null && DataLists.CrewData.Count > 0
+            if (selectedImplantID != ImplantEnum.END_OF_LIST && DataLists.CrewData != null && DataLists.CrewData.Count > 0
                     && selectedTeam > UNSELECTED_INDEX)
             {
                 if (ConfigUtilities.CountNumberOfImplantsInTeam(DataLists.CrewData[selectedTeam].Team) < 15)
@@ -234,9 +234,9 @@ namespace FS_Crew_Config_Tool
         {
             bool removeSuccessful = false;
 
-            if (DataLists.CrewData[selectedTeam].Team.CrewMembers[args.CrewIndex].ImplantIDs[args.ImplantIndex] != ImplantEnum.NONE)
+            if (DataLists.CrewData[selectedTeam].Team.CrewMembers[args.CrewIndex].ImplantIDs[args.ImplantIndex] != ImplantEnum.END_OF_LIST)
             {
-                DataLists.CrewData[selectedTeam].Team.CrewMembers[args.CrewIndex].ImplantIDs[args.ImplantIndex] = ImplantEnum.NONE;
+                DataLists.CrewData[selectedTeam].Team.CrewMembers[args.CrewIndex].ImplantIDs[args.ImplantIndex] = ImplantEnum.END_OF_LIST;
                 removeSuccessful = true;
             }
 

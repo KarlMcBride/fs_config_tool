@@ -31,7 +31,7 @@ namespace FS_Crew_Config_Tool.Classes
         UTILITY_COOLDOWN,
         UTILITY_DURATION,
         // End of list
-        NONE
+        END_OF_LIST
     }
 
     public struct Implant
@@ -39,7 +39,7 @@ namespace FS_Crew_Config_Tool.Classes
         public ImplantEnum ID        { get; private set; }
         public string Name           { get; private set; }
         public StatCategory Category { get; private set; }
-        public StatType Type         { get; private set; }
+        public StatEnum Type         { get; private set; }
         public string Code           { get; private set; }
         public StatCombination Stat  { get; private set; }
 

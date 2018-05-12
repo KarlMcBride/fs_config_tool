@@ -17,7 +17,7 @@ namespace UnitTests.ListingChecks
         [TestMethod]
         public void VerifyCrewCountsMatch()
         {
-            int enum_expected = (int)CrewEnum.NONE;
+            int enum_expected = (int)CrewEnum.END_OF_LIST;
 
             int actual = CrewList.CrewListing.Count;
 
@@ -27,7 +27,7 @@ namespace UnitTests.ListingChecks
         [TestMethod]
         public void VerifyCrewListOrder()
         {
-            for (int index = 0; index < (int)CrewEnum.NONE; index++)
+            for (int index = 0; index < (int)CrewEnum.END_OF_LIST; index++)
             {
                 CrewEnum expected = (CrewEnum)index;
 
@@ -35,7 +35,6 @@ namespace UnitTests.ListingChecks
 
                 Assert.AreEqual(expected, actual);
             }
-
         }
     }
 }

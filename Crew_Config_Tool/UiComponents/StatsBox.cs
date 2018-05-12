@@ -33,7 +33,7 @@ namespace FS_Crew_Config_Tool.UiComponents
 
         private void PopulateStatMathList()
         {
-            int numOfStats = (int)StatType.ENERGY_EFFICIENCY + 1;
+            int numOfStats = (int)StatEnum.END_OF_LIST;
 
             StatMathList = new StatCombination[numOfStats];
 
@@ -72,7 +72,7 @@ namespace FS_Crew_Config_Tool.UiComponents
                 CrewEnum crew = team.CrewMembers[crewIndex].CrewID;
 
                 // Ignore NONE crew
-                if (crew != CrewEnum.NONE)
+                if (crew != CrewEnum.END_OF_LIST)
                 {
                     int crewID = (int)team.CrewMembers[crewIndex].CrewID;
                     AddCrewStatsToTotals(CrewList.CrewListing[crewID].CrewStats);
@@ -83,7 +83,7 @@ namespace FS_Crew_Config_Tool.UiComponents
                     ImplantEnum implant = team.CrewMembers[crewIndex].ImplantIDs[implantIndex];
 
                     // Ignore NONE implants
-                    if (implant != ImplantEnum.NONE)
+                    if (implant != ImplantEnum.END_OF_LIST)
                     {
                         int implantID = (int)team.CrewMembers[crewIndex].ImplantIDs[implantIndex];
                         AddStatToTotals(ImplantList.ImplantListing[implantID].Stat);

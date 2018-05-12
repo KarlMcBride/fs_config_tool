@@ -51,7 +51,7 @@ namespace FS_Crew_Config_Tool.Classes
 
             if (!parseSuccessful)
             {
-                crewMember = CrewEnum.NONE;
+                crewMember = CrewEnum.END_OF_LIST;
             }
 
             return crewMember;
@@ -59,9 +59,9 @@ namespace FS_Crew_Config_Tool.Classes
 
         public static ImplantEnum ConvertImplantStringToEnum(string implantName)
         {
-            ImplantEnum implantEnum = ImplantEnum.NONE;
+            ImplantEnum implantEnum = ImplantEnum.END_OF_LIST;
 
-            for (int index = 0; index < (int)ImplantEnum.NONE; index++)
+            for (int index = 0; index < (int)ImplantEnum.END_OF_LIST; index++)
             {
                 if (ImplantList.ImplantListing[index].Name.Equals(implantName))
                 {

@@ -17,7 +17,7 @@ namespace UnitTests.ListingChecks
         [TestMethod]
         public void VerifyImplantCountsMatch()
         {
-            int enum_expected = (int)ImplantEnum.NONE;
+            int enum_expected = (int)ImplantEnum.END_OF_LIST;
 
             int actual = ImplantList.ImplantListing.Count;
 
@@ -27,7 +27,7 @@ namespace UnitTests.ListingChecks
         [TestMethod]
         public void VerifyImplantListOrder()
         {
-            for (int index = 0; index < (int)ImplantEnum.NONE; index++)
+            for (int index = 0; index < (int)ImplantEnum.END_OF_LIST; index++)
             {
                 ImplantEnum expected = (ImplantEnum)index;
 
@@ -35,7 +35,6 @@ namespace UnitTests.ListingChecks
 
                 Assert.AreEqual(expected, actual);
             }
-
         }
     }
 }

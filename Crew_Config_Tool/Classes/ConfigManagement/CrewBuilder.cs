@@ -30,7 +30,7 @@
             string crewString = "(";
 
             // If there's no crew member, just wrap up to make a "()"
-            if (crewMember.CrewID == CrewEnum.NONE)
+            if (crewMember.CrewID == CrewEnum.END_OF_LIST)
             {
                 crewString += ")";
             }
