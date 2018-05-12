@@ -484,7 +484,7 @@ namespace FS_Crew_Config_Tool
 
             // ##### REPAIR #####
 
-            CrewMember everSwordKern = new CrewMember(CrewEnum.MAS_LEYDRAB, "Ever Sword Kern", CrewRole.REPAIR, "07FB941F4118D9C16F7194AF2DEE9236");
+            CrewMember everSwordKern = new CrewMember(CrewEnum.EVER_SWORD_KERN, "Ever Sword Kern", CrewRole.REPAIR, "07FB941F4118D9C16F7194AF2DEE9236");
             everSwordKern.CrewStats[0].Value = 18.75f;  // BADR
             everSwordKern.CrewStats[1].Value = -9.37f;  // Armour Repair Rate
             CrewListing.Add(everSwordKern);

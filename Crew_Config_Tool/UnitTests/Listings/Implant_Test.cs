@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace UnitTests.ListingChecks
 {
     [TestClass]
-    public class CrewAndImplants
+    public class Implant_Test
     {
         [TestInitialize]
         public void PopulateLists()
@@ -14,16 +14,6 @@ namespace UnitTests.ListingChecks
             StatList.PopulateStatsList();
             CrewList.PopulateCrewList();
             ImplantList.PopulateImplantList();
-        }
-
-        [TestMethod]
-        public void VerifyCrewCountsMatch()
-        {
-            int enum_expected = (int)CrewEnum.NONE;
-
-            int actual = CrewList.CrewListing.Count;
-
-            Assert.AreEqual(enum_expected, actual);
         }
 
         [TestMethod]
