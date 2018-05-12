@@ -1,4 +1,4 @@
-﻿namespace UnitTests.ConfigParsing.TestData
+﻿namespace UnitTests.TestData
 {
     public static class RawStringData
     {

@@ -1,8 +1,7 @@
 ﻿using FS_Crew_Config_Tool;
 using FS_Crew_Config_Tool.Classes;
-using FS_Crew_Config_Tool.Classes.Listings;
 
-namespace UnitTests.ConfigParsing.TestData
+namespace UnitTests.TestData
 {
     public class ParsedData
     {

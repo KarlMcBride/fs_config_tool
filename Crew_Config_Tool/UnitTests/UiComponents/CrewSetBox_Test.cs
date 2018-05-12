@@ -1,7 +1,7 @@
 ﻿using FS_Crew_Config_Tool.UiComponents;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using UnitTests.ConfigParsing.TestData;
+using UnitTests.TestData;
 
 namespace UnitTests.UiComponents
 {

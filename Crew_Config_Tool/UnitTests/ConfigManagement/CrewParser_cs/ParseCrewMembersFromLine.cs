@@ -1,9 +1,8 @@
 ﻿using FS_Crew_Config_Tool;
 using FS_Crew_Config_Tool.Classes;
 using FS_Crew_Config_Tool.Classes.ConfigManagement;
-using FS_Crew_Config_Tool.Classes.Listings;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using UnitTests.ConfigParsing.TestData;
+using UnitTests.TestData;
 
 namespace UnitTests.ConfigManagement.CrewParser_cs
 {
