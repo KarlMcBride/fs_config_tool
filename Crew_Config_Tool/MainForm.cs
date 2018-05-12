@@ -2,6 +2,7 @@
 using FS_Crew_Config_Tool.Classes.ConfigManagement;
 using FS_Crew_Config_Tool.Classes.ConfigManagement.FS_Crew_Config_Tool.Classes.ConfigManagement;
 using FS_Crew_Config_Tool.UiComponents;
+using Microsoft.VisualBasic;
 using System;
 using System.ComponentModel;
 using System.Threading;
@@ -287,6 +288,19 @@ namespace FS_Crew_Config_Tool
         {
             CrewSetBoxMain.DisplaySelectedTeam(config.DataLists.CrewData[selectedCrewIndex].Team, CrewSetBoxMain);
             StatsBox.UpdateAndShowStats(config.DataLists.CrewData[selectedCrewIndex].Team);
+        }
+
+        private void ButtonNew_Click(object sender, EventArgs e)
+        {
+            string crewName = Interaction.InputBox("Enter the name for a new crew", "Create New Crew", "");
+
+            config.AddNewCrew(crewName);
+            ListBoxCrews.Items.Add(crewName);
+        }
+
+        private void ButtonGenerate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -242,5 +242,14 @@ namespace FS_Crew_Config_Tool
 
             return removeSuccessful;
         }
+
+        public void AddNewCrew(string newCrewName)
+        {
+            CrewLines newCrew = new CrewLines();
+            newCrew.Team = new TeamConfig();
+            newCrew.CrewName = newCrewName;
+
+            DataLists.CrewData.Add(newCrew);
+        }
     }
 }
