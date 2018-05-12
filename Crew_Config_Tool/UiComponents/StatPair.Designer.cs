@@ -34,20 +34,22 @@
             // 
             // LabelStatName
             // 
+            this.LabelStatName.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelStatName.Location = new System.Drawing.Point(3, 0);
             this.LabelStatName.Name = "LabelStatName";
             this.LabelStatName.Size = new System.Drawing.Size(100, 26);
             this.LabelStatName.TabIndex = 0;
-            this.LabelStatName.Text = "Default Text";
+            this.LabelStatName.Text = "Broken Armour Damage Reduction";
             this.LabelStatName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // LabelStatValue
             // 
+            this.LabelStatValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
             this.LabelStatValue.Location = new System.Drawing.Point(84, 0);
             this.LabelStatValue.Name = "LabelStatValue";
             this.LabelStatValue.Size = new System.Drawing.Size(70, 26);
             this.LabelStatValue.TabIndex = 1;
-            this.LabelStatValue.Text = "####";
+            this.LabelStatValue.Text = "+1000 HP";
             this.LabelStatValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // StatPair
