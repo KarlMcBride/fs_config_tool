@@ -1,5 +1,6 @@
 ﻿using FS_Crew_Config_Tool.Classes;
 using FS_Crew_Config_Tool.Classes.Listings;
+using System;
 using System.Windows.Forms;
 
 namespace FS_Crew_Config_Tool.UiComponents
@@ -53,6 +54,7 @@ namespace FS_Crew_Config_Tool.UiComponents
             ClearStats();
             ResetStats();
             CalculateStats(team);
+            SortArrayForAlphabeticalOrder();
             ShowStats();
         }
 
@@ -90,6 +92,18 @@ namespace FS_Crew_Config_Tool.UiComponents
                     }
                 }
             }
+        }
+
+        private void SortArrayForAlphabeticalOrder()
+        {
+            StatCombination tempStat = StatMathList[(int)StatEnum.ENERGY_EFFICIENCY];
+
+            Array.Sort(StatMathList, SortByNameAlphabetically);
+        }
+
+        private int SortByNameAlphabetically(StatCombination first, StatCombination second)
+        {
+            return first.Name.CompareTo(second.Name);
         }
 
         private void AddCrewStatsToTotals(StatCombination[] crewStats)
