@@ -5,6 +5,9 @@
         public const string NO_MEMBERS_FULL_STRING =
             "CrewTeams=(ID=\"C3ED77E04FCB6D1876D4F2AFD372E00E\",Name=\"The Opportunists\",Icon=\"\",CrewMembers=((),(),(),(),()),Members=)";
 
+        public const string NO_MEMBERS_FULL_STRING_SPACED =
+            "CrewTeams=(ID=\"C3ED77E04FCB6D1876D4F2AFD372E00E\", Name=\"The Opportunists\", Icon=\"\",CrewMembers=((),(),(),(),()),Members=)";
+
         public const string NO_MEMBERS_PARTIAL_STRING =
             "CrewTeams=(ID=\"C3ED77E04FCB6D1876D4F2AFD372E00E\",Name=\"The Opportunists\",Icon=\"\",CrewMembers=";
 
@@ -70,7 +73,7 @@
             "Members=)";
 
         public const string FIVE_MEMBERS_ALL_IMPLANTS_FULL_STRING =
-            "CrewTeams=(ID=\"63B17BDE49EF9339945E5C977CD50B28\", Name = \"Paladin - Max Heal\", Icon = \"\", CrewMembers = " +
+            "CrewTeams=(ID=\"63B17BDE49EF9339945E5C977CD50B28\",Name=\"Paladin - Max Heal\",Icon=\"\",CrewMembers=" +
             "((ID=\"C54041CE43F8A0E89B2E04ADA2ED147F\"," +
                 "Affinities=(\"B553F54842EF2379C90DF49836292A76\",\"E0DF7C9441151ED8AFD4ED9BF12DE8B6\",\"EC1EE1F84F43B42461FD848FB3433529\"))," +
             "(ID=\"34D3B51248D2D71DA09F49B70D527191\"," +

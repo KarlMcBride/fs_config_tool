@@ -21,9 +21,17 @@
 
                 int length = nameEndIndex - nameStartIndex;
 
-                CrewName = RawLine.Substring(nameStartIndex, length);
+                // Range check the values, or we can cause OOR exceptions
+                if (nameStartIndex > -1 && length > -1)
+                {
+                    CrewName = RawLine.Substring(nameStartIndex, length);
 
-                Team = CrewParser.ParseCrewMembersFromLine(RawLine);
+                    Team = CrewParser.ParseCrewMembersFromLine(RawLine);
+                }
+                else
+                {
+                    CrewName = "Undefined";
+                }
             }
 
             public string BuildLine()

@@ -59,6 +59,7 @@
     <Compile Include="ConfigManagement\TestData\ParsedData.cs" />
     <Compile Include="ConfigManagement\ConfigManager_Test.cs" />
     <Compile Include="ConfigManagement\ConfigUtilities_Test.cs" />
+    <Compile Include="ConfigManagement\DataTypes_Test.cs" />
     <Compile Include="Listings\Implant_Test.cs" />
     <Compile Include="Listings\Crew_Test.cs" />
     <Compile Include="Listings\Stats_Test.cs" />
