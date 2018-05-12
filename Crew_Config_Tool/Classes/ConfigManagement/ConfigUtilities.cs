@@ -45,9 +45,15 @@ namespace FS_Crew_Config_Tool.Classes.ConfigManagement
         /// <returns>Index of match if found (0-4), or -1 if not found</returns>
         public static int CheckCrewTeamForSelectedMembersRoleIsPresent(CrewEnum crewEnum, TeamConfig selectedTeam)
         {
+            // Don't continue if a proper crew enum hasn't been passed in
+            if (crewEnum == CrewEnum.END_OF_LIST)
+            {
+                return -1;
+            }
+
             int matchIndex = OUT_OF_BOUNDS;
 
-            CrewRole selectedRole = (crewEnum == CrewEnum.END_OF_LIST) ? CrewRole.END_OF_LIST : CrewList.CrewListing[(int)crewEnum].Role;
+            CrewRole selectedRole = CrewList.CrewListing[(int)crewEnum].Role;
 
             for (int index = 0; index < 5; index++)
             {

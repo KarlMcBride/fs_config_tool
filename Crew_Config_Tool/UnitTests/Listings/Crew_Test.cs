@@ -1,9 +1,7 @@
 ﻿using FS_Crew_Config_Tool;
-using FS_Crew_Config_Tool.Classes;
-using FS_Crew_Config_Tool.Classes.Listings;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UnitTests.ListingChecks
+namespace UnitTests.Listings
 {
     [TestClass]
     public class Crew_Test

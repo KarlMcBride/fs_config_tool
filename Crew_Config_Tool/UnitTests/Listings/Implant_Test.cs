@@ -1,9 +1,8 @@
-﻿using FS_Crew_Config_Tool;
-using FS_Crew_Config_Tool.Classes;
+﻿using FS_Crew_Config_Tool.Classes;
 using FS_Crew_Config_Tool.Classes.Listings;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UnitTests.ListingChecks
+namespace UnitTests.Listings
 {
     [TestClass]
     public class Implant_Test
@@ -34,6 +33,22 @@ namespace UnitTests.ListingChecks
                 ImplantEnum actual = ImplantList.ImplantListing[index].ID;
 
                 Assert.AreEqual(expected, actual);
+            }
+        }
+
+        [TestMethod]
+        public void VerifyGetStat()
+        {
+            for (int index = 0; index < (int)ImplantEnum.END_OF_LIST; index++)
+            {
+                StatCombination stat = ImplantList.ImplantListing[index].Stat;
+
+                float expectedFloat = 0;
+
+                Assert.AreNotEqual(StatCategory.END_OF_LIST,    stat.Category, "Category is unassigned");
+                Assert.AreNotEqual(string.Empty,                stat.Name,     "Name is unassigned");
+                Assert.AreNotEqual(StatEnum.END_OF_LIST,        stat.Type,     "Type is unassigned");
+                Assert.AreNotEqual(expectedFloat,               stat.Value,    "Value is unassigned");
             }
         }
     }

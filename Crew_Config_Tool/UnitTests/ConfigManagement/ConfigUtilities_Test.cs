@@ -53,7 +53,7 @@ namespace UnitTests.ConfigManagement
         }
 
         [TestMethod]
-        public void CheckNoneCrewMemberAgainstValidTeam()
+        public void CheckEndOfListCrewMemberAgainstValidTeam()
         {
             TeamConfig teamConfig = ParsedData.BasicFiveMembersNoImplants();
 
@@ -79,7 +79,7 @@ namespace UnitTests.ConfigManagement
         }
 
         [TestMethod]
-        public void CheckNoneCrewMemberAgainstEmptyTeam()
+        public void CheckEndOFListCrewMemberAgainstEmptyTeam()
         {
             TeamConfig teamConfig = new TeamConfig();
 
