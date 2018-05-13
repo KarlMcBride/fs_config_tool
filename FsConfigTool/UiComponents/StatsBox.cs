@@ -54,7 +54,7 @@ namespace FS_Config_Tool.UiComponents
             ClearStats();
             ResetStats();
             CalculateStats(team);
-            SortArrayForAlphabeticalOrder();
+            //SortArrayForAlphabeticalOrder();
             ShowStats();
         }
 
