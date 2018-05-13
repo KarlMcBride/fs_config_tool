@@ -96,17 +96,24 @@ namespace FS_Crew_Config_Tool.UiComponents
 
         private void SortArrayForAlphabeticalOrder()
         {
-            for (int index = 0; index < StatMathList.Length - 1; index++)
+            for (int outerLoop = 0; outerLoop < StatMathList.Length - 1; outerLoop++)
             {
-                string firstStat = StatMathList[index].Name;
-                string secondStat = StatMathList[index + 1].Name;
-
-                if (firstStat.CompareTo(secondStat) > 1)
+                for (int index = 0; index < StatMathList.Length - 1; index++)
                 {
-                    StatCombination tempStat = StatMathList[index];
+                    string firstStat = StatMathList[index].Name;
+                    string secondStat = StatMathList[index + 1].Name;
 
-                    StatMathList[index] = StatMathList[index + 1];
-                    StatMathList[index + 1] = tempStat;
+                    int comparisonResult = firstStat.CompareTo(secondStat);
+
+                    Console.WriteLine("Comparison result [" + index.ToString() + " of [" + firstStat + "] vs second [" + secondStat + "] is " + comparisonResult.ToString());
+
+                    if (comparisonResult == 1)
+                    {
+                        StatCombination tempStat = StatMathList[index];
+
+                        StatMathList[index] = StatMathList[index + 1];
+                        StatMathList[index + 1] = tempStat;
+                    }
                 }
             }
         }
