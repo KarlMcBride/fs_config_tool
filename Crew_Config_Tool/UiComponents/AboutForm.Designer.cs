@@ -46,6 +46,7 @@
             this.PictureBoxObi.Size = new System.Drawing.Size(141, 132);
             this.PictureBoxObi.TabIndex = 0;
             this.PictureBoxObi.TabStop = false;
+            this.PictureBoxObi.Click += new System.EventHandler(this.PictureBoxObi_Click);
             // 
             // LabelVersion
             // 

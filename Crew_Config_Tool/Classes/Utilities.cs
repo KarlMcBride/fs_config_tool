@@ -135,7 +135,12 @@ namespace FS_Crew_Config_Tool.Classes
         {
             string currentVersion = GetCurrentVersion();
 
-            int result = latestVersion.CompareTo(currentVersion);
+            int result = 0;
+
+            if (latestVersion != null)
+            {
+                result = latestVersion.CompareTo(currentVersion);
+            }
 
             return (result == 1);
         }
@@ -147,19 +152,28 @@ namespace FS_Crew_Config_Tool.Classes
 
             string uriResponse = string.Empty;
 
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            Stream stream = response.GetResponseStream();
-            StreamReader reader = new StreamReader(stream);
+            try
+            {
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                Stream stream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(stream);
 
-            uriResponse = reader.ReadToEnd();
+                uriResponse = reader.ReadToEnd();
 
-            stream.Dispose();
+                stream.Dispose();
+            }
+            catch (WebException e) { }
 
             return uriResponse;
         }
 
         public static string ParseOutInfo(string source, string startTag, string endTag)
         {
+            if (source.Equals(string.Empty))
+            {
+                return null;
+            }
+
             Match start = Regex.Match(source, startTag);
             Match end = Regex.Match(source, endTag);
 

@@ -30,5 +30,11 @@ namespace FS_Crew_Config_Tool.UiComponents
             string gitHubAddress = "https://github.com/O3ObijuanKenobi/FracturedSpace";
             Process.Start(gitHubAddress);
         }
+
+        private void PictureBoxObi_Click(object sender, System.EventArgs e)
+        {
+            string mySteamProfile = "https://steamcommunity.com/id/O3_Obiwan_Kenobi/";
+            Process.Start(mySteamProfile);
+        }
     }
 }
