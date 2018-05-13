@@ -300,7 +300,9 @@ namespace FS_Crew_Config_Tool
 
         private void ButtonGenerate_Click(object sender, EventArgs e)
         {
+            ShipSelector shipSelector = new ShipSelector();
 
+            shipSelector.ShowDialog();
         }
     }
 }

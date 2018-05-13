@@ -24,6 +24,7 @@ namespace FS_Crew_Config_Tool
             StatList.PopulateStatsList();
             CrewList.PopulateCrewList();
             ImplantList.PopulateImplantList();
+            ShipList.PopulateShipList();
 
             DataLists = new DataListings();
             FileIO = new FileIO();

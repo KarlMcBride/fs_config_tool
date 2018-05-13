@@ -334,7 +334,7 @@
             this.ButtonGenerate.Name = "ButtonGenerate";
             this.ButtonGenerate.Size = new System.Drawing.Size(109, 23);
             this.ButtonGenerate.TabIndex = 3;
-            this.ButtonGenerate.Text = "Generate ...";
+            this.ButtonGenerate.Text = "Generate Multiple";
             this.ButtonGenerate.UseVisualStyleBackColor = true;
             this.ButtonGenerate.Click += new System.EventHandler(this.ButtonGenerate_Click);
             // 
