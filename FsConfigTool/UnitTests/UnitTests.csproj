@@ -76,9 +76,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CrewConfigTool.csproj">
+    <ProjectReference Include="..\ConfigTool.csproj">
       <Project>{0c3a80f2-9e27-4f1e-8268-8f431c96882d}</Project>
-      <Name>CrewConfigTool</Name>
+      <Name>ConfigTool</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

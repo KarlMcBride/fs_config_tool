@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrewConfigTool", "CrewConfigTool.csproj", "{0C3A80F2-9E27-4F1E-8268-8F431C96882D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigTool", "ConfigTool.csproj", "{0C3A80F2-9E27-4F1E-8268-8F431C96882D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{EEF58CD9-6DD4-4323-8622-0C3399C8A07B}"
 EndProject
