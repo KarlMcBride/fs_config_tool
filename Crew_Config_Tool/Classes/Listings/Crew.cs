@@ -490,48 +490,48 @@ namespace FS_Crew_Config_Tool
             // ##### REPAIR #####
 
             CrewMember everSwordKern = new CrewMember(CrewEnum.EVER_SWORD_KERN, "Ever Sword Kern", CrewRole.REPAIR, "07FB941F4118D9C16F7194AF2DEE9236");
-            everSwordKern.CrewStats[0].Value = 18.75f;  // BADR
-            everSwordKern.CrewStats[1].Value = -9.37f;  // Armour Repair Rate
+            everSwordKern.CrewStats[0].Value = -18.75f;  // BADR
+            everSwordKern.CrewStats[1].Value = 9.37f;  // Armour Repair Rate
             CrewListing.Add(everSwordKern);
 
             CrewMember lanceGregory = new CrewMember(CrewEnum.LANCE_GREGORY, "Lance Gregory", CrewRole.REPAIR, "B25536CF42280EB3A851A19EFC566AF6");
-            lanceGregory.CrewStats[0].Value = 12.5f;    // BADR
-            lanceGregory.CrewStats[1].Value = -12.5f;   // Armour Repair Rate
+            lanceGregory.CrewStats[0].Value = -12.5f;    // BADR
+            lanceGregory.CrewStats[1].Value = 12.5f;   // Armour Repair Rate
             CrewListing.Add(lanceGregory);
 
             CrewMember masDreylab = new CrewMember(CrewEnum.MAS_LEYDRAB, "Mas Dreylab", CrewRole.REPAIR, "DCC3E4D34D881F9AD77A4485D49FADDB");
-            masDreylab.CrewStats[0].Value = 12.5f;  // BADR
-            masDreylab.CrewStats[1].Value = -12.5f; // Armour Repair Rate
+            masDreylab.CrewStats[0].Value = -12.5f;  // BADR
+            masDreylab.CrewStats[1].Value = 12.5f; // Armour Repair Rate
             CrewListing.Add(masDreylab);
 
             CrewMember miraSharma = new CrewMember(CrewEnum.MIRA_SHARMA, "Mira Sharma", CrewRole.REPAIR, "97E4B6DE426E33CBD78D30888416E3B0");
-            miraSharma.CrewStats[0].Value = 18.75f; // BADR
-            miraSharma.CrewStats[1].Value = -9.37f; // Armour Repair Rate
+            miraSharma.CrewStats[0].Value = -18.75f; // BADR
+            miraSharma.CrewStats[1].Value = 9.37f; // Armour Repair Rate
             CrewListing.Add(miraSharma);
 
             CrewMember rayvakMolk = new CrewMember(CrewEnum.RAYVAK_MOLK, "Rayvak Molk", CrewRole.REPAIR, "01EFAA1A4FAD35C8F2AF29BB80D38505");
-            rayvakMolk.CrewStats[0].Value = 25f;    // BADR
-            rayvakMolk.CrewStats[1].Value = -6.25f; // Armour Repair Rate
+            rayvakMolk.CrewStats[0].Value = -25f;    // BADR
+            rayvakMolk.CrewStats[1].Value = 6.25f; // Armour Repair Rate
             CrewListing.Add(rayvakMolk);
 
             CrewMember revokThorn = new CrewMember(CrewEnum.REVOK_THORN, "Revok Thorn", CrewRole.REPAIR, "1B5382DF460CA84BE24285A16393D7D1");
-            revokThorn.CrewStats[0].Value = 12.5f;  // BADR
-            revokThorn.CrewStats[1].Value = -12.5f; // Armour Repair Rate
+            revokThorn.CrewStats[0].Value = -12.5f;  // BADR
+            revokThorn.CrewStats[1].Value = 12.5f; // Armour Repair Rate
             CrewListing.Add(revokThorn);
 
             CrewMember ridleyjFincher = new CrewMember(CrewEnum.RIDLEY_J_FINCHER, "Ridley J Fincher", CrewRole.REPAIR, "D84BFBD24EE5AADEA97A57ABDE5B8D06");
-            ridleyjFincher.CrewStats[0].Value = 12.5f;  // BADR
-            ridleyjFincher.CrewStats[1].Value = -12.5f; // Armour Repair Rate
+            ridleyjFincher.CrewStats[0].Value = -12.5f;  // BADR
+            ridleyjFincher.CrewStats[1].Value = 12.5f; // Armour Repair Rate
             CrewListing.Add(ridleyjFincher);
 
             CrewMember stellanShaw = new CrewMember(CrewEnum.STELLAN_SHAW, "Stellan Shaw", CrewRole.REPAIR, "CC29E90E40459910158A85AA6AD80603");
-            stellanShaw.CrewStats[0].Value = 25f;       // BADR
-            stellanShaw.CrewStats[1].Value = -6.25f;    // Armour Repair Rate
+            stellanShaw.CrewStats[0].Value = -25f;       // BADR
+            stellanShaw.CrewStats[1].Value = 6.25f;    // Armour Repair Rate
             CrewListing.Add(stellanShaw);
 
             CrewMember tyrainDenam = new CrewMember(CrewEnum.TYRAIN_DEMAM, "Tyrain Demam", CrewRole.REPAIR, "739B3F2445F94A3F0AC41C8E420850BD");
-            tyrainDenam.CrewStats[0].Value = 25f;       // BADR
-            tyrainDenam.CrewStats[1].Value = -6.25f;    // Armour Repair Rate
+            tyrainDenam.CrewStats[0].Value = -25f;       // BADR
+            tyrainDenam.CrewStats[1].Value = 6.25f;    // Armour Repair Rate
             CrewListing.Add(tyrainDenam);
 
             // ##### TACTICAL #####
