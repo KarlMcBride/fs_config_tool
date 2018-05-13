@@ -9,7 +9,9 @@ namespace FS_Crew_Config_Tool.Classes.ConfigManagement
         private const string FS_PATH = "..\\Local\\spacegame\\Saved\\Config\\WindowsNoEditor\\";
         private const string CONFIG_FILE_NAME = "GameUserSettings.ini";
 
-        private string CompletePath
+        private const string BACKUP_DIR = "Backups\\";
+
+        private string CompletePathToFile
         {
             get
             {
@@ -18,13 +20,24 @@ namespace FS_Crew_Config_Tool.Classes.ConfigManagement
             }
         }
 
+        private string BackupPath
+        {
+            get
+            {
+                string appDataDir = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                return Path.Combine(appDataDir, FS_PATH, BACKUP_DIR);
+            }
+        }
+
         public string[] ReadConfig()
         {
             string[] fullConfig = null;
 
+            BackupConfigFile();
+
             try
             {
-                fullConfig = File.ReadAllLines(CompletePath);
+                fullConfig = File.ReadAllLines(CompletePathToFile);
             }
             catch (DirectoryNotFoundException e)
             {
@@ -40,7 +53,7 @@ namespace FS_Crew_Config_Tool.Classes.ConfigManagement
 
         public void SaveConfig(DataListings dataLists)
         {
-            using (StreamWriter writetext = new StreamWriter(CompletePath))
+            using (StreamWriter writetext = new StreamWriter(CompletePathToFile))
             {
                 // Write all segment one items
                 foreach (string line in dataLists.SegmentStart)
@@ -59,6 +72,18 @@ namespace FS_Crew_Config_Tool.Classes.ConfigManagement
                 {
                     writetext.WriteLine(line);
                 }
+            }
+        }
+
+        public void BackupConfigFile()
+        {
+            Directory.CreateDirectory(BackupPath);
+
+            string backupPath = BackupPath + CONFIG_FILE_NAME + "_" + DateTime.Now.ToString("yy-MM-dd");
+
+            if (File.Exists(backupPath))
+            {
+                File.Copy(CompletePathToFile, backupPath);
             }
         }
     }
