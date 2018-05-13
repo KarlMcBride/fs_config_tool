@@ -55,6 +55,7 @@
             this.CrewSetBoxMain = new FS_Crew_Config_Tool.UiComponents.CrewSetBox();
             this.ButtonNew = new System.Windows.Forms.Button();
             this.ButtonGenerate = new System.Windows.Forms.Button();
+            this.ButtonRenameSelected = new System.Windows.Forms.Button();
             this.GroupBoxCrewMembers.SuspendLayout();
             this.GroupBoxImplants.SuspendLayout();
             this.SuspendLayout();
@@ -62,9 +63,9 @@
             // ListBoxCrews
             // 
             this.ListBoxCrews.FormattingEnabled = true;
-            this.ListBoxCrews.Location = new System.Drawing.Point(12, 70);
+            this.ListBoxCrews.Location = new System.Drawing.Point(12, 109);
             this.ListBoxCrews.Name = "ListBoxCrews";
-            this.ListBoxCrews.Size = new System.Drawing.Size(228, 628);
+            this.ListBoxCrews.Size = new System.Drawing.Size(228, 589);
             this.ListBoxCrews.TabIndex = 5;
             this.ListBoxCrews.SelectedIndexChanged += new System.EventHandler(this.ListBoxCrews_SelectedIndexChanged);
             // 
@@ -338,11 +339,22 @@
             this.ButtonGenerate.UseVisualStyleBackColor = true;
             this.ButtonGenerate.Click += new System.EventHandler(this.ButtonGenerate_Click);
             // 
+            // ButtonRenameSelected
+            // 
+            this.ButtonRenameSelected.Location = new System.Drawing.Point(12, 80);
+            this.ButtonRenameSelected.Name = "ButtonRenameSelected";
+            this.ButtonRenameSelected.Size = new System.Drawing.Size(228, 23);
+            this.ButtonRenameSelected.TabIndex = 12;
+            this.ButtonRenameSelected.Text = "Rename Selected Crew";
+            this.ButtonRenameSelected.UseVisualStyleBackColor = true;
+            this.ButtonRenameSelected.Click += new System.EventHandler(this.ButtonRenameSelected_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1574, 703);
+            this.Controls.Add(this.ButtonRenameSelected);
             this.Controls.Add(this.ButtonGenerate);
             this.Controls.Add(this.ButtonNew);
             this.Controls.Add(this.StatsBox);
@@ -397,6 +409,7 @@
         private UiComponents.StatsBox StatsBox;
         private System.Windows.Forms.Button ButtonNew;
         private System.Windows.Forms.Button ButtonGenerate;
+        private System.Windows.Forms.Button ButtonRenameSelected;
     }
 }
 

@@ -324,5 +324,18 @@ namespace FS_Crew_Config_Tool
             config.AddNewCrew(crewName);
             ListBoxCrews.Items.Add(crewName);
         }
+
+        private void ButtonRenameSelected_Click(object sender, EventArgs e)
+        {
+            int selectedIndex = ListBoxCrews.SelectedIndex;
+
+            string currentName = ListBoxCrews.Items[selectedIndex].ToString();
+
+            string newCrewName = Interaction.InputBox("Enter the name for [" + currentName + "]", "Rename Crew", "");
+
+            config.RenameCrew(selectedIndex, newCrewName);
+
+            ListBoxCrews.Items[selectedIndex] = newCrewName;
+        }
     }
 }

@@ -252,5 +252,12 @@ namespace FS_Crew_Config_Tool
 
             DataLists.CrewData.Add(newCrew);
         }
+
+        public void RenameCrew(int index, string newName)
+        {
+            CrewLines crew = DataLists.CrewData[index];
+            crew.CrewName = newName;
+            DataLists.CrewData[index] = crew;
+        }
     }
 }
