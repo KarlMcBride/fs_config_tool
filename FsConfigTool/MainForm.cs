@@ -24,6 +24,8 @@ namespace FS_Config_Tool
         private RadioButton[] crewFilterArray;
         private RadioButton[] implantFilterArray;
 
+        private bool unsavedChangesPresent = false;
+
         public MainForm()
         {
             InitializeComponent();
@@ -164,6 +166,7 @@ namespace FS_Config_Tool
         private void ButtonSave_Click(object sender, EventArgs e)
         {
             config.SaveConfig();
+            unsavedChangesPresent = false;
         }
 
         private void ButtonDelete_Click(object sender, EventArgs e)
@@ -304,6 +307,8 @@ namespace FS_Config_Tool
 
         private void RunCrewUpdates(int selectedCrewIndex)
         {
+            unsavedChangesPresent = true;
+
             CrewSetBoxMain.DisplaySelectedTeam(config.DataLists.CrewData[selectedCrewIndex].Team, CrewSetBoxMain);
             StatsBox.UpdateAndShowStats(config.DataLists.CrewData[selectedCrewIndex].Team);
         }
@@ -361,6 +366,24 @@ namespace FS_Config_Tool
         {
             AboutForm about = new AboutForm();
             about.ShowDialog();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (unsavedChangesPresent)
+            {
+                DialogResult result = MessageBox.Show("Do you wish to save your changes?",
+                                        "Unsaved Changes Present", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
+
+                if (result == DialogResult.Yes)
+                {
+                    config.SaveConfig();
+                }
+                else if (result == DialogResult.Cancel)
+                {
+                    e.Cancel = true;
+                }
+            }
         }
     }
 }

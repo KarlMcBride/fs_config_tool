@@ -383,6 +383,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "FS Config Tool";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.GroupBoxCrewMembers.ResumeLayout(false);
             this.GroupBoxCrewMembers.PerformLayout();
