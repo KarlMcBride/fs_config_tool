@@ -1,5 +1,5 @@
-﻿using System.Diagnostics;
-using System.Reflection;
+﻿using FS_Crew_Config_Tool.Classes;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace FS_Crew_Config_Tool.UiComponents
@@ -12,7 +12,7 @@ namespace FS_Crew_Config_Tool.UiComponents
         {
             InitializeComponent();
 
-            softwareVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            softwareVersion = Utilities.GetCurrentVersion();
 
             LabelVersion.Text = "Version: " + softwareVersion;
         }

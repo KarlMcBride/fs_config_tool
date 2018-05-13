@@ -19,7 +19,7 @@ namespace FS_Crew_Config_Tool
         private BackgroundWorker backgroundWorker;
         private const int BG_WORKER_INTERVAL_MS = 1000;
 
-        private const int ITERATIONS_TO_UPDATE_CCU = 60;
+        private const int ITERATIONS_TO_UPDATE = 60;
 
         private RadioButton[] crewFilterArray;
         private RadioButton[] implantFilterArray;
@@ -70,17 +70,19 @@ namespace FS_Crew_Config_Tool
         {
             bool fsRunning = false;
 
-            int iterations = ITERATIONS_TO_UPDATE_CCU;
+            int iterations = ITERATIONS_TO_UPDATE;
             string playerCount = string.Empty;
 
             while (true)
             {
                 fsRunning = Utilities.CheckIfFracSpaceIsRunning("Fractured Space");
 
-                if (iterations >= ITERATIONS_TO_UPDATE_CCU)
+                if (iterations >= ITERATIONS_TO_UPDATE)
                 {
                     playerCount = Utilities.GetOnlinePlayerCount();
                     iterations = 0;
+
+                    Utilities.CheckLatestSoftwareVersion();
                 }
 
                 BeginInvoke(new MethodInvoker(delegate

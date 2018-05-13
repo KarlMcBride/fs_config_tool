@@ -4,12 +4,22 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Net;
+using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace FS_Crew_Config_Tool.Classes
 {
     public static class Utilities
     {
         public const string FS_PLAYER_API = "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?key=KEY&format=json&appid=310380";
+        public const string DOCS_SW_VERSION = "https://docs.google.com/document/d/1Nr_iR2cXICoyYjgbHTPc3Cb48BdVaV9PSVZnBJRcMP0/edit?usp=sharing";
+
+        private const string VERSION_START = "LatestVerStart";
+        private const string VERSION_END = "LatestVerEnd";
+        private const string LINK_START = "LinkStart";
+        private const string LINK_END = "LinkEnd";
+
+        public static bool UpdateAvailable { get; private set; }
 
         public static bool IsCrewMemberCaptain(CrewEnum id)
         {
@@ -93,7 +103,40 @@ namespace FS_Crew_Config_Tool.Classes
         /// <returns>Player count in string format</returns>
         public static string GetOnlinePlayerCount()
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(FS_PLAYER_API);
+            string uriResponse = GetWebRequest(FS_PLAYER_API);
+
+            string playerCount = "N/A";
+
+            char[] separators = { ',', ':' };
+            string[] parsed = uriResponse.Split(separators);
+
+            playerCount = parsed[2];
+
+            return playerCount;
+        }
+
+        public static void CheckLatestSoftwareVersion()
+        {
+            string uriResponse = GetWebRequest(DOCS_SW_VERSION);
+
+            string latestVersion = ParseOutInfo(uriResponse, VERSION_START, VERSION_END);
+            string latestLink = ParseOutInfo(uriResponse, LINK_START, LINK_END);
+
+            UpdateAvailable = CompareSoftwareVersions(latestVersion);
+        }
+
+        private static bool CompareSoftwareVersions(string latestVersion)
+        {
+            string currentVersion = GetCurrentVersion();
+
+            int result = latestVersion.CompareTo(currentVersion);
+
+            return (result == 1);
+        }
+
+        private static string GetWebRequest(string address)
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(address);
             request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
 
             string uriResponse = string.Empty;
@@ -106,14 +149,26 @@ namespace FS_Crew_Config_Tool.Classes
 
             stream.Dispose();
 
-            string playerCount = "N/A";
+            return uriResponse;
+        }
 
-            char[] separators = { ',', ':' };
-            string[] parsed = uriResponse.Split(separators);
+        public static string ParseOutInfo(string source, string startTag, string endTag)
+        {
+            Match start = Regex.Match(source, startTag);
+            Match end = Regex.Match(source, endTag);
 
-            playerCount = parsed[2];
+            // +1 and -1 to dispose of leading and trailing colons
+            int startIndex = start.Index + start.Length + 1;
+            int endIndex = end.Index - 1;
 
-            return playerCount;
+            int length = endIndex - startIndex;
+
+            return source.Substring(startIndex, length);
+        }
+
+        public static string GetCurrentVersion()
+        {
+            return Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
     }
 }
