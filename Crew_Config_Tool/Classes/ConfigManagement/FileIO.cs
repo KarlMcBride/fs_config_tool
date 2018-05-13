@@ -81,7 +81,7 @@ namespace FS_Crew_Config_Tool.Classes.ConfigManagement
 
             string backupPath = BackupPath + CONFIG_FILE_NAME + "_" + DateTime.Now.ToString("yy-MM-dd");
 
-            if (File.Exists(backupPath))
+            if (!File.Exists(backupPath))
             {
                 File.Copy(CompletePathToFile, backupPath);
             }
