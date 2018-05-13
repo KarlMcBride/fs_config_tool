@@ -1,11 +1,11 @@
-﻿using FS_Crew_Config_Tool.Classes;
-using FS_Crew_Config_Tool.Classes.ConfigManagement;
-using FS_Crew_Config_Tool.Classes.ConfigManagement.FS_Crew_Config_Tool.Classes.ConfigManagement;
-using FS_Crew_Config_Tool.Classes.Listings;
-using FS_Crew_Config_Tool.UiComponents;
+﻿using FS_Config_Tool.Classes;
+using FS_Config_Tool.Classes.ConfigManagement;
+using FS_Config_Tool.Classes.ConfigManagement.FS_Crew_Config_Tool.Classes.ConfigManagement;
+using FS_Config_Tool.Classes.Listings;
+using FS_Config_Tool.UiComponents;
 using System;
 
-namespace FS_Crew_Config_Tool
+namespace FS_Config_Tool
 {
     public class ConfigManager
     {

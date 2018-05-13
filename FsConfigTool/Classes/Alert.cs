@@ -3,7 +3,7 @@ using System;
 using System.Diagnostics;
 using System.Windows.Forms;
 
-namespace FS_Crew_Config_Tool.Classes
+namespace FS_Config_Tool.Classes
 {
     public class Alert
     {

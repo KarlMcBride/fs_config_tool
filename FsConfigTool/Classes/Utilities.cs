@@ -1,4 +1,4 @@
-﻿using FS_Crew_Config_Tool.Content;
+﻿using FS_Config_Tool.Content;
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -7,7 +7,7 @@ using System.Net;
 using System.Reflection;
 using System.Text.RegularExpressions;
 
-namespace FS_Crew_Config_Tool.Classes
+namespace FS_Config_Tool.Classes
 {
     public static class Utilities
     {

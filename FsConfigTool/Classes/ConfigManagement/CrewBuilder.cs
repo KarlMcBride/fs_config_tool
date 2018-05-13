@@ -1,4 +1,4 @@
-﻿namespace FS_Crew_Config_Tool.Classes.ConfigManagement
+﻿namespace FS_Config_Tool.Classes.ConfigManagement
 {
     public static class CrewBuilder
     {

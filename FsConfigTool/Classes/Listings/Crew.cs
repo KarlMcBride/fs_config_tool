@@ -1,7 +1,7 @@
-﻿using FS_Crew_Config_Tool.Classes.Listings;
+﻿using FS_Config_Tool.Classes.Listings;
 using System.Collections.Generic;
 
-namespace FS_Crew_Config_Tool
+namespace FS_Config_Tool
 {
     public enum CrewRole
     {

@@ -1,9 +1,9 @@
-﻿using FS_Crew_Config_Tool.Classes.Listings;
+﻿using FS_Config_Tool.Classes.Listings;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace FS_Crew_Config_Tool.UiComponents
+namespace FS_Config_Tool.UiComponents
 {
     public partial class ShipSelector : Form
     {

@@ -1,8 +1,8 @@
-﻿using FS_Crew_Config_Tool.Classes;
+﻿using FS_Config_Tool.Classes;
 using System;
 using System.Windows.Forms;
 
-namespace FS_Crew_Config_Tool.UiComponents
+namespace FS_Config_Tool.UiComponents
 {
     public partial class CrewBox : UserControl
     {

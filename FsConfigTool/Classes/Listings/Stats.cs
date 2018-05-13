@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace FS_Crew_Config_Tool.Classes.Listings
+namespace FS_Config_Tool.Classes.Listings
 {
     /// <summary>
     /// Broad stat category used for grouping (i.e. attack, defense, utility)

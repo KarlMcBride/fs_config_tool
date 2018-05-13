@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace FS_Crew_Config_Tool
+namespace FS_Config_Tool
 {
     static class Program
     {

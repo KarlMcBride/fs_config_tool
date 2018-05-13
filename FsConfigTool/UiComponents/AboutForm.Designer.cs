@@ -1,4 +1,4 @@
-﻿namespace FS_Crew_Config_Tool.UiComponents
+﻿namespace FS_Config_Tool.UiComponents
 {
     partial class AboutForm
     {
@@ -39,7 +39,7 @@
             // 
             // PictureBoxObi
             // 
-            this.PictureBoxObi.BackgroundImage = global::FS_Crew_Config_Tool.Properties.Resources.ObiwanDog;
+            this.PictureBoxObi.BackgroundImage = global::FS_Config_Tool.Properties.Resources.ObiwanDog;
             this.PictureBoxObi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.PictureBoxObi.Location = new System.Drawing.Point(296, 12);
             this.PictureBoxObi.Name = "PictureBoxObi";

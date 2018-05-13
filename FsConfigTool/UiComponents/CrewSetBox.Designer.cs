@@ -1,4 +1,4 @@
-﻿namespace FS_Crew_Config_Tool.UiComponents
+﻿namespace FS_Config_Tool.UiComponents
 {
     partial class CrewSetBox
     {
@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.CrewBox0 = new FS_Crew_Config_Tool.UiComponents.CrewBox();
-            this.CrewBox1 = new FS_Crew_Config_Tool.UiComponents.CrewBox();
-            this.CrewBox2 = new FS_Crew_Config_Tool.UiComponents.CrewBox();
-            this.CrewBox3 = new FS_Crew_Config_Tool.UiComponents.CrewBox();
-            this.CrewBox4 = new FS_Crew_Config_Tool.UiComponents.CrewBox();
+            this.CrewBox0 = new FS_Config_Tool.UiComponents.CrewBox();
+            this.CrewBox1 = new FS_Config_Tool.UiComponents.CrewBox();
+            this.CrewBox2 = new FS_Config_Tool.UiComponents.CrewBox();
+            this.CrewBox3 = new FS_Config_Tool.UiComponents.CrewBox();
+            this.CrewBox4 = new FS_Config_Tool.UiComponents.CrewBox();
             this.SuspendLayout();
             // 
             // CrewBox0

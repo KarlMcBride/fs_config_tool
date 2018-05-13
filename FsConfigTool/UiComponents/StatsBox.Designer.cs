@@ -1,4 +1,4 @@
-﻿namespace FS_Crew_Config_Tool.UiComponents
+﻿namespace FS_Config_Tool.UiComponents
 {
     partial class StatsBox
     {
@@ -29,34 +29,34 @@
         private void InitializeComponent()
         {
             this.PanelAttack = new System.Windows.Forms.Panel();
-            this.StatPairAttack4 = new FS_Crew_Config_Tool.UiComponents.StatPair();
-            this.StatPairAttack3 = new FS_Crew_Config_Tool.UiComponents.StatPair();
-            this.StatPairAttack2 = new FS_Crew_Config_Tool.UiComponents.StatPair();
-            this.StatPairAttack1 = new FS_Crew_Config_Tool.UiComponents.StatPair();
-            this.StatPairAttack0 = new FS_Crew_Config_Tool.UiComponents.StatPair();
+            this.StatPairAttack4 = new FS_Config_Tool.UiComponents.StatPair();
+            this.StatPairAttack3 = new FS_Config_Tool.UiComponents.StatPair();
+            this.StatPairAttack2 = new FS_Config_Tool.UiComponents.StatPair();
+            this.StatPairAttack1 = new FS_Config_Tool.UiComponents.StatPair();
+            this.StatPairAttack0 = new FS_Config_Tool.UiComponents.StatPair();
             this.PanelDefense = new System.Windows.Forms.Panel();
-            this.StatPairDefense6 = new FS_Crew_Config_Tool.UiComponents.StatPair();
-            this.StatPairDefense5 = new FS_Crew_Config_Tool.UiComponents.StatPair();
-            this.StatPairDefense4 = new FS_Crew_Config_Tool.UiComponents.StatPair();
-            this.StatPairDefense3 = new FS_Crew_Config_Tool.UiComponents.StatPair();
-            this.StatPairDefense2 = new FS_Crew_Config_Tool.UiComponents.StatPair();
-            this.StatPairDefense1 = new FS_Crew_Config_Tool.UiComponents.StatPair();
-            this.StatPairDefense0 = new FS_Crew_Config_Tool.UiComponents.StatPair();
+            this.StatPairDefense6 = new FS_Config_Tool.UiComponents.StatPair();
+            this.StatPairDefense5 = new FS_Config_Tool.UiComponents.StatPair();
+            this.StatPairDefense4 = new FS_Config_Tool.UiComponents.StatPair();
+            this.StatPairDefense3 = new FS_Config_Tool.UiComponents.StatPair();
+            this.StatPairDefense2 = new FS_Config_Tool.UiComponents.StatPair();
+            this.StatPairDefense1 = new FS_Config_Tool.UiComponents.StatPair();
+            this.StatPairDefense0 = new FS_Config_Tool.UiComponents.StatPair();
             this.PanelUtility = new System.Windows.Forms.Panel();
-            this.StatPairUtility13 = new FS_Crew_Config_Tool.UiComponents.StatPair();
-            this.StatPairUtility7 = new FS_Crew_Config_Tool.UiComponents.StatPair();
-            this.StatPairUtility12 = new FS_Crew_Config_Tool.UiComponents.StatPair();
-            this.StatPairUtility8 = new FS_Crew_Config_Tool.UiComponents.StatPair();
-            this.StatPairUtility11 = new FS_Crew_Config_Tool.UiComponents.StatPair();
-            this.StatPairUtility9 = new FS_Crew_Config_Tool.UiComponents.StatPair();
-            this.StatPairUtility10 = new FS_Crew_Config_Tool.UiComponents.StatPair();
-            this.StatPairUtility6 = new FS_Crew_Config_Tool.UiComponents.StatPair();
-            this.StatPairUtility0 = new FS_Crew_Config_Tool.UiComponents.StatPair();
-            this.StatPairUtility5 = new FS_Crew_Config_Tool.UiComponents.StatPair();
-            this.StatPairUtility1 = new FS_Crew_Config_Tool.UiComponents.StatPair();
-            this.StatPairUtility4 = new FS_Crew_Config_Tool.UiComponents.StatPair();
-            this.StatPairUtility2 = new FS_Crew_Config_Tool.UiComponents.StatPair();
-            this.StatPairUtility3 = new FS_Crew_Config_Tool.UiComponents.StatPair();
+            this.StatPairUtility13 = new FS_Config_Tool.UiComponents.StatPair();
+            this.StatPairUtility7 = new FS_Config_Tool.UiComponents.StatPair();
+            this.StatPairUtility12 = new FS_Config_Tool.UiComponents.StatPair();
+            this.StatPairUtility8 = new FS_Config_Tool.UiComponents.StatPair();
+            this.StatPairUtility11 = new FS_Config_Tool.UiComponents.StatPair();
+            this.StatPairUtility9 = new FS_Config_Tool.UiComponents.StatPair();
+            this.StatPairUtility10 = new FS_Config_Tool.UiComponents.StatPair();
+            this.StatPairUtility6 = new FS_Config_Tool.UiComponents.StatPair();
+            this.StatPairUtility0 = new FS_Config_Tool.UiComponents.StatPair();
+            this.StatPairUtility5 = new FS_Config_Tool.UiComponents.StatPair();
+            this.StatPairUtility1 = new FS_Config_Tool.UiComponents.StatPair();
+            this.StatPairUtility4 = new FS_Config_Tool.UiComponents.StatPair();
+            this.StatPairUtility2 = new FS_Config_Tool.UiComponents.StatPair();
+            this.StatPairUtility3 = new FS_Config_Tool.UiComponents.StatPair();
             this.PanelAttack.SuspendLayout();
             this.PanelDefense.SuspendLayout();
             this.PanelUtility.SuspendLayout();
@@ -65,7 +65,7 @@
             // PanelAttack
             // 
             this.PanelAttack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.PanelAttack.BackgroundImage = global::FS_Crew_Config_Tool.Properties.Resources.Attack;
+            this.PanelAttack.BackgroundImage = global::FS_Config_Tool.Properties.Resources.Attack;
             this.PanelAttack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.PanelAttack.Controls.Add(this.StatPairAttack4);
             this.PanelAttack.Controls.Add(this.StatPairAttack3);
@@ -120,7 +120,7 @@
             // PanelDefense
             // 
             this.PanelDefense.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(200)))), ((int)(((byte)(220)))));
-            this.PanelDefense.BackgroundImage = global::FS_Crew_Config_Tool.Properties.Resources.Defense;
+            this.PanelDefense.BackgroundImage = global::FS_Config_Tool.Properties.Resources.Defense;
             this.PanelDefense.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.PanelDefense.Controls.Add(this.StatPairDefense6);
             this.PanelDefense.Controls.Add(this.StatPairDefense5);
@@ -193,7 +193,7 @@
             // PanelUtility
             // 
             this.PanelUtility.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.PanelUtility.BackgroundImage = global::FS_Crew_Config_Tool.Properties.Resources.Utility;
+            this.PanelUtility.BackgroundImage = global::FS_Config_Tool.Properties.Resources.Utility;
             this.PanelUtility.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.PanelUtility.Controls.Add(this.StatPairUtility13);
             this.PanelUtility.Controls.Add(this.StatPairUtility7);

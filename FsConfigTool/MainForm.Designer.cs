@@ -1,4 +1,4 @@
-﻿namespace FS_Crew_Config_Tool
+﻿namespace FS_Config_Tool
 {
     partial class MainForm
     {
@@ -54,8 +54,8 @@
             this.ButtonNew = new System.Windows.Forms.Button();
             this.ButtonGenerate = new System.Windows.Forms.Button();
             this.ButtonRenameSelected = new System.Windows.Forms.Button();
-            this.StatsBox = new FS_Crew_Config_Tool.UiComponents.StatsBox();
-            this.CrewSetBoxMain = new FS_Crew_Config_Tool.UiComponents.CrewSetBox();
+            this.StatsBox = new FS_Config_Tool.UiComponents.StatsBox();
+            this.CrewSetBoxMain = new FS_Config_Tool.UiComponents.CrewSetBox();
             this.ButtonAbout = new System.Windows.Forms.Button();
             this.GroupBoxCrewMembers.SuspendLayout();
             this.GroupBoxImplants.SuspendLayout();

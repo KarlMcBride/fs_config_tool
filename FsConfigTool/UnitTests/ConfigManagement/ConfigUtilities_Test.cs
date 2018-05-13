@@ -1,6 +1,6 @@
-﻿using FS_Crew_Config_Tool;
-using FS_Crew_Config_Tool.Classes;
-using FS_Crew_Config_Tool.Classes.ConfigManagement;
+﻿using FS_Config_Tool;
+using FS_Config_Tool.Classes;
+using FS_Config_Tool.Classes.ConfigManagement;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using UnitTests.TestData;
 

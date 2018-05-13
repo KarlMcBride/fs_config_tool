@@ -1,4 +1,4 @@
-﻿using FS_Crew_Config_Tool;
+﻿using FS_Config_Tool;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTests.Listings

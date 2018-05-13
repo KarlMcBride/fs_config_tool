@@ -1,4 +1,4 @@
-﻿namespace FS_Crew_Config_Tool.Classes
+﻿namespace FS_Config_Tool.Classes
 {
     /// <summary>
     /// Contains enumerations of upto 5 crew, and 3 implants for each crew member

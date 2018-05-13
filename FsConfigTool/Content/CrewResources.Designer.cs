@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FS_Crew_Config_Tool.Content {
+namespace FS_Config_Tool.Content {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace FS_Crew_Config_Tool.Content {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FS_Crew_Config_Tool.Content.CrewResources", typeof(CrewResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FS_Config_Tool.Content.CrewResources", typeof(CrewResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

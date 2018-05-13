@@ -1,8 +1,8 @@
-﻿using FS_Crew_Config_Tool.Classes.ConfigManagement.FS_Crew_Config_Tool.Classes.ConfigManagement;
+﻿using FS_Config_Tool.Classes.ConfigManagement.FS_Crew_Config_Tool.Classes.ConfigManagement;
 using System;
 using System.IO;
 
-namespace FS_Crew_Config_Tool.Classes.ConfigManagement
+namespace FS_Config_Tool.Classes.ConfigManagement
 {
     public class FileIO
     {

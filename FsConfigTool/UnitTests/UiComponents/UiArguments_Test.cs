@@ -1,4 +1,4 @@
-﻿using FS_Crew_Config_Tool.UiComponents;
+﻿using FS_Config_Tool.UiComponents;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTests.UiComponents

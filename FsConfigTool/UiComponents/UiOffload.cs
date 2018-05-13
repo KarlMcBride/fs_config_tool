@@ -1,9 +1,9 @@
-﻿using FS_Crew_Config_Tool.Classes;
-using FS_Crew_Config_Tool.Classes.Listings;
+﻿using FS_Config_Tool.Classes;
+using FS_Config_Tool.Classes.Listings;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace FS_Crew_Config_Tool.UiComponents
+namespace FS_Config_Tool.UiComponents
 {
     /// <summary>
     /// Class specifically designed to contain UI logic, to declutter and allow unit testing

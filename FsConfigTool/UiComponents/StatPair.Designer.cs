@@ -1,4 +1,4 @@
-﻿namespace FS_Crew_Config_Tool.UiComponents
+﻿namespace FS_Config_Tool.UiComponents
 {
     partial class StatPair
     {
