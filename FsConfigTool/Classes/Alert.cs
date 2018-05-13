@@ -25,12 +25,13 @@ namespace FS_Config_Tool.Classes
             {
                 string osVersion = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ProductName", "").ToString();
                 string osRelease = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ReleaseId", "").ToString();
+                string osBitness = (Environment.Is64BitOperatingSystem) ? "x64" : "x32";
 
                 string feedbackAddress = "https://docs.google.com/forms/d/e/1FAIpQLSfhzr-7Iz3vfyJrAUggUdf7VNO1y4A6V4vVpxiSgIqXkO5nug/viewform?entry.1235937830="
                                          + Utilities.GetCurrentVersion()
                                          + "&entry.2145434213=Stack+Trace"
                                          + "&entry.1687052561=" + e.Message + " with source: " + callingPoint
-                                         + "&entry.1479586596=" + osVersion + " - Build " + osRelease;
+                                         + "&entry.1479586596=" + osVersion + "(" + osBitness + ")" + " - Build " + osRelease;
 
                 Process.Start(feedbackAddress);
             }
