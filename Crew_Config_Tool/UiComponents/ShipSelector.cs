@@ -1,4 +1,5 @@
 ﻿using FS_Crew_Config_Tool.Classes.Listings;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -7,6 +8,8 @@ namespace FS_Crew_Config_Tool.UiComponents
     public partial class ShipSelector : Form
     {
         private CheckBox[] checkboxArray;
+
+        public event EventHandler<ShipArgs> GenerateButtonClicked;
 
         public ShipSelector()
         {
@@ -52,6 +55,18 @@ namespace FS_Crew_Config_Tool.UiComponents
             {
                 checkboxArray[index].Checked = markAsChecked;
             }
+        }
+
+        private void ButtonGenerate_Click(object sender, System.EventArgs e)
+        {
+            if (GenerateButtonClicked != null)
+            {
+                ShipArgs args = new ShipArgs(checkboxArray);
+
+                GenerateButtonClicked(this, args);
+            }
+
+            Close();
         }
     }
 }

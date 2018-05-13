@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 
 namespace FS_Crew_Config_Tool.UiComponents
 {
@@ -35,5 +36,23 @@ namespace FS_Crew_Config_Tool.UiComponents
 
         public int CrewIndex    { get; private set; }
         public int ImplantIndex { get; private set; }
+    }
+
+    public class ShipArgs : EventArgs
+    {
+        public ShipArgs(CheckBox[] checkBoxArray)
+        {
+            ArrayLength = checkBoxArray.Length;
+
+            ShipSelectionArray = new bool[ArrayLength];
+
+            for (int index = 0; index < ArrayLength; index++)
+            {
+                ShipSelectionArray[index] = checkBoxArray[index].Checked;
+            }
+        }
+
+        public int    ArrayLength        { get; private set; }
+        public bool[] ShipSelectionArray { get; private set; }
     }
 }

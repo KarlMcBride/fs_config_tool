@@ -1,6 +1,7 @@
 ﻿using FS_Crew_Config_Tool.Classes;
 using FS_Crew_Config_Tool.Classes.ConfigManagement;
 using FS_Crew_Config_Tool.Classes.ConfigManagement.FS_Crew_Config_Tool.Classes.ConfigManagement;
+using FS_Crew_Config_Tool.Classes.Listings;
 using FS_Crew_Config_Tool.UiComponents;
 using Microsoft.VisualBasic;
 using System;
@@ -294,15 +295,34 @@ namespace FS_Crew_Config_Tool
         {
             string crewName = Interaction.InputBox("Enter the name for a new crew", "Create New Crew", "");
 
-            config.AddNewCrew(crewName);
-            ListBoxCrews.Items.Add(crewName);
+            AddNewCrewToLists(crewName);
         }
 
         private void ButtonGenerate_Click(object sender, EventArgs e)
         {
             ShipSelector shipSelector = new ShipSelector();
+            shipSelector.GenerateButtonClicked += GenerateSelectedShips;
 
             shipSelector.ShowDialog();
+        }
+
+        private void GenerateSelectedShips(object sender, ShipArgs shipArgs)
+        {
+            for (int index = 0; index < shipArgs.ArrayLength; index++)
+            {
+                if (shipArgs.ShipSelectionArray[index])
+                {
+                    string shipName = ShipList.ShipListing[index].Name;
+
+                    AddNewCrewToLists(shipName);
+                }
+            }
+        }
+
+        private void AddNewCrewToLists(string crewName)
+        {
+            config.AddNewCrew(crewName);
+            ListBoxCrews.Items.Add(crewName);
         }
     }
 }

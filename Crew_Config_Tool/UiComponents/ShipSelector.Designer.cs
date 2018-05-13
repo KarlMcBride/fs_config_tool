@@ -71,6 +71,7 @@
             this.ButtonGenerate.TabIndex = 4;
             this.ButtonGenerate.Text = "Generate";
             this.ButtonGenerate.UseVisualStyleBackColor = true;
+            this.ButtonGenerate.Click += new System.EventHandler(this.ButtonGenerate_Click);
             // 
             // ShipSelector
             // 
