@@ -337,5 +337,11 @@ namespace FS_Crew_Config_Tool
 
             ListBoxCrews.Items[selectedIndex] = newCrewName;
         }
+
+        private void ButtonAbout_Click(object sender, EventArgs e)
+        {
+            AboutForm about = new AboutForm();
+            about.ShowDialog();
+        }
     }
 }

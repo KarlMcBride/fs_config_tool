@@ -51,11 +51,12 @@
             this.RadioButtonImpAtk = new System.Windows.Forms.RadioButton();
             this.GroupBoxCrewMembers = new System.Windows.Forms.GroupBox();
             this.GroupBoxImplants = new System.Windows.Forms.GroupBox();
-            this.StatsBox = new FS_Crew_Config_Tool.UiComponents.StatsBox();
-            this.CrewSetBoxMain = new FS_Crew_Config_Tool.UiComponents.CrewSetBox();
             this.ButtonNew = new System.Windows.Forms.Button();
             this.ButtonGenerate = new System.Windows.Forms.Button();
             this.ButtonRenameSelected = new System.Windows.Forms.Button();
+            this.StatsBox = new FS_Crew_Config_Tool.UiComponents.StatsBox();
+            this.CrewSetBoxMain = new FS_Crew_Config_Tool.UiComponents.CrewSetBox();
+            this.ButtonAbout = new System.Windows.Forms.Button();
             this.GroupBoxCrewMembers.SuspendLayout();
             this.GroupBoxImplants.SuspendLayout();
             this.SuspendLayout();
@@ -92,7 +93,7 @@
             // LabelFsRunningWarning
             // 
             this.LabelFsRunningWarning.AutoSize = true;
-            this.LabelFsRunningWarning.Location = new System.Drawing.Point(1489, 648);
+            this.LabelFsRunningWarning.Location = new System.Drawing.Point(1427, 639);
             this.LabelFsRunningWarning.Name = "LabelFsRunningWarning";
             this.LabelFsRunningWarning.Size = new System.Drawing.Size(73, 13);
             this.LabelFsRunningWarning.TabIndex = 10;
@@ -101,7 +102,7 @@
             // labelCcuCount
             // 
             this.labelCcuCount.AutoSize = true;
-            this.labelCcuCount.Location = new System.Drawing.Point(1506, 671);
+            this.labelCcuCount.Location = new System.Drawing.Point(1506, 639);
             this.labelCcuCount.Name = "labelCcuCount";
             this.labelCcuCount.Size = new System.Drawing.Size(56, 13);
             this.labelCcuCount.TabIndex = 11;
@@ -304,21 +305,6 @@
             this.GroupBoxImplants.TabStop = false;
             this.GroupBoxImplants.Text = "Implants";
             // 
-            // StatsBox
-            // 
-            this.StatsBox.AutoSize = true;
-            this.StatsBox.Location = new System.Drawing.Point(1078, 2);
-            this.StatsBox.Name = "StatsBox";
-            this.StatsBox.Size = new System.Drawing.Size(492, 281);
-            this.StatsBox.TabIndex = 7;
-            // 
-            // CrewSetBoxMain
-            // 
-            this.CrewSetBoxMain.Location = new System.Drawing.Point(259, 12);
-            this.CrewSetBoxMain.Name = "CrewSetBoxMain";
-            this.CrewSetBoxMain.Size = new System.Drawing.Size(812, 270);
-            this.CrewSetBoxMain.TabIndex = 6;
-            // 
             // ButtonNew
             // 
             this.ButtonNew.Location = new System.Drawing.Point(12, 9);
@@ -349,11 +335,37 @@
             this.ButtonRenameSelected.UseVisualStyleBackColor = true;
             this.ButtonRenameSelected.Click += new System.EventHandler(this.ButtonRenameSelected_Click);
             // 
+            // StatsBox
+            // 
+            this.StatsBox.AutoSize = true;
+            this.StatsBox.Location = new System.Drawing.Point(1078, 2);
+            this.StatsBox.Name = "StatsBox";
+            this.StatsBox.Size = new System.Drawing.Size(492, 281);
+            this.StatsBox.TabIndex = 7;
+            // 
+            // CrewSetBoxMain
+            // 
+            this.CrewSetBoxMain.Location = new System.Drawing.Point(259, 12);
+            this.CrewSetBoxMain.Name = "CrewSetBoxMain";
+            this.CrewSetBoxMain.Size = new System.Drawing.Size(812, 270);
+            this.CrewSetBoxMain.TabIndex = 6;
+            // 
+            // ButtonAbout
+            // 
+            this.ButtonAbout.Location = new System.Drawing.Point(1430, 668);
+            this.ButtonAbout.Name = "ButtonAbout";
+            this.ButtonAbout.Size = new System.Drawing.Size(132, 23);
+            this.ButtonAbout.TabIndex = 13;
+            this.ButtonAbout.Text = "About";
+            this.ButtonAbout.UseVisualStyleBackColor = true;
+            this.ButtonAbout.Click += new System.EventHandler(this.ButtonAbout_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1574, 703);
+            this.Controls.Add(this.ButtonAbout);
             this.Controls.Add(this.ButtonRenameSelected);
             this.Controls.Add(this.ButtonGenerate);
             this.Controls.Add(this.ButtonNew);
@@ -410,6 +422,7 @@
         private System.Windows.Forms.Button ButtonNew;
         private System.Windows.Forms.Button ButtonGenerate;
         private System.Windows.Forms.Button ButtonRenameSelected;
+        private System.Windows.Forms.Button ButtonAbout;
     }
 }
 

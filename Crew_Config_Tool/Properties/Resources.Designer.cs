@@ -83,6 +83,16 @@ namespace FS_Crew_Config_Tool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ObiwanDog {
+            get {
+                object obj = ResourceManager.GetObject("ObiwanDog", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Utility {
             get {
                 object obj = ResourceManager.GetObject("Utility", resourceCulture);
