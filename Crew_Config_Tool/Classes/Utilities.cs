@@ -26,6 +26,8 @@ namespace FS_Crew_Config_Tool.Classes
         public static string LatestLink      { get; private set; }
         public static string LatestNotes     { get; private set; }
 
+        private static bool apiErrorShown = false;
+
         public static bool IsCrewMemberCaptain(CrewEnum id)
         {
             bool isCaptain = false;
@@ -162,7 +164,14 @@ namespace FS_Crew_Config_Tool.Classes
 
                 stream.Dispose();
             }
-            catch (WebException e) { }
+            catch (WebException e)
+            {
+                if (!apiErrorShown)
+                {
+                    Alert.CreateMessageBox("Endpoint [" + address + "] could not be reached", e, "Utilities.GetWebRequest");
+                    apiErrorShown = true;
+                }
+            }
 
             return uriResponse;
         }

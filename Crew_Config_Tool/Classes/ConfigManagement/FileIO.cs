@@ -6,20 +6,34 @@ namespace FS_Crew_Config_Tool.Classes.ConfigManagement
 {
     public class FileIO
     {
-        private const string FS_PATH = "..\\Local\\spacegame\\Saved\\Config\\WindowsNoEditor\\GameUserSettings.ini";
+        private const string FS_PATH = "..\\Local\\spacegame\\Saved\\Config\\WindowsNoEditor\\";
+        private const string CONFIG_FILE_NAME = "GameUserSettings.ini";
 
         private string CompletePath
         {
             get
             {
                 string appDataDir = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-                return Path.Combine(appDataDir, FS_PATH);
+                return Path.Combine(appDataDir, FS_PATH, CONFIG_FILE_NAME);
             }
         }
 
         public string[] ReadConfig()
         {
-            string[] fullConfig = File.ReadAllLines(CompletePath);
+            string[] fullConfig = null;
+
+            try
+            {
+                fullConfig = File.ReadAllLines(CompletePath);
+            }
+            catch (DirectoryNotFoundException e)
+            {
+                Alert.CreateMessageBox("FS directory could not be found", e, "FileIO:ReadConfig");
+            }
+            catch (FileNotFoundException e)
+            {
+                Alert.CreateMessageBox("FS config file could not be found", e, "FileIO:ReadConfig");
+            }
 
             return fullConfig;
         }

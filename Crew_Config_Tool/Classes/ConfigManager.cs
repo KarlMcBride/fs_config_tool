@@ -39,6 +39,11 @@ namespace FS_Crew_Config_Tool
 
         private void ParseIntoSegments(string[] config)
         {
+            if (config == null)
+            {
+                return;
+            }
+
             int lineNumber = 0;
 
             bool keepParsing = true;
