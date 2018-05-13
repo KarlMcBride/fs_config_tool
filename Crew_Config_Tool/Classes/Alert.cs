@@ -19,7 +19,7 @@ namespace FS_Crew_Config_Tool.Classes
             message += visibleMessage + "\n\n";
             message += "Would you like to report this?";
 
-            DialogResult result = MessageBox.Show(message, "Error", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show(message, "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
 
             if (result == DialogResult.Yes)
             {
