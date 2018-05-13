@@ -46,7 +46,7 @@
 
                     line += GenerateHexString(32);
 
-                    line += "\",Name=\"" + CrewName + "\",Icon=\"";
+                    line += "\",Name=\"" + CrewName + "\",Icon=\"\",CrewMembers=";
 
                 }
                 else
