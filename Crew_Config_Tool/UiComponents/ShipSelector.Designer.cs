@@ -31,7 +31,6 @@
             this.LabelDescriptor = new System.Windows.Forms.Label();
             this.ButtonSelectAll = new System.Windows.Forms.Button();
             this.ButtonSelectNone = new System.Windows.Forms.Button();
-            this.ButtonSmartSelect = new System.Windows.Forms.Button();
             this.ButtonGenerate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -52,6 +51,7 @@
             this.ButtonSelectAll.TabIndex = 1;
             this.ButtonSelectAll.Text = "Select All";
             this.ButtonSelectAll.UseVisualStyleBackColor = true;
+            this.ButtonSelectAll.Click += new System.EventHandler(this.ButtonSelectAll_Click);
             // 
             // ButtonSelectNone
             // 
@@ -61,19 +61,11 @@
             this.ButtonSelectNone.TabIndex = 2;
             this.ButtonSelectNone.Text = "Select None";
             this.ButtonSelectNone.UseVisualStyleBackColor = true;
-            // 
-            // ButtonSmartSelect
-            // 
-            this.ButtonSmartSelect.Location = new System.Drawing.Point(476, 112);
-            this.ButtonSmartSelect.Name = "ButtonSmartSelect";
-            this.ButtonSmartSelect.Size = new System.Drawing.Size(75, 23);
-            this.ButtonSmartSelect.TabIndex = 3;
-            this.ButtonSmartSelect.Text = "Smart Select";
-            this.ButtonSmartSelect.UseVisualStyleBackColor = true;
+            this.ButtonSelectNone.Click += new System.EventHandler(this.ButtonSelectAll_Click);
             // 
             // ButtonGenerate
             // 
-            this.ButtonGenerate.Location = new System.Drawing.Point(476, 157);
+            this.ButtonGenerate.Location = new System.Drawing.Point(476, 127);
             this.ButtonGenerate.Name = "ButtonGenerate";
             this.ButtonGenerate.Size = new System.Drawing.Size(75, 23);
             this.ButtonGenerate.TabIndex = 4;
@@ -86,7 +78,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 257);
             this.Controls.Add(this.ButtonGenerate);
-            this.Controls.Add(this.ButtonSmartSelect);
             this.Controls.Add(this.ButtonSelectNone);
             this.Controls.Add(this.ButtonSelectAll);
             this.Controls.Add(this.LabelDescriptor);
@@ -98,7 +89,6 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "ShipSelector";
-            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,7 +99,6 @@
         private System.Windows.Forms.Label LabelDescriptor;
         private System.Windows.Forms.Button ButtonSelectAll;
         private System.Windows.Forms.Button ButtonSelectNone;
-        private System.Windows.Forms.Button ButtonSmartSelect;
         private System.Windows.Forms.Button ButtonGenerate;
     }
 }

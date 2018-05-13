@@ -6,10 +6,11 @@ namespace FS_Crew_Config_Tool.UiComponents
 {
     public partial class ShipSelector : Form
     {
+        private CheckBox[] checkboxArray;
+
         public ShipSelector()
         {
             InitializeComponent();
-            ConfigureToolTip();
             AddCheckBoxes();
         }
 
@@ -17,6 +18,8 @@ namespace FS_Crew_Config_Tool.UiComponents
         {
             Point startingPoint = new Point(40, 50);
             Point shiftingPoint = startingPoint;
+
+            checkboxArray = new CheckBox[(int)ShipEnum.END_OF_LIST];
 
             for (int index = 0; index < (int)ShipEnum.END_OF_LIST; index++)
             {
@@ -34,16 +37,21 @@ namespace FS_Crew_Config_Tool.UiComponents
 
                 shiftingPoint.Y += 20;
 
-                this.Controls.Add(checkBox);
+                Controls.Add(checkBox);
+                checkboxArray[index] = checkBox;
             }
         }
 
-        private void ConfigureToolTip()
+        private void ButtonSelectAll_Click(object sender, System.EventArgs e)
         {
-            ToolTip toolTip = new ToolTip();
-            toolTip.SetToolTip(ButtonSmartSelect , "Selects all ships that aren't named within a config.\n" +
-                                                      "E.g. if you don't have a crew named enforcer, this will,\n" +
-                                                      "select enforcer automatically.\n");
+            Button clickedButton = sender as Button;
+
+            bool markAsChecked = (clickedButton.Name.Equals(ButtonSelectAll.Name));
+
+            for (int index = 0; index < (int)ShipEnum.END_OF_LIST; index++)
+            {
+                checkboxArray[index].Checked = markAsChecked;
+            }
         }
     }
 }
