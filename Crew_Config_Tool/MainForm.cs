@@ -6,6 +6,7 @@ using FS_Crew_Config_Tool.UiComponents;
 using Microsoft.VisualBasic;
 using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -73,6 +74,23 @@ namespace FS_Crew_Config_Tool
             int iterations = ITERATIONS_TO_UPDATE;
             string playerCount = string.Empty;
 
+            Utilities.CheckLatestSoftwareVersion();
+
+            if (Utilities.UpdateAvailable)
+            {
+                string message = "Version " + Utilities.LatestVersion + " is available and contains the following changes.\n\n";
+
+                message += Utilities.LatestNotes + "\n\n";
+                message += "Would you like to get the next version?";
+
+                DialogResult result = MessageBox.Show(message, "Version " + Utilities.LatestVersion + " available", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    Process.Start(Utilities.LatestLink);
+                }
+            }
+
             while (true)
             {
                 fsRunning = Utilities.CheckIfFracSpaceIsRunning("Fractured Space");
@@ -81,8 +99,6 @@ namespace FS_Crew_Config_Tool
                 {
                     playerCount = Utilities.GetOnlinePlayerCount();
                     iterations = 0;
-
-                    Utilities.CheckLatestSoftwareVersion();
                 }
 
                 BeginInvoke(new MethodInvoker(delegate

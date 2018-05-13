@@ -18,8 +18,13 @@ namespace FS_Crew_Config_Tool.Classes
         private const string VERSION_END = "LatestVerEnd";
         private const string LINK_START = "LinkStart";
         private const string LINK_END = "LinkEnd";
+        private const string NOTES_START = "NotesStart:";
+        private const string NOTES_END = ":NotesEnd";
 
-        public static bool UpdateAvailable { get; private set; }
+        public static bool   UpdateAvailable { get; private set; }
+        public static string LatestVersion   { get; private set; }
+        public static string LatestLink      { get; private set; }
+        public static string LatestNotes     { get; private set; }
 
         public static bool IsCrewMemberCaptain(CrewEnum id)
         {
@@ -119,10 +124,11 @@ namespace FS_Crew_Config_Tool.Classes
         {
             string uriResponse = GetWebRequest(DOCS_SW_VERSION);
 
-            string latestVersion = ParseOutInfo(uriResponse, VERSION_START, VERSION_END);
-            string latestLink = ParseOutInfo(uriResponse, LINK_START, LINK_END);
+            LatestVersion = ParseOutInfo(uriResponse, VERSION_START, VERSION_END);
+            LatestLink = ParseOutInfo(uriResponse, LINK_START, LINK_END);
+            LatestNotes = ParseOutInfo(uriResponse, NOTES_START, NOTES_END);
 
-            UpdateAvailable = CompareSoftwareVersions(latestVersion);
+            UpdateAvailable = CompareSoftwareVersions(LatestVersion);
         }
 
         private static bool CompareSoftwareVersions(string latestVersion)
