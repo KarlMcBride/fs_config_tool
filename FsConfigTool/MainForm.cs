@@ -350,7 +350,7 @@ namespace FS_Config_Tool
         private void ButtonRenameSelected_Click(object sender, EventArgs e)
         {
             int selectedIndex = ListBoxCrews.SelectedIndex;
-            if (selectedIndex > 0)
+            if (selectedIndex >= 0)
             {
                 string currentName = ListBoxCrews.Items[selectedIndex].ToString();
 
