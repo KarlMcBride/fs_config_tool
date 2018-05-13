@@ -96,14 +96,19 @@ namespace FS_Crew_Config_Tool.UiComponents
 
         private void SortArrayForAlphabeticalOrder()
         {
-            StatCombination tempStat = StatMathList[(int)StatEnum.ENERGY_EFFICIENCY];
+            for (int index = 0; index < StatMathList.Length - 1; index++)
+            {
+                string firstStat = StatMathList[index].Name;
+                string secondStat = StatMathList[index + 1].Name;
 
-            Array.Sort(StatMathList, SortByNameAlphabetically);
-        }
+                if (firstStat.CompareTo(secondStat) > 1)
+                {
+                    StatCombination tempStat = StatMathList[index];
 
-        private int SortByNameAlphabetically(StatCombination first, StatCombination second)
-        {
-            return first.Name.CompareTo(second.Name);
+                    StatMathList[index] = StatMathList[index + 1];
+                    StatMathList[index + 1] = tempStat;
+                }
+            }
         }
 
         private void AddCrewStatsToTotals(StatCombination[] crewStats)
