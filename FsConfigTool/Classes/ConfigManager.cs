@@ -13,6 +13,8 @@ namespace FS_Config_Tool
 
         private const string CREW_TEAMS_FLAG = "CrewTeams=";
 
+        public bool UnsavedChangesPresent { get; private set; } = false;
+
         public DataListings DataLists;
         public FileIO FileIO;
 
@@ -115,11 +117,15 @@ namespace FS_Config_Tool
                     }
                 }
             }
+
+            UnsavedChangesPresent = true;
         }
 
         public void SaveConfig()
         {
             FileIO.SaveConfig(DataLists);
+
+            UnsavedChangesPresent = false;
         }
 
         public bool DeleteSelectedCrewFromList(int indexToDelete)
@@ -132,6 +138,8 @@ namespace FS_Config_Tool
                 {
                     DataLists.CrewData.RemoveAt(indexToDelete);
                     deleteSuccessful = true;
+
+                    UnsavedChangesPresent = true;
                 }
             }
 
@@ -191,6 +199,8 @@ namespace FS_Config_Tool
                     {
                         DataLists.CrewData[selectedTeam].Team.CrewMembers[nextFreeSlot].CrewID = selectedCrewID;
                         addSuccessful = true;
+
+                        UnsavedChangesPresent = true;
                     }
                 }
             }
@@ -206,6 +216,8 @@ namespace FS_Config_Tool
             {
                 DataLists.CrewData[selectedTeam].Team.CrewMembers[crewIndexToRemove].CrewID = CrewEnum.END_OF_LIST;
                 removeSuccessful = true;
+
+                UnsavedChangesPresent = true;
             }
 
             return removeSuccessful;
@@ -229,6 +241,8 @@ namespace FS_Config_Tool
                     {
                         DataLists.CrewData[selectedTeam].Team.CrewMembers[nextFreeSlot.CrewIndex].ImplantIDs[nextFreeSlot.ImplantIndex] = selectedImplantID;
                         addSuccessful = true;
+
+                        UnsavedChangesPresent = true;
                     }
                 }
             }
@@ -246,6 +260,7 @@ namespace FS_Config_Tool
                 removeSuccessful = true;
             }
 
+
             return removeSuccessful;
         }
 
@@ -256,6 +271,8 @@ namespace FS_Config_Tool
             newCrew.CrewName = newCrewName;
 
             DataLists.CrewData.Add(newCrew);
+
+            UnsavedChangesPresent = true;
         }
 
         public void RenameCrew(int index, string newName)
@@ -263,6 +280,8 @@ namespace FS_Config_Tool
             CrewLines crew = DataLists.CrewData[index];
             crew.CrewName = newName;
             DataLists.CrewData[index] = crew;
+
+            UnsavedChangesPresent = true;
         }
     }
 }
