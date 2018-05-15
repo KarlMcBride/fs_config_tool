@@ -1,6 +1,9 @@
-﻿using FS_Config_Tool.Classes.Listings;
+﻿using FS_Config_Tool;
+using FS_Config_Tool.Classes;
+using FS_Config_Tool.Classes.Listings;
 using FS_Config_Tool.UiComponents;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using UnitTests.TestData;
 
 namespace UnitTests.UiComponents
 {
@@ -11,19 +14,38 @@ namespace UnitTests.UiComponents
         public void PopulateLists()
         {
             StatList.PopulateStatsList();
+            CrewList.PopulateCrewList();
+            ImplantList.PopulateImplantList();
         }
 
+        /// <summary>
+        /// Ensure that all values are cleared down when populated
+        /// </summary>
         [TestMethod]
-        public void PopulateStatMathList()
+        public void ResetStats()
         {
             StatsBox statsBox = new StatsBox();
 
-            statsBox.CallHiddenMethod("PopulateStatMathList");
+            // Implants cover all stats except energy efficiency, so use a comms officer to move it off zero
 
-            int actualSize = statsBox.GetStatMathListLength();
-            int expectedSize = (int)StatEnum.ENERGY_EFFICIENCY + 1;
+            TeamConfig commsCrew = new TeamConfig();
+            commsCrew.CrewMembers[0].CrewID = CrewEnum.PROTAGONIST;
+            statsBox.CallHiddenMethod("CalculateStats", commsCrew);
 
-            Assert.AreEqual(expectedSize, actualSize, "Size of StatMathList is not correct");
+            for (int implantIndex = 0; implantIndex < (int)ImplantEnum.END_OF_LIST; implantIndex++)
+            {
+                TeamConfig implantConfig = new TeamConfig();
+                implantConfig.CrewMembers[0].ImplantIDs[0] = (ImplantEnum)implantIndex;
+
+                statsBox.CallHiddenMethod("CalculateStats", implantConfig);
+            }
+
+            statsBox.CallHiddenMethod("ResetStats");
+
+            for (int index = 0; index < statsBox.StatMathList.Length; index++)
+            {
+                Assert.AreEqual(0, statsBox.StatMathList[index].Value, "Statistic is non-zero");
+            }
         }
     }
 }
