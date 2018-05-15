@@ -48,7 +48,7 @@ namespace FS_Config_Tool.UiComponents
             }
         }
 
-        private void ButtonSelectAll_Click(object sender, EventArgs e)
+        private void ButtonSelectAllOrNone_Click(object sender, EventArgs e)
         {
             Button clickedButton = sender as Button;
 

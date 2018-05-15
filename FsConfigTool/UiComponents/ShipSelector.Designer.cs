@@ -51,7 +51,7 @@
             this.ButtonSelectAll.TabIndex = 1;
             this.ButtonSelectAll.Text = "Select All";
             this.ButtonSelectAll.UseVisualStyleBackColor = true;
-            this.ButtonSelectAll.Click += new System.EventHandler(this.ButtonSelectAll_Click);
+            this.ButtonSelectAll.Click += new System.EventHandler(this.ButtonSelectAllOrNone_Click);
             // 
             // ButtonSelectNone
             // 
@@ -61,7 +61,7 @@
             this.ButtonSelectNone.TabIndex = 2;
             this.ButtonSelectNone.Text = "Select None";
             this.ButtonSelectNone.UseVisualStyleBackColor = true;
-            this.ButtonSelectNone.Click += new System.EventHandler(this.ButtonSelectAll_Click);
+            this.ButtonSelectNone.Click += new System.EventHandler(this.ButtonSelectAllOrNone_Click);
             // 
             // ButtonGenerate
             // 
