@@ -30,6 +30,7 @@ namespace FS_Config_Tool
 
             config = new ConfigManager();
             uiOffload = new UiOffload();
+            StatsBox.PopulateStatMathList();
         }
 
         private void MainForm_Load(object sender, EventArgs e)

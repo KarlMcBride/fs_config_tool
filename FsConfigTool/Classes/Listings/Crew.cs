@@ -246,8 +246,8 @@ namespace FS_Config_Tool
             CrewListing.Add(cplJohnerOne);
 
             CrewMember ernestGrimur = new CrewMember(CrewEnum.ERNEST_GRIMUR, "Ernest Grimur", CrewRole.CAG, "F54C19614EED261DE7B5688440419793");
-            cplJohnerOne.CrewStats[0].Value = CAG_COOLDOWN_7_5;
-            cplJohnerOne.CrewStats[1].Value = CAG_SURVIVAL_15_00;
+            ernestGrimur.CrewStats[0].Value = CAG_COOLDOWN_7_5;
+            ernestGrimur.CrewStats[1].Value = CAG_SURVIVAL_15_00;
             CrewListing.Add(ernestGrimur);
 
             CrewMember matildaIsaacs = new CrewMember(CrewEnum.MATILDA_ISAACS, "Matilda Isaacs", CrewRole.CAG, "5589B0694B749C382B0E9A95B2A500B5");

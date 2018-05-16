@@ -37,8 +37,8 @@ namespace FS_Config_Tool.Classes.Listings
         REPAIR_EFFICIENCY,
         SENSOR_RANGE,
         SQUAD_COOLDOWN,
-        STATION_DAMAGE_REDUCTION,
         SQUAD_SURVIVAL,
+        STATION_DAMAGE_REDUCTION,
         TURN_RATE,
         TURRET_TRAVERSE,
         UTILITY_COOLDOWN,
@@ -212,11 +212,11 @@ namespace FS_Config_Tool.Classes.Listings
             StatCombination squadCooldown = new StatCombination(StatCategory.UTILITY, StatEnum.SQUAD_COOLDOWN, "Squad Cooldown");
             StatsListing.Add(squadCooldown);
 
-            StatCombination StationDamageReduction = new StatCombination(StatCategory.DEFENSE, StatEnum.STATION_DAMAGE_REDUCTION, "Station Damage Reduction");
-            StatsListing.Add(StationDamageReduction);
-
             StatCombination squadSurvival = new StatCombination(StatCategory.UTILITY, StatEnum.SQUAD_SURVIVAL, "Squad Survival");
             StatsListing.Add(squadSurvival);
+
+            StatCombination StationDamageReduction = new StatCombination(StatCategory.DEFENSE, StatEnum.STATION_DAMAGE_REDUCTION, "Station Damage Reduction");
+            StatsListing.Add(StationDamageReduction);
 
             StatCombination turnRate = new StatCombination(StatCategory.UTILITY, StatEnum.TURN_RATE, "Turn Rate");
             StatsListing.Add(turnRate);

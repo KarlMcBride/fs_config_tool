@@ -8,6 +8,7 @@ namespace FS_Config_Tool.UiComponents
     public partial class StatsBox : UserControl
     {
         public StatCombination[] StatMathList { get; private set; }
+        public bool MathListPopulated { get; private set; } = false;
 
         private StatPair[] statPairsAttack;
         private StatPair[] statPairsDefense;
@@ -30,12 +31,15 @@ namespace FS_Config_Tool.UiComponents
                                                 StatPairUtility6,  StatPairUtility7,  StatPairUtility8,
                                                 StatPairUtility9,  StatPairUtility10, StatPairUtility11,
                                                 StatPairUtility12, StatPairUtility13 };
-
-            PopulateStatMathList();
         }
 
-        private void PopulateStatMathList()
+        public void PopulateStatMathList()
         {
+            if (MathListPopulated)
+            {
+                return;
+            }
+
             int numOfStats = (int)StatEnum.END_OF_LIST;
 
             StatMathList = new StatCombination[numOfStats];
@@ -44,6 +48,8 @@ namespace FS_Config_Tool.UiComponents
             {
                 StatMathList[index] = StatList.StatsListing[index];
             }
+
+            MathListPopulated = true;
         }
 
         public void UpdateAndShowStats(TeamConfig team)
