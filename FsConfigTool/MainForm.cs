@@ -74,9 +74,8 @@ namespace FS_Config_Tool
             int iterations = ITERATIONS_TO_UPDATE;
             string playerCount = string.Empty;
 
-            Utilities.CheckLatestSoftwareVersion();
-
-            if (Utilities.UpdateAvailable)
+            // Check for new version once at startup
+            if (Utilities.CheckLatestSoftwareVersion() == Utilities.UPDATE_STATUS.NEW_VERSION_AVAILABLE)
             {
                 string message = "Version " + Utilities.LatestVersion + " is available and contains the following changes.\n\n";
 

@@ -148,5 +148,13 @@ namespace UnitTests
 
             Assert.AreNotEqual(unexpected, actual);
         }
+
+        [TestMethod]
+        public void GetSoftwareUpdateState()
+        {
+            Utilities.UPDATE_STATUS status = Utilities.CheckLatestSoftwareVersion();
+
+            Assert.AreEqual(Utilities.UPDATE_STATUS.UP_TO_DATE, status);
+        }
     }
 }

@@ -21,10 +21,16 @@ namespace FS_Config_Tool.Classes
         private const string NOTES_START = "NotesStart:";
         private const string NOTES_END = ":NotesEnd";
 
-        public static bool   UpdateAvailable { get; private set; }
         public static string LatestVersion   { get; private set; }
         public static string LatestLink      { get; private set; }
         public static string LatestNotes     { get; private set; }
+
+        public enum UPDATE_STATUS
+        {
+            UP_TO_DATE,
+            NEW_VERSION_AVAILABLE,
+            ERROR_CHECKING
+        }
 
         private static bool apiErrorShown = false;
 
@@ -122,7 +128,7 @@ namespace FS_Config_Tool.Classes
             return playerCount;
         }
 
-        public static void CheckLatestSoftwareVersion()
+        public static UPDATE_STATUS CheckLatestSoftwareVersion()
         {
             string uriResponse = GetWebRequest(DOCS_SW_VERSION);
 
@@ -130,21 +136,21 @@ namespace FS_Config_Tool.Classes
             LatestLink = ParseOutInfo(uriResponse, LINK_START, LINK_END);
             LatestNotes = ParseOutInfo(uriResponse, NOTES_START, NOTES_END);
 
-            UpdateAvailable = CompareSoftwareVersions(LatestVersion);
+            return CompareSoftwareVersions(LatestVersion);
         }
 
-        private static bool CompareSoftwareVersions(string latestVersion)
+        private static UPDATE_STATUS CompareSoftwareVersions(string latestVersion)
         {
             string currentVersion = GetCurrentVersion();
 
-            int result = 0;
+            UPDATE_STATUS status = UPDATE_STATUS.ERROR_CHECKING;
 
             if (latestVersion != null)
             {
-                result = latestVersion.CompareTo(currentVersion);
+                status = (1 == latestVersion.CompareTo(currentVersion)) ? UPDATE_STATUS.NEW_VERSION_AVAILABLE : UPDATE_STATUS.UP_TO_DATE;
             }
 
-            return (result == 1);
+            return status;
         }
 
         private static string GetWebRequest(string address)
