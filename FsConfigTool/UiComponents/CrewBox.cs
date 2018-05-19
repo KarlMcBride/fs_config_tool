@@ -26,7 +26,7 @@ namespace FS_Config_Tool.UiComponents
 
         private void CrewBox_Load(object sender, EventArgs e)
         {
-            for (int index = 0; index < 3; index++)
+            for (int index = 0; index < TeamConfig.MAX_IMPLANTS_PER_CREW_MEMBER; index++)
             {
                 pictureBoxImplantArray[index].Parent = PictureBoxCrew;
             }
@@ -36,7 +36,7 @@ namespace FS_Config_Tool.UiComponents
         {
             PictureBoxCrew.Image = Utilities.GetCrewImageByIndex((int)crew.CrewID);
 
-            for (int index = 0; index < 3; index++)
+            for (int index = 0; index < TeamConfig.MAX_IMPLANTS_PER_CREW_MEMBER; index++)
             {
                 pictureBoxImplantArray[index].Image = Utilities.GetImplantImageByIndex((int)crew.ImplantIDs[index]);
             }

@@ -60,7 +60,7 @@ namespace UnitTests.TestData
             config.CrewMembers[3].CrewID = CrewEnum.GREGORII_DUROV;
             config.CrewMembers[4].CrewID = CrewEnum.LUDOLOGIST;
 
-            for (int crewIndex = 0; crewIndex < 5; crewIndex++)
+            for (int crewIndex = 0; crewIndex < TeamConfig.MAX_CREW_MEMBERS_PER_TEAM; crewIndex++)
             {
                 config.CrewMembers[crewIndex].ImplantIDs[0] = ImplantEnum.HULL_STRENGTH;
                 config.CrewMembers[crewIndex].ImplantIDs[1] = ImplantEnum.MANEUVERING;

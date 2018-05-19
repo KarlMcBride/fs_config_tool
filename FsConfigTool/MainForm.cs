@@ -237,7 +237,7 @@ namespace FS_Config_Tool
             // If shift is down, attempt to apply the implant to each crew member
             if (ModifierKeys == Keys.Shift)
             {
-                for (int index = 0; index < 5; index++)
+                for (int index = 0; index < TeamConfig.MAX_CREW_MEMBERS_PER_TEAM; index++)
                 {
                     addSuccessful |= config.AddSelectedImplantToNextFreeSlot(implantName, selectedCrewIndex);
                 }
@@ -261,7 +261,7 @@ namespace FS_Config_Tool
 
             if (ModifierKeys == Keys.Shift)
             {
-                for (int index = 0; index < 5; index++)
+                for (int index = 0; index < TeamConfig.MAX_CREW_MEMBERS_PER_TEAM; index++)
                 {
                     removeSuccessful |= config.RemoveSelectedCrewMember(selectedCrewIndex, index);
                 }
@@ -285,7 +285,7 @@ namespace FS_Config_Tool
 
             if (ModifierKeys == Keys.Shift)
             {
-                for (int implantIndex = 0; implantIndex < 3; implantIndex++)
+                for (int implantIndex = 0; implantIndex < TeamConfig.MAX_IMPLANTS_PER_CREW_MEMBER; implantIndex++)
                 {
                     CrewImplantArgs uiArguments = new CrewImplantArgs(args.CrewIndex, implantIndex);
 

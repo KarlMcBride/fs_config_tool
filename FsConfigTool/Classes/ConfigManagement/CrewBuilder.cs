@@ -10,7 +10,7 @@
         {
             string teamString = "(";
 
-            for (int crewIndex = 0; crewIndex < 5; crewIndex++)
+            for (int crewIndex = 0; crewIndex < TeamConfig.MAX_CREW_MEMBERS_PER_TEAM; crewIndex++)
             {
                 teamString += GenerateSingleCrewMemberComponent(teamConfig.CrewMembers[crewIndex]);
 

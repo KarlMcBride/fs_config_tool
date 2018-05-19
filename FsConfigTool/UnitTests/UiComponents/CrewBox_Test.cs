@@ -46,7 +46,7 @@ namespace UnitTests.UiComponents
 
             Assert.IsFalse(crewBox.CheckDisplayedCrewImage());
 
-            for (int implantIndex = 0; implantIndex < 3; implantIndex++)
+            for (int implantIndex = 0; implantIndex < TeamConfig.MAX_IMPLANTS_PER_CREW_MEMBER; implantIndex++)
             {
                 Assert.IsFalse(crewBox.CheckDisplayedImplantImage(implantIndex));
             }
@@ -65,7 +65,7 @@ namespace UnitTests.UiComponents
             CrewBox crewBox = new CrewBox();
             crewBox.DisplaySelectedCrew(enumeratedCrew);
 
-            for (int implantIndex = 0; implantIndex < 3; implantIndex++)
+            for (int implantIndex = 0; implantIndex < TeamConfig.MAX_IMPLANTS_PER_CREW_MEMBER; implantIndex++)
             {
                 Assert.IsTrue(crewBox.CheckDisplayedImplantImage(implantIndex));
             }
@@ -78,7 +78,7 @@ namespace UnitTests.UiComponents
 
             crewBox.CrewMemberDoubleClicked += CrewReceiver;
 
-            for(int index = 0; index < 5; index++)
+            for(int index = 0; index < TeamConfig.MAX_CREW_MEMBERS_PER_TEAM; index++)
             {
                 crewBox.SetBoxIndex(index);
                 crewBox.CallHiddenMethod("PictureBoxCrew_MouseDoubleClick", null, null);
@@ -94,7 +94,7 @@ namespace UnitTests.UiComponents
         {
             CrewBox crewBox = new CrewBox();
 
-            for (int index = 0; index < 5; index+=6)
+            for (int index = 0; index < TeamConfig.MAX_CREW_MEMBERS_PER_TEAM; index+=6)
             {
                 crewBox.SetBoxIndex(index);
                 crewBox.CallHiddenMethod("PictureBoxCrew_MouseDoubleClick", null, null);
@@ -109,7 +109,7 @@ namespace UnitTests.UiComponents
 
             crewBox.ImplantDoubleClicked += CrewImplantReceiver;
 
-            for (int index = 0; index < 5; index++)
+            for (int index = 0; index < TeamConfig.MAX_CREW_MEMBERS_PER_TEAM; index++)
             {
                 crewBox.SetBoxIndex(index);
                 crewBox.CallHiddenMethod("PictureBoxImplant0_MouseDoubleClick", null, null);
@@ -133,7 +133,7 @@ namespace UnitTests.UiComponents
         {
             CrewBox crewBox = new CrewBox();
 
-            for (int index = 0; index < 5; index++)
+            for (int index = 0; index < TeamConfig.MAX_CREW_MEMBERS_PER_TEAM; index++)
             {
                 crewBox.SetBoxIndex(index);
                 crewBox.CallHiddenMethod("PictureBoxImplant0_MouseDoubleClick", null, null);

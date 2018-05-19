@@ -21,7 +21,7 @@ namespace UnitTests.ConfigManagement
         {
             TeamConfig teamConfig = ParsedData.BasicFiveMembersNoImplants();
 
-            for (int crewIndex = 0; crewIndex < 5; crewIndex++)
+            for (int crewIndex = 0; crewIndex < TeamConfig.MAX_CREW_MEMBERS_PER_TEAM; crewIndex++)
             {
                 // Use the first member's enum, as it will be in the config we're checking against
                 CrewEnum crew = teamConfig.CrewMembers[crewIndex].CrewID;
@@ -67,7 +67,7 @@ namespace UnitTests.ConfigManagement
         {
             TeamConfig teamConfig = ParsedData.BasicFiveMembersNoImplants();
 
-            for(int index = 0; index < 5; index++)
+            for(int index = 0; index < TeamConfig.MAX_CREW_MEMBERS_PER_TEAM; index++)
             {
                 CrewEnum crewId = teamConfig.CrewMembers[index].CrewID;
 
@@ -252,9 +252,9 @@ namespace UnitTests.ConfigManagement
         [TestMethod]
         public void FindFirstFreeImplantSlot_FullCrewWithSingleImplant()
         {
-            for (int crewIndex = 0; crewIndex < 5; crewIndex++)
+            for (int crewIndex = 0; crewIndex < TeamConfig.MAX_CREW_MEMBERS_PER_TEAM; crewIndex++)
             {
-                for (int implantIndex = 0; implantIndex < 3; implantIndex++)
+                for (int implantIndex = 0; implantIndex < TeamConfig.MAX_IMPLANTS_PER_CREW_MEMBER; implantIndex++)
                 {
                     TeamConfig teamConfig = ParsedData.BasicFiveMembersNoImplants();
 

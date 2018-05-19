@@ -55,7 +55,7 @@ namespace FS_Config_Tool.Classes.ConfigManagement
 
             CrewRole selectedRole = CrewList.CrewListing[(int)crewEnum].Role;
 
-            for (int index = 0; index < 5; index++)
+            for (int index = 0; index < TeamConfig.MAX_CREW_MEMBERS_PER_TEAM; index++)
             {
                 int crewIndex = (int)selectedTeam.CrewMembers[index].CrewID;
 
@@ -83,7 +83,7 @@ namespace FS_Config_Tool.Classes.ConfigManagement
         {
             int crewCount = 0;
 
-            for (int index = 0; index < 5; index++)
+            for (int index = 0; index < TeamConfig.MAX_CREW_MEMBERS_PER_TEAM; index++)
             {
                 if (selectedTeam.CrewMembers[index].CrewID != CrewEnum.END_OF_LIST)
                 {
@@ -98,7 +98,7 @@ namespace FS_Config_Tool.Classes.ConfigManagement
         {
             int nextFreeSlot = OUT_OF_BOUNDS;
 
-            for (int index = 0; index < 5; index++)
+            for (int index = 0; index < TeamConfig.MAX_CREW_MEMBERS_PER_TEAM; index++)
             {
                 if (index == 2)
                 {
@@ -124,7 +124,7 @@ namespace FS_Config_Tool.Classes.ConfigManagement
         {
             int implantCount = 0;
 
-            for (int crewIndex = 0; crewIndex < 5; crewIndex++)
+            for (int crewIndex = 0; crewIndex < TeamConfig.MAX_CREW_MEMBERS_PER_TEAM; crewIndex++)
             {
                 implantCount += CountNumberOfImplantsInCrewMember(selectedTeam.CrewMembers[crewIndex]);
             }
@@ -141,7 +141,7 @@ namespace FS_Config_Tool.Classes.ConfigManagement
         {
             int implantCount = 0;
 
-            for (int implantIndex = 0; implantIndex < 3; implantIndex++)
+            for (int implantIndex = 0; implantIndex < TeamConfig.MAX_IMPLANTS_PER_CREW_MEMBER; implantIndex++)
             {
                 if (selectedCrew.ImplantIDs[implantIndex] != ImplantEnum.END_OF_LIST)
                 {
@@ -158,12 +158,12 @@ namespace FS_Config_Tool.Classes.ConfigManagement
             int crewIndex = 0;
             int implantIndex = 0;
 
-            for (crewIndex = 0; crewIndex < 5; crewIndex++)
+            for (crewIndex = 0; crewIndex < TeamConfig.MAX_CREW_MEMBERS_PER_TEAM; crewIndex++)
             {
                 int implantSlotsChecked = 0;
                 int emptySlot = -1;
 
-                for (implantIndex = 0; implantIndex < 3; implantIndex++)
+                for (implantIndex = 0; implantIndex < TeamConfig.MAX_IMPLANTS_PER_CREW_MEMBER; implantIndex++)
                 {
                     if (selectedTeam.CrewMembers[crewIndex].ImplantIDs[implantIndex] == ImplantEnum.END_OF_LIST)
                     {

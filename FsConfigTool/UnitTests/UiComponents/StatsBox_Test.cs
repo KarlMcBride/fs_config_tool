@@ -29,7 +29,7 @@ namespace UnitTests.UiComponents
 
                 int expectedNonZeros = (role == CrewRole.CAPTAIN) ? 3 : 2;
 
-                for (int slotIndex = 0; slotIndex < 5; slotIndex++)
+                for (int slotIndex = 0; slotIndex < TeamConfig.MAX_CREW_MEMBERS_PER_TEAM; slotIndex++)
                 {
                     TeamConfig crew = new TeamConfig();
                     crew.CrewMembers[slotIndex].CrewID = (CrewEnum)crewIndex;
@@ -65,9 +65,9 @@ namespace UnitTests.UiComponents
 
             for (int implantIndex = 0; implantIndex < (int)ImplantEnum.END_OF_LIST; implantIndex++)
             {
-                for (int crewSlotIndex = 0; crewSlotIndex < 5; crewSlotIndex++)
+                for (int crewSlotIndex = 0; crewSlotIndex < TeamConfig.MAX_CREW_MEMBERS_PER_TEAM; crewSlotIndex++)
                 {
-                    for (int implantSlotIndex = 0; implantSlotIndex < 3; implantSlotIndex++)
+                    for (int implantSlotIndex = 0; implantSlotIndex < TeamConfig.MAX_IMPLANTS_PER_CREW_MEMBER; implantSlotIndex++)
                     {
                         TeamConfig crew = new TeamConfig();
                         crew.CrewMembers[crewSlotIndex].ImplantIDs[implantSlotIndex] = (ImplantEnum)implantIndex;

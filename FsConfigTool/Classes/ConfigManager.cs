@@ -191,7 +191,7 @@ namespace FS_Config_Tool
                     DataLists.CrewData[selectedTeam].Team.CrewMembers[matchIndex].CrewID = selectedCrewID;
                     addSuccessful = true;
                 }
-                else if (ConfigUtilities.CountNumberOfCrewInTeam(DataLists.CrewData[selectedTeam].Team) < 5)
+                else if (ConfigUtilities.CountNumberOfCrewInTeam(DataLists.CrewData[selectedTeam].Team) < TeamConfig.MAX_CREW_MEMBERS_PER_TEAM)
                 {
                     int nextFreeSlot = ConfigUtilities.FindFirstFreeSlotForNonCaptain(DataLists.CrewData[selectedTeam].Team);
 

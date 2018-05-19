@@ -5,8 +5,8 @@
     /// </summary>
     public class TeamConfig
     {
-        private const int MAX_CREW_MEMBERS_PER_TEAM = 5;
-        private const int MAX_IMPLANTS_PER_CREW_MEMBER = 3;
+        public const int MAX_CREW_MEMBERS_PER_TEAM = 5;
+        public const int MAX_IMPLANTS_PER_CREW_MEMBER = 3;
 
         public EnumeratedCrewMember[] CrewMembers = new EnumeratedCrewMember[MAX_CREW_MEMBERS_PER_TEAM];
 
@@ -32,7 +32,7 @@
         {
             CrewMembers = new EnumeratedCrewMember[MAX_CREW_MEMBERS_PER_TEAM];
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < MAX_CREW_MEMBERS_PER_TEAM; i++)
             {
                 CrewMembers[i] = new TeamConfig.EnumeratedCrewMember();
             }

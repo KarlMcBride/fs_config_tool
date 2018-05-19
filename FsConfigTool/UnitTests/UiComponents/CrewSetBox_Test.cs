@@ -1,4 +1,5 @@
-﻿using FS_Config_Tool.UiComponents;
+﻿using FS_Config_Tool.Classes;
+using FS_Config_Tool.UiComponents;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using UnitTests.TestData;
@@ -46,7 +47,7 @@ namespace UnitTests.UiComponents
             CrewSetBox crewSetBox = new CrewSetBox();
             crewSetBox.DisplaySelectedTeam(ParsedData.FiveMembersFullImplantsOrdered(), null);
 
-            for(int index = 0; index < 5; index++)
+            for(int index = 0; index < TeamConfig.MAX_CREW_MEMBERS_PER_TEAM; index++)
             {
                 Assert.IsNotNull(crewSetBox.CheckCrewImageState(index, EXPECTING_IMAGE));
             }
@@ -58,7 +59,7 @@ namespace UnitTests.UiComponents
             CrewSetBox crewSetBox = new CrewSetBox();
             crewSetBox.ClearDisplayedTeam(null);
 
-            for (int index = 0; index < 5; index++)
+            for (int index = 0; index < TeamConfig.MAX_CREW_MEMBERS_PER_TEAM; index++)
             {
                 Assert.IsNotNull(crewSetBox.CheckCrewImageState(index, EXPECTING_NULL));
             }
@@ -71,7 +72,7 @@ namespace UnitTests.UiComponents
             crewSetBox.DisplaySelectedTeam(ParsedData.FiveMembersFullImplantsOrdered(), null);
             crewSetBox.ClearDisplayedTeam(null);
 
-            for (int index = 0; index < 5; index++)
+            for (int index = 0; index < TeamConfig.MAX_CREW_MEMBERS_PER_TEAM; index++)
             {
                 Assert.IsNotNull(crewSetBox.CheckCrewImageState(index, EXPECTING_NULL));
             }
@@ -84,7 +85,7 @@ namespace UnitTests.UiComponents
 
             crewSetBox.CrewMemberDoubleClicked += CrewReceiver;
 
-            for (int index = 0; index < 5; index++)
+            for (int index = 0; index < TeamConfig.MAX_CREW_MEMBERS_PER_TEAM; index++)
             {
                 CrewArgs args = new CrewArgs(index);
                 
@@ -101,7 +102,7 @@ namespace UnitTests.UiComponents
         {
             CrewSetBox crewSetBox = new CrewSetBox();
 
-            for (int index = 0; index < 5; index++)
+            for (int index = 0; index < TeamConfig.MAX_CREW_MEMBERS_PER_TEAM; index++)
             {
                 CrewArgs args = new CrewArgs(index);
 
@@ -115,9 +116,9 @@ namespace UnitTests.UiComponents
 
             crewSetBox.ImplantDoubleClicked += CrewImplantReceiver;
 
-            for (int crewIndex = 0; crewIndex < 5; crewIndex++)
+            for (int crewIndex = 0; crewIndex < TeamConfig.MAX_CREW_MEMBERS_PER_TEAM; crewIndex++)
             {
-                for (int implantIndex = 0; implantIndex < 3; implantIndex++)
+                for (int implantIndex = 0; implantIndex < TeamConfig.MAX_IMPLANTS_PER_CREW_MEMBER; implantIndex++)
                 {
                     CrewImplantArgs args = new CrewImplantArgs(crewIndex, implantIndex);
 
@@ -136,9 +137,9 @@ namespace UnitTests.UiComponents
         {
             CrewSetBox crewSetBox = new CrewSetBox();
 
-            for (int crewIndex = 0; crewIndex < 5; crewIndex++)
+            for (int crewIndex = 0; crewIndex < TeamConfig.MAX_CREW_MEMBERS_PER_TEAM; crewIndex++)
             {
-                for (int implantIndex = 0; implantIndex < 3; implantIndex++)
+                for (int implantIndex = 0; implantIndex < TeamConfig.MAX_IMPLANTS_PER_CREW_MEMBER; implantIndex++)
                 {
                     CrewImplantArgs args = new CrewImplantArgs(crewIndex, implantIndex);
 

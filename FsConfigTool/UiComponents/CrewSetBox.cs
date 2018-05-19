@@ -17,7 +17,7 @@ namespace FS_Config_Tool.UiComponents
 
             crewBoxArray = new CrewBox[] { CrewBox0, CrewBox1, CrewBox2, CrewBox3, CrewBox4 };
 
-            for (int index = 0; index < 5; index++)
+            for (int index = 0; index < TeamConfig.MAX_CREW_MEMBERS_PER_TEAM; index++)
             {
                 crewBoxArray[index].SetBoxIndex(index);
                 crewBoxArray[index].CrewMemberDoubleClicked += RemoveClickedCrewMember;
@@ -51,7 +51,7 @@ namespace FS_Config_Tool.UiComponents
 
         public void DisplaySelectedTeam(TeamConfig team, CrewSetBox parent)
         {
-            for (int index = 0; index < 5; index++)
+            for (int index = 0; index < TeamConfig.MAX_CREW_MEMBERS_PER_TEAM; index++)
             {
                 crewBoxArray[index].Parent = parent;
                 crewBoxArray[index].DisplaySelectedCrew(team.CrewMembers[index]);

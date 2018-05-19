@@ -72,7 +72,7 @@ namespace FS_Config_Tool.UiComponents
         private void CalculateStats(TeamConfig team)
         {
             // Cycle through all crew members and their respective implants
-            for (int crewIndex = 0; crewIndex < 5; crewIndex++)
+            for (int crewIndex = 0; crewIndex < TeamConfig.MAX_CREW_MEMBERS_PER_TEAM; crewIndex++)
             {
                 CrewEnum crew = team.CrewMembers[crewIndex].CrewID;
 
@@ -83,7 +83,7 @@ namespace FS_Config_Tool.UiComponents
                     AddCrewStatsToTotals(CrewList.CrewListing[crewID].CrewStats);
                 }
 
-                for (int implantIndex = 0; implantIndex < 3; implantIndex++)
+                for (int implantIndex = 0; implantIndex < TeamConfig.MAX_IMPLANTS_PER_CREW_MEMBER; implantIndex++)
                 {
                     ImplantEnum implant = team.CrewMembers[crewIndex].ImplantIDs[implantIndex];
 
