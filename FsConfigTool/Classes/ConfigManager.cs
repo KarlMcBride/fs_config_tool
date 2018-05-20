@@ -146,7 +146,15 @@ namespace FS_Config_Tool
             return deleteSuccessful;
         }
 
-        public int GetNextSelectableItem(int currentlySelectedItem, int numOfItems)
+        /// <summary>
+        /// Gets the index of the next item to select if one is removed.
+        /// Returns the current index if there are trailing items, and
+        /// decrements by one if there's not.
+        /// </summary>
+        /// <param name="currentlySelectedItem"></param>
+        /// <param name="numOfItems"></param>
+        /// <returns></returns>
+        public int GetNextSelectableCrewInList(int currentlySelectedItem, int numOfItems)
         {
             int nextSelectable = UNSELECTED_INDEX;
 
@@ -199,11 +207,11 @@ namespace FS_Config_Tool
                     {
                         DataLists.CrewData[selectedTeam].Team.CrewMembers[nextFreeSlot].CrewID = selectedCrewID;
                         addSuccessful = true;
-
-                        UnsavedChangesPresent = true;
                     }
                 }
             }
+
+            UnsavedChangesPresent |= addSuccessful;
 
             return addSuccessful;
         }
@@ -216,9 +224,9 @@ namespace FS_Config_Tool
             {
                 DataLists.CrewData[selectedTeam].Team.CrewMembers[crewIndexToRemove].CrewID = CrewEnum.END_OF_LIST;
                 removeSuccessful = true;
-
-                UnsavedChangesPresent = true;
             }
+
+            UnsavedChangesPresent |= removeSuccessful;
 
             return removeSuccessful;
         }
@@ -241,11 +249,11 @@ namespace FS_Config_Tool
                     {
                         DataLists.CrewData[selectedTeam].Team.CrewMembers[nextFreeSlot.CrewIndex].ImplantIDs[nextFreeSlot.ImplantIndex] = selectedImplantID;
                         addSuccessful = true;
-
-                        UnsavedChangesPresent = true;
                     }
                 }
             }
+
+            UnsavedChangesPresent |= addSuccessful;
 
             return addSuccessful;
         }
@@ -260,10 +268,14 @@ namespace FS_Config_Tool
                 removeSuccessful = true;
             }
 
+            UnsavedChangesPresent |= removeSuccessful;
 
             return removeSuccessful;
         }
 
+        /// <summary>
+        /// Adds a new blank crew to the list with the given crew name
+        /// </summary>
         public void AddNewCrew(string newCrewName)
         {
             CrewLines newCrew = new CrewLines();

@@ -177,7 +177,7 @@ namespace FS_Config_Tool
             {
                 ListBoxCrews.Items.RemoveAt(selectedIndex);
 
-                ListBoxCrews.SelectedIndex = config.GetNextSelectableItem(selectedIndex, itemCount);
+                ListBoxCrews.SelectedIndex = config.GetNextSelectableCrewInList(selectedIndex, itemCount);
             }
         }
 
