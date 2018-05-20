@@ -13,6 +13,12 @@ namespace UnitTests.Listings
         }
 
         [TestMethod]
+        public void VerifyNoneCrewTypeIsHandled()
+        {
+            CrewMember noneCrewMember = new CrewMember(CrewEnum.END_OF_LIST, "EOL", CrewRole.END_OF_LIST, "NO CODE");
+        }
+
+        [TestMethod]
         public void VerifyCrewCountsMatch()
         {
             int enum_expected = (int)CrewEnum.END_OF_LIST;
