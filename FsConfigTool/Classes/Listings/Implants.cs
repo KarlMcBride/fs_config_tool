@@ -24,8 +24,8 @@ namespace FS_Config_Tool.Classes
         REPAIR_EFFICIENCY,
         SENSOR_RANGE,
         SQUAD_COOLDOWN,
-        STATION_DAMAGE_REDUCTION,
         SQUAD_SURVIVAL,
+        STATION_DAMAGE_REDUCTION,
         TURN_RATE,
         TURRET_TRAVERSE,
         UTILITY_COOLDOWN,
@@ -125,11 +125,11 @@ namespace FS_Config_Tool.Classes
             Implant squadCooldown = new Implant(ImplantEnum.SQUAD_COOLDOWN, "FB3FE8FD4EAA331346C3E596B32CEEF4", -3f);
             ImplantListing.Add(squadCooldown);
 
-            Implant stationDamageReduction = new Implant(ImplantEnum.STATION_DAMAGE_REDUCTION, "3949CAB645FA818C56A12BB0063F0AAB", 10f);
-            ImplantListing.Add(stationDamageReduction);
-
             Implant squadSurvival = new Implant(ImplantEnum.SQUAD_SURVIVAL, "2357BFE34CED88AAD4FB458B644FD792", 3f);
             ImplantListing.Add(squadSurvival);
+
+            Implant stationDamageReduction = new Implant(ImplantEnum.STATION_DAMAGE_REDUCTION, "3949CAB645FA818C56A12BB0063F0AAB", 10f);
+            ImplantListing.Add(stationDamageReduction);
 
             Implant turnRate = new Implant(ImplantEnum.TURN_RATE, "77B35B9844EAF5A526E422AFBCEA881D", 2.4f);
             ImplantListing.Add(turnRate);
