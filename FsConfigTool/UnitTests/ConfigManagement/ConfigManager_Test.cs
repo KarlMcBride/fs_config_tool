@@ -314,5 +314,26 @@ namespace UnitTests.ConfigManagement
             Assert.AreEqual(newName, manager.DataLists.CrewData[indexZero].CrewName, "New crew name did not match");
             Assert.IsTrue(manager.UnsavedChangesPresent, "Expected UnsavedChangesPresent flag to be true");
         }
+
+        [TestMethod]
+        public void AlphabeticallySortCrewList()
+        {
+            ConfigManager manager = new ConfigManager();
+
+            string[] crewNames = new string[] { "Alpha", "Beta", "Charlie" };
+
+            for (int index = crewNames.Length - 1; index >= 0; index--)
+            {
+                manager.AddNewCrew(crewNames[index]);
+            }
+
+            manager.SortAlphabetically();
+
+            for (int index = 0; index < crewNames.Length; index++)
+            {
+                Assert.AreEqual(crewNames[index], manager.DataLists.CrewData[index].CrewName, "Crew name did not match");
+            }
+            Assert.IsTrue(manager.UnsavedChangesPresent, "Expected UnsavedChangesPresent flag to be true");
+        }
     }
 }
