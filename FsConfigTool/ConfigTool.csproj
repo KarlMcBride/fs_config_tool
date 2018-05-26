@@ -138,6 +138,9 @@
     <Compile Include="UiComponents\CrewSetBox.Designer.cs">
       <DependentUpon>CrewSetBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="UiComponents\QuickShareCodeTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UiComponents\ShipSelector.cs">
       <SubType>Form</SubType>
     </Compile>

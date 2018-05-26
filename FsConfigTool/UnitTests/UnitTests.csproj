@@ -72,6 +72,7 @@
     <Compile Include="UiComponents\StatPair_Test.cs" />
     <Compile Include="UiComponents\StatsBox_Test.cs" />
     <Compile Include="UiComponents\ShipSelector_Test.cs" />
+    <Compile Include="UiComponents\QuickShareCodeTextBox_Test.cs" />
     <Compile Include="Utilities_Test.cs" />
   </ItemGroup>
   <ItemGroup>

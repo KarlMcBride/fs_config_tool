@@ -57,6 +57,10 @@
             this.StatsBox = new FS_Config_Tool.UiComponents.StatsBox();
             this.CrewSetBoxMain = new FS_Config_Tool.UiComponents.CrewSetBox();
             this.ButtonAbout = new System.Windows.Forms.Button();
+            this.labelSelected = new System.Windows.Forms.Label();
+            this.LabelSelectedCrewName = new System.Windows.Forms.Label();
+            this.labelCode = new System.Windows.Forms.Label();
+            this.QuickShareTextBox = new FS_Config_Tool.UiComponents.QuickShareCodeTextBox();
             this.GroupBoxCrewMembers.SuspendLayout();
             this.GroupBoxImplants.SuspendLayout();
             this.SuspendLayout();
@@ -338,14 +342,14 @@
             // StatsBox
             // 
             this.StatsBox.AutoSize = true;
-            this.StatsBox.Location = new System.Drawing.Point(1078, 2);
+            this.StatsBox.Location = new System.Drawing.Point(1078, 15);
             this.StatsBox.Name = "StatsBox";
             this.StatsBox.Size = new System.Drawing.Size(492, 281);
             this.StatsBox.TabIndex = 7;
             // 
             // CrewSetBoxMain
             // 
-            this.CrewSetBoxMain.Location = new System.Drawing.Point(259, 12);
+            this.CrewSetBoxMain.Location = new System.Drawing.Point(259, 25);
             this.CrewSetBoxMain.Name = "CrewSetBoxMain";
             this.CrewSetBoxMain.Size = new System.Drawing.Size(812, 270);
             this.CrewSetBoxMain.TabIndex = 6;
@@ -360,11 +364,49 @@
             this.ButtonAbout.UseVisualStyleBackColor = true;
             this.ButtonAbout.Click += new System.EventHandler(this.ButtonAbout_Click);
             // 
+            // labelSelected
+            // 
+            this.labelSelected.AutoSize = true;
+            this.labelSelected.Location = new System.Drawing.Point(270, 7);
+            this.labelSelected.Name = "labelSelected";
+            this.labelSelected.Size = new System.Drawing.Size(79, 13);
+            this.labelSelected.TabIndex = 14;
+            this.labelSelected.Text = "Selected Crew:";
+            // 
+            // LabelSelectedCrewName
+            // 
+            this.LabelSelectedCrewName.AutoSize = true;
+            this.LabelSelectedCrewName.Location = new System.Drawing.Point(355, 7);
+            this.LabelSelectedCrewName.Name = "LabelSelectedCrewName";
+            this.LabelSelectedCrewName.Size = new System.Drawing.Size(28, 13);
+            this.LabelSelectedCrewName.TabIndex = 15;
+            this.LabelSelectedCrewName.Text = "- - - -";
+            // 
+            // labelCode
+            // 
+            this.labelCode.AutoSize = true;
+            this.labelCode.Location = new System.Drawing.Point(492, 7);
+            this.labelCode.Name = "labelCode";
+            this.labelCode.Size = new System.Drawing.Size(97, 13);
+            this.labelCode.TabIndex = 16;
+            this.labelCode.Text = "Quick Share Code:";
+            // 
+            // QuickShareTextBox
+            // 
+            this.QuickShareTextBox.Location = new System.Drawing.Point(595, 4);
+            this.QuickShareTextBox.Name = "QuickShareTextBox";
+            this.QuickShareTextBox.Size = new System.Drawing.Size(310, 20);
+            this.QuickShareTextBox.TabIndex = 17;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1574, 703);
+            this.Controls.Add(this.QuickShareTextBox);
+            this.Controls.Add(this.labelCode);
+            this.Controls.Add(this.LabelSelectedCrewName);
+            this.Controls.Add(this.labelSelected);
             this.Controls.Add(this.ButtonAbout);
             this.Controls.Add(this.ButtonRenameSelected);
             this.Controls.Add(this.ButtonGenerate);
@@ -424,6 +466,10 @@
         private System.Windows.Forms.Button ButtonGenerate;
         private System.Windows.Forms.Button ButtonRenameSelected;
         private System.Windows.Forms.Button ButtonAbout;
+        private System.Windows.Forms.Label labelSelected;
+        private System.Windows.Forms.Label LabelSelectedCrewName;
+        private System.Windows.Forms.Label labelCode;
+        private UiComponents.QuickShareCodeTextBox QuickShareTextBox;
     }
 }
 
