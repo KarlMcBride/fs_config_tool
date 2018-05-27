@@ -302,13 +302,16 @@ namespace FS_Config_Tool
             }
         }
 
-        private void RunCrewUpdates(int selectedCrewIndex)
+        private void RunCrewUpdates(int selectedCrewIndex, bool codeEntered = false)
         {
             LabelSelectedCrewName.Text = config.DataLists.CrewData[selectedCrewIndex].CrewName;
             CrewSetBoxMain.DisplaySelectedTeam(config.DataLists.CrewData[selectedCrewIndex].Team, CrewSetBoxMain);
             StatsBox.UpdateAndShowStats(config.DataLists.CrewData[selectedCrewIndex].Team);
 
-            QuickShareTextBox.GenerateCodeFromTeam(config.DataLists.CrewData[selectedCrewIndex].Team);
+            if (!codeEntered)
+            {
+                QuickShareTextBox.GenerateCodeFromTeam(config.DataLists.CrewData[selectedCrewIndex].Team);
+            }
         }
 
         private void ButtonNew_Click(object sender, EventArgs e)
@@ -382,6 +385,15 @@ namespace FS_Config_Tool
                     e.Cancel = true;
                 }
             }
+        }
+
+        private void QuickShareTextBox_TextChanged(object sender, EventArgs e)
+        {
+            int selectedCrewIndex = ListBoxCrews.SelectedIndex;
+
+            config.UpdateCrewToMatchGeneratedConfig(QuickShareTextBox.GeneratedConfig, selectedCrewIndex);
+
+            RunCrewUpdates(selectedCrewIndex, true);
         }
     }
 }

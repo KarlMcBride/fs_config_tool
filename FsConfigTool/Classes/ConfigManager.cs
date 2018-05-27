@@ -295,5 +295,18 @@ namespace FS_Config_Tool
 
             UnsavedChangesPresent = true;
         }
+
+        public void UpdateCrewToMatchGeneratedConfig(TeamConfig newConfig, int index)
+        {
+            for (int crewIndex = 0; crewIndex < TeamConfig.MAX_CREW_MEMBERS_PER_TEAM; crewIndex++)
+            {
+                DataLists.CrewData[index].Team.CrewMembers[crewIndex].CrewID = newConfig.CrewMembers[crewIndex].CrewID;
+                for (int implantIndex = 0; implantIndex < TeamConfig.MAX_IMPLANTS_PER_CREW_MEMBER; implantIndex++)
+                {
+                    DataLists.CrewData[index].Team.CrewMembers[crewIndex].ImplantIDs[implantIndex]
+                        = newConfig.CrewMembers[crewIndex].ImplantIDs[implantIndex];
+                }
+            }
+        }
     }
 }

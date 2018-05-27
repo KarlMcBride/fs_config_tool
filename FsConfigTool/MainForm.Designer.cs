@@ -397,6 +397,7 @@
             this.QuickShareTextBox.Name = "QuickShareTextBox";
             this.QuickShareTextBox.Size = new System.Drawing.Size(310, 20);
             this.QuickShareTextBox.TabIndex = 17;
+            this.QuickShareTextBox.TextChanged += new System.EventHandler(this.QuickShareTextBox_TextChanged);
             // 
             // MainForm
             // 
