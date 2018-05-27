@@ -1,22 +1,13 @@
 ﻿using FS_Config_Tool;
 using FS_Config_Tool.Classes;
-using FS_Config_Tool.Classes.Listings;
 using FS_Config_Tool.UiComponents;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTests.UiComponents
 {
     [TestClass]
-    public class StatsBox_Test
+    public class StatsBox_Test : UnitTestCore
     {
-        [TestInitialize]
-        public void PopulateLists()
-        {
-            StatList.PopulateStatsList();
-            CrewList.PopulateCrewList();
-            ImplantList.PopulateImplantList();
-        }
-
         [TestMethod]
         public void AssignAllCrewMembersToEachSlot()
         {

@@ -1,23 +1,14 @@
 ﻿using FS_Config_Tool;
 using FS_Config_Tool.Classes;
 using FS_Config_Tool.Classes.ConfigManagement.FS_Crew_Config_Tool.Classes.ConfigManagement;
-using FS_Config_Tool.Classes.Listings;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using UnitTests.TestData;
 
 namespace UnitTests.ConfigManagement
 {
     [TestClass]
-    public class ConfigManager_Test
+    public class ConfigManager_Test : UnitTestCore
     {
-        [TestInitialize]
-        public void PopulateLists()
-        {
-            StatList.PopulateStatsList();
-            CrewList.PopulateCrewList();
-            ImplantList.PopulateImplantList();
-        }
-
         [TestMethod]
         public void GetNextSelectableItem_NoItemsAvailable()
         {

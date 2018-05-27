@@ -7,15 +7,8 @@ using UnitTests.TestData;
 namespace UnitTests.ConfigManagement.CrewBuilder_cs
 {
     [TestClass]
-    public class GenerateSingleCrewMemberComponent
+    public class GenerateSingleCrewMemberComponent : UnitTestCore
     {
-        [TestInitialize]
-        public void PopulateLists()
-        {
-            CrewList.PopulateCrewList();
-            ImplantList.PopulateImplantList();
-        }
-
         [TestMethod]
         public void OnlyImplants()
         {

@@ -1,12 +1,11 @@
-﻿using System;
-using System.Windows.Forms;
-using FS_Config_Tool.UiComponents;
+﻿using FS_Config_Tool.UiComponents;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Windows.Forms;
 
 namespace UnitTests.UiComponents
 {
     [TestClass]
-    public class ShipSelector_Test
+    public class ShipSelector_Test : UnitTestCore
     {
         private ShipArgs localShipArgs;
 

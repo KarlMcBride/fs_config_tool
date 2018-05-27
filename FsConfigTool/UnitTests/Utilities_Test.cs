@@ -6,15 +6,8 @@ using System.Drawing;
 namespace UnitTests
 {
     [TestClass]
-    public class Utilities_Test
+    public class Utilities_Test : UnitTestCore
     {
-        [TestInitialize]
-        public void PopulateLists()
-        {
-            CrewList.PopulateCrewList();
-            ImplantList.PopulateImplantList();
-        }
-
         [TestMethod]
         public void CheckIfFracIsNotRunning()
         {

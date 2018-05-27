@@ -7,15 +7,8 @@ using UnitTests.TestData;
 namespace UnitTests.ConfigManagement
 {
     [TestClass]
-    public class DataTypes_Test
+    public class DataTypes_Test : UnitTestCore
     {
-        [TestInitialize]
-        public void PopulateLists()
-        {
-            CrewList.PopulateCrewList();
-            StatList.PopulateStatsList();
-        }
-
         [TestMethod]
         public void ParseEmptyLine()
         {

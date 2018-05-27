@@ -7,15 +7,8 @@ using UnitTests.TestData;
 namespace UnitTests.ConfigManagement
 {
     [TestClass]
-    public class ConfigUtilities_Test
+    public class ConfigUtilities_Test : UnitTestCore
     {
-        [TestInitialize]
-        public void PopulateLists()
-        {
-            CrewList.PopulateCrewList();
-            ImplantList.PopulateImplantList();
-        }
-
         [TestMethod]
         public void CheckValidCrewMemberAgainstFullTeamMatch()
         {

@@ -1,6 +1,5 @@
 ﻿namespace UnitTests
 {
-
     /// <summary>
     /// Unit-test only class to allow access to non-public methods.
     /// </summary>

@@ -8,16 +8,8 @@ using System.Windows.Forms;
 namespace UnitTests.UiComponents
 {
     [TestClass]
-    public class UiOffload_Test
+    public class UiOffload_Test : UnitTestCore
     {
-        [TestInitialize]
-        public void PopulateLists()
-        {
-            StatList.PopulateStatsList();
-            CrewList.PopulateCrewList();
-            ImplantList.PopulateImplantList();
-        }
-
         private RadioButton[] CreateRadioButtonArray(int numOfElements)
         {
             RadioButton[] array = new RadioButton[numOfElements];

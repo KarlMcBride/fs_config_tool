@@ -4,14 +4,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace UnitTests.Listings
 {
     [TestClass]
-    public class Stats_Test
+    public class Stats_Test : UnitTestCore
     {
-        [TestInitialize]
-        public void PopulateLists()
-        {
-            StatList.PopulateStatsList();
-        }
-
         [TestMethod]
         public void VerifyStatsCountsMatch()
         {
