@@ -308,7 +308,7 @@ namespace FS_Config_Tool
             CrewSetBoxMain.DisplaySelectedTeam(config.DataLists.CrewData[selectedCrewIndex].Team, CrewSetBoxMain);
             StatsBox.UpdateAndShowStats(config.DataLists.CrewData[selectedCrewIndex].Team);
 
-            QuickShareTextBox.GenerateCode(config.DataLists.CrewData[selectedCrewIndex].Team);
+            QuickShareTextBox.GenerateCodeFromTeam(config.DataLists.CrewData[selectedCrewIndex].Team);
         }
 
         private void ButtonNew_Click(object sender, EventArgs e)

@@ -11,7 +11,7 @@ namespace FS_Config_Tool.UiComponents
         /// Generates a code of the format Crew-Imp-Imp-Imp,...Crew-Imp-Imp-Imp
         /// </summary>
         /// <param name="config">Quick share code to generate a crew for</param>
-        public void GenerateCode(TeamConfig config)
+        public void GenerateCodeFromTeam(TeamConfig config)
         {
             string code = string.Empty;
 
@@ -39,11 +39,11 @@ namespace FS_Config_Tool.UiComponents
 
         protected override void OnTextChanged(EventArgs e)
         {
-            GenerateTeamCode();
+            GenerateTeamFromCode();
             base.OnTextChanged(e);
         }
 
-        private void GenerateTeamCode()
+        private void GenerateTeamFromCode()
         {
             // Each crew member is separated by an ID tag
             string[] separator = { "-", "," };

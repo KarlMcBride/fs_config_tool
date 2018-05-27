@@ -15,7 +15,7 @@ namespace UnitTests.UiComponents
 
             QuickShareCodeTextBox codeBox = new QuickShareCodeTextBox();
 
-            codeBox.GenerateCode(team);
+            codeBox.GenerateCodeFromTeam(team);
 
             string crewComponent = ((int)CrewEnum.END_OF_LIST).ToString();
             string implantComponent = ((int)ImplantEnum.END_OF_LIST).ToString();
@@ -38,7 +38,7 @@ namespace UnitTests.UiComponents
 
             QuickShareCodeTextBox codeBox = new QuickShareCodeTextBox();
 
-            codeBox.GenerateCode(team);
+            codeBox.GenerateCodeFromTeam(team);
 
             string crewComponent = ((int)CrewEnum.END_OF_LIST).ToString();
             string implantComponent = ((int)ImplantEnum.END_OF_LIST).ToString();
