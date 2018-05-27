@@ -281,5 +281,99 @@ namespace UnitTests.ConfigManagement
 
             Assert.AreEqual(expected, actual, "Partial crew string differs");
         }
+
+        [TestMethod]
+        public void ConvertStringToCrewEnum_Valid()
+        {
+            for (int crewIndex = 0; crewIndex <= (int)CrewEnum.END_OF_LIST; crewIndex++)
+            {
+                CrewEnum expected = (CrewEnum)crewIndex;
+                string crewIndexAsString = crewIndex.ToString();
+                CrewEnum actual = ConfigUtilities.ConvertStringToCrewEnum(crewIndexAsString);
+
+                Assert.AreEqual(expected, actual, "Converted crew enum [ %d ] does not match expected [ %d ]",
+                    actual, expected);
+            }
+        }
+
+        [TestMethod]
+        public void ConvertStringToCrewEnum_Negative()
+        {
+            CrewEnum expected = CrewEnum.END_OF_LIST;
+            string invalidString = "-1";
+            CrewEnum actual = ConfigUtilities.ConvertStringToCrewEnum(invalidString);
+
+            Assert.AreEqual(expected, actual, "Converted crew enum [ %d ] does not match expected [ %d ]",
+                actual, expected);
+        }
+
+        [TestMethod]
+        public void ConvertStringToCrewEnum_OutOfRange()
+        {
+            CrewEnum expected = CrewEnum.END_OF_LIST;
+            string invalidString = "999";
+            CrewEnum actual = ConfigUtilities.ConvertStringToCrewEnum(invalidString);
+
+            Assert.AreEqual(expected, actual, "Converted crew enum [ %d ] does not match expected [ %d ]",
+                actual, expected);
+        }
+
+        [TestMethod]
+        public void ConvertStringToCrewEnum_NonIntConversion()
+        {
+            CrewEnum expected = CrewEnum.END_OF_LIST;
+            string invalidString = "Not an integer";
+            CrewEnum actual = ConfigUtilities.ConvertStringToCrewEnum(invalidString);
+
+            Assert.AreEqual(expected, actual, "Converted crew enum [ %d ] does not match expected [ %d ]",
+                actual, expected);
+        }
+
+        [TestMethod]
+        public void ConvertStringToImplantEnum_Valid()
+        {
+            for (int implantIndex = 0; implantIndex <= (int)ImplantEnum.END_OF_LIST; implantIndex++)
+            {
+                ImplantEnum expected = (ImplantEnum)implantIndex;
+                string implantIndexAsString = implantIndex.ToString();
+                ImplantEnum actual = ConfigUtilities.ConvertStringToImplantEnum(implantIndexAsString);
+
+                Assert.AreEqual(expected, actual, "Converted implant enum [ %d ] does not match expected [ %d ]",
+                    actual, expected);
+            }
+        }
+
+        [TestMethod]
+        public void ConvertStringToImplantEnum_Negative()
+        {
+            ImplantEnum expected = ImplantEnum.END_OF_LIST;
+            string invalidString = "-1";
+            ImplantEnum actual = ConfigUtilities.ConvertStringToImplantEnum(invalidString);
+
+            Assert.AreEqual(expected, actual, "Converted implant enum [ %d ] does not match expected [ %d ]",
+                actual, expected);
+        }
+
+        [TestMethod]
+        public void ConvertStringToImplantEnum_OutOfRange()
+        {
+            ImplantEnum expected = ImplantEnum.END_OF_LIST;
+            string invalidString = "999";
+            ImplantEnum actual = ConfigUtilities.ConvertStringToImplantEnum(invalidString);
+
+            Assert.AreEqual(expected, actual, "Converted implant enum [ %d ] does not match expected [ %d ]",
+                actual, expected);
+        }
+
+        [TestMethod]
+        public void ConvertStringToImplantEnum_NonIntConversion()
+        {
+            ImplantEnum expected = ImplantEnum.END_OF_LIST;
+            string invalidString = "Not an integer";
+            ImplantEnum actual = ConfigUtilities.ConvertStringToImplantEnum(invalidString);
+
+            Assert.AreEqual(expected, actual, "Converted crew enum [ %d ] does not match expected [ %d ]",
+                actual, expected);
+        }
     }
 }

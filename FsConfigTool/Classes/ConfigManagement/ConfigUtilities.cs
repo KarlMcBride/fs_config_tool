@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 
 namespace FS_Config_Tool.Classes.ConfigManagement
 {
@@ -202,6 +203,57 @@ namespace FS_Config_Tool.Classes.ConfigManagement
             string returnString = rawString.Substring(0, endOfStartIndex);
 
             return returnString;
+        }
+
+
+        /// <summary>
+        /// Attempts to convert a string to crew enum
+        /// </summary>
+        /// <param name="value">Value to parse</param>
+        /// <returns>Valid crew enum if in range, otherwise END_OF_LIST</returns>
+        public static CrewEnum ConvertStringToCrewEnum(string value)
+        {
+            CrewEnum crewVal;
+
+            int crewIntVal = 0;
+
+            bool parseSuccessful = Int32.TryParse(value, out crewIntVal);
+
+            if (!parseSuccessful || crewIntVal < 0 || crewIntVal > (int)CrewEnum.END_OF_LIST)
+            {
+                crewVal = CrewEnum.END_OF_LIST;
+            }
+            else
+            {
+                crewVal = (CrewEnum)crewIntVal;
+            }
+
+            return crewVal;
+        }
+
+        /// <summary>
+        /// Attempts to convert a string to implant enum
+        /// </summary>
+        /// <param name="value">Value to parse</param>
+        /// <returns>Valid implant enum if in range, otherwise END_OF_LIST</returns>
+        public static ImplantEnum ConvertStringToImplantEnum(string value)
+        {
+            ImplantEnum crewVal;
+
+            int implantIntVal = 0;
+
+            bool parseSuccessful = Int32.TryParse(value, out implantIntVal);
+
+            if (!parseSuccessful || implantIntVal < 0 || implantIntVal > (int)ImplantEnum.END_OF_LIST)
+            {
+                crewVal = ImplantEnum.END_OF_LIST;
+            }
+            else
+            {
+                crewVal = (ImplantEnum)implantIntVal;
+            }
+
+            return crewVal;
         }
     }
 }
