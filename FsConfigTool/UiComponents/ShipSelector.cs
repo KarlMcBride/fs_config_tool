@@ -27,12 +27,16 @@ namespace FS_Config_Tool.UiComponents
 
             CheckBoxArray = new CheckBox[(int)ShipEnum.END_OF_LIST];
 
+            int shipsInColumn = 0;
+            const int SHIP_IN_COLUMN_LIMIT = 9;
+
             for (int index = 0; index < (int)ShipEnum.END_OF_LIST; index++)
             {
-                if (index == (int)ShipEnum.ENDEAVOUR || index == (int)ShipEnum.INTERCEPTOR || index == (int)ShipEnum.RANGER)
+                if (shipsInColumn == SHIP_IN_COLUMN_LIMIT)
                 {
                     shiftingPoint.X += 110;
                     shiftingPoint.Y = startingPoint.Y;
+                    shipsInColumn = 0;
                 }
 
                 CheckBox checkBox = new CheckBox();
@@ -41,10 +45,11 @@ namespace FS_Config_Tool.UiComponents
 
                 checkBox.Location = shiftingPoint;
 
-                shiftingPoint.Y += 20;
+                shiftingPoint.Y += 21;
 
                 Controls.Add(checkBox);
                 CheckBoxArray[index] = checkBox;
+                shipsInColumn++;
             }
         }
 
