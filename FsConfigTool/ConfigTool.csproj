@@ -495,6 +495,7 @@
     <None Include="Content\Crew\SURINDER_KAUR.png" />
     <None Include="Content\Crew\KN1FE.png" />
     <None Include="Content\Crew\HANAKO_OGRADY.png" />
+    <Content Include="Content\Crew\NEWTON_SIDDIS.png" />
     <Content Include="Drone.ico" />
   </ItemGroup>
   <ItemGroup>

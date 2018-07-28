@@ -543,6 +543,16 @@ namespace FS_Config_Tool.Content {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap NEWTON_SIDDIS {
+            get {
+                object obj = ResourceManager.GetObject("NEWTON_SIDDIS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PALAM0N {
             get {
                 object obj = ResourceManager.GetObject("PALAM0N", resourceCulture);

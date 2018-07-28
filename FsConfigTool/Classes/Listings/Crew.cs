@@ -100,6 +100,7 @@ namespace FS_Config_Tool
         // UTILITY
         GRINCZ_MORROW,
         LUDOLOGIST,
+        NEWTON_SIDDIS,
         PALAM0N,
         REGAN,
         SCALPEL,
@@ -663,6 +664,11 @@ namespace FS_Config_Tool
             ludologist.CrewStats[0].Value = UTILITY_ENERGY_3_75;
             ludologist.CrewStats[1].Value = UTILITY_UTIL_CD_7_5;
             CrewListing.Add(ludologist);
+
+            CrewMember newton = new CrewMember(CrewEnum.NEWTON_SIDDIS, "Newton Siddis", CrewRole.UTILITY, "C1F583764F2DB928EE6336AF5265F065");
+            newton.CrewStats[0].Value = UTILITY_ENERGY_3_75;
+            newton.CrewStats[1].Value = UTILITY_UTIL_CD_7_5;
+            CrewListing.Add(newton);
 
             CrewMember palam0n = new CrewMember(CrewEnum.PALAM0N, "Palam0n", CrewRole.UTILITY, "555DCF064663C9470A03AD89978A710B");
             palam0n.CrewStats[0].Value = UTILITY_ENERGY_3_75;
