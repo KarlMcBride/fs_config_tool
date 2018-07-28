@@ -17,6 +17,7 @@ namespace FS_Config_Tool.Classes.Listings
         ENFORCER,
         EQUALISER,
         EXECUTIONER,
+        FURION,
         GHOST,
         GLADIATOR,
         GUARDIAN,
@@ -30,6 +31,7 @@ namespace FS_Config_Tool.Classes.Listings
         PERSECUTOR,
         PIONEER,
         PROTECTOR,
+        PUNISHER,
         RAIDER,
         RANGER,
         RAVEN,
@@ -80,6 +82,7 @@ namespace FS_Config_Tool.Classes.Listings
             ShipListing.Add(new Ship(ShipEnum.ENFORCER, "Enforcer"));
             ShipListing.Add(new Ship(ShipEnum.EQUALISER, "Equaliser"));
             ShipListing.Add(new Ship(ShipEnum.EXECUTIONER, "Executioner"));
+            ShipListing.Add(new Ship(ShipEnum.FURION, "Furion"));
             ShipListing.Add(new Ship(ShipEnum.GHOST, "Ghost"));
             ShipListing.Add(new Ship(ShipEnum.GLADIATOR, "Gladiator"));
             ShipListing.Add(new Ship(ShipEnum.GUARDIAN, "Guardian"));
@@ -93,6 +96,7 @@ namespace FS_Config_Tool.Classes.Listings
             ShipListing.Add(new Ship(ShipEnum.PERSECUTOR, "Persecutor"));
             ShipListing.Add(new Ship(ShipEnum.PIONEER, "Pioneer"));
             ShipListing.Add(new Ship(ShipEnum.PROTECTOR, "Protector"));
+            ShipListing.Add(new Ship(ShipEnum.PUNISHER, "Punisher"));
             ShipListing.Add(new Ship(ShipEnum.RAIDER, "Raider"));
             ShipListing.Add(new Ship(ShipEnum.RANGER, "Ranger"));
             ShipListing.Add(new Ship(ShipEnum.RAVEN, "Raven"));
