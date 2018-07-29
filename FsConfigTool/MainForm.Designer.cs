@@ -60,7 +60,9 @@
             this.labelSelected = new System.Windows.Forms.Label();
             this.LabelSelectedCrewName = new System.Windows.Forms.Label();
             this.labelCode = new System.Windows.Forms.Label();
-            this.QuickShareTextBox = new FS_Config_Tool.UiComponents.QuickShareCodeTextBox();
+            this.TextBoxQuickShare = new FS_Config_Tool.UiComponents.QuickShareCodeTextBox();
+            this.ButtonCopy = new System.Windows.Forms.Button();
+            this.ButtonPaste = new System.Windows.Forms.Button();
             this.GroupBoxCrewMembers.SuspendLayout();
             this.GroupBoxImplants.SuspendLayout();
             this.SuspendLayout();
@@ -385,26 +387,48 @@
             // labelCode
             // 
             this.labelCode.AutoSize = true;
-            this.labelCode.Location = new System.Drawing.Point(492, 7);
+            this.labelCode.Location = new System.Drawing.Point(485, 7);
             this.labelCode.Name = "labelCode";
             this.labelCode.Size = new System.Drawing.Size(97, 13);
             this.labelCode.TabIndex = 16;
             this.labelCode.Text = "Quick Share Code:";
             // 
-            // QuickShareTextBox
+            // TextBoxQuickShare
             // 
-            this.QuickShareTextBox.Location = new System.Drawing.Point(595, 4);
-            this.QuickShareTextBox.Name = "QuickShareTextBox";
-            this.QuickShareTextBox.Size = new System.Drawing.Size(310, 20);
-            this.QuickShareTextBox.TabIndex = 17;
-            this.QuickShareTextBox.TextChanged += new System.EventHandler(this.QuickShareTextBox_TextChanged);
+            this.TextBoxQuickShare.Location = new System.Drawing.Point(588, 4);
+            this.TextBoxQuickShare.Name = "TextBoxQuickShare";
+            this.TextBoxQuickShare.Size = new System.Drawing.Size(317, 20);
+            this.TextBoxQuickShare.TabIndex = 17;
+            this.TextBoxQuickShare.TextChanged += new System.EventHandler(this.TextBoxQuickShare_TextChanged);
+            // 
+            // ButtonCopy
+            // 
+            this.ButtonCopy.Location = new System.Drawing.Point(913, 3);
+            this.ButtonCopy.Name = "ButtonCopy";
+            this.ButtonCopy.Size = new System.Drawing.Size(42, 22);
+            this.ButtonCopy.TabIndex = 18;
+            this.ButtonCopy.Text = "Copy";
+            this.ButtonCopy.UseVisualStyleBackColor = true;
+            this.ButtonCopy.Click += new System.EventHandler(this.ButtonCopy_Click);
+            // 
+            // ButtonPaste
+            // 
+            this.ButtonPaste.Location = new System.Drawing.Point(962, 3);
+            this.ButtonPaste.Name = "ButtonPaste";
+            this.ButtonPaste.Size = new System.Drawing.Size(42, 22);
+            this.ButtonPaste.TabIndex = 19;
+            this.ButtonPaste.Text = "Paste";
+            this.ButtonPaste.UseVisualStyleBackColor = true;
+            this.ButtonPaste.Click += new System.EventHandler(this.ButtonPaste_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1574, 703);
-            this.Controls.Add(this.QuickShareTextBox);
+            this.Controls.Add(this.ButtonPaste);
+            this.Controls.Add(this.ButtonCopy);
+            this.Controls.Add(this.TextBoxQuickShare);
             this.Controls.Add(this.labelCode);
             this.Controls.Add(this.LabelSelectedCrewName);
             this.Controls.Add(this.labelSelected);
@@ -470,7 +494,9 @@
         private System.Windows.Forms.Label labelSelected;
         private System.Windows.Forms.Label LabelSelectedCrewName;
         private System.Windows.Forms.Label labelCode;
-        private UiComponents.QuickShareCodeTextBox QuickShareTextBox;
+        private UiComponents.QuickShareCodeTextBox TextBoxQuickShare;
+        private System.Windows.Forms.Button ButtonCopy;
+        private System.Windows.Forms.Button ButtonPaste;
     }
 }
 

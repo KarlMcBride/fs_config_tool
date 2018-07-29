@@ -310,7 +310,7 @@ namespace FS_Config_Tool
 
             if (!codeEntered)
             {
-                QuickShareTextBox.GenerateCodeFromTeam(config.DataLists.CrewData[selectedCrewIndex].Team);
+                TextBoxQuickShare.GenerateCodeFromTeam(config.DataLists.CrewData[selectedCrewIndex].Team);
             }
         }
 
@@ -387,13 +387,26 @@ namespace FS_Config_Tool
             }
         }
 
-        private void QuickShareTextBox_TextChanged(object sender, EventArgs e)
+        private void TextBoxQuickShare_TextChanged(object sender, EventArgs e)
         {
             int selectedCrewIndex = ListBoxCrews.SelectedIndex;
 
-            config.UpdateCrewToMatchGeneratedConfig(QuickShareTextBox.GeneratedConfig, selectedCrewIndex);
+            if (selectedCrewIndex > -1)
+            {
+                config.UpdateCrewToMatchGeneratedConfig(TextBoxQuickShare.GeneratedConfig, selectedCrewIndex);
 
-            RunCrewUpdates(selectedCrewIndex, true);
+                RunCrewUpdates(selectedCrewIndex, true);
+            }
+        }
+
+        private void ButtonCopy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(TextBoxQuickShare.Text);
+        }
+
+        private void ButtonPaste_Click(object sender, EventArgs e)
+        {
+            TextBoxQuickShare.Text = Clipboard.GetText();
         }
     }
 }
