@@ -79,8 +79,25 @@ namespace FS_Config_Tool.UiComponents
                         break;
                     }
 
-                    GeneratedConfig.CrewMembers[crewIndex].ImplantIDs[implantIndex] =
-                        ConfigUtilities.ConvertStringToImplantEnum(splitCrewCode[index]);
+                    ImplantEnum codedImplant = ConfigUtilities.ConvertStringToImplantEnum(splitCrewCode[index]);
+
+                    bool implantAlreadyAdded = false;
+                    if (implantIndex > 0)
+                    {
+                        for (int checkIndex = 0; checkIndex < implantIndex; checkIndex++)
+                        {
+                            if (GeneratedConfig.CrewMembers[checkIndex].ImplantIDs[checkIndex] == codedImplant)
+                            {
+                                implantAlreadyAdded = true;
+                            }
+                        }
+                    }
+
+                    if (!implantAlreadyAdded)
+                    {
+                        GeneratedConfig.CrewMembers[crewIndex].ImplantIDs[implantIndex] = codedImplant;
+                    }
+
                     index++;
                 }
             }
